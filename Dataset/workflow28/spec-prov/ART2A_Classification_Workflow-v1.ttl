@@ -1,0 +1,93 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1ad6c989-9ed7-420d-a3ac-bf0d4f127da1-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/ART2A_Classificator> , <http://weprov.csiro.au/program/Write_Result_File_Name> , <http://weprov.csiro.au/program/Write_Log_File> , <http://weprov.csiro.au/program/Get_QSAR_vector_from_database> , <http://weprov.csiro.au/program/Write_UnusableVector_IDs> , <http://weprov.csiro.au/program/Write_UsableColumnNames> , <http://weprov.csiro.au/program/Write_UnusableColumnNames> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow loads a vector from a database and performs an ART2A classification. The ART2A classificator contains various options which are changeable within the stored workflow configuration file. There is no UI for these content available." ;
+        <http://purl.org/dc/terms/title>
+                "ART2A Classification Workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ART2A_Classificator.Comment:Write_Log_File.content> , <http://weprov.csiro.au/controller/ART2A_Classificator.resultFileNames:Write_Result_File_Name.content> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableColumnNames:Write_UnusableColumnNames.content> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableVectorIdentifierList:Write_UnusableVector_IDs.fileName> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UsableColumnNames:Write_UsableColumnNames.content> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.fingerprintItemList:ART2A_Classificator.fingerprintItemList> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/ART2A_Classificator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ART2A_Classificator.Comment:Write_Log_File.content> , <http://weprov.csiro.au/controller/ART2A_Classificator.resultFileNames:Write_Result_File_Name.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ART2A_Classificator" .
+
+<http://weprov.csiro.au/program/Write_Result_File_Name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_Result_File_Name" .
+
+<http://weprov.csiro.au/program/Write_Log_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_Log_File" .
+
+<http://weprov.csiro.au/program/Get_QSAR_vector_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableColumnNames:Write_UnusableColumnNames.content> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableVectorIdentifierList:Write_UnusableVector_IDs.fileName> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UsableColumnNames:Write_UsableColumnNames.content> , <http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.fingerprintItemList:ART2A_Classificator.fingerprintItemList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_QSAR_vector_from_database" .
+
+<http://weprov.csiro.au/program/Write_UnusableVector_IDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_UnusableVector_IDs" .
+
+<http://weprov.csiro.au/program/Write_UsableColumnNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_UsableColumnNames" .
+
+<http://weprov.csiro.au/program/Write_UnusableColumnNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_UnusableColumnNames" .
+
+<http://weprov.csiro.au/controller/ART2A_Classificator.Comment:Write_Log_File.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ART2A_Classificator.Comment:Write_Log_File.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_Log_File> .
+
+<http://weprov.csiro.au/controller/ART2A_Classificator.resultFileNames:Write_Result_File_Name.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ART2A_Classificator.resultFileNames:Write_Result_File_Name.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_Result_File_Name> .
+
+<http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableColumnNames:Write_UnusableColumnNames.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_QSAR_vector_from_database.UnusableColumnNames:Write_UnusableColumnNames.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_UnusableColumnNames> .
+
+<http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UnusableVectorIdentifierList:Write_UnusableVector_IDs.fileName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_QSAR_vector_from_database.UnusableVectorIdentifierList:Write_UnusableVector_IDs.fileName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_UnusableVector_IDs> .
+
+<http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.UsableColumnNames:Write_UsableColumnNames.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_QSAR_vector_from_database.UsableColumnNames:Write_UsableColumnNames.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_UsableColumnNames> .
+
+<http://weprov.csiro.au/controller/Get_QSAR_vector_from_database.fingerprintItemList:ART2A_Classificator.fingerprintItemList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_QSAR_vector_from_database.fingerprintItemList:ART2A_Classificator.fingerprintItemList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ART2A_Classificator> .

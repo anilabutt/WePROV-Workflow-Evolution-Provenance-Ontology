@@ -1,0 +1,59 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:87c56f6c-5d25-4d32-a24d-cc6e2582069a-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:87c56f6c-5d25-4d32-a24d-cc6e2582069a-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/create_temporary_directory> , <http://weprov.csiro.au/program/populate_directory> , <http://weprov.csiro.au/program/List_Files_By_Extension> ;
+        <http://purl.org/dc/terms/description>
+                "The create_temporary_directory beanshell creates a temporary directory and outputs the path to that directory.\n\nThe populate_directory beanshell creates several files within the temporary directory.\n\nOnce the directory has been populated, it is examined by the List_files_by_extension service and the file paths to the three files ending in \".png\" are output." ;
+        <http://purl.org/dc/terms/title>
+                "List files by extension - several answers" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/List_Files_By_Extension.filelist:out> , <http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:List_Files_By_Extension.directory> , <http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:populate_directory.directory> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/create_temporary_directory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:List_Files_By_Extension.directory> , <http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:populate_directory.directory> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_temporary_directory" .
+
+<http://weprov.csiro.au/program/populate_directory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "populate_directory" .
+
+<http://weprov.csiro.au/program/List_Files_By_Extension>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/List_Files_By_Extension.filelist:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "List_Files_By_Extension" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:87c56f6c-5d25-4d32-a24d-cc6e2582069a-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/List_Files_By_Extension.filelist:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "List_Files_By_Extension.filelist:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:List_Files_By_Extension.directory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_temporary_directory.directoryPath:List_Files_By_Extension.directory" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_Files_By_Extension> .
+
+<http://weprov.csiro.au/controller/create_temporary_directory.directoryPath:populate_directory.directory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_temporary_directory.directoryPath:populate_directory.directory" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/populate_directory> .

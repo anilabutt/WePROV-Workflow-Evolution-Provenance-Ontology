@@ -1,0 +1,105 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/GeneSymbol> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/Organism> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/PubMedQuery> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetPubMedQuery> , <http://weprov.csiro.au/program/Organism> , <http://weprov.csiro.au/program/Object> , <http://weprov.csiro.au/program/Parse_Moby_Data_BooleanQueryString> ;
+        <http://purl.org/dc/terms/description>
+                "Example workflow demonstrating how to use GeneIlluminator_GetPubMedQuery, a synchronous BioMOBY service for gene symbol disambiguation. If a gene symbol is ambiguous this service uses GeneIlluminator to create clusters describing which different genes, sharing the same symbol, exist in different parts of the tree of life. GeneIlluminator provides also aliases associated to the input gene symbol. Finally, using the cluster characteristics it creates a boolean PubMed query that could be used to unambiguously retrieve documents related to the gene from the cluster the input gene symbol was assigned to.\n\nPlease note that GeneIlluminator_GetPubMedQuery provides a query string that can be used to query PubMed, but it does not query PubMed itself. You'll have to do that by other means. When you do query PubMed at the NCBI using some automated procedure, make sure to throttle your queries! Otherwise you'll have your university/institute/company disconnected from the NCBI servers in no time. Visit http://www.ncbi.nlm.nih.gov/ for guidelines for automated/scripted acces to NCBI resources like PubMed.   \n\nVisit http://www.bioinformatics.nl/gi/ for more info about GeneIlluminator.\n\nGeneIlluminator services use a secure connection over HTTPS. To make this work you *must* import our SSL certificates in your local Java keystores. More information can be found on https://www.bioinformatics.nl/phenolink/home/\n  " ;
+        <http://purl.org/dc/terms/title>
+                "GeneIlluminator_GetPubMedQuery" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GeneIlluminator_GetPubMedQuery.BooleanQueryString(query):Parse_Moby_Data_BooleanQueryString.mobyData('BooleanQueryString')> , <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetPubMedQuery.Object(gene_symbol)> , <http://weprov.csiro.au/controller/Organism:Organism.id> , <http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_GetPubMedQuery.Organism(organism)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_BooleanQueryString.query_'query':PubMedQuery> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/GeneIlluminator_GetPubMedQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneIlluminator_GetPubMedQuery.BooleanQueryString(query):Parse_Moby_Data_BooleanQueryString.mobyData('BooleanQueryString')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneIlluminator_GetPubMedQuery" .
+
+<http://weprov.csiro.au/program/Organism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_GetPubMedQuery.Organism(organism)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Organism" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetPubMedQuery.Object(gene_symbol)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_BooleanQueryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_BooleanQueryString.query_'query':PubMedQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_BooleanQueryString" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/GeneSymbol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneSymbol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/Organism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Organism" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:eac7446d-bddb-4643-b4e5-8d964c01ae42-v1/PubMedQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PubMedQuery" .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_GetPubMedQuery.BooleanQueryString(query):Parse_Moby_Data_BooleanQueryString.mobyData('BooleanQueryString')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_GetPubMedQuery.BooleanQueryString(query):Parse_Moby_Data_BooleanQueryString.mobyData('BooleanQueryString')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_BooleanQueryString> .
+
+<http://weprov.csiro.au/controller/GeneSymbol:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneSymbol:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/Organism:Organism.id> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetPubMedQuery.Object(gene_symbol)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:GeneIlluminator_GetPubMedQuery.Object(gene_symbol)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetPubMedQuery> .
+
+<http://weprov.csiro.au/controller/Organism:Organism.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Organism:Organism.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Organism> .
+
+<http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_GetPubMedQuery.Organism(organism)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Organism.mobyData:GeneIlluminator_GetPubMedQuery.Organism(organism)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetPubMedQuery> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_BooleanQueryString.query_'query':PubMedQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_BooleanQueryString.query_'query':PubMedQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

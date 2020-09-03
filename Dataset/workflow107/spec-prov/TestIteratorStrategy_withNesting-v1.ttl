@@ -1,0 +1,309 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/letter_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/concatenated> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/capital_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/count_concatenated> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/count_letterlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/String_Constant> , <http://weprov.csiro.au/program/create_letterListOfLists> , <http://weprov.csiro.au/program/create_capitalList> , <http://weprov.csiro.au/program/Count1> , <http://weprov.csiro.au/program/Count2> , <http://weprov.csiro.au/program/Concatenate> ;
+        <http://purl.org/dc/terms/description>
+                "Implementation of the iteration workaround by Tom Oin conform the Q&A below. The nested workflow 'NestedProcessor' is called that to conform to Tom's explanation. For an alternative solution using a java beanshell to clone list items see 'TestIteratorStrategy_withCloning. \n\nThis workflow implements the following Q&A:\nMarco Roos wrote:\n> Dear Taverna user,\n>\n> Issue 1: Complex iteration\n>\n>     I would like to perform an iteration including a dot product between\n>     a list and a list of lists; example:\n>     Input:\n>\n>         [1]\n>         [A,B,C]\n>         [[a,b],[c,d],[e,f]]\n>\n>     Desired output:\n>\n>         [1Aa, 1Ab, 1Bc, 1Bd, 1Ce, 1Cf]\n>\n>     Is this possible? If so, how can I achieve this?\n\nYes, but not directly. This is actually the reason for the new T2 feature called 'staged iteration'. The issue is that assuming you iterate down to single items (which appears to be the case) you want to go half way with a dot product and then use a cross product. As the iteration strategies always (in the current code) drill down to the final thing you're asking for you can't do this, at least you can't do it without a trick...\n\nSo... the trick :\n\nFirst off the [1] is a red herring, that's the easy bit! it doesn't matter where you put that in as it'll always be added onto every single job.\n\nSo you now have a list and a list of lists, you want to combine item 'n' in the first list with all the items of list 'n' in the second. Firstly you'll need a nested workflow into which you put your processor, the trick being that you also put in an 'echo list' operation. Connect the echo list output to the input of your processor being fed needing the list of lists and the echo list input to a workflow input. Connect the other input (the list) of your processor to a workflow input. The workflow inputs will have type of 'single item' and 'list' as the workflow inputs copy the types of the inputs they're connected to.\n\nIt should be obvious that if you give this nested workflow the inputs 'A' and [a,b] it'll iterate and give you [f(A*a),f(A*b]. Also note that now the nested workflow mismatches by the same level on both inputs - it has one input with a single item type which you'll feed it a list and another of a list where you feed it a list of lists. This means you can set a dot iteration strategy over the nested workflow with the cross product (default) iteration strategy over the processor within it.\n\nThis nested workflow will now produce the result you want; it will be called three times with :\n\n[A*[a,b], B*[c,d], C*[e,f]]\n\nEach one of these then creates a cross product iteration within the nested workflow, so the output is :\n\n[f(A*a),f(A*b)],[f(B*c),f(B*d)],[f(C*e),f(C*f)]]\n\nPassing the output through a list flatten operation then gives you (leaving out the 'F(x)' and replacing with 'x') :\n\n[Aa,Ab,Bc,Bd,Ce,Cf] which is what I believe you wanted? :) Adding the [1] bit in is easy from there!\n\nWe actually did this exact thing some time ago for Paul, he had a structure he was viewing as two lists of directories where the lists were the same length but the directories could have any number of items in, he wanted a comparison between every item in directory 'n' from list 1 and every item in directory 'n' from list 2.\n\nHope that helps, if you were wondering why we have a superficially pointless 'echo list' local worker now you know :)\n\nTom" ;
+        <http://purl.org/dc/terms/title>
+                "TestIteratorStrategy_withNesting" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list> , <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> , <http://weprov.csiro.au/controller/Count2.count:count_concatenated> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Count1.xml_list> , <http://weprov.csiro.au/controller/Count1.count:count_letterlist> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/program/create_letterListOfLists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Count1.xml_list> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_letterListOfLists" .
+
+<http://weprov.csiro.au/program/create_capitalList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_capitalList" .
+
+<http://weprov.csiro.au/program/Count1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Count1.count:count_letterlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/CountListElements.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Count1" .
+
+<http://weprov.csiro.au/workflow/CountListElements.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/D:/Marco/adaptivedisclosure.org/public_html/BioAID/Preliminary/Workflows/UtilityWorkflows/CountListElements.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/Count2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Count2.count:count_concatenated> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/CountListElements.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Count2" .
+
+<http://weprov.csiro.au/program/Concatenate>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input3> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/concatenated_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Echo_list3> , <http://weprov.csiro.au/program/NestedProcessor> , <http://weprov.csiro.au/program/Concatenate_two_strings2> , <http://weprov.csiro.au/program/Concatenate_two_strings1> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Concatenate" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string> , <http://weprov.csiro.au/controller/input1:NestedProcessor.input1> , <http://weprov.csiro.au/controller/input2:NestedProcessor.input2> , <http://weprov.csiro.au/controller/input3:Echo_list3.inputlist> , <http://weprov.csiro.au/controller/Echo_list3.outputlist:NestedProcessor.input3> , <http://weprov.csiro.au/controller/NestedProcessor.concatenated_string:concatenated_string> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Echo_list3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Echo_list3.outputlist:NestedProcessor.input3> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Echo_list3" .
+
+<http://weprov.csiro.au/program/NestedProcessor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NestedProcessor.concatenated_string:concatenated_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NestedProcessor" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings2" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input3" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated_string" .
+
+<http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input1:Concatenate_two_strings1.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/input1:NestedProcessor.input1> , <http://weprov.csiro.au/controller/input2:NestedProcessor.input2> , <http://weprov.csiro.au/controller/input3:Echo_list3.inputlist> .
+
+<http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input2:Concatenate_two_strings1.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings1.output:Concatenate_two_strings2.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input3:Concatenate_two_strings2.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings2.output:concatenated_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/input1:NestedProcessor.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input1:NestedProcessor.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NestedProcessor> .
+
+<http://weprov.csiro.au/controller/input2:NestedProcessor.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input2:NestedProcessor.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NestedProcessor> .
+
+<http://weprov.csiro.au/controller/input3:Echo_list3.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input3:Echo_list3.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Echo_list3> .
+
+<http://weprov.csiro.au/controller/Echo_list3.outputlist:NestedProcessor.input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Echo_list3.outputlist:NestedProcessor.input3" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NestedProcessor> .
+
+<http://weprov.csiro.au/controller/NestedProcessor.concatenated_string:concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NestedProcessor.concatenated_string:concatenated_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "letter_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "capital_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/count_concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count_concatenated" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/count_letterlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count_letterlist" .
+
+<http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate.concatenated_string:Count2.xml_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Count2> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Concatenate.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:Concatenate.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate.concatenated_string:concatenated" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Count2.count:count_concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count2.count:count_concatenated" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:capital_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_letterListOfLists.outlist:Concatenate.input3" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Count1.xml_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_letterListOfLists.outlist:Count1.xml_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Count1> .
+
+<http://weprov.csiro.au/controller/Count1.count:count_letterlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count1.count:count_letterlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_letterListOfLists.outlist:letter_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

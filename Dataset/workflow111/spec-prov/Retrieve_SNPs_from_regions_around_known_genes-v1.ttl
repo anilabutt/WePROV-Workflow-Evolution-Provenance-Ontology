@@ -1,0 +1,165 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0/GeneIDList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0/GeneIDList> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0/ReportList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Add1000> , <http://weprov.csiro.au/program/ForceListType> , <http://weprov.csiro.au/program/NCBI36> , <http://weprov.csiro.au/program/Subtract1000> , <http://weprov.csiro.au/program/CreateReport> , <http://weprov.csiro.au/program/dbSNP> ;
+        <http://purl.org/dc/terms/description>
+                "Given a list of Gene IDs this workflow will query against the Ensembl human genome data to fetch the genomic region for each gene, extend that region by 1000bp in each direction and use this set of ranges, one per gene, to build a query against dbSNP to return the SNP identifier and location information (chromosome name, strand and position)" ;
+        <http://purl.org/dc/terms/title>
+                "Retrieve SNPs from regions around known genes" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Add1000.output:dbSNP.hsapiens_snp.chrom_end_filter> , <http://weprov.csiro.au/controller/GeneIDList:ForceListType.inputlist> , <http://weprov.csiro.au/controller/CreateReport.result:ReportList> , <http://weprov.csiro.au/controller/ForceListType.outputlist:GeneIDList> , <http://weprov.csiro.au/controller/ForceListType.outputlist:NCBI36.hsapiens_gene_ensembl.gene_stable_id_filter> , <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.chromosome_name:dbSNP.hsapiens_snp.chr_name_filter> , <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.end_position:Add1000.input> , <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.start_position:Subtract1000.input> , <http://weprov.csiro.au/controller/Subtract1000.output:dbSNP.hsapiens_snp.chrom_start_filter> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chr_name:CreateReport.chrom> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_start:CreateReport.chromStart> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_strand:CreateReport.strand> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.refsnp_id:CreateReport.snpID> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Add1000>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Add1000.output:dbSNP.hsapiens_snp.chrom_end_filter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Add1000" .
+
+<http://weprov.csiro.au/program/ForceListType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ForceListType.outputlist:GeneIDList> , <http://weprov.csiro.au/controller/ForceListType.outputlist:NCBI36.hsapiens_gene_ensembl.gene_stable_id_filter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ForceListType" .
+
+<http://weprov.csiro.au/program/NCBI36>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.chromosome_name:dbSNP.hsapiens_snp.chr_name_filter> , <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.end_position:Add1000.input> , <http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.start_position:Subtract1000.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NCBI36" .
+
+<http://weprov.csiro.au/program/Subtract1000>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Subtract1000.output:dbSNP.hsapiens_snp.chrom_start_filter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Subtract1000" .
+
+<http://weprov.csiro.au/program/CreateReport>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CreateReport.result:ReportList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CreateReport" .
+
+<http://weprov.csiro.au/program/dbSNP>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chr_name:CreateReport.chrom> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_start:CreateReport.chromStart> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_strand:CreateReport.strand> , <http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.refsnp_id:CreateReport.snpID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "dbSNP" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0/GeneIDList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIDList" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneIDList" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:FB5WOXCGH410-v0/ReportList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ReportList" .
+
+<http://weprov.csiro.au/controller/Add1000.output:dbSNP.hsapiens_snp.chrom_end_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Add1000.output:dbSNP.hsapiens_snp.chrom_end_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/dbSNP> .
+
+<http://weprov.csiro.au/controller/GeneIDList:ForceListType.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIDList:ForceListType.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ForceListType> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneIDList:ForceListType.inputlist> .
+
+<http://weprov.csiro.au/controller/CreateReport.result:ReportList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateReport.result:ReportList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ForceListType.outputlist:GeneIDList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ForceListType.outputlist:GeneIDList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ForceListType.outputlist:NCBI36.hsapiens_gene_ensembl.gene_stable_id_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ForceListType.outputlist:NCBI36.hsapiens_gene_ensembl.gene_stable_id_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NCBI36> .
+
+<http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.chromosome_name:dbSNP.hsapiens_snp.chr_name_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI36.hsapiens_gene_ensembl.chromosome_name:dbSNP.hsapiens_snp.chr_name_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/dbSNP> .
+
+<http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.end_position:Add1000.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI36.hsapiens_gene_ensembl.end_position:Add1000.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Add1000> .
+
+<http://weprov.csiro.au/controller/NCBI36.hsapiens_gene_ensembl.start_position:Subtract1000.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI36.hsapiens_gene_ensembl.start_position:Subtract1000.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Subtract1000> .
+
+<http://weprov.csiro.au/controller/Subtract1000.output:dbSNP.hsapiens_snp.chrom_start_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Subtract1000.output:dbSNP.hsapiens_snp.chrom_start_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/dbSNP> .
+
+<http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chr_name:CreateReport.chrom>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dbSNP.hsapiens_snp.chr_name:CreateReport.chrom" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateReport> .
+
+<http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_start:CreateReport.chromStart>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dbSNP.hsapiens_snp.chrom_start:CreateReport.chromStart" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateReport> .
+
+<http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.chrom_strand:CreateReport.strand>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dbSNP.hsapiens_snp.chrom_strand:CreateReport.strand" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateReport> .
+
+<http://weprov.csiro.au/controller/dbSNP.hsapiens_snp.refsnp_id:CreateReport.snpID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dbSNP.hsapiens_snp.refsnp_id:CreateReport.snpID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateReport> .

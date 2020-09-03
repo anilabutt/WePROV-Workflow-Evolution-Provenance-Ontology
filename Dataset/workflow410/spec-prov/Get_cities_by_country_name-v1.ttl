@@ -1,0 +1,79 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fbdc48ce-671d-4066-95fd-669ac4e9d1c2-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fbdc48ce-671d-4066-95fd-669ac4e9d1c2-v0/Country> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fbdc48ce-671d-4066-95fd-669ac4e9d1c2-v0/Cities> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GetCitiesByCountry> , <http://weprov.csiro.au/program/GetCitiesResult> , <http://weprov.csiro.au/program/CountryName> ;
+        <http://purl.org/dc/terms/description>
+                "Get all the cities supported by the 'Get Weather info' workflow.... just enter your country name as input." ;
+        <http://purl.org/dc/terms/title>
+                "Get cities by country name" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Country:CountryName.CountryName> , <http://weprov.csiro.au/controller/CountryName.output:GetCitiesByCountry.parameters> , <http://weprov.csiro.au/controller/GetCitiesByCountry.parameters:GetCitiesResult.input> , <http://weprov.csiro.au/controller/GetCitiesResult.GetCitiesByCountryResult:Cities> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GetCitiesByCountry>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCitiesByCountry.parameters:GetCitiesResult.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCitiesByCountry" .
+
+<http://weprov.csiro.au/program/GetCitiesResult>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCitiesResult.GetCitiesByCountryResult:Cities> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCitiesResult" .
+
+<http://weprov.csiro.au/program/CountryName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountryName.output:GetCitiesByCountry.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountryName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fbdc48ce-671d-4066-95fd-669ac4e9d1c2-v0/Country>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Country" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fbdc48ce-671d-4066-95fd-669ac4e9d1c2-v0/Cities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Cities" .
+
+<http://weprov.csiro.au/controller/Country:CountryName.CountryName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Country:CountryName.CountryName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountryName> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Country:CountryName.CountryName> .
+
+<http://weprov.csiro.au/controller/CountryName.output:GetCitiesByCountry.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountryName.output:GetCitiesByCountry.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCitiesByCountry> .
+
+<http://weprov.csiro.au/controller/GetCitiesByCountry.parameters:GetCitiesResult.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCitiesByCountry.parameters:GetCitiesResult.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCitiesResult> .
+
+<http://weprov.csiro.au/controller/GetCitiesResult.GetCitiesByCountryResult:Cities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCitiesResult.GetCitiesByCountryResult:Cities" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

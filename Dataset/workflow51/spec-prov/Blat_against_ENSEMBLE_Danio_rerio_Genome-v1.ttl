@@ -1,0 +1,217 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/DataBase> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/Sequences> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/blatResults> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_urls> , <http://weprov.csiro.au/program/Download_Report_and_Filter> , <http://weprov.csiro.au/program/eValue> , <http://weprov.csiro.au/program/Parse_Moby_Data_URL> , <http://weprov.csiro.au/program/MobyBlat> , <http://weprov.csiro.au/program/Email> , <http://weprov.csiro.au/program/BlatJob> , <http://weprov.csiro.au/program/DataBase> , <http://weprov.csiro.au/program/User> , <http://weprov.csiro.au/program/FASTA> , <http://weprov.csiro.au/program/String> , <http://weprov.csiro.au/program/Password> ;
+        <http://purl.org/dc/terms/description>
+                "The blat workflow invokes the blat services provided at www.bioinformatics.nl (author Pieter Neerincx).\n\nAs input, it takes a database name (for example, Danio_rerio_Genome for Zebra Fish) and one or more sequences in Fasta format. The output will be a tab separated output of the blat. An eValue string constant is added to filter on the e-Value.\n\nNote, the e-Value is not exactly the same as the blast e-Value." ;
+        <http://purl.org/dc/terms/title>
+                "Blat" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/BlatJob.mobyData:MobyBlat.BlatJob(input)> , <http://weprov.csiro.au/controller/DataBase:DataBase.id> , <http://weprov.csiro.au/controller/DataBase.mobyData:BlatJob.DataBase(database)> , <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> , <http://weprov.csiro.au/controller/FASTA.mobyData:BlatJob.FASTA(fasta)> , <http://weprov.csiro.au/controller/MobyBlat.URL(result):Parse_Moby_Data_URL.mobyData('URL')> , <http://weprov.csiro.au/controller/Sequences:String.value> , <http://weprov.csiro.au/controller/Download_Report_and_Filter.blatResults:blatResults> , <http://weprov.csiro.au/controller/Flatten_urls.concatenated:Download_Report_and_Filter.URL> , <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist> , <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> , <http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)> , <http://weprov.csiro.au/controller/User.mobyData:MobyBlat.User(user)> , <http://weprov.csiro.au/controller/eValue.value:Download_Report_and_Filter.eValue> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Flatten_urls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_urls.concatenated:Download_Report_and_Filter.URL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_urls" .
+
+<http://weprov.csiro.au/program/Download_Report_and_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Download_Report_and_Filter.blatResults:blatResults> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Download_Report_and_Filter" .
+
+<http://weprov.csiro.au/program/eValue>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eValue.value:Download_Report_and_Filter.eValue> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eValue" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_URL" .
+
+<http://weprov.csiro.au/program/MobyBlat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MobyBlat.URL(result):Parse_Moby_Data_URL.mobyData('URL')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MobyBlat" .
+
+<http://weprov.csiro.au/program/Email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Email" .
+
+<http://weprov.csiro.au/program/BlatJob>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BlatJob.mobyData:MobyBlat.BlatJob(input)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BlatJob" .
+
+<http://weprov.csiro.au/program/DataBase>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataBase.mobyData:BlatJob.DataBase(database)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataBase" .
+
+<http://weprov.csiro.au/program/User>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/User.mobyData:MobyBlat.User(user)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "User" .
+
+<http://weprov.csiro.au/program/FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FASTA.mobyData:BlatJob.FASTA(fasta)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FASTA" .
+
+<http://weprov.csiro.au/program/String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String" .
+
+<http://weprov.csiro.au/program/Password>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Password" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/DataBase>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataBase" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/Sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequences" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:29ce4255-9c51-46f7-a517-5b9bcc275069-v0/blatResults>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blatResults" .
+
+<http://weprov.csiro.au/controller/BlatJob.mobyData:MobyBlat.BlatJob(input)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlatJob.mobyData:MobyBlat.BlatJob(input)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MobyBlat> .
+
+<http://weprov.csiro.au/controller/DataBase:DataBase.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataBase:DataBase.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DataBase> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataBase:DataBase.id> , <http://weprov.csiro.au/controller/Sequences:String.value> .
+
+<http://weprov.csiro.au/controller/DataBase.mobyData:BlatJob.DataBase(database)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataBase.mobyData:BlatJob.DataBase(database)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BlatJob> .
+
+<http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Email.mobyData:User.Email(email)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/FASTA.mobyData:BlatJob.FASTA(fasta)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FASTA.mobyData:BlatJob.FASTA(fasta)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BlatJob> .
+
+<http://weprov.csiro.au/controller/MobyBlat.URL(result):Parse_Moby_Data_URL.mobyData('URL')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MobyBlat.URL(result):Parse_Moby_Data_URL.mobyData('URL')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_URL> .
+
+<http://weprov.csiro.au/controller/Sequences:String.value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequences:String.value" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String> .
+
+<http://weprov.csiro.au/controller/Download_Report_and_Filter.blatResults:blatResults>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Download_Report_and_Filter.blatResults:blatResults" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Flatten_urls.concatenated:Download_Report_and_Filter.URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_urls.concatenated:Download_Report_and_Filter.URL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Download_Report_and_Filter> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_URL.id:Flatten_urls.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_urls> .
+
+<http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Password.mobyData:User.Password(password)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String.mobyData:FASTA.String(content)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FASTA> .
+
+<http://weprov.csiro.au/controller/User.mobyData:MobyBlat.User(user)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "User.mobyData:MobyBlat.User(user)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MobyBlat> .
+
+<http://weprov.csiro.au/controller/eValue.value:Download_Report_and_Filter.eValue>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eValue.value:Download_Report_and_Filter.eValue" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Download_Report_and_Filter> .

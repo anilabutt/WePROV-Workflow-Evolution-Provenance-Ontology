@@ -1,0 +1,361 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/Sequences> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/DataBaseName> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/BlatResults> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_urls> , <http://weprov.csiro.au/program/DownloadURLWithBasicAuth> , <http://weprov.csiro.au/program/Parse_Moby_Data_URL> , <http://weprov.csiro.au/program/Program> , <http://weprov.csiro.au/program/MobyBlast_submit> , <http://weprov.csiro.au/program/DataBase> , <http://weprov.csiro.au/program/Email> , <http://weprov.csiro.au/program/String> , <http://weprov.csiro.au/program/User> , <http://weprov.csiro.au/program/BlastJob> , <http://weprov.csiro.au/program/Password> , <http://weprov.csiro.au/program/Poll_Job> , <http://weprov.csiro.au/program/FASTA> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow invokes the blast service provided at www.bioinformatics.nl, written by Pieter Neerincx. The workflow takes as input a database name (Danio_rerio_Genome for Zebra Fish for example) and a set of sequences in fasta format.\n\nThe blast service is invoked (using polling) and the result is a tab separated blast report." ;
+        <http://purl.org/dc/terms/title>
+                "Blast" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/BlastJob.mobyData:MobyBlast_submit.BlastJob(input)> , <http://weprov.csiro.au/controller/DataBase.mobyData:BlastJob.DataBase(database)> , <http://weprov.csiro.au/controller/DataBaseName:DataBase.id> , <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> , <http://weprov.csiro.au/controller/FASTA.mobyData:BlastJob.FASTA(fasta)> , <http://weprov.csiro.au/controller/MobyBlast_submit.BlastJob(output):Poll_Job.BlastJob> , <http://weprov.csiro.au/controller/MobyBlast_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')> , <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist> , <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> , <http://weprov.csiro.au/controller/Program.mobyData:BlastJob.Program(program)> , <http://weprov.csiro.au/controller/Sequences:String.value> , <http://weprov.csiro.au/controller/DownloadURLWithBasicAuth.blastResults:BlatResults> , <http://weprov.csiro.au/controller/Flatten_urls.concatenated:DownloadURLWithBasicAuth.theURL> , <http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)> , <http://weprov.csiro.au/controller/User.mobyData:MobyBlast_submit.User(user)> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Flatten_urls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_urls.concatenated:DownloadURLWithBasicAuth.theURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_urls" .
+
+<http://weprov.csiro.au/program/DownloadURLWithBasicAuth>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DownloadURLWithBasicAuth.blastResults:BlatResults> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DownloadURLWithBasicAuth" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_URL" .
+
+<http://weprov.csiro.au/program/Program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Program.mobyData:BlastJob.Program(program)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Program" .
+
+<http://weprov.csiro.au/program/MobyBlast_submit>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MobyBlast_submit.BlastJob(output):Poll_Job.BlastJob> , <http://weprov.csiro.au/controller/MobyBlast_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MobyBlast_submit" .
+
+<http://weprov.csiro.au/program/DataBase>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataBase.mobyData:BlastJob.DataBase(database)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataBase" .
+
+<http://weprov.csiro.au/program/Email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Email" .
+
+<http://weprov.csiro.au/program/String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String" .
+
+<http://weprov.csiro.au/program/User>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/User.mobyData:MobyBlast_submit.User(user)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "User" .
+
+<http://weprov.csiro.au/program/BlastJob>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BlastJob.mobyData:MobyBlast_submit.BlastJob(input)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BlastJob" .
+
+<http://weprov.csiro.au/program/Password>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Password" .
+
+<http://weprov.csiro.au/program/Poll_Job>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a7f029f5-ea3d-4939-8adc-5d388bcd02b3-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Poll_Job" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a7f029f5-ea3d-4939-8adc-5d388bcd02b3-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a7f029f5-ea3d-4939-8adc-5d388bcd02b3-v0/BlastJob> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/isRunning> , <http://weprov.csiro.au/program/MergeID> , <http://weprov.csiro.au/program/Correct_Moby_Object> , <http://weprov.csiro.au/program/Get_Job_ID> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/Parse_Moby_Data_Object> , <http://weprov.csiro.au/program/MobyBlast_poll> , <http://weprov.csiro.au/program/Object> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Poll_Job" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/BlastJob:Get_Job_ID.xml-text> , <http://weprov.csiro.au/controller/Correct_Moby_Object.outputXML:MobyBlast_poll.Object(job_id)> , <http://weprov.csiro.au/controller/Get_Job_ID.nodelist:MergeID.stringlist> , <http://weprov.csiro.au/controller/MergeID.concatenated:Object.id> , <http://weprov.csiro.au/controller/MobyBlast_poll.Object(status):Parse_Moby_Data_Object.mobyData('Object')> , <http://weprov.csiro.au/controller/Object.mobyData:Correct_Moby_Object.inputXML> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:isRunning.status> , <http://weprov.csiro.au/controller/isRunning.isRunning:Fail_if_true.test> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/isRunning>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isRunning.isRunning:Fail_if_true.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isRunning" .
+
+<http://weprov.csiro.au/program/MergeID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeID.concatenated:Object.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeID" .
+
+<http://weprov.csiro.au/program/Correct_Moby_Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Correct_Moby_Object.outputXML:MobyBlast_poll.Object(job_id)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Correct_Moby_Object" .
+
+<http://weprov.csiro.au/program/Get_Job_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Job_ID.nodelist:MergeID.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Job_ID" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:isRunning.status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Object" .
+
+<http://weprov.csiro.au/program/MobyBlast_poll>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MobyBlast_poll.Object(status):Parse_Moby_Data_Object.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MobyBlast_poll" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:Correct_Moby_Object.inputXML> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a7f029f5-ea3d-4939-8adc-5d388bcd02b3-v0/BlastJob>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BlastJob" .
+
+<http://weprov.csiro.au/controller/BlastJob:Get_Job_ID.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlastJob:Get_Job_ID.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Job_ID> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BlastJob:Get_Job_ID.xml-text> , <http://weprov.csiro.au/controller/DataBaseName:DataBase.id> , <http://weprov.csiro.au/controller/Sequences:String.value> .
+
+<http://weprov.csiro.au/controller/Correct_Moby_Object.outputXML:MobyBlast_poll.Object(job_id)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Correct_Moby_Object.outputXML:MobyBlast_poll.Object(job_id)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MobyBlast_poll> .
+
+<http://weprov.csiro.au/controller/Get_Job_ID.nodelist:MergeID.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Job_ID.nodelist:MergeID.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeID> .
+
+<http://weprov.csiro.au/controller/MergeID.concatenated:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeID.concatenated:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/controller/MobyBlast_poll.Object(status):Parse_Moby_Data_Object.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MobyBlast_poll.Object(status):Parse_Moby_Data_Object.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Object> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:Correct_Moby_Object.inputXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:Correct_Moby_Object.inputXML" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Correct_Moby_Object> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:isRunning.status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Object.id:isRunning.status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isRunning> .
+
+<http://weprov.csiro.au/controller/isRunning.isRunning:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isRunning.isRunning:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/program/FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FASTA.mobyData:BlastJob.FASTA(fasta)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FASTA" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/Sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequences" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/DataBaseName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataBaseName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eb05694-c30b-4baf-889c-961922578e8c-v0/BlatResults>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlatResults" .
+
+<http://weprov.csiro.au/controller/BlastJob.mobyData:MobyBlast_submit.BlastJob(input)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlastJob.mobyData:MobyBlast_submit.BlastJob(input)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MobyBlast_submit> .
+
+<http://weprov.csiro.au/controller/DataBase.mobyData:BlastJob.DataBase(database)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataBase.mobyData:BlastJob.DataBase(database)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BlastJob> .
+
+<http://weprov.csiro.au/controller/DataBaseName:DataBase.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataBaseName:DataBase.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DataBase> .
+
+<http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Email.mobyData:User.Email(email)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/FASTA.mobyData:BlastJob.FASTA(fasta)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FASTA.mobyData:BlastJob.FASTA(fasta)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BlastJob> .
+
+<http://weprov.csiro.au/controller/MobyBlast_submit.BlastJob(output):Poll_Job.BlastJob>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MobyBlast_submit.BlastJob(output):Poll_Job.BlastJob" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Poll_Job> .
+
+<http://weprov.csiro.au/controller/MobyBlast_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MobyBlast_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_URL> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:Flatten_urls.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_URL.id:Flatten_urls.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_urls> .
+
+<http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Password.mobyData:User.Password(password)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/Program.mobyData:BlastJob.Program(program)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Program.mobyData:BlastJob.Program(program)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BlastJob> .
+
+<http://weprov.csiro.au/controller/Sequences:String.value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequences:String.value" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String> .
+
+<http://weprov.csiro.au/controller/DownloadURLWithBasicAuth.blastResults:BlatResults>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DownloadURLWithBasicAuth.blastResults:BlatResults" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Flatten_urls.concatenated:DownloadURLWithBasicAuth.theURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_urls.concatenated:DownloadURLWithBasicAuth.theURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DownloadURLWithBasicAuth> .
+
+<http://weprov.csiro.au/controller/String.mobyData:FASTA.String(content)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String.mobyData:FASTA.String(content)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FASTA> .
+
+<http://weprov.csiro.au/controller/User.mobyData:MobyBlast_submit.User(user)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "User.mobyData:MobyBlast_submit.User(user)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MobyBlast_submit> .

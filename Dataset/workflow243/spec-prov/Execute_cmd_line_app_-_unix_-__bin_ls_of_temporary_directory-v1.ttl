@@ -1,0 +1,47 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8de451e6-2818-4e60-8c01-7df60785d5af-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8de451e6-2818-4e60-8c01-7df60785d5af-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Execute_cmd_line_app> , <http://weprov.csiro.au/program/Get_temporary_directory> ;
+        <http://purl.org/dc/terms/description>
+                "Note that this workflow only works on Unix systems.\n\nThe get_temporary_directory beanshell returns the path to the directory in which temporary files are held.  This value is passed to the args port of the execute_cmd_line_app service.  The command port of that service has been defaulted to '/bin/ls'.\n\nThe execute_cmd_line_app service runs the /bin/ls command on the temporary directory.  The result is passed to its result port and then to the out port of the workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Execute cmd line app - unix - /bin/ls of temporary directory" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_temporary_directory.directoryPath:Execute_cmd_line_app.args> , <http://weprov.csiro.au/controller/Execute_cmd_line_app.result:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Execute_cmd_line_app>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Execute_cmd_line_app.result:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Execute_cmd_line_app" .
+
+<http://weprov.csiro.au/program/Get_temporary_directory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_temporary_directory.directoryPath:Execute_cmd_line_app.args> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_temporary_directory" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8de451e6-2818-4e60-8c01-7df60785d5af-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Get_temporary_directory.directoryPath:Execute_cmd_line_app.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_temporary_directory.directoryPath:Execute_cmd_line_app.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Execute_cmd_line_app> .
+
+<http://weprov.csiro.au/controller/Execute_cmd_line_app.result:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Execute_cmd_line_app.result:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

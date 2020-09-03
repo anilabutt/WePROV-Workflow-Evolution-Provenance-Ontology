@@ -1,0 +1,47 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v0/graphs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getGraphs> , <http://weprov.csiro.au/program/parametersXML> ;
+        <http://purl.org/dc/terms/description>
+                "Thiw workflow simply returns all the Ondex graphs that are present on a given server (where the web service is)" ;
+        <http://purl.org/dc/terms/title>
+                "Get graphs" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input> , <http://weprov.csiro.au/controller/parametersXML.graphs:graphs> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/getGraphs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getGraphs" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.graphs:graphs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v0/graphs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "graphs" .
+
+<http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getGraphs.parameters:parametersXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/parametersXML.graphs:graphs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.graphs:graphs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

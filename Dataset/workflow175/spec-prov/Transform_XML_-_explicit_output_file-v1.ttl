@@ -1,0 +1,129 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e290bdf6-3305-4f4e-a093-145aa846b63f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e290bdf6-3305-4f4e-a093-145aa846b63f-v0/out> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e290bdf6-3305-4f4e-a093-145aa846b63f-v0/contents_of_output_file> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Transform_XML> , <http://weprov.csiro.au/program/Create_and_populate_XML_file> , <http://weprov.csiro.au/program/Create_and_populate_xslt_file> , <http://weprov.csiro.au/program/Get_xml_file_from_web> , <http://weprov.csiro.au/program/Get_xslt_file_from_web> , <http://weprov.csiro.au/program/Create_temporary_file> , <http://weprov.csiro.au/program/Read_Text_File> ;
+        <http://purl.org/dc/terms/description>
+                "The get_xml_file_from_web service downloads an example xml from myExperiment.  The content of that file is then saved to a temporary file by create_and_populate_xml_file.  The path to the temporary file is passed to the inFileURL port of Transform_XML.\n\nThe get_xslt_file_from_web service downloads an example xslt file from myExperiment.  The content of that file is then saved to a temporary file by create_and_populate_xslt_file.  The path to the temporary file is passed to the xslFileURL port of Transform_XML.\n\nThe create_temporary_file beanshell creates a temporary file to which the transformed XML is to be written.  The file path to this file is passed to the outFileURL port of Transform_XML.\n\nThe Transform_XML service transforms the XML using the specified XSLT and sends the resultant XML document to its outputStr port and so to the workflow's out port.  The transformed XML document is also written to the file whose path is passed to the outFileURL port.\n\nTo check the content of the output file, its file path is passed to the Read_Text_File service.  Once the Transform_XML service has finished, the Read_Text_File service reads the output file and echoes its content to the contents_of_output_file port of the workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Transform XML - explicit output file" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Create_and_populate_XML_file.filePath:Transform_XML.inFileURL> , <http://weprov.csiro.au/controller/Create_and_populate_xslt_file.filePath:Transform_XML.xslFileURL> , <http://weprov.csiro.au/controller/Create_temporary_file.filePath:Read_Text_File.fileurl> , <http://weprov.csiro.au/controller/Create_temporary_file.filePath:Transform_XML.outFileURL> , <http://weprov.csiro.au/controller/Get_xml_file_from_web.contents:Create_and_populate_XML_file.content> , <http://weprov.csiro.au/controller/Get_xslt_file_from_web.contents:Create_and_populate_xslt_file.content> , <http://weprov.csiro.au/controller/Read_Text_File.filecontents:contents_of_output_file> , <http://weprov.csiro.au/controller/Transform_XML.outputStr:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Transform_XML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Transform_XML.outputStr:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Transform_XML" .
+
+<http://weprov.csiro.au/program/Create_and_populate_XML_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Create_and_populate_XML_file.filePath:Transform_XML.inFileURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_and_populate_XML_file" .
+
+<http://weprov.csiro.au/program/Create_and_populate_xslt_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Create_and_populate_xslt_file.filePath:Transform_XML.xslFileURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_and_populate_xslt_file" .
+
+<http://weprov.csiro.au/program/Get_xml_file_from_web>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_xml_file_from_web.contents:Create_and_populate_XML_file.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_xml_file_from_web" .
+
+<http://weprov.csiro.au/program/Get_xslt_file_from_web>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_xslt_file_from_web.contents:Create_and_populate_xslt_file.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_xslt_file_from_web" .
+
+<http://weprov.csiro.au/program/Create_temporary_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Create_temporary_file.filePath:Read_Text_File.fileurl> , <http://weprov.csiro.au/controller/Create_temporary_file.filePath:Transform_XML.outFileURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_temporary_file" .
+
+<http://weprov.csiro.au/program/Read_Text_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_Text_File.filecontents:contents_of_output_file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_Text_File" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e290bdf6-3305-4f4e-a093-145aa846b63f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e290bdf6-3305-4f4e-a093-145aa846b63f-v0/contents_of_output_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "contents_of_output_file" .
+
+<http://weprov.csiro.au/controller/Create_and_populate_XML_file.filePath:Transform_XML.inFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_and_populate_XML_file.filePath:Transform_XML.inFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Create_and_populate_xslt_file.filePath:Transform_XML.xslFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_and_populate_xslt_file.filePath:Transform_XML.xslFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Create_temporary_file.filePath:Read_Text_File.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_temporary_file.filePath:Read_Text_File.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_Text_File> .
+
+<http://weprov.csiro.au/controller/Create_temporary_file.filePath:Transform_XML.outFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_temporary_file.filePath:Transform_XML.outFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Get_xml_file_from_web.contents:Create_and_populate_XML_file.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_xml_file_from_web.contents:Create_and_populate_XML_file.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_and_populate_XML_file> .
+
+<http://weprov.csiro.au/controller/Get_xslt_file_from_web.contents:Create_and_populate_xslt_file.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_xslt_file_from_web.contents:Create_and_populate_xslt_file.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_and_populate_xslt_file> .
+
+<http://weprov.csiro.au/controller/Read_Text_File.filecontents:contents_of_output_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_Text_File.filecontents:contents_of_output_file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Transform_XML.outputStr:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transform_XML.outputStr:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

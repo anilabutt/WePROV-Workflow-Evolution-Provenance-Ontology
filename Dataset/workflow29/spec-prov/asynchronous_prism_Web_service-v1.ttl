@@ -1,0 +1,141 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/model> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/properties> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constants> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/email> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/info> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/error> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/asyncResultXML> , <http://weprov.csiro.au/program/asyncPrismParamsCompactXML> , <http://weprov.csiro.au/program/setConstantCompactXmlList> , <http://weprov.csiro.au/program/asyncPrism> ;
+        <http://purl.org/dc/terms/description>
+                "Asynchronous version of the Prism Web service. Results XML list is sent via email." ;
+        <http://purl.org/dc/terms/title>
+                "asynchronous prism Web service" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/constants:setConstantCompactXmlList.input> , <http://weprov.csiro.au/controller/email:asyncPrismParamsCompactXML.email> , <http://weprov.csiro.au/controller/model:asyncPrismParamsCompactXML.model> , <http://weprov.csiro.au/controller/asyncPrismParamsCompactXML.output:asyncPrism.asyncPrismParamsCompact> , <http://weprov.csiro.au/controller/properties:asyncPrismParamsCompactXML.properties> , <http://weprov.csiro.au/controller/asyncPrism.asyncResult:asyncResultXML.input> , <http://weprov.csiro.au/controller/setConstantCompactXmlList.output:asyncPrismParamsCompactXML.constantCompact> , <http://weprov.csiro.au/controller/asyncResultXML.error:error> , <http://weprov.csiro.au/controller/asyncResultXML.info:info> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/asyncResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/asyncResultXML.error:error> , <http://weprov.csiro.au/controller/asyncResultXML.info:info> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "asyncResultXML" .
+
+<http://weprov.csiro.au/program/asyncPrismParamsCompactXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/asyncPrismParamsCompactXML.output:asyncPrism.asyncPrismParamsCompact> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "asyncPrismParamsCompactXML" .
+
+<http://weprov.csiro.au/program/setConstantCompactXmlList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/setConstantCompactXmlList.output:asyncPrismParamsCompactXML.constantCompact> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setConstantCompactXmlList" .
+
+<http://weprov.csiro.au/program/asyncPrism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/asyncPrism.asyncResult:asyncResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "asyncPrism" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "model" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/properties>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "properties" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constants>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "constants" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "email" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/info>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "info" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "error" .
+
+<http://weprov.csiro.au/controller/constants:setConstantCompactXmlList.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "constants:setConstantCompactXmlList.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setConstantCompactXmlList> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/constants:setConstantCompactXmlList.input> , <http://weprov.csiro.au/controller/email:asyncPrismParamsCompactXML.email> , <http://weprov.csiro.au/controller/model:asyncPrismParamsCompactXML.model> , <http://weprov.csiro.au/controller/properties:asyncPrismParamsCompactXML.properties> .
+
+<http://weprov.csiro.au/controller/email:asyncPrismParamsCompactXML.email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "email:asyncPrismParamsCompactXML.email" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncPrismParamsCompactXML> .
+
+<http://weprov.csiro.au/controller/model:asyncPrismParamsCompactXML.model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "model:asyncPrismParamsCompactXML.model" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncPrismParamsCompactXML> .
+
+<http://weprov.csiro.au/controller/asyncPrismParamsCompactXML.output:asyncPrism.asyncPrismParamsCompact>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "asyncPrismParamsCompactXML.output:asyncPrism.asyncPrismParamsCompact" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncPrism> .
+
+<http://weprov.csiro.au/controller/properties:asyncPrismParamsCompactXML.properties>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "properties:asyncPrismParamsCompactXML.properties" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncPrismParamsCompactXML> .
+
+<http://weprov.csiro.au/controller/asyncPrism.asyncResult:asyncResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "asyncPrism.asyncResult:asyncResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncResultXML> .
+
+<http://weprov.csiro.au/controller/setConstantCompactXmlList.output:asyncPrismParamsCompactXML.constantCompact>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "setConstantCompactXmlList.output:asyncPrismParamsCompactXML.constantCompact" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/asyncPrismParamsCompactXML> .
+
+<http://weprov.csiro.au/controller/asyncResultXML.error:error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "asyncResultXML.error:error" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/asyncResultXML.info:info>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "asyncResultXML.info:info" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,73 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3cd05093-831d-464c-b24d-f4bcf9d0cf4d-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Substructure_Filter> , <http://weprov.csiro.au/program/Parse_SMILES> , <http://weprov.csiro.au/program/Create_PNG_File_with_2D_Structures> , <http://weprov.csiro.au/program/Read_MDL_SD_File> , <http://weprov.csiro.au/program/Rule_of_Five_Filter> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow reads a library from an SD file (change the default value of Read_MDL_SD_File) and identifies those structures that conform to Lipinski's Rule of Five.\n\nIt then performs a substructure query, represented as SMILES (change the default value on Parse_SMILES), on the structures that pass Lipinski, and creates PNG images of those structures that contain the substructure.\n\nThe image results will be found in your Taverna Data folder." ;
+        <http://purl.org/dc/terms/title>
+                "CDK Example" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure> , <http://weprov.csiro.au/controller/Read_MDL_SD_File.resultStructure:Rule_of_Five_Filter.inputStructures> , <http://weprov.csiro.au/controller/Rule_of_Five_Filter.matchingStructures:Substructure_Filter.inputStructures> , <http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Create_PNG_File_with_2D_Structures.inputStructures> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Substructure_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Create_PNG_File_with_2D_Structures.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Substructure_Filter" .
+
+<http://weprov.csiro.au/program/Parse_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_SMILES" .
+
+<http://weprov.csiro.au/program/Create_PNG_File_with_2D_Structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_PNG_File_with_2D_Structures" .
+
+<http://weprov.csiro.au/program/Read_MDL_SD_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_MDL_SD_File.resultStructure:Rule_of_Five_Filter.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_MDL_SD_File" .
+
+<http://weprov.csiro.au/program/Rule_of_Five_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Rule_of_Five_Filter.matchingStructures:Substructure_Filter.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Rule_of_Five_Filter" .
+
+<http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_SMILES.resultStructure:Substructure_Filter.subStructure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Substructure_Filter> .
+
+<http://weprov.csiro.au/controller/Read_MDL_SD_File.resultStructure:Rule_of_Five_Filter.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_MDL_SD_File.resultStructure:Rule_of_Five_Filter.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Rule_of_Five_Filter> .
+
+<http://weprov.csiro.au/controller/Rule_of_Five_Filter.matchingStructures:Substructure_Filter.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rule_of_Five_Filter.matchingStructures:Substructure_Filter.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Substructure_Filter> .
+
+<http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Create_PNG_File_with_2D_Structures.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Substructure_Filter.matchingStructures:Create_PNG_File_with_2D_Structures.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_PNG_File_with_2D_Structures> .

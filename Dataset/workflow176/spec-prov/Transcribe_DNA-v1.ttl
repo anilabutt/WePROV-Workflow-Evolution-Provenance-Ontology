@@ -1,0 +1,33 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:847fb8bc-0961-4bd8-9977-2f66c0d1f38f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:847fb8bc-0961-4bd8-9977-2f66c0d1f38f-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Transcribe_DNA> ;
+        <http://purl.org/dc/terms/description>
+                "The Transcribe DNA service takes the DNA sequence, here defaulted to 'gatcctccat' and outputs the corresponding transcribed RNA  sequence, in this example, 'gauccuccau'." ;
+        <http://purl.org/dc/terms/title>
+                "Transcribe DNA" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Transcribe_DNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Transcribe_DNA" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:847fb8bc-0961-4bd8-9977-2f66c0d1f38f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transcribe_DNA.rna_seq:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

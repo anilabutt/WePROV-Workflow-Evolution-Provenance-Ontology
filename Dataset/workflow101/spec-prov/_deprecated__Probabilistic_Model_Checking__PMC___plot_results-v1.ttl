@@ -1,0 +1,256 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/resultsXml> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constantNameList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/plotOptionList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/plot> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/string2List> , <http://weprov.csiro.au/program/extendList> , <http://weprov.csiro.au/program/getPropertiesNames> , <http://weprov.csiro.au/program/MathPlot> , <http://weprov.csiro.au/program/resultsXml2dataXmlList> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Probabilistic Model Checking (PMC): plot results" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/constantNameList:extendList.firstList> , <http://weprov.csiro.au/controller/constantNameList:resultsXml2dataXmlList.argNameList> , <http://weprov.csiro.au/controller/extendList.list:MathPlot.axisList> , <http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:extendList.secondList> , <http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:string2List.string> , <http://weprov.csiro.au/controller/plotOptionList:MathPlot.optionList> , <http://weprov.csiro.au/controller/resultsXml:getPropertiesNames.resultsXml> , <http://weprov.csiro.au/controller/resultsXml:resultsXml2dataXmlList.elementXml> , <http://weprov.csiro.au/controller/resultsXml2dataXmlList.dataXmlList:MathPlot.dataXmlList> , <http://weprov.csiro.au/controller/string2List.list:resultsXml2dataXmlList.valNameListList> , <http://weprov.csiro.au/controller/MathPlot.plots:plot> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/string2List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/string2List.list:resultsXml2dataXmlList.valNameListList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "string2List" .
+
+<http://weprov.csiro.au/program/extendList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extendList.list:MathPlot.axisList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extendList" .
+
+<http://weprov.csiro.au/program/getPropertiesNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:extendList.secondList> , <http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:string2List.string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPropertiesNames" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0/resultsXml> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0/propertyNameList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/XPath_From_Text> , <http://weprov.csiro.au/program/propertyNameXPath> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Get properties names" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:propertyNameList> , <http://weprov.csiro.au/controller/propertyNameXPath.value:XPath_From_Text.xpath> , <http://weprov.csiro.au/controller/resultsXml:XPath_From_Text.xml-text> , <http://weprov.csiro.au/controller/XPath_From_Text.nodelist:Remove_duplicate_strings.stringlist> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:propertyNameList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/program/XPath_From_Text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_From_Text.nodelist:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_From_Text" .
+
+<http://weprov.csiro.au/program/propertyNameXPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/propertyNameXPath.value:XPath_From_Text.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "propertyNameXPath" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0/resultsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "resultsXml" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd497604-43f4-43ec-9b1c-9077da9dc7b0-v0/propertyNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "propertyNameList" .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:propertyNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:propertyNameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/resultsXml:XPath_From_Text.xml-text> , <http://weprov.csiro.au/controller/constantNameList:extendList.firstList> , <http://weprov.csiro.au/controller/constantNameList:resultsXml2dataXmlList.argNameList> , <http://weprov.csiro.au/controller/plotOptionList:MathPlot.optionList> , <http://weprov.csiro.au/controller/resultsXml:getPropertiesNames.resultsXml> , <http://weprov.csiro.au/controller/resultsXml:resultsXml2dataXmlList.elementXml> .
+
+<http://weprov.csiro.au/controller/propertyNameXPath.value:XPath_From_Text.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "propertyNameXPath.value:XPath_From_Text.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_From_Text> .
+
+<http://weprov.csiro.au/controller/resultsXml:XPath_From_Text.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultsXml:XPath_From_Text.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_From_Text> .
+
+<http://weprov.csiro.au/controller/XPath_From_Text.nodelist:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_From_Text.nodelist:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/program/MathPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MathPlot.plots:plot> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/ws_mathPlot.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MathPlot" .
+
+<http://weprov.csiro.au/workflow/ws_mathPlot.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://bioputer.mimuw.edu.pl/tav4sb/workflows/ws_mathPlot.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/resultsXml2dataXmlList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/resultsXml2dataXmlList.dataXmlList:MathPlot.dataXmlList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/elementXml2dataXmlList.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "resultsXml2dataXmlList" .
+
+<http://weprov.csiro.au/workflow/elementXml2dataXmlList.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://bioputer.mimuw.edu.pl/tav4sb/workflows/elementXml2dataXmlList.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/resultsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "resultsXml" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constantNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "constantNameList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/plotOptionList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "plotOptionList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plot" .
+
+<http://weprov.csiro.au/controller/constantNameList:extendList.firstList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "constantNameList:extendList.firstList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extendList> .
+
+<http://weprov.csiro.au/controller/constantNameList:resultsXml2dataXmlList.argNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "constantNameList:resultsXml2dataXmlList.argNameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/resultsXml2dataXmlList> .
+
+<http://weprov.csiro.au/controller/extendList.list:MathPlot.axisList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extendList.list:MathPlot.axisList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MathPlot> .
+
+<http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:extendList.secondList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPropertiesNames.propertyNameList:extendList.secondList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extendList> .
+
+<http://weprov.csiro.au/controller/getPropertiesNames.propertyNameList:string2List.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPropertiesNames.propertyNameList:string2List.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/string2List> .
+
+<http://weprov.csiro.au/controller/plotOptionList:MathPlot.optionList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plotOptionList:MathPlot.optionList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MathPlot> .
+
+<http://weprov.csiro.au/controller/resultsXml:getPropertiesNames.resultsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultsXml:getPropertiesNames.resultsXml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPropertiesNames> .
+
+<http://weprov.csiro.au/controller/resultsXml:resultsXml2dataXmlList.elementXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultsXml:resultsXml2dataXmlList.elementXml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/resultsXml2dataXmlList> .
+
+<http://weprov.csiro.au/controller/resultsXml2dataXmlList.dataXmlList:MathPlot.dataXmlList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultsXml2dataXmlList.dataXmlList:MathPlot.dataXmlList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MathPlot> .
+
+<http://weprov.csiro.au/controller/string2List.list:resultsXml2dataXmlList.valNameListList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "string2List.list:resultsXml2dataXmlList.valNameListList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/resultsXml2dataXmlList> .
+
+<http://weprov.csiro.au/controller/MathPlot.plots:plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MathPlot.plots:plot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

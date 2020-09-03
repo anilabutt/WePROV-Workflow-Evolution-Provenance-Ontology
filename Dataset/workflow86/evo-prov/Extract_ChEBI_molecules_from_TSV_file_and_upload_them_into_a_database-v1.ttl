@@ -1,0 +1,26 @@
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:20.334Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Thomas Kuhn> .
+
+<http://weprov.csiro.au/agent/Thomas Kuhn>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Thomas Kuhn" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:20.334Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:2dc68802-e350-49ef-866f-f454c9c8a5ad> .

@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR947-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR947-v0/pathway_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR947-v0/compounds_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/get_compounds_by_pathway> ;
+        <http://purl.org/dc/terms/description>
+                "Retrieves all compounds on the specified pathway\n\nExample of input: \npath:eco00020" ;
+        <http://purl.org/dc/terms/title>
+                "get_compounds_by_pathway" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/pathway_id:get_compounds_by_pathway.pathway_id> , <http://weprov.csiro.au/controller/get_compounds_by_pathway.return:compounds_id> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/get_compounds_by_pathway>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_compounds_by_pathway.return:compounds_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_compounds_by_pathway" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR947-v0/pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pathway_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR947-v0/compounds_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compounds_id" .
+
+<http://weprov.csiro.au/controller/pathway_id:get_compounds_by_pathway.pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_id:get_compounds_by_pathway.pathway_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_compounds_by_pathway> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pathway_id:get_compounds_by_pathway.pathway_id> .
+
+<http://weprov.csiro.au/controller/get_compounds_by_pathway.return:compounds_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_compounds_by_pathway.return:compounds_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

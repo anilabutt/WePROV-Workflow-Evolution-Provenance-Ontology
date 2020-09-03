@@ -1,0 +1,47 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:01517a9f-fdf4-4e52-be28-a1a1497519f1-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:01517a9f-fdf4-4e52-be28-a1a1497519f1-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> ;
+        <http://purl.org/dc/terms/description>
+                "The workflow examines the five element list split from the first service.  For each element, if it contains an 'a' followed by two characters, the second character after the 'a' is included in the output.  Thus, for the input  ['a','b','abcde','cdef','axy'], only 'abcde' and 'axy' contain a match and so ['c', 'y'] is output." ;
+        <http://purl.org/dc/terms/title>
+                "FIlter list of strings by regex extracting the specified group in the matches" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:out> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:01517a9f-fdf4-4e52-be28-a1a1497519f1-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .

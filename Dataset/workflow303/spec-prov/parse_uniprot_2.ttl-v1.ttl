@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:KC211UMOYL1345-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:KC211UMOYL1345-v0/uniprot_record> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:KC211UMOYL1345-v0/parsed_data> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/parse_uniprot> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/uniprot_record:parse_uniprot.file_direct_data> , <http://weprov.csiro.au/controller/parse_uniprot.output:parsed_data> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/parse_uniprot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parse_uniprot.output:parsed_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parse_uniprot" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:KC211UMOYL1345-v0/uniprot_record>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "uniprot_record" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:KC211UMOYL1345-v0/parsed_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parsed_data" .
+
+<http://weprov.csiro.au/controller/uniprot_record:parse_uniprot.file_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "uniprot_record:parse_uniprot.file_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parse_uniprot> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/uniprot_record:parse_uniprot.file_direct_data> .
+
+<http://weprov.csiro.au/controller/parse_uniprot.output:parsed_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parse_uniprot.output:parsed_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

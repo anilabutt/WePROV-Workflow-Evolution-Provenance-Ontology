@@ -1,0 +1,151 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7aef73f4-9784-4c80-bb7e-619a86c57346-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Iterative_Molecule_from_database_reader> , <http://weprov.csiro.au/program/Nested_Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow loads molecules from a database in an iterative manner using the SQL commands LIMIT and OFFSET.\nAfter the loading each molecule goes through an atom typing perception before the Hueckel Aromaticity Detector tries to detect the aromaticity. All id of the aromatic molecules will be written wo a text file." ;
+        <http://purl.org/dc/terms/title>
+                "Iterative loading of molecules from database with aromaticity detection" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Iterative_Molecule_from_database_reader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Iterative_Molecule_from_database_reader" .
+
+<http://weprov.csiro.au/program/Nested_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Nested_Workflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0/DatabaseReaderID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Iterative_File_Writer> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/Perceive_atom_types> , <http://weprov.csiro.au/program/Has_Next_Molecule_from_database> , <http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule> , <http://weprov.csiro.au/program/Get_Molecule_from_database> , <http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "aromaticitydetectionsubworkflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content> , <http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures> , <http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test> , <http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.aromaticStructures:Extract_the_database_ID_from_the_molcule.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Hueckel_Aromaticity_Detector.inputStructures> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Iterative_File_Writer>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Iterative_File_Writer" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/Perceive_atom_types>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Hueckel_Aromaticity_Detector.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Perceive_atom_types" .
+
+<http://weprov.csiro.au/program/Has_Next_Molecule_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Has_Next_Molecule_from_database" .
+
+<http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_the_database_ID_from_the_molcule" .
+
+<http://weprov.csiro.au/program/Get_Molecule_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Molecule_from_database" .
+
+<http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.aromaticStructures:Extract_the_database_ID_from_the_molcule.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Hueckel_Aromaticity_Detector" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0/DatabaseReaderID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DatabaseReaderID" .
+
+<http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Molecule_from_database> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID> .
+
+<http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Has_Next_Molecule_from_database> .
+
+<http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Iterative_File_Writer> .
+
+<http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Perceive_atom_types> .
+
+<http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has_Next_Molecule_from_database.hasNext:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.aromaticStructures:Extract_the_database_ID_from_the_molcule.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hueckel_Aromaticity_Detector.aromaticStructures:Extract_the_database_ID_from_the_molcule.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule> .
+
+<http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Hueckel_Aromaticity_Detector.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Perceive_atom_types.allAtomTypesPerceived:Hueckel_Aromaticity_Detector.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector> .
+
+<http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .

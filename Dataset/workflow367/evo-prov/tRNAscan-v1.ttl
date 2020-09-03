@@ -1,0 +1,98 @@
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:13.788Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Hamish McWilliam> .
+
+<http://weprov.csiro.au/agent/Hamish McWilliam>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Hamish McWilliam" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:13.789Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:13.804Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:fff530f8-b1f4-4ae0-b078-c3d23ee22e13> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:13.798Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Hamish McWilliam> .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:13.798Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:13.804Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Hamish McWilliam> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:bf15c1ae-dd9b-4d7d-ade4-bde9f337867b> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:13.815Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Hamish McWilliam> .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:13.816Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:3171e630-fc67-4ef0-b86d-7874f048a65d> .

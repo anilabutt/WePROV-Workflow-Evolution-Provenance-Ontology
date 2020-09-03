@@ -1,0 +1,79 @@
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:08.814Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/> .
+
+<http://weprov.csiro.au/agent/>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:08.815Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:08.83Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/> .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:08.831Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:08.843Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Pieter B.T. Neerincx & Philip de Groot> .
+
+<http://weprov.csiro.au/agent/Pieter B.T. Neerincx & Philip de Groot>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Pieter B.T. Neerincx & Philip de Groot" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:08.843Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0> .

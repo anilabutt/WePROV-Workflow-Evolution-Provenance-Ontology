@@ -1,0 +1,251 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d0b43e2d-530d-485a-909e-6a85b78a3160-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d0b43e2d-530d-485a-909e-6a85b78a3160-v0/apbq> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d0b43e2d-530d-485a-909e-6a85b78a3160-v0/flattened> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/P> , <http://weprov.csiro.au/program/A> , <http://weprov.csiro.au/program/Q> , <http://weprov.csiro.au/program/B> , <http://weprov.csiro.au/program/bq> , <http://weprov.csiro.au/program/ap> , <http://weprov.csiro.au/program/apbq_iter> , <http://weprov.csiro.au/program/Flatten_list> , <http://weprov.csiro.au/program/Merge_string_list_to_string> ;
+        <http://purl.org/dc/terms/description>
+                "Consider two lists A and B, of equal size 3. A1 corresponds to B1, A2 to B2, etc, for instance A are image scans from 2007 and B from 2008, and the index indicates the patient number.\n\nThere's then two lists of possible parameters P and Q, of different lengths, P has 2 and Q has 4 items.\n\nEach of the A items should be processed in \"ap\" using each of the P parameters, and each of the B items processed in \"bq\" using each of the Q parameters.\n\nThe problem then is how to compare AnPp against the all BnQq - but notice that An and Bn have to match. The normal crossproduct would compare all AaPp against all BbQq - but we want to restrict the iteration strategy. We can't use the dot product directly because for a given patient n we want to compare all Ps against all Qs using the cross product.\n\nThis is solved in t2 using staged iteration, but here is a hack showing how this can be achieved in t1 using a nested workflow. The nested workflow basically \"stops\" the iteration at list level, due to the echo_lists inside that makes the nested workflow excpect lists.\n\nThere's explicit crossproduct(p,a) strategy set on ap and crossproduct(q,b) on bq to make sure they output with a/b iteration at the top-level lists, ie. \"ap\" outputs:\n\n[  [ a0p0, a0p1],\n   [ a1p0, a1p1],\n   [ a2p0, a2p1]\n]\n\nSo the top level lists from \"ap\" corresponds to each item of A. The same trick applies to \"bq\" - if we don't do this the implicit iteration might output the opposite with the highest list corresponding to the Ps and Qs.\n\nThe second part is to use a nested workflow that takes the outputs from ap and bq, but through the \"Echo list\" local worker. This worker doesn't do anything except it forces the nested workflow to take a list of items as inputs instead of single inputs. \n\nHence we can set a dotproduct(pq, ap) on the processor for the nested workflow \"apbq_iter\" - since the nested workflow consumes lists at both ports this means it will be iterated over with these inputs:\n\nap = [ a0p0, a0p1]    bq = [b0q0, b0q1, b0q2, b0q3]\nap = [ a1p0, a1p1]    bq = [b1q0, b1q1, b1q2, b1q3]\nap = [ a2p0, a2p1]    bq = [b2q0, b2q1, b2q2, b2q3]\n\nInside the nested workflow there's the normal crossproduct(pq, ap) so that it could (in theory) do an all-to-all comparison. (The beanshell inside apbq here only returns the string ap+bq.)\n\nWith this hack we can run a dotproduct for the outermost list, and a crossproduct for the innermost list.\n\nThe output of running this should be:\n\n{\n  [ (a0p0b0q0, a0p0b0q1, a0p0b0q2, a0p0b0q3),\n    (a0p1b0q0, a0p1b0q1, a0p1b0q2, a0p1b0q3)\n  ],\n  [ (a1p0b1q0, a1p0b1q1, a1p0b1q2, a1p0b1q3),\n    (a1p1b1q0, a1p1b1q1, a1p1b1q2, a1p1b1q3)\n  ],\n  [ (a2p0b2q0, a2p0b2q1, a2p0b2q2, a2p0b2q3),\n    (a2p1b2q0, a2p1b2q1, a2p1b2q2, a2p1b2q3)\n  ]\n}\n\nSo in the final output {} (depth=3) there's three big [] lists of depth\n2, responding to a0/b0, a1/b1 and b2/b2. Within each of these are two\n() lists of depth 1 corresponding two p0 and p1. The content of these\nlists (depth 0) are the actual items returned from \"apbq\" - one for each\nof q0,q1,q2,q3." ;
+        <http://purl.org/dc/terms/title>
+                "Staged iteration strategy" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/A.A:ap.a> , <http://weprov.csiro.au/controller/B.B:bq.b> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:flattened> , <http://weprov.csiro.au/controller/P.P:ap.p> , <http://weprov.csiro.au/controller/Q.Q:bq.q> , <http://weprov.csiro.au/controller/ap.ap:apbq_iter.ap> , <http://weprov.csiro.au/controller/apbq_iter.apbq:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/apbq_iter.apbq:apbq> , <http://weprov.csiro.au/controller/bq.bq:apbq_iter.pq> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/P>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/P.P:ap.p> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "P" .
+
+<http://weprov.csiro.au/program/A>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/A.A:ap.a> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "A" .
+
+<http://weprov.csiro.au/program/Q>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Q.Q:bq.q> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Q" .
+
+<http://weprov.csiro.au/program/B>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/B.B:bq.b> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "B" .
+
+<http://weprov.csiro.au/program/bq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bq.bq:apbq_iter.pq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bq" .
+
+<http://weprov.csiro.au/program/ap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ap.ap:apbq_iter.ap> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ap" .
+
+<http://weprov.csiro.au/program/apbq_iter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/apbq_iter.apbq:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/apbq_iter.apbq:apbq> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "apbq_iter" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/ap> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/pq> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/apbq> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/pq_echo> , <http://weprov.csiro.au/program/ap_echo> , <http://weprov.csiro.au/program/apbq> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Untitled workflow #58" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ap:ap_echo.inputlist> , <http://weprov.csiro.au/controller/pq:pq_echo.inputlist> , <http://weprov.csiro.au/controller/ap_echo.outputlist:apbq.ap> , <http://weprov.csiro.au/controller/apbq.apbq:apbq> , <http://weprov.csiro.au/controller/pq_echo.outputlist:apbq.bq> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/pq_echo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pq_echo.outputlist:apbq.bq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pq_echo" .
+
+<http://weprov.csiro.au/program/ap_echo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ap_echo.outputlist:apbq.ap> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ap_echo" .
+
+<http://weprov.csiro.au/program/apbq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/apbq.apbq:apbq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "apbq" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/ap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ap" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/pq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pq" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5f800cd7-281d-45ba-835b-b7303d12237f-v0/apbq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "apbq" .
+
+<http://weprov.csiro.au/controller/ap:ap_echo.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ap:ap_echo.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ap_echo> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ap:ap_echo.inputlist> , <http://weprov.csiro.au/controller/pq:pq_echo.inputlist> .
+
+<http://weprov.csiro.au/controller/pq:pq_echo.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pq:pq_echo.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pq_echo> .
+
+<http://weprov.csiro.au/controller/ap_echo.outputlist:apbq.ap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ap_echo.outputlist:apbq.ap" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/apbq> .
+
+<http://weprov.csiro.au/controller/apbq.apbq:apbq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "apbq.apbq:apbq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/pq_echo.outputlist:apbq.bq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pq_echo.outputlist:apbq.bq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/apbq> .
+
+<http://weprov.csiro.au/program/Flatten_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_list.outputlist:Merge_string_list_to_string.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_list" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:flattened> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d0b43e2d-530d-485a-909e-6a85b78a3160-v0/apbq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "apbq" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d0b43e2d-530d-485a-909e-6a85b78a3160-v0/flattened>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "flattened" .
+
+<http://weprov.csiro.au/controller/A.A:ap.a>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "A.A:ap.a" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ap> .
+
+<http://weprov.csiro.au/controller/B.B:bq.b>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "B.B:bq.b" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/bq> .
+
+<http://weprov.csiro.au/controller/Flatten_list.outputlist:Merge_string_list_to_string.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list.outputlist:Merge_string_list_to_string.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:flattened>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:flattened" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/P.P:ap.p>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "P.P:ap.p" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ap> .
+
+<http://weprov.csiro.au/controller/Q.Q:bq.q>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Q.Q:bq.q" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/bq> .
+
+<http://weprov.csiro.au/controller/ap.ap:apbq_iter.ap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ap.ap:apbq_iter.ap" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/apbq_iter> .
+
+<http://weprov.csiro.au/controller/apbq_iter.apbq:Flatten_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "apbq_iter.apbq:Flatten_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list> .
+
+<http://weprov.csiro.au/controller/apbq_iter.apbq:apbq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "apbq_iter.apbq:apbq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/bq.bq:apbq_iter.pq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bq.bq:apbq_iter.pq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/apbq_iter> .

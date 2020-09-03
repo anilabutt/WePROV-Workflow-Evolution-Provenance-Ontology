@@ -1,0 +1,15 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8c4d9af5-596a-4a31-9c3b-cf79a0693db9-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/AppendToFile> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "AppendToFile" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/AppendToFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AppendToFile" .

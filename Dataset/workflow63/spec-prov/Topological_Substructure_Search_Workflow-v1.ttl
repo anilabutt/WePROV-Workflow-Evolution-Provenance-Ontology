@@ -1,0 +1,119 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/in_SMILES> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/matched_CML> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/NOT Matched_InChI> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Substructure_Filter> , <http://weprov.csiro.au/program/Parse_SMILES> , <http://weprov.csiro.au/program/Convert_to_CML_String> , <http://weprov.csiro.au/program/Generate_InChI> , <http://weprov.csiro.au/program/File_Reader> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow performs a topological substructure search. The molecules to be searched are loaded from a MDL SD file. The substructure is loaded from a SMILES (workflow input). The matched molecules are converted to CML and for the molecules which do not contain the substructure the InChI is generated." ;
+        <http://purl.org/dc/terms/title>
+                "Topological Substructure Search Workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure> , <http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Convert_to_CML_String.inputStructures> , <http://weprov.csiro.au/controller/Substructure_Filter.otherStructures:Generate_InChI.structures> , <http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE> , <http://weprov.csiro.au/controller/File_Reader.resultStructure:Substructure_Filter.inputStructures> , <http://weprov.csiro.au/controller/Convert_to_CML_String.CML:matched_CML> , <http://weprov.csiro.au/controller/Generate_InChI.InChI:NOT Matched_InChI> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Substructure_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Convert_to_CML_String.inputStructures> , <http://weprov.csiro.au/controller/Substructure_Filter.otherStructures:Generate_InChI.structures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Substructure_Filter" .
+
+<http://weprov.csiro.au/program/Parse_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_SMILES" .
+
+<http://weprov.csiro.au/program/Convert_to_CML_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Convert_to_CML_String.CML:matched_CML> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Convert_to_CML_String" .
+
+<http://weprov.csiro.au/program/Generate_InChI>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Generate_InChI.InChI:NOT Matched_InChI> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Generate_InChI" .
+
+<http://weprov.csiro.au/program/File_Reader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/File_Reader.resultStructure:Substructure_Filter.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "File_Reader" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/in_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "in_SMILES" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/matched_CML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "matched_CML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0516f8e8-aa0f-41a7-8678-323ace25617d-v0/NOT Matched_InChI>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NOT Matched_InChI" .
+
+<http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Filter.subStructure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_SMILES.resultStructure:Substructure_Filter.subStructure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Substructure_Filter> .
+
+<http://weprov.csiro.au/controller/Substructure_Filter.matchingStructures:Convert_to_CML_String.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Substructure_Filter.matchingStructures:Convert_to_CML_String.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Convert_to_CML_String> .
+
+<http://weprov.csiro.au/controller/Substructure_Filter.otherStructures:Generate_InChI.structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Substructure_Filter.otherStructures:Generate_InChI.structures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_InChI> .
+
+<http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "in_SMILES:Parse_SMILES.SMILE" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_SMILES> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE> .
+
+<http://weprov.csiro.au/controller/File_Reader.resultStructure:Substructure_Filter.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "File_Reader.resultStructure:Substructure_Filter.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Substructure_Filter> .
+
+<http://weprov.csiro.au/controller/Convert_to_CML_String.CML:matched_CML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Convert_to_CML_String.CML:matched_CML" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Generate_InChI.InChI:NOT Matched_InChI>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_InChI.InChI:NOT Matched_InChI" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

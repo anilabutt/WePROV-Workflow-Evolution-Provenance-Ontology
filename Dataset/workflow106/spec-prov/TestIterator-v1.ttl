@@ -1,0 +1,243 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/number_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/letter_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/concatenated> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/capital_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/create_numberListOfLists> , <http://weprov.csiro.au/program/String_Constant> , <http://weprov.csiro.au/program/create_letterListOfLists> , <http://weprov.csiro.au/program/Concatenate> , <http://weprov.csiro.au/program/create_capitalList> ;
+        <http://purl.org/dc/terms/description>
+                "Workflow to experiment with list iteration strategies. Look at metadata of nested workflow 'Concatenate' to see the current iteration strategy." ;
+        <http://purl.org/dc/terms/title>
+                "TestIterator" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_numberListOfLists.outlist:Concatenate.input4> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list> , <http://weprov.csiro.au/controller/create_numberListOfLists.outlist:number_list> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/create_numberListOfLists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_numberListOfLists.outlist:Concatenate.input4> , <http://weprov.csiro.au/controller/create_numberListOfLists.outlist:number_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_numberListOfLists" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/program/create_letterListOfLists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_letterListOfLists" .
+
+<http://weprov.csiro.au/program/Concatenate>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input3> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input4> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/concatenated_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> , <http://weprov.csiro.au/program/Concatenate_two_strings2> , <http://weprov.csiro.au/program/Concatenate_two_strings3> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Concatenate" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> , <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:Concatenate_two_strings3.string1> , <http://weprov.csiro.au/controller/input4:Concatenate_two_strings3.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings3.output:concatenated_string> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings1" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:Concatenate_two_strings3.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings2" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings3.output:concatenated_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings3" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input3" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/input4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input4" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v0/concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated_string" .
+
+<http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input1:Concatenate_two_strings1.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/input4:Concatenate_two_strings3.string2> .
+
+<http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input2:Concatenate_two_strings1.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input3:Concatenate_two_strings2.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings1.output:Concatenate_two_strings2.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings2.output:Concatenate_two_strings3.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings2.output:Concatenate_two_strings3.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings3> .
+
+<http://weprov.csiro.au/controller/input4:Concatenate_two_strings3.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input4:Concatenate_two_strings3.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings3> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings3.output:concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings3.output:concatenated_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/create_capitalList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_capitalList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/number_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "number_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "letter_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v0/capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "capital_list" .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Concatenate.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:Concatenate.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:Concatenate.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_letterListOfLists.outlist:Concatenate.input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_letterListOfLists.outlist:Concatenate.input3" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_numberListOfLists.outlist:Concatenate.input4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_numberListOfLists.outlist:Concatenate.input4" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate.concatenated_string:concatenated" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:capital_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_letterListOfLists.outlist:letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_letterListOfLists.outlist:letter_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_numberListOfLists.outlist:number_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_numberListOfLists.outlist:number_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

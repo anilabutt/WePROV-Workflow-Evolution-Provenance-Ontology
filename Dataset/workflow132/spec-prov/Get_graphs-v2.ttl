@@ -1,0 +1,96 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v1/graph_names_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getGraphs> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/combine_name_id> , <http://weprov.csiro.au/program/graphsXML> , <http://weprov.csiro.au/program/merge_graph_name_ids> ;
+        <http://purl.org/dc/terms/description>
+                "Thiw workflow simply returns all the Ondex graphs that are present on a given server (where the web service is)" ;
+        <http://purl.org/dc/terms/title>
+                "Get graphs" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/combine_name_id.output:merge_graph_name_ids.stringlist> , <http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input> , <http://weprov.csiro.au/controller/graphsXML.id:combine_name_id.id> , <http://weprov.csiro.au/controller/graphsXML.name:combine_name_id.name> , <http://weprov.csiro.au/controller/merge_graph_name_ids.concatenated:graph_names_ids> , <http://weprov.csiro.au/controller/parametersXML.graphs:graphsXML.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/getGraphs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getGraphs" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.graphs:graphsXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/combine_name_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/combine_name_id.output:merge_graph_name_ids.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "combine_name_id" .
+
+<http://weprov.csiro.au/program/graphsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/graphsXML.id:combine_name_id.id> , <http://weprov.csiro.au/controller/graphsXML.name:combine_name_id.name> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "graphsXML" .
+
+<http://weprov.csiro.au/program/merge_graph_name_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_graph_name_ids.concatenated:graph_names_ids> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_graph_name_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c69369e3-eac2-4592-985d-74852e8e4ece-v1/graph_names_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "graph_names_ids" .
+
+<http://weprov.csiro.au/controller/combine_name_id.output:merge_graph_name_ids.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "combine_name_id.output:merge_graph_name_ids.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_graph_name_ids> .
+
+<http://weprov.csiro.au/controller/getGraphs.parameters:parametersXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getGraphs.parameters:parametersXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/graphsXML.id:combine_name_id.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "graphsXML.id:combine_name_id.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/combine_name_id> .
+
+<http://weprov.csiro.au/controller/graphsXML.name:combine_name_id.name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "graphsXML.name:combine_name_id.name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/combine_name_id> .
+
+<http://weprov.csiro.au/controller/merge_graph_name_ids.concatenated:graph_names_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_graph_name_ids.concatenated:graph_names_ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML.graphs:graphsXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.graphs:graphsXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/graphsXML> .

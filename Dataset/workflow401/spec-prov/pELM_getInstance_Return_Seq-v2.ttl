@@ -1,0 +1,79 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:680f8700-290f-46ab-ba48-4bc56e55f6de-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:680f8700-290f-46ab-ba48-4bc56e55f6de-v1/InstanceID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:680f8700-290f-46ab-ba48-4bc56e55f6de-v1/Test Out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getInstanceByIdentifier> , <http://weprov.csiro.au/program/parameterXML1> , <http://weprov.csiro.au/program/InstanceXML> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "pELM_getInstance_Return_Seq" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/InstanceID:getInstanceByIdentifier.parameter> , <http://weprov.csiro.au/controller/InstanceXML.Sequence:Test Out> , <http://weprov.csiro.au/controller/getInstanceByIdentifier.parameter:parameterXML1.input> , <http://weprov.csiro.au/controller/parameterXML1.Instance:InstanceXML.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/getInstanceByIdentifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getInstanceByIdentifier.parameter:parameterXML1.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getInstanceByIdentifier" .
+
+<http://weprov.csiro.au/program/parameterXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parameterXML1.Instance:InstanceXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parameterXML1" .
+
+<http://weprov.csiro.au/program/InstanceXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/InstanceXML.Sequence:Test Out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "InstanceXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:680f8700-290f-46ab-ba48-4bc56e55f6de-v1/InstanceID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "InstanceID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:680f8700-290f-46ab-ba48-4bc56e55f6de-v1/Test Out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Test Out" .
+
+<http://weprov.csiro.au/controller/InstanceID:getInstanceByIdentifier.parameter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InstanceID:getInstanceByIdentifier.parameter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getInstanceByIdentifier> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/InstanceID:getInstanceByIdentifier.parameter> .
+
+<http://weprov.csiro.au/controller/InstanceXML.Sequence:Test Out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InstanceXML.Sequence:Test Out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getInstanceByIdentifier.parameter:parameterXML1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getInstanceByIdentifier.parameter:parameterXML1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parameterXML1> .
+
+<http://weprov.csiro.au/controller/parameterXML1.Instance:InstanceXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parameterXML1.Instance:InstanceXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/InstanceXML> .

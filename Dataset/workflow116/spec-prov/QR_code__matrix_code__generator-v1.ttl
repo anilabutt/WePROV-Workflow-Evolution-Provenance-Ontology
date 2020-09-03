@@ -1,0 +1,103 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/url> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/title> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/qrcode_string> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/qrcode_base64> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/makeBookmark> , <http://weprov.csiro.au/program/Byte___to_String> , <http://weprov.csiro.au/program/Encode_byte___to_base64> ;
+        <http://purl.org/dc/terms/description>
+                "\n    A simple workflow to create a QRCode for any given URL and Title (although at some point I will expand this to extract the <title> element using screen-scraping!).\n    The Byte[] to String service requires that the local machine uses Unix (to avoid line break issues).\n  " ;
+        <http://purl.org/dc/terms/title>
+                "QRscufl" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/title:makeBookmark.title> , <http://weprov.csiro.au/controller/url:makeBookmark.url> , <http://weprov.csiro.au/controller/Byte___to_String.string:qrcode_string> , <http://weprov.csiro.au/controller/Encode_byte___to_base64.base64:qrcode_base64> , <http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Byte___to_String.bytes> , <http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Encode_byte___to_base64.bytes> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/makeBookmark>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Byte___to_String.bytes> , <http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Encode_byte___to_base64.bytes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "makeBookmark" .
+
+<http://weprov.csiro.au/program/Byte___to_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Byte___to_String.string:qrcode_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Byte___to_String" .
+
+<http://weprov.csiro.au/program/Encode_byte___to_base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Encode_byte___to_base64.base64:qrcode_base64> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Encode_byte___to_base64" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "title" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/qrcode_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qrcode_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c8a1edfc-534a-47ec-a166-60067a4acd56-v0/qrcode_base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qrcode_base64" .
+
+<http://weprov.csiro.au/controller/title:makeBookmark.title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "title:makeBookmark.title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/makeBookmark> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/title:makeBookmark.title> , <http://weprov.csiro.au/controller/url:makeBookmark.url> .
+
+<http://weprov.csiro.au/controller/url:makeBookmark.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url:makeBookmark.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/makeBookmark> .
+
+<http://weprov.csiro.au/controller/Byte___to_String.string:qrcode_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Byte___to_String.string:qrcode_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Encode_byte___to_base64.base64:qrcode_base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Encode_byte___to_base64.base64:qrcode_base64" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Byte___to_String.bytes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "makeBookmark.makeBookmarkReturn:Byte___to_String.bytes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Byte___to_String> .
+
+<http://weprov.csiro.au/controller/makeBookmark.makeBookmarkReturn:Encode_byte___to_base64.bytes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "makeBookmark.makeBookmarkReturn:Encode_byte___to_base64.bytes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Encode_byte___to_base64> .

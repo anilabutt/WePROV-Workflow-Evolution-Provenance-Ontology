@@ -1,0 +1,61 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GetCompoundDetails> , <http://weprov.csiro.au/program/XPath_From_Text> , <http://weprov.csiro.au/program/parametersXML2> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Extract_GetCompoundDetails_with_xpath" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GetCompoundDetails.parameters:XPath_From_Text.xml-text> , <http://weprov.csiro.au/controller/XPath_From_Text.nodelistAsXML:out> , <http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GetCompoundDetails>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCompoundDetails.parameters:XPath_From_Text.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCompoundDetails" .
+
+<http://weprov.csiro.au/program/XPath_From_Text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_From_Text.nodelistAsXML:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_From_Text" .
+
+<http://weprov.csiro.au/program/parametersXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/GetCompoundDetails.parameters:XPath_From_Text.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCompoundDetails.parameters:XPath_From_Text.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_From_Text> .
+
+<http://weprov.csiro.au/controller/XPath_From_Text.nodelistAsXML:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_From_Text.nodelistAsXML:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.output:GetCompoundDetails.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundDetails> .

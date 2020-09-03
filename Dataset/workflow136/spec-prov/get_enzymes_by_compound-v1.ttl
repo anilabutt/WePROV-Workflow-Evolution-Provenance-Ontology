@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR923-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR923-v0/compound_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR923-v0/enzymes_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/get_enzymes_by_compound> ;
+        <http://purl.org/dc/terms/description>
+                "Retrieve all enzymes which have a link to a given compound id\n\nInput example: \ncpd:C00345" ;
+        <http://purl.org/dc/terms/title>
+                "get_enzymes_by_compound" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/compound_id:get_enzymes_by_compound.compound_id> , <http://weprov.csiro.au/controller/get_enzymes_by_compound.return:enzymes_id> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/get_enzymes_by_compound>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_enzymes_by_compound.return:enzymes_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_enzymes_by_compound" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR923-v0/compound_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "compound_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR923-v0/enzymes_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "enzymes_id" .
+
+<http://weprov.csiro.au/controller/compound_id:get_enzymes_by_compound.compound_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compound_id:get_enzymes_by_compound.compound_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_enzymes_by_compound> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/compound_id:get_enzymes_by_compound.compound_id> .
+
+<http://weprov.csiro.au/controller/get_enzymes_by_compound.return:enzymes_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_enzymes_by_compound.return:enzymes_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

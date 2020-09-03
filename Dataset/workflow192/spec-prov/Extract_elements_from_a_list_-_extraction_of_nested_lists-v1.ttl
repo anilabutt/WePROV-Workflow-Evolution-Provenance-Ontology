@@ -1,0 +1,103 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b8278b1e-05a9-4332-b3b7-09984f42fb99-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b8278b1e-05a9-4332-b3b7-09984f42fb99-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> , <http://weprov.csiro.au/program/a_b_c_d> , <http://weprov.csiro.au/program/e_f_g_h> , <http://weprov.csiro.au/program/i_j_k_l> , <http://weprov.csiro.au/program/m_n_o_p> , <http://weprov.csiro.au/program/Create_two_deep_list> ;
+        <http://purl.org/dc/terms/description>
+                "The extract_elements_from_a_list is passed the list [['a','b','c', 'd'], ['e','f','g','h'],['i','j','k','l'],['m','n','o','p']]  with fromIndex of 1 and toIndex of 3  and  depth 2, will output the list [['e','f','g','h'],['i','j','k','l']] as it is the outermost list i.e. that with depth 2 that is considered." ;
+        <http://purl.org/dc/terms/title>
+                "Extract elements from a list - extraction of nested lists" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Create_two_deep_list.outList:Extract_elements_from_a_list.inputlist> , <http://weprov.csiro.au/controller/a_b_c_d.split:Create_two_deep_list.in1> , <http://weprov.csiro.au/controller/e_f_g_h.split:Create_two_deep_list.in2> , <http://weprov.csiro.au/controller/i_j_k_l.split:Create_two_deep_list.in3> , <http://weprov.csiro.au/controller/m_n_o_p.split:Create_two_deep_list.in4> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Extract_elements_from_a_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_elements_from_a_list" .
+
+<http://weprov.csiro.au/program/a_b_c_d>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/a_b_c_d.split:Create_two_deep_list.in1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "a_b_c_d" .
+
+<http://weprov.csiro.au/program/e_f_g_h>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/e_f_g_h.split:Create_two_deep_list.in2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "e_f_g_h" .
+
+<http://weprov.csiro.au/program/i_j_k_l>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/i_j_k_l.split:Create_two_deep_list.in3> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "i_j_k_l" .
+
+<http://weprov.csiro.au/program/m_n_o_p>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/m_n_o_p.split:Create_two_deep_list.in4> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "m_n_o_p" .
+
+<http://weprov.csiro.au/program/Create_two_deep_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Create_two_deep_list.outList:Extract_elements_from_a_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_two_deep_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b8278b1e-05a9-4332-b3b7-09984f42fb99-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Create_two_deep_list.outList:Extract_elements_from_a_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_two_deep_list.outList:Extract_elements_from_a_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> .
+
+<http://weprov.csiro.au/controller/a_b_c_d.split:Create_two_deep_list.in1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "a_b_c_d.split:Create_two_deep_list.in1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_two_deep_list> .
+
+<http://weprov.csiro.au/controller/e_f_g_h.split:Create_two_deep_list.in2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "e_f_g_h.split:Create_two_deep_list.in2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_two_deep_list> .
+
+<http://weprov.csiro.au/controller/i_j_k_l.split:Create_two_deep_list.in3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "i_j_k_l.split:Create_two_deep_list.in3" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_two_deep_list> .
+
+<http://weprov.csiro.au/controller/m_n_o_p.split:Create_two_deep_list.in4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "m_n_o_p.split:Create_two_deep_list.in4" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_two_deep_list> .
+
+<http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_elements_from_a_list.outputlist:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

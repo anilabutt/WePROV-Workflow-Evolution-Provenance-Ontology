@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:JK23LS2YM334-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:JK23LS2YM334-v1/DNA_sequence> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:JK23LS2YM334-v1/output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Transcribe_DNA> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow transcribes a DNA sequence into an RNA sequence" ;
+        <http://purl.org/dc/terms/title>
+                "Transcribe a DNA sequence into an RNA sequence" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DNA_sequence:Transcribe_DNA.dna_seq> , <http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Transcribe_DNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Transcribe_DNA" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:JK23LS2YM334-v1/DNA_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DNA_sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:JK23LS2YM334-v1/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/controller/DNA_sequence:Transcribe_DNA.dna_seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DNA_sequence:Transcribe_DNA.dna_seq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transcribe_DNA> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DNA_sequence:Transcribe_DNA.dna_seq> .
+
+<http://weprov.csiro.au/controller/Transcribe_DNA.rna_seq:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transcribe_DNA.rna_seq:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

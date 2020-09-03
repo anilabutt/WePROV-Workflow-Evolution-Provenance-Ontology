@@ -1,0 +1,133 @@
+<http://weprov.csiro.au/workflow/OA-experiment-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/OA-experiment-v0/task2_a> , <http://weprov.csiro.au/port/OA-experiment-v0/task0_url> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/OA-experiment-v0/task5_ret> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/task0> , <http://weprov.csiro.au/program/task1> , <http://weprov.csiro.au/program/task2> , <http://weprov.csiro.au/program/task3> , <http://weprov.csiro.au/program/task4> , <http://weprov.csiro.au/program/task5> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow is just for trying" ;
+        <http://purl.org/dc/terms/title>
+                "OA translated experiment" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/task0.ret:task1.a> , <http://weprov.csiro.au/controller/task1.ret:task3.a> , <http://weprov.csiro.au/controller/task2.ret:task3.b> , <http://weprov.csiro.au/controller/task3.ret:task4.x> , <http://weprov.csiro.au/controller/task4.ret:task5.x> , <http://weprov.csiro.au/controller/task2_a:task2.a> , <http://weprov.csiro.au/controller/task0_url:task0.url> , <http://weprov.csiro.au/controller/task5.ret:task5_ret> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/task0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task0.ret:task1.a> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task0" .
+
+<http://weprov.csiro.au/program/task1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task1.ret:task3.a> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task1" .
+
+<http://weprov.csiro.au/program/task2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task2.ret:task3.b> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task2" .
+
+<http://weprov.csiro.au/program/task3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task3.ret:task4.x> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task3" .
+
+<http://weprov.csiro.au/program/task4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task4.ret:task5.x> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task4" .
+
+<http://weprov.csiro.au/program/task5>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task5.ret:task5_ret> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task5" .
+
+<http://weprov.csiro.au/port/OA-experiment-v0/task2_a>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task2_a" .
+
+<http://weprov.csiro.au/port/OA-experiment-v0/task0_url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "task0_url" .
+
+<http://weprov.csiro.au/port/OA-experiment-v0/task5_ret>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task5_ret" .
+
+<http://weprov.csiro.au/controller/task0.ret:task1.a>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task0.ret:task1.a" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task1> .
+
+<http://weprov.csiro.au/controller/task1.ret:task3.a>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task1.ret:task3.a" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task3> .
+
+<http://weprov.csiro.au/controller/task2.ret:task3.b>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task2.ret:task3.b" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task3> .
+
+<http://weprov.csiro.au/controller/task3.ret:task4.x>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task3.ret:task4.x" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task4> .
+
+<http://weprov.csiro.au/controller/task4.ret:task5.x>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task4.ret:task5.x" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task5> .
+
+<http://weprov.csiro.au/controller/task2_a:task2.a>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task2_a:task2.a" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task2> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/task2_a:task2.a> , <http://weprov.csiro.au/controller/task0_url:task0.url> .
+
+<http://weprov.csiro.au/controller/task0_url:task0.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task0_url:task0.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/task0> .
+
+<http://weprov.csiro.au/controller/task5.ret:task5_ret>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "task5.ret:task5_ret" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

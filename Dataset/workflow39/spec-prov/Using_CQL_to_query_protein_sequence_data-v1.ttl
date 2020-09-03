@@ -1,0 +1,211 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/CPAS_Result> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/GridPIR_Result> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/caBIO_Result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/Beanshell_1> , <http://weprov.csiro.au/program/parametersXML1> , <http://weprov.csiro.au/program/cqlQueryXML1> , <http://weprov.csiro.au/program/parametersXML2> , <http://weprov.csiro.au/program/Beanshell_2> , <http://weprov.csiro.au/program/parametersXML3> , <http://weprov.csiro.au/program/cqlQueryXML> , <http://weprov.csiro.au/program/cqlQueryXML2> , <http://weprov.csiro.au/program/CPASQuery> , <http://weprov.csiro.au/program/GridPIRQuery> , <http://weprov.csiro.au/program/caBIOQuery> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "cql" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Beanshell_1.output:cqlQueryXML1.CQLQuery> , <http://weprov.csiro.au/controller/Beanshell_2.output:cqlQueryXML2.CQLQuery> , <http://weprov.csiro.au/controller/CPASQuery.parameters:parametersXML2.input> , <http://weprov.csiro.au/controller/cqlQueryXML1.output:parametersXML1.cqlQuery> , <http://weprov.csiro.au/controller/cqlQueryXML2.output:parametersXML3.cqlQuery> , <http://weprov.csiro.au/controller/cqlQueryXML.output:parametersXML.cqlQuery> , <http://weprov.csiro.au/controller/CPASQuery.parameters:CPAS_Result> , <http://weprov.csiro.au/controller/parametersXML1.output:GridPIRQuery.parameters> , <http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_1.input> , <http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_2.input> , <http://weprov.csiro.au/controller/parametersXML3.output:caBIOQuery.parameters> , <http://weprov.csiro.au/controller/parametersXML.output:CPASQuery.parameters> , <http://weprov.csiro.au/controller/GridPIRQuery.parameters:GridPIR_Result> , <http://weprov.csiro.au/controller/caBIOQuery.parameters:caBIO_Result> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:CPASQuery.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/Beanshell_1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_1.output:cqlQueryXML1.CQLQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_1" .
+
+<http://weprov.csiro.au/program/parametersXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML1.output:GridPIRQuery.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML1" .
+
+<http://weprov.csiro.au/program/cqlQueryXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cqlQueryXML1.output:parametersXML1.cqlQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cqlQueryXML1" .
+
+<http://weprov.csiro.au/program/parametersXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_1.input> , <http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_2.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML2" .
+
+<http://weprov.csiro.au/program/Beanshell_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_2.output:cqlQueryXML2.CQLQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_2" .
+
+<http://weprov.csiro.au/program/parametersXML3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML3.output:caBIOQuery.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML3" .
+
+<http://weprov.csiro.au/program/cqlQueryXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cqlQueryXML.output:parametersXML.cqlQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cqlQueryXML" .
+
+<http://weprov.csiro.au/program/cqlQueryXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cqlQueryXML2.output:parametersXML3.cqlQuery> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cqlQueryXML2" .
+
+<http://weprov.csiro.au/program/CPASQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CPASQuery.parameters:parametersXML2.input> , <http://weprov.csiro.au/controller/CPASQuery.parameters:CPAS_Result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CPASQuery" .
+
+<http://weprov.csiro.au/program/GridPIRQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GridPIRQuery.parameters:GridPIR_Result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GridPIRQuery" .
+
+<http://weprov.csiro.au/program/caBIOQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/caBIOQuery.parameters:caBIO_Result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "caBIOQuery" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/CPAS_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CPAS_Result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/GridPIR_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GridPIR_Result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:683f4d7c-8190-4c42-900c-37ec65811da4-v0/caBIO_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "caBIO_Result" .
+
+<http://weprov.csiro.au/controller/Beanshell_1.output:cqlQueryXML1.CQLQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_1.output:cqlQueryXML1.CQLQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/cqlQueryXML1> .
+
+<http://weprov.csiro.au/controller/Beanshell_2.output:cqlQueryXML2.CQLQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_2.output:cqlQueryXML2.CQLQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/cqlQueryXML2> .
+
+<http://weprov.csiro.au/controller/CPASQuery.parameters:parametersXML2.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CPASQuery.parameters:parametersXML2.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML2> .
+
+<http://weprov.csiro.au/controller/cqlQueryXML1.output:parametersXML1.cqlQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cqlQueryXML1.output:parametersXML1.cqlQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML1> .
+
+<http://weprov.csiro.au/controller/cqlQueryXML2.output:parametersXML3.cqlQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cqlQueryXML2.output:parametersXML3.cqlQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML3> .
+
+<http://weprov.csiro.au/controller/cqlQueryXML.output:parametersXML.cqlQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cqlQueryXML.output:parametersXML.cqlQuery" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/CPASQuery.parameters:CPAS_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CPASQuery.parameters:CPAS_Result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML1.output:GridPIRQuery.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML1.output:GridPIRQuery.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GridPIRQuery> .
+
+<http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.CQLQueryResultCollection:Beanshell_1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_1> .
+
+<http://weprov.csiro.au/controller/parametersXML2.CQLQueryResultCollection:Beanshell_2.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.CQLQueryResultCollection:Beanshell_2.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_2> .
+
+<http://weprov.csiro.au/controller/parametersXML3.output:caBIOQuery.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML3.output:caBIOQuery.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/caBIOQuery> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:CPASQuery.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:CPASQuery.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CPASQuery> .
+
+<http://weprov.csiro.au/controller/GridPIRQuery.parameters:GridPIR_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GridPIRQuery.parameters:GridPIR_Result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/caBIOQuery.parameters:caBIO_Result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "caBIOQuery.parameters:caBIO_Result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

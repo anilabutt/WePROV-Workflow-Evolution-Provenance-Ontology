@@ -1,0 +1,165 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Organism> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GI_ClusterAssignment> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GI_Clusters> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_gene_symbol_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_organism_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_probability> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_cluster_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GeneIlluminator_Disambiguate> , <http://weprov.csiro.au/program/Parse_Moby_Data_GI_ClusterAssignment> , <http://weprov.csiro.au/program/Organism> , <http://weprov.csiro.au/program/Object> ;
+        <http://purl.org/dc/terms/description>
+                "Example workflow demonstrating how to use GeneIlluminator_Disambiguate, a synchronous BioMOBY service for gene symbol disambiguation. If a gene symbol is ambiguous this service provides GI_Clusters describing which different genes, sharing the same symbol, exist in different parts of the tree of life. Provides also gene symbol aliases associated to the input gene symbol. (This is the same output as the one from the GeneIlluminator_GetClusters service.) In addition this service takes an Organism object as input and disambiguates the gene symbol in the context of that organism by assigning the gene symbol for the given organism to one of the GI_Clusters.\n  \nVisit http://www.bioinformatics.nl/gi/ for more info about GeneIlluminator.\n\nGeneIlluminator services use a secure connection over HTTPS. To make this work you *must* import our SSL certificates in your local Java keystores. More information can be found on https://www.bioinformatics.nl/phenolink/home/\n  " ;
+        <http://purl.org/dc/terms/title>
+                "GeneIlluminator_Disambiguate" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):Parse_Moby_Data_GI_ClusterAssignment.mobyData('GI_ClusterAssignment')> , <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_Disambiguate.Object(gene_symbol)> , <http://weprov.csiro.au/controller/Organism:Organism.id> , <http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_Disambiguate.Organism(organism)> , <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_Cluster(Collection - 'gi_clusters'):GI_Clusters> , <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):GI_ClusterAssignment> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gene_symbol'_id:ca_gene_symbol_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gi_cluster'_id:ca_cluster_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'organism'_id:ca_organism_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'probability':ca_probability> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/GeneIlluminator_Disambiguate>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):Parse_Moby_Data_GI_ClusterAssignment.mobyData('GI_ClusterAssignment')> , <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_Cluster(Collection - 'gi_clusters'):GI_Clusters> , <http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):GI_ClusterAssignment> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneIlluminator_Disambiguate" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_GI_ClusterAssignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gene_symbol'_id:ca_gene_symbol_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gi_cluster'_id:ca_cluster_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'organism'_id:ca_organism_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'probability':ca_probability> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_GI_ClusterAssignment" .
+
+<http://weprov.csiro.au/program/Organism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_Disambiguate.Organism(organism)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Organism" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_Disambiguate.Object(gene_symbol)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneSymbol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Organism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Organism" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GI_ClusterAssignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GI_ClusterAssignment" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GI_Clusters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GI_Clusters" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_gene_symbol_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ca_gene_symbol_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_organism_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ca_organism_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_probability>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ca_probability" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/ca_cluster_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ca_cluster_id" .
+
+<http://weprov.csiro.au/controller/GeneSymbol:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneSymbol:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/Organism:Organism.id> .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):Parse_Moby_Data_GI_ClusterAssignment.mobyData('GI_ClusterAssignment')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):Parse_Moby_Data_GI_ClusterAssignment.mobyData('GI_ClusterAssignment')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_GI_ClusterAssignment> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_Disambiguate.Object(gene_symbol)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:GeneIlluminator_Disambiguate.Object(gene_symbol)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_Disambiguate> .
+
+<http://weprov.csiro.au/controller/Organism:Organism.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Organism:Organism.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Organism> .
+
+<http://weprov.csiro.au/controller/Organism.mobyData:GeneIlluminator_Disambiguate.Organism(organism)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Organism.mobyData:GeneIlluminator_Disambiguate.Organism(organism)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_Disambiguate> .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_Cluster(Collection - 'gi_clusters'):GI_Clusters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_Disambiguate.GI_Cluster(Collection - 'gi_clusters'):GI_Clusters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):GI_ClusterAssignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_Disambiguate.GI_ClusterAssignment(gi_clusterassignment):GI_ClusterAssignment" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gene_symbol'_id:ca_gene_symbol_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gene_symbol'_id:ca_gene_symbol_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gi_cluster'_id:ca_cluster_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'gi_cluster'_id:ca_cluster_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'organism'_id:ca_organism_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'organism'_id:ca_organism_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'probability':ca_probability>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GI_ClusterAssignment.gi_clusterassignment_'probability':ca_probability" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

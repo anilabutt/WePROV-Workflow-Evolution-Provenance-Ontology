@@ -1,0 +1,115 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/capitalName> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/url> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/clat> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/clng> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/xmlData> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/composeURL> , <http://weprov.csiro.au/program/Get_web_page_from_URL> , <http://weprov.csiro.au/program/getLatAndLngfromXML> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "getCityCoordinates" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/capitalName:composeURL.q> , <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getLatAndLngfromXML.xmlData> , <http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:xmlData> , <http://weprov.csiro.au/controller/composeURL.url:url> , <http://weprov.csiro.au/controller/getLatAndLngfromXML.clat:clat> , <http://weprov.csiro.au/controller/getLatAndLngfromXML.clng:clng> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/composeURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/composeURL.url:url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "composeURL" .
+
+<http://weprov.csiro.au/program/Get_web_page_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getLatAndLngfromXML.xmlData> , <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:xmlData> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_web_page_from_URL" .
+
+<http://weprov.csiro.au/program/getLatAndLngfromXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getLatAndLngfromXML.clat:clat> , <http://weprov.csiro.au/controller/getLatAndLngfromXML.clng:clng> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getLatAndLngfromXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/capitalName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "capitalName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/clat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "clat" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/clng>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "clng" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:872d2c3a-8e9a-4052-beef-a34f41f708f0-v0/xmlData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xmlData" .
+
+<http://weprov.csiro.au/controller/capitalName:composeURL.q>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "capitalName:composeURL.q" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/composeURL> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/capitalName:composeURL.q> .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getLatAndLngfromXML.xmlData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:getLatAndLngfromXML.xmlData" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getLatAndLngfromXML> .
+
+<http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "composeURL.url:Get_web_page_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:xmlData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:xmlData" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/composeURL.url:url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "composeURL.url:url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getLatAndLngfromXML.clat:clat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getLatAndLngfromXML.clat:clat" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getLatAndLngfromXML.clng:clng>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getLatAndLngfromXML.clng:clng" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

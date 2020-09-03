@@ -1,0 +1,980 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/location> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/FirstID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/LastID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/notExistingUrl> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/existingUrlAndOperation> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/existingUrlButOperationNot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/status> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NumWSDLServices> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NumDifferentWSDLServices> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NotExistingURL> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/ExistingURLButOperationNot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/ExistingURLAndOperation> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/RTable> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/WorkflowsAnalysed> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/WorkflowRecords> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_NotExistingUrl> , <http://weprov.csiro.au/program/Flatten_ExistingUrlButOperationNot> , <http://weprov.csiro.au/program/MergeURLS> , <http://weprov.csiro.au/program/Merge_NotExistingUrl> , <http://weprov.csiro.au/program/generateIDs> , <http://weprov.csiro.au/program/Different_Count_Size> , <http://weprov.csiro.au/program/GetAnalysedWorkflows> , <http://weprov.csiro.au/program/Count_Size> , <http://weprov.csiro.au/program/createRTable> , <http://weprov.csiro.au/program/generateURL> , <http://weprov.csiro.au/program/FilterAndCount> , <http://weprov.csiro.au/program/Merge_ExistingUrlAndOperation> , <http://weprov.csiro.au/program/Merge_ExistingUrlBotOperationNot> , <http://weprov.csiro.au/program/Flatten_list> , <http://weprov.csiro.au/program/Flatten_ExistingUrlAndOperation> , <http://weprov.csiro.au/program/Flatten_Records> , <http://weprov.csiro.au/program/Merge_Records> , <http://weprov.csiro.au/program/Analyse_Location> , <http://weprov.csiro.au/program/Operation_exists> , <http://weprov.csiro.au/program/Operation_does_NOT_exists> , <http://weprov.csiro.au/program/available> , <http://weprov.csiro.au/program/operation_unavailable> , <http://weprov.csiro.au/program/URL_exists> , <http://weprov.csiro.au/program/URL_does_NOT_exists> , <http://weprov.csiro.au/program/location_unavailable> , <http://weprov.csiro.au/program/isEmptyList> , <http://weprov.csiro.au/program/EchoExistingURLAndOperation> , <http://weprov.csiro.au/program/IsEmpty> , <http://weprov.csiro.au/program/MyXPathFromText> , <http://weprov.csiro.au/program/EmptyList> , <http://weprov.csiro.au/program/EmptyExistingURLAndOperation> , <http://weprov.csiro.au/program/EmptyExistingURLButOperationNot> , <http://weprov.csiro.au/program/GenerateXpath> , <http://weprov.csiro.au/program/EmptyNotExistingURL> , <http://weprov.csiro.au/program/DownloadFile> , <http://weprov.csiro.au/program/SplitLocation> , <http://weprov.csiro.au/program/EchoNotExistingURL> , <http://weprov.csiro.au/program/EchoExistingURLButOperationNot> , <http://weprov.csiro.au/program/CreateWorkflowLog> , <http://weprov.csiro.au/program/Analyse_Single_Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow tests for all Taverna workflows stored at myExperiment wether the SOAP/WSDL services used still exists. For each SOAP/WSDL service it checks wether the WSDL file is still accessible and whether the operation is still exists.\n\nThe output is among others a report of \n* accessible services and operation,\n* operations which WSDL file is not accessible,\n* operations which WSDL file still exists, but the operation is not defined anymore.\n\nThe last set needs to be checked by hand, because this workflow currently does not check correctly WSDL files that use import statements, because these import statements are ignored. This means that many of the operations not found exists, but are defined in imported WSDL files." , "" ;
+        <http://purl.org/dc/terms/title>
+                "Test SOAP/WSDL Service Availability" , "test" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DownloadFile.content:IsEmpty.string> , <http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_does_NOT_exists.test> , <http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_exists.test> , <http://weprov.csiro.au/controller/MyXPathFromText.nodes:isEmptyList.nodes> , <http://weprov.csiro.au/controller/SplitLocation.operation:GenerateXpath.operation> , <http://weprov.csiro.au/controller/SplitLocation.url:DownloadFile.url> , <http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_does_NOT_exists.test> , <http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_exists.test> , <http://weprov.csiro.au/controller/location:EchoExistingURLAndOperation.inputlist> , <http://weprov.csiro.au/controller/location:EchoExistingURLButOperationNot.inputlist> , <http://weprov.csiro.au/controller/location:EchoNotExistingURL.inputlist> , <http://weprov.csiro.au/controller/location:SplitLocation.location> , <http://weprov.csiro.au/controller/DownloadFile.content:MyXPathFromText.xml> , <http://weprov.csiro.au/controller/EchoExistingURLAndOperation.outputlist:existingUrlAndOperation> , <http://weprov.csiro.au/controller/EchoExistingURLButOperationNot.outputlist:existingUrlButOperationNot> , <http://weprov.csiro.au/controller/EchoNotExistingURL.outputlist:notExistingUrl> , <http://weprov.csiro.au/controller/EmptyExistingURLAndOperation.list:existingUrlAndOperation> , <http://weprov.csiro.au/controller/EmptyExistingURLButOperationNot.list:existingUrlButOperationNot> , <http://weprov.csiro.au/controller/EmptyList.list:existingUrlAndOperation> , <http://weprov.csiro.au/controller/EmptyList.list:existingUrlButOperationNot> , <http://weprov.csiro.au/controller/EmptyNotExistingURL.list:notExistingUrl> , <http://weprov.csiro.au/controller/GenerateXpath.xpath:MyXPathFromText.xpath> , <http://weprov.csiro.au/controller/available.value:status> , <http://weprov.csiro.au/controller/location_unavailable.value:status> , <http://weprov.csiro.au/controller/operation_unavailable.value:status> , <http://weprov.csiro.au/controller/Analyse_Location.existingUrlAndOperation:Flatten_ExistingUrlAndOperation.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.existingUrlButOperationNot:Flatten_ExistingUrlButOperationNot.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.notExistingUrl:Flatten_NotExistingUrl.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.status:createRTable.states> , <http://weprov.csiro.au/controller/Analyse_Single_Workflow.scufl:GetAnalysedWorkflows.scufl> , <http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:CreateWorkflowLog.wsdlOperations> , <http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/CreateWorkflowLog.logRecords:Flatten_Records.inputlist> , <http://weprov.csiro.au/controller/FilterAndCount.counts:createRTable.counts> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Analyse_Location.location> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Different_Count_Size.list> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:createRTable.locations> , <http://weprov.csiro.au/controller/FirstID:generateIDs.firstId> , <http://weprov.csiro.au/controller/Flatten_ExistingUrlAndOperation.outputlist:Merge_ExistingUrlAndOperation.stringlist> , <http://weprov.csiro.au/controller/Flatten_ExistingUrlButOperationNot.outputlist:Merge_ExistingUrlBotOperationNot.stringlist> , <http://weprov.csiro.au/controller/Flatten_NotExistingUrl.outputlist:Merge_NotExistingUrl.stringlist> , <http://weprov.csiro.au/controller/Flatten_Records.outputlist:Merge_Records.stringlist> , <http://weprov.csiro.au/controller/LastID:generateIDs.lastId> , <http://weprov.csiro.au/controller/Count_Size.length:NumWSDLServices> , <http://weprov.csiro.au/controller/Different_Count_Size.length:NumDifferentWSDLServices> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:Count_Size.list> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:FilterAndCount.locations> , <http://weprov.csiro.au/controller/GetAnalysedWorkflows.analysedURLS:MergeURLS.stringlist> , <http://weprov.csiro.au/controller/MergeURLS.concatenated:WorkflowsAnalysed> , <http://weprov.csiro.au/controller/Merge_ExistingUrlAndOperation.concatenated:ExistingURLAndOperation> , <http://weprov.csiro.au/controller/Merge_ExistingUrlBotOperationNot.concatenated:ExistingURLButOperationNot> , <http://weprov.csiro.au/controller/createRTable.rTable:RTable> , <http://weprov.csiro.au/controller/generateIDs.workflowIDs:generateURL.id> , <http://weprov.csiro.au/controller/generateURL.url:Analyse_Single_Workflow.workflowUrl> , <http://weprov.csiro.au/controller/generateURL.url:CreateWorkflowLog.url> , <http://weprov.csiro.au/controller/generateURL.url:GetAnalysedWorkflows.urls> , <http://weprov.csiro.au/controller/Merge_NotExistingUrl.concatenated:NotExistingURL> , <http://weprov.csiro.au/controller/Merge_Records.concatenated:WorkflowRecords> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Flatten_NotExistingUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_NotExistingUrl.outputlist:Merge_NotExistingUrl.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_NotExistingUrl" .
+
+<http://weprov.csiro.au/program/Flatten_ExistingUrlButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_ExistingUrlButOperationNot.outputlist:Merge_ExistingUrlBotOperationNot.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_ExistingUrlButOperationNot" .
+
+<http://weprov.csiro.au/program/MergeURLS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeURLS.concatenated:WorkflowsAnalysed> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeURLS" .
+
+<http://weprov.csiro.au/program/Merge_NotExistingUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_NotExistingUrl.concatenated:NotExistingURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_NotExistingUrl" .
+
+<http://weprov.csiro.au/program/generateIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/generateIDs.workflowIDs:generateURL.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "generateIDs" .
+
+<http://weprov.csiro.au/program/Different_Count_Size>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Different_Count_Size.length:NumDifferentWSDLServices> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Different_Count_Size" .
+
+<http://weprov.csiro.au/program/GetAnalysedWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetAnalysedWorkflows.analysedURLS:MergeURLS.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetAnalysedWorkflows" .
+
+<http://weprov.csiro.au/program/Count_Size>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Count_Size.length:NumWSDLServices> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Count_Size" .
+
+<http://weprov.csiro.au/program/createRTable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createRTable.rTable:RTable> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createRTable" .
+
+<http://weprov.csiro.au/program/generateURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/generateURL.url:Analyse_Single_Workflow.workflowUrl> , <http://weprov.csiro.au/controller/generateURL.url:CreateWorkflowLog.url> , <http://weprov.csiro.au/controller/generateURL.url:GetAnalysedWorkflows.urls> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "generateURL" .
+
+<http://weprov.csiro.au/program/FilterAndCount>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FilterAndCount.counts:createRTable.counts> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Analyse_Location.location> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Different_Count_Size.list> , <http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:createRTable.locations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FilterAndCount" .
+
+<http://weprov.csiro.au/program/Merge_ExistingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_ExistingUrlAndOperation.concatenated:ExistingURLAndOperation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_ExistingUrlAndOperation" .
+
+<http://weprov.csiro.au/program/Merge_ExistingUrlBotOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_ExistingUrlBotOperationNot.concatenated:ExistingURLButOperationNot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_ExistingUrlBotOperationNot" .
+
+<http://weprov.csiro.au/program/Flatten_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_list.outputlist:Count_Size.list> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:FilterAndCount.locations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_list" .
+
+<http://weprov.csiro.au/program/Flatten_ExistingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_ExistingUrlAndOperation.outputlist:Merge_ExistingUrlAndOperation.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_ExistingUrlAndOperation" .
+
+<http://weprov.csiro.au/program/Flatten_Records>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_Records.outputlist:Merge_Records.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_Records" .
+
+<http://weprov.csiro.au/program/Merge_Records>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_Records.concatenated:WorkflowRecords> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_Records" .
+
+<http://weprov.csiro.au/program/Analyse_Location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Analyse_Location.existingUrlAndOperation:Flatten_ExistingUrlAndOperation.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.existingUrlButOperationNot:Flatten_ExistingUrlButOperationNot.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.notExistingUrl:Flatten_NotExistingUrl.inputlist> , <http://weprov.csiro.au/controller/Analyse_Location.status:createRTable.states> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Analyse_Location" .
+
+<http://weprov.csiro.au/program/Operation_exists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Operation_exists" .
+
+<http://weprov.csiro.au/program/Operation_does_NOT_exists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Operation_does_NOT_exists" .
+
+<http://weprov.csiro.au/program/available>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/available.value:status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "available" .
+
+<http://weprov.csiro.au/program/operation_unavailable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/operation_unavailable.value:status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "operation_unavailable" .
+
+<http://weprov.csiro.au/program/URL_exists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL_exists" .
+
+<http://weprov.csiro.au/program/URL_does_NOT_exists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL_does_NOT_exists" .
+
+<http://weprov.csiro.au/program/location_unavailable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/location_unavailable.value:status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "location_unavailable" .
+
+<http://weprov.csiro.au/program/isEmptyList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_does_NOT_exists.test> , <http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_exists.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isEmptyList" .
+
+<http://weprov.csiro.au/program/EchoExistingURLAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EchoExistingURLAndOperation.outputlist:existingUrlAndOperation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EchoExistingURLAndOperation" .
+
+<http://weprov.csiro.au/program/IsEmpty>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_does_NOT_exists.test> , <http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_exists.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "IsEmpty" .
+
+<http://weprov.csiro.au/program/MyXPathFromText>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MyXPathFromText.nodes:isEmptyList.nodes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MyXPathFromText" .
+
+<http://weprov.csiro.au/program/EmptyList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EmptyList.list:existingUrlAndOperation> , <http://weprov.csiro.au/controller/EmptyList.list:existingUrlButOperationNot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EmptyList" .
+
+<http://weprov.csiro.au/program/EmptyExistingURLAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EmptyExistingURLAndOperation.list:existingUrlAndOperation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EmptyExistingURLAndOperation" .
+
+<http://weprov.csiro.au/program/EmptyExistingURLButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EmptyExistingURLButOperationNot.list:existingUrlButOperationNot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EmptyExistingURLButOperationNot" .
+
+<http://weprov.csiro.au/program/GenerateXpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GenerateXpath.xpath:MyXPathFromText.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GenerateXpath" .
+
+<http://weprov.csiro.au/program/EmptyNotExistingURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EmptyNotExistingURL.list:notExistingUrl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EmptyNotExistingURL" .
+
+<http://weprov.csiro.au/program/DownloadFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DownloadFile.content:IsEmpty.string> , <http://weprov.csiro.au/controller/DownloadFile.content:MyXPathFromText.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DownloadFile" .
+
+<http://weprov.csiro.au/program/SplitLocation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitLocation.operation:GenerateXpath.operation> , <http://weprov.csiro.au/controller/SplitLocation.url:DownloadFile.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitLocation" .
+
+<http://weprov.csiro.au/program/EchoNotExistingURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EchoNotExistingURL.outputlist:notExistingUrl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EchoNotExistingURL" .
+
+<http://weprov.csiro.au/program/EchoExistingURLButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EchoExistingURLButOperationNot.outputlist:existingUrlButOperationNot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EchoExistingURLButOperationNot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "location" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/notExistingUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "notExistingUrl" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/existingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "existingUrlAndOperation" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/existingUrlButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "existingUrlButOperationNot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status" .
+
+<http://weprov.csiro.au/controller/DownloadFile.content:IsEmpty.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DownloadFile.content:IsEmpty.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/IsEmpty> .
+
+<http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_does_NOT_exists.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IsEmpty.isEmpty:URL_does_NOT_exists.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/URL_does_NOT_exists> .
+
+<http://weprov.csiro.au/controller/IsEmpty.isEmpty:URL_exists.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IsEmpty.isEmpty:URL_exists.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/URL_exists> .
+
+<http://weprov.csiro.au/controller/MyXPathFromText.nodes:isEmptyList.nodes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MyXPathFromText.nodes:isEmptyList.nodes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isEmptyList> .
+
+<http://weprov.csiro.au/controller/SplitLocation.operation:GenerateXpath.operation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitLocation.operation:GenerateXpath.operation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GenerateXpath> .
+
+<http://weprov.csiro.au/controller/SplitLocation.url:DownloadFile.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitLocation.url:DownloadFile.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DownloadFile> .
+
+<http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_does_NOT_exists.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isEmptyList.isEmpty:Operation_does_NOT_exists.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Operation_does_NOT_exists> .
+
+<http://weprov.csiro.au/controller/isEmptyList.isEmpty:Operation_exists.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isEmptyList.isEmpty:Operation_exists.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Operation_exists> .
+
+<http://weprov.csiro.au/controller/location:EchoExistingURLAndOperation.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "location:EchoExistingURLAndOperation.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EchoExistingURLAndOperation> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/location:EchoExistingURLAndOperation.inputlist> , <http://weprov.csiro.au/controller/location:EchoExistingURLButOperationNot.inputlist> , <http://weprov.csiro.au/controller/location:EchoNotExistingURL.inputlist> , <http://weprov.csiro.au/controller/location:SplitLocation.location> , <http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url> , <http://weprov.csiro.au/controller/FirstID:generateIDs.firstId> , <http://weprov.csiro.au/controller/LastID:generateIDs.lastId> .
+
+<http://weprov.csiro.au/controller/location:EchoExistingURLButOperationNot.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "location:EchoExistingURLButOperationNot.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EchoExistingURLButOperationNot> .
+
+<http://weprov.csiro.au/controller/location:EchoNotExistingURL.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "location:EchoNotExistingURL.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EchoNotExistingURL> .
+
+<http://weprov.csiro.au/controller/location:SplitLocation.location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "location:SplitLocation.location" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitLocation> .
+
+<http://weprov.csiro.au/controller/DownloadFile.content:MyXPathFromText.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DownloadFile.content:MyXPathFromText.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MyXPathFromText> .
+
+<http://weprov.csiro.au/controller/EchoExistingURLAndOperation.outputlist:existingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EchoExistingURLAndOperation.outputlist:existingUrlAndOperation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EchoExistingURLButOperationNot.outputlist:existingUrlButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EchoExistingURLButOperationNot.outputlist:existingUrlButOperationNot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EchoNotExistingURL.outputlist:notExistingUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EchoNotExistingURL.outputlist:notExistingUrl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EmptyExistingURLAndOperation.list:existingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EmptyExistingURLAndOperation.list:existingUrlAndOperation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EmptyExistingURLButOperationNot.list:existingUrlButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EmptyExistingURLButOperationNot.list:existingUrlButOperationNot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EmptyList.list:existingUrlAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EmptyList.list:existingUrlAndOperation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EmptyList.list:existingUrlButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EmptyList.list:existingUrlButOperationNot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EmptyNotExistingURL.list:notExistingUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EmptyNotExistingURL.list:notExistingUrl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GenerateXpath.xpath:MyXPathFromText.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GenerateXpath.xpath:MyXPathFromText.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MyXPathFromText> .
+
+<http://weprov.csiro.au/controller/available.value:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "available.value:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/location_unavailable.value:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "location_unavailable.value:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/operation_unavailable.value:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "operation_unavailable.value:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/CreateWorkflowLog>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CreateWorkflowLog.logRecords:Flatten_Records.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CreateWorkflowLog" .
+
+<http://weprov.csiro.au/program/Analyse_Single_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Analyse_Single_Workflow.scufl:GetAnalysedWorkflows.scufl> , <http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:CreateWorkflowLog.wsdlOperations> , <http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:Flatten_list.inputlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Analyse_Single_Workflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/workflowUrl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/scufl> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/wsdlOperations> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/emptyString> , <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/echoWorkflowContent> , <http://weprov.csiro.au/program/emptyList> , <http://weprov.csiro.au/program/getWSDLOperation> , <http://weprov.csiro.au/program/getWSDLLocation> , <http://weprov.csiro.au/program/append_WSDLLocation> , <http://weprov.csiro.au/program/isScufl> , <http://weprov.csiro.au/program/readWorkflowFromNet> , <http://weprov.csiro.au/program/append_OperationName> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "analyseWFS" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/append_WSDLLocation.output:append_OperationName.string1> , <http://weprov.csiro.au/controller/getWSDLLocation.nodes:append_WSDLLocation.string1> , <http://weprov.csiro.au/controller/getWSDLOperation.nodes:append_OperationName.string2> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input> , <http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url> , <http://weprov.csiro.au/controller/append_OperationName.output:wsdlOperations> , <http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl> , <http://weprov.csiro.au/controller/emptyList.list:wsdlOperations> , <http://weprov.csiro.au/controller/emptyString.value:scufl> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLLocation.xml> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLOperation.xml> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/emptyString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emptyString.value:scufl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emptyString" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/echoWorkflowContent>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echoWorkflowContent" .
+
+<http://weprov.csiro.au/program/emptyList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emptyList.list:wsdlOperations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emptyList" .
+
+<http://weprov.csiro.au/program/getWSDLOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getWSDLOperation.nodes:append_OperationName.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getWSDLOperation" .
+
+<http://weprov.csiro.au/program/getWSDLLocation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getWSDLLocation.nodes:append_WSDLLocation.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getWSDLLocation" .
+
+<http://weprov.csiro.au/program/append_WSDLLocation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/append_WSDLLocation.output:append_OperationName.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "append_WSDLLocation" .
+
+<http://weprov.csiro.au/program/isScufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isScufl" .
+
+<http://weprov.csiro.au/program/readWorkflowFromNet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLLocation.xml> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLOperation.xml> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "readWorkflowFromNet" .
+
+<http://weprov.csiro.au/program/append_OperationName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/append_OperationName.output:wsdlOperations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "append_OperationName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/workflowUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "workflowUrl" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "scufl" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v0/wsdlOperations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wsdlOperations" .
+
+<http://weprov.csiro.au/controller/append_WSDLLocation.output:append_OperationName.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "append_WSDLLocation.output:append_OperationName.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/append_OperationName> .
+
+<http://weprov.csiro.au/controller/getWSDLLocation.nodes:append_WSDLLocation.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getWSDLLocation.nodes:append_WSDLLocation.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/append_WSDLLocation> .
+
+<http://weprov.csiro.au/controller/getWSDLOperation.nodes:append_OperationName.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getWSDLOperation.nodes:append_OperationName.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/append_OperationName> .
+
+<http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isScufl.isEmpty:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isScufl.isEmpty:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:echoWorkflowContent.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echoWorkflowContent> .
+
+<http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "workflowUrl:readWorkflowFromNet.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readWorkflowFromNet> .
+
+<http://weprov.csiro.au/controller/append_OperationName.output:wsdlOperations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "append_OperationName.output:wsdlOperations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echoWorkflowContent.output:scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/emptyList.list:wsdlOperations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emptyList.list:wsdlOperations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/emptyString.value:scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emptyString.value:scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLLocation.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:getWSDLLocation.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getWSDLLocation> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getWSDLOperation.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:getWSDLOperation.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getWSDLOperation> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:isScufl.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isScufl> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/FirstID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FirstID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/LastID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "LastID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NumWSDLServices>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NumWSDLServices" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NumDifferentWSDLServices>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NumDifferentWSDLServices" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/NotExistingURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NotExistingURL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/ExistingURLButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExistingURLButOperationNot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/ExistingURLAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExistingURLAndOperation" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/RTable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RTable" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/WorkflowsAnalysed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WorkflowsAnalysed" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a4942d92-faef-4fa5-abba-f8645908e4d0-v0/WorkflowRecords>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WorkflowRecords" .
+
+<http://weprov.csiro.au/controller/Analyse_Location.existingUrlAndOperation:Flatten_ExistingUrlAndOperation.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Location.existingUrlAndOperation:Flatten_ExistingUrlAndOperation.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_ExistingUrlAndOperation> .
+
+<http://weprov.csiro.au/controller/Analyse_Location.existingUrlButOperationNot:Flatten_ExistingUrlButOperationNot.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Location.existingUrlButOperationNot:Flatten_ExistingUrlButOperationNot.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_ExistingUrlButOperationNot> .
+
+<http://weprov.csiro.au/controller/Analyse_Location.notExistingUrl:Flatten_NotExistingUrl.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Location.notExistingUrl:Flatten_NotExistingUrl.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_NotExistingUrl> .
+
+<http://weprov.csiro.au/controller/Analyse_Location.status:createRTable.states>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Location.status:createRTable.states" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createRTable> .
+
+<http://weprov.csiro.au/controller/Analyse_Single_Workflow.scufl:GetAnalysedWorkflows.scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Single_Workflow.scufl:GetAnalysedWorkflows.scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetAnalysedWorkflows> .
+
+<http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:CreateWorkflowLog.wsdlOperations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Single_Workflow.wsdlOperations:CreateWorkflowLog.wsdlOperations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateWorkflowLog> .
+
+<http://weprov.csiro.au/controller/Analyse_Single_Workflow.wsdlOperations:Flatten_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Single_Workflow.wsdlOperations:Flatten_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list> .
+
+<http://weprov.csiro.au/controller/CreateWorkflowLog.logRecords:Flatten_Records.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateWorkflowLog.logRecords:Flatten_Records.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_Records> .
+
+<http://weprov.csiro.au/controller/FilterAndCount.counts:createRTable.counts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterAndCount.counts:createRTable.counts" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createRTable> .
+
+<http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Analyse_Location.location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterAndCount.uniqueLocations:Analyse_Location.location" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Analyse_Location> .
+
+<http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:Different_Count_Size.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterAndCount.uniqueLocations:Different_Count_Size.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Different_Count_Size> .
+
+<http://weprov.csiro.au/controller/FilterAndCount.uniqueLocations:createRTable.locations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterAndCount.uniqueLocations:createRTable.locations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createRTable> .
+
+<http://weprov.csiro.au/controller/FirstID:generateIDs.firstId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FirstID:generateIDs.firstId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generateIDs> .
+
+<http://weprov.csiro.au/controller/Flatten_ExistingUrlAndOperation.outputlist:Merge_ExistingUrlAndOperation.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_ExistingUrlAndOperation.outputlist:Merge_ExistingUrlAndOperation.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_ExistingUrlAndOperation> .
+
+<http://weprov.csiro.au/controller/Flatten_ExistingUrlButOperationNot.outputlist:Merge_ExistingUrlBotOperationNot.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_ExistingUrlButOperationNot.outputlist:Merge_ExistingUrlBotOperationNot.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_ExistingUrlBotOperationNot> .
+
+<http://weprov.csiro.au/controller/Flatten_NotExistingUrl.outputlist:Merge_NotExistingUrl.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_NotExistingUrl.outputlist:Merge_NotExistingUrl.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_NotExistingUrl> .
+
+<http://weprov.csiro.au/controller/Flatten_Records.outputlist:Merge_Records.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_Records.outputlist:Merge_Records.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_Records> .
+
+<http://weprov.csiro.au/controller/LastID:generateIDs.lastId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LastID:generateIDs.lastId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generateIDs> .
+
+<http://weprov.csiro.au/controller/Count_Size.length:NumWSDLServices>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count_Size.length:NumWSDLServices" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Different_Count_Size.length:NumDifferentWSDLServices>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Different_Count_Size.length:NumDifferentWSDLServices" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Flatten_list.outputlist:Count_Size.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list.outputlist:Count_Size.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Count_Size> .
+
+<http://weprov.csiro.au/controller/Flatten_list.outputlist:FilterAndCount.locations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list.outputlist:FilterAndCount.locations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FilterAndCount> .
+
+<http://weprov.csiro.au/controller/GetAnalysedWorkflows.analysedURLS:MergeURLS.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetAnalysedWorkflows.analysedURLS:MergeURLS.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeURLS> .
+
+<http://weprov.csiro.au/controller/MergeURLS.concatenated:WorkflowsAnalysed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeURLS.concatenated:WorkflowsAnalysed" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_ExistingUrlAndOperation.concatenated:ExistingURLAndOperation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_ExistingUrlAndOperation.concatenated:ExistingURLAndOperation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_ExistingUrlBotOperationNot.concatenated:ExistingURLButOperationNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_ExistingUrlBotOperationNot.concatenated:ExistingURLButOperationNot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/createRTable.rTable:RTable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createRTable.rTable:RTable" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/generateIDs.workflowIDs:generateURL.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generateIDs.workflowIDs:generateURL.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generateURL> .
+
+<http://weprov.csiro.au/controller/generateURL.url:Analyse_Single_Workflow.workflowUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generateURL.url:Analyse_Single_Workflow.workflowUrl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Analyse_Single_Workflow> .
+
+<http://weprov.csiro.au/controller/generateURL.url:CreateWorkflowLog.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generateURL.url:CreateWorkflowLog.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateWorkflowLog> .
+
+<http://weprov.csiro.au/controller/generateURL.url:GetAnalysedWorkflows.urls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generateURL.url:GetAnalysedWorkflows.urls" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetAnalysedWorkflows> .
+
+<http://weprov.csiro.au/controller/Merge_NotExistingUrl.concatenated:NotExistingURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_NotExistingUrl.concatenated:NotExistingURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_Records.concatenated:WorkflowRecords>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_Records.concatenated:WorkflowRecords" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

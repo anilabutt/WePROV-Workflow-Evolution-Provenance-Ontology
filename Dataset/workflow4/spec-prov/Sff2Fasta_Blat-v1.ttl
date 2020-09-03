@@ -1,0 +1,141 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/SffFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/DatabaseFastaGz> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/FastaFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/QualFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/FlowFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/BlatOutTarGz> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/config_Sff2Fasta> , <http://weprov.csiro.au/program/config_Blat> , <http://weprov.csiro.au/program/Sff2Fasta> , <http://weprov.csiro.au/program/Blat> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Sff2Fasta_Blat" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DatabaseFastaGz:Blat.input1> , <http://weprov.csiro.au/controller/SffFile:Sff2Fasta.input0> , <http://weprov.csiro.au/controller/Sff2Fasta.result0:Blat.input0> , <http://weprov.csiro.au/controller/config_Blat.value:Blat.config-file> , <http://weprov.csiro.au/controller/Blat.result0:BlatOutTarGz> , <http://weprov.csiro.au/controller/Sff2Fasta.result0:FastaFile> , <http://weprov.csiro.au/controller/Sff2Fasta.result1:QualFile> , <http://weprov.csiro.au/controller/Sff2Fasta.result2:FlowFile> , <http://weprov.csiro.au/controller/config_Sff2Fasta.value:Sff2Fasta.config-file> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/config_Sff2Fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/config_Sff2Fasta.value:Sff2Fasta.config-file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "config_Sff2Fasta" .
+
+<http://weprov.csiro.au/program/config_Blat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/config_Blat.value:Blat.config-file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "config_Blat" .
+
+<http://weprov.csiro.au/program/Sff2Fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Sff2Fasta.result0:Blat.input0> , <http://weprov.csiro.au/controller/Sff2Fasta.result0:FastaFile> , <http://weprov.csiro.au/controller/Sff2Fasta.result1:QualFile> , <http://weprov.csiro.au/controller/Sff2Fasta.result2:FlowFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sff2Fasta" .
+
+<http://weprov.csiro.au/program/Blat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Blat.result0:BlatOutTarGz> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Blat" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/SffFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SffFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/DatabaseFastaGz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DatabaseFastaGz" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/FastaFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FastaFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/QualFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "QualFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/FlowFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlowFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2892f337-c894-4707-a205-c19d5f185ccb-v0/BlatOutTarGz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlatOutTarGz" .
+
+<http://weprov.csiro.au/controller/DatabaseFastaGz:Blat.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatabaseFastaGz:Blat.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DatabaseFastaGz:Blat.input1> , <http://weprov.csiro.au/controller/SffFile:Sff2Fasta.input0> .
+
+<http://weprov.csiro.au/controller/SffFile:Sff2Fasta.input0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SffFile:Sff2Fasta.input0" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Sff2Fasta> .
+
+<http://weprov.csiro.au/controller/Sff2Fasta.result0:Blat.input0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sff2Fasta.result0:Blat.input0" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/config_Blat.value:Blat.config-file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "config_Blat.value:Blat.config-file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/Blat.result0:BlatOutTarGz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blat.result0:BlatOutTarGz" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Sff2Fasta.result0:FastaFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sff2Fasta.result0:FastaFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Sff2Fasta.result1:QualFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sff2Fasta.result1:QualFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Sff2Fasta.result2:FlowFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sff2Fasta.result2:FlowFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/config_Sff2Fasta.value:Sff2Fasta.config-file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "config_Sff2Fasta.value:Sff2Fasta.config-file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Sff2Fasta> .

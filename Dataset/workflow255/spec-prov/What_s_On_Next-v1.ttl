@@ -1,0 +1,337 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeTitle> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeSynopsis> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeStart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/method> , <http://weprov.csiro.au/program/Concat1> , <http://weprov.csiro.au/program/channel> , <http://weprov.csiro.au/program/limit> , <http://weprov.csiro.au/program/ProgrammeTitleQuery> , <http://weprov.csiro.au/program/DetailsURL> , <http://weprov.csiro.au/program/ProgrammeIdQuery> , <http://weprov.csiro.au/program/SynopsisQuery> , <http://weprov.csiro.au/program/Concat2> , <http://weprov.csiro.au/program/Concat3> , <http://weprov.csiro.au/program/TitleXPath> , <http://weprov.csiro.au/program/Concat4> , <http://weprov.csiro.au/program/GetProgrammeDetails> , <http://weprov.csiro.au/program/IdXPath> , <http://weprov.csiro.au/program/GetProgrammeSynopsis> , <http://weprov.csiro.au/program/FlattenList> , <http://weprov.csiro.au/program/bbcAPI> , <http://weprov.csiro.au/program/GetSchedule> , <http://weprov.csiro.au/program/ProgrammeStartQuery> , <http://weprov.csiro.au/program/StartXPath> , <http://weprov.csiro.au/program/FlattenList2> ;
+        <http://purl.org/dc/terms/description>
+                "Queries the BBC to find out what's on next for a particular channel." ;
+        <http://purl.org/dc/terms/title>
+                "What's On Next" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Concat1.output:Concat2.string1> , <http://weprov.csiro.au/controller/Concat2.output:Concat3.string1> , <http://weprov.csiro.au/controller/Concat3.output:GetSchedule.url> , <http://weprov.csiro.au/controller/Concat4.output:GetProgrammeDetails.url> , <http://weprov.csiro.au/controller/DetailsURL.value:Concat4.string1> , <http://weprov.csiro.au/controller/FlattenList2.concatenated:ProgrammeStart> , <http://weprov.csiro.au/controller/GetProgrammeDetails.contents:StartXPath.xml-text> , <http://weprov.csiro.au/controller/ProgrammeIdQuery.value:IdXPath.xpath> , <http://weprov.csiro.au/controller/ProgrammeStartQuery.value:StartXPath.xpath> , <http://weprov.csiro.au/controller/ProgrammeTitleQuery.value:TitleXPath.xpath> , <http://weprov.csiro.au/controller/StartXPath.nodelist:FlattenList2.stringlist> , <http://weprov.csiro.au/controller/SynopsisQuery.value:GetProgrammeSynopsis.xpath> , <http://weprov.csiro.au/controller/FlattenList.outputlist:ProgrammeSynopsis> , <http://weprov.csiro.au/controller/GetProgrammeDetails.contents:GetProgrammeSynopsis.xml-text> , <http://weprov.csiro.au/controller/GetProgrammeSynopsis.nodelist:FlattenList.inputlist> , <http://weprov.csiro.au/controller/GetSchedule.contents:IdXPath.xml-text> , <http://weprov.csiro.au/controller/GetSchedule.contents:TitleXPath.xml-text> , <http://weprov.csiro.au/controller/IdXPath.nodelist:Concat4.string2> , <http://weprov.csiro.au/controller/TitleXPath.nodelist:ProgrammeTitle> , <http://weprov.csiro.au/controller/bbcAPI.value:Concat1.string1> , <http://weprov.csiro.au/controller/channel.value:Concat2.string2> , <http://weprov.csiro.au/controller/limit.value:Concat3.string2> , <http://weprov.csiro.au/controller/method.value:Concat1.string2> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/method>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/method.value:Concat1.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "method" .
+
+<http://weprov.csiro.au/program/Concat1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concat1.output:Concat2.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concat1" .
+
+<http://weprov.csiro.au/program/channel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/channel.value:Concat2.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "channel" .
+
+<http://weprov.csiro.au/program/limit>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/limit.value:Concat3.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "limit" .
+
+<http://weprov.csiro.au/program/ProgrammeTitleQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ProgrammeTitleQuery.value:TitleXPath.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ProgrammeTitleQuery" .
+
+<http://weprov.csiro.au/program/DetailsURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DetailsURL.value:Concat4.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DetailsURL" .
+
+<http://weprov.csiro.au/program/ProgrammeIdQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ProgrammeIdQuery.value:IdXPath.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ProgrammeIdQuery" .
+
+<http://weprov.csiro.au/program/SynopsisQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SynopsisQuery.value:GetProgrammeSynopsis.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SynopsisQuery" .
+
+<http://weprov.csiro.au/program/Concat2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concat2.output:Concat3.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concat2" .
+
+<http://weprov.csiro.au/program/Concat3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concat3.output:GetSchedule.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concat3" .
+
+<http://weprov.csiro.au/program/TitleXPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/TitleXPath.nodelist:ProgrammeTitle> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "TitleXPath" .
+
+<http://weprov.csiro.au/program/Concat4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concat4.output:GetProgrammeDetails.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concat4" .
+
+<http://weprov.csiro.au/program/GetProgrammeDetails>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetProgrammeDetails.contents:StartXPath.xml-text> , <http://weprov.csiro.au/controller/GetProgrammeDetails.contents:GetProgrammeSynopsis.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetProgrammeDetails" .
+
+<http://weprov.csiro.au/program/IdXPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/IdXPath.nodelist:Concat4.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "IdXPath" .
+
+<http://weprov.csiro.au/program/GetProgrammeSynopsis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetProgrammeSynopsis.nodelist:FlattenList.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetProgrammeSynopsis" .
+
+<http://weprov.csiro.au/program/FlattenList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FlattenList.outputlist:ProgrammeSynopsis> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FlattenList" .
+
+<http://weprov.csiro.au/program/bbcAPI>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bbcAPI.value:Concat1.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bbcAPI" .
+
+<http://weprov.csiro.au/program/GetSchedule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetSchedule.contents:IdXPath.xml-text> , <http://weprov.csiro.au/controller/GetSchedule.contents:TitleXPath.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetSchedule" .
+
+<http://weprov.csiro.au/program/ProgrammeStartQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ProgrammeStartQuery.value:StartXPath.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ProgrammeStartQuery" .
+
+<http://weprov.csiro.au/program/StartXPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/StartXPath.nodelist:FlattenList2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "StartXPath" .
+
+<http://weprov.csiro.au/program/FlattenList2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FlattenList2.concatenated:ProgrammeStart> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FlattenList2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeTitle>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeTitle" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeSynopsis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeSynopsis" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5e07145e-44bd-4154-890b-c74e2c3aff83-v0/ProgrammeStart>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeStart" .
+
+<http://weprov.csiro.au/controller/Concat1.output:Concat2.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concat1.output:Concat2.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat2> .
+
+<http://weprov.csiro.au/controller/Concat2.output:Concat3.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concat2.output:Concat3.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat3> .
+
+<http://weprov.csiro.au/controller/Concat3.output:GetSchedule.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concat3.output:GetSchedule.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetSchedule> .
+
+<http://weprov.csiro.au/controller/Concat4.output:GetProgrammeDetails.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concat4.output:GetProgrammeDetails.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetProgrammeDetails> .
+
+<http://weprov.csiro.au/controller/DetailsURL.value:Concat4.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DetailsURL.value:Concat4.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat4> .
+
+<http://weprov.csiro.au/controller/FlattenList2.concatenated:ProgrammeStart>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenList2.concatenated:ProgrammeStart" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetProgrammeDetails.contents:StartXPath.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetProgrammeDetails.contents:StartXPath.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/StartXPath> .
+
+<http://weprov.csiro.au/controller/ProgrammeIdQuery.value:IdXPath.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeIdQuery.value:IdXPath.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/IdXPath> .
+
+<http://weprov.csiro.au/controller/ProgrammeStartQuery.value:StartXPath.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeStartQuery.value:StartXPath.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/StartXPath> .
+
+<http://weprov.csiro.au/controller/ProgrammeTitleQuery.value:TitleXPath.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProgrammeTitleQuery.value:TitleXPath.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/TitleXPath> .
+
+<http://weprov.csiro.au/controller/StartXPath.nodelist:FlattenList2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StartXPath.nodelist:FlattenList2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FlattenList2> .
+
+<http://weprov.csiro.au/controller/SynopsisQuery.value:GetProgrammeSynopsis.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SynopsisQuery.value:GetProgrammeSynopsis.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetProgrammeSynopsis> .
+
+<http://weprov.csiro.au/controller/FlattenList.outputlist:ProgrammeSynopsis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenList.outputlist:ProgrammeSynopsis" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetProgrammeDetails.contents:GetProgrammeSynopsis.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetProgrammeDetails.contents:GetProgrammeSynopsis.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetProgrammeSynopsis> .
+
+<http://weprov.csiro.au/controller/GetProgrammeSynopsis.nodelist:FlattenList.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetProgrammeSynopsis.nodelist:FlattenList.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FlattenList> .
+
+<http://weprov.csiro.au/controller/GetSchedule.contents:IdXPath.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetSchedule.contents:IdXPath.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/IdXPath> .
+
+<http://weprov.csiro.au/controller/GetSchedule.contents:TitleXPath.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetSchedule.contents:TitleXPath.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/TitleXPath> .
+
+<http://weprov.csiro.au/controller/IdXPath.nodelist:Concat4.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdXPath.nodelist:Concat4.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat4> .
+
+<http://weprov.csiro.au/controller/TitleXPath.nodelist:ProgrammeTitle>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "TitleXPath.nodelist:ProgrammeTitle" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/bbcAPI.value:Concat1.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bbcAPI.value:Concat1.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat1> .
+
+<http://weprov.csiro.au/controller/channel.value:Concat2.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "channel.value:Concat2.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat2> .
+
+<http://weprov.csiro.au/controller/limit.value:Concat3.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "limit.value:Concat3.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat3> .
+
+<http://weprov.csiro.au/controller/method.value:Concat1.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "method.value:Concat1.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat1> .

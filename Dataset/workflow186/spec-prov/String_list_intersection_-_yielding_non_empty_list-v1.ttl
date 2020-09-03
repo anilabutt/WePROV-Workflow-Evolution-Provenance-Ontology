@@ -1,0 +1,61 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/list1> , <http://weprov.csiro.au/program/list2> , <http://weprov.csiro.au/program/String_list_intersection> ;
+        <http://purl.org/dc/terms/description>
+                "The string list intersection service takes in ['a','b','c'] and ['a','e','c] and returns the list ['a','c']." ;
+        <http://purl.org/dc/terms/title>
+                "String list intersection - yielding non empty list" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/String_list_intersection.intersection:out> , <http://weprov.csiro.au/controller/list1.split:String_list_intersection.list1> , <http://weprov.csiro.au/controller/list2.split:String_list_intersection.list2> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/list1.split:String_list_intersection.list1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "list1" .
+
+<http://weprov.csiro.au/program/list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/list2.split:String_list_intersection.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "list2" .
+
+<http://weprov.csiro.au/program/String_list_intersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_list_intersection.intersection:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_list_intersection" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/String_list_intersection.intersection:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_list_intersection.intersection:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/list1.split:String_list_intersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "list1.split:String_list_intersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/list2.split:String_list_intersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "list2.split:String_list_intersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .

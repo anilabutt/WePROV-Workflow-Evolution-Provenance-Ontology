@@ -1,0 +1,96 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v0/condition> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v0/result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/foo> , <http://weprov.csiro.au/program/bar> , <http://weprov.csiro.au/program/Echo_list> ;
+        <http://purl.org/dc/terms/description>
+                "If the input is true then the string 'foo' is emited, if false then 'bar'. Just a simple example to show how the monster works, so to speak." ;
+        <http://purl.org/dc/terms/title>
+                "Example of a conditional execution workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/condition:Fail_if_true.test> , <http://weprov.csiro.au/controller/condition:Fail_if_false.test> , <http://weprov.csiro.au/controller/foo.value:Echo_list.inputlist> , <http://weprov.csiro.au/controller/bar.value:Echo_list.inputlist> , <http://weprov.csiro.au/controller/Echo_list.outputlist:result> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/foo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/foo.value:Echo_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "foo" .
+
+<http://weprov.csiro.au/program/bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bar.value:Echo_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bar" .
+
+<http://weprov.csiro.au/program/Echo_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Echo_list.outputlist:result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Echo_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v0/condition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "condition" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v0/result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "result" .
+
+<http://weprov.csiro.au/controller/condition:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "condition:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/condition:Fail_if_true.test> , <http://weprov.csiro.au/controller/condition:Fail_if_false.test> .
+
+<http://weprov.csiro.au/controller/condition:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "condition:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/controller/foo.value:Echo_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "foo.value:Echo_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Echo_list> .
+
+<http://weprov.csiro.au/controller/bar.value:Echo_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bar.value:Echo_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Echo_list> .
+
+<http://weprov.csiro.au/controller/Echo_list.outputlist:result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Echo_list.outputlist:result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

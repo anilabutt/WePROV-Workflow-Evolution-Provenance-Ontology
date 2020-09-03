@@ -1,0 +1,130 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:edc552fb-32b2-45c0-8ccc-7e0095846a2a-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edc552fb-32b2-45c0-8ccc-7e0095846a2a-v0/FASTA_report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/EBI_FASTA> , <http://weprov.csiro.au/program/Ask_for_email> , <http://weprov.csiro.au/program/Ask_for_sequence> , <http://weprov.csiro.au/program/Select_FASTA_program> , <http://weprov.csiro.au/program/Make_FASTA_program_list> , <http://weprov.csiro.au/program/Make_database_list> , <http://weprov.csiro.au/program/Select_database> ;
+        <http://purl.org/dc/terms/description>
+                "Run a FASTA analysis using the EBI’s WSFasta service (see http://www.ebi.ac.uk/Tools/webservices/services/fasta). This workflow wraps the EBI_FASTA workflow to provide a basic user interface which prompts for the required inputs: sequence, database, FASTA program and user e-mail. Other parameters (e.g. matrix, gap penalties, etc.) are allowed to default." ;
+        <http://purl.org/dc/terms/title>
+                "EBI FASTA with prompts" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Ask_for_email.answer:EBI_FASTA.E-mail> , <http://weprov.csiro.au/controller/Ask_for_sequence.answer:EBI_FASTA.Sequence_or_ID> , <http://weprov.csiro.au/controller/Make_FASTA_program_list.split:Select_FASTA_program.valueList> , <http://weprov.csiro.au/controller/Make_database_list.split:Select_database.valueList> , <http://weprov.csiro.au/controller/Select_FASTA_program.answer:EBI_FASTA.FASTA_Program> , <http://weprov.csiro.au/controller/Select_database.answer:EBI_FASTA.Database> , <http://weprov.csiro.au/controller/EBI_FASTA.FASTA_Text_Result:FASTA_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/EBI_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_FASTA.FASTA_Text_Result:FASTA_report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/EBI_FASTA.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_FASTA" .
+
+<http://weprov.csiro.au/workflow/EBI_FASTA.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/C:/Documents%20and%20Settings/hamish/My%20Documents/My%20Downloads/EBI_FASTA.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/Ask_for_email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Ask_for_email.answer:EBI_FASTA.E-mail> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Ask_for_email" .
+
+<http://weprov.csiro.au/program/Ask_for_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Ask_for_sequence.answer:EBI_FASTA.Sequence_or_ID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Ask_for_sequence" .
+
+<http://weprov.csiro.au/program/Select_FASTA_program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_FASTA_program.answer:EBI_FASTA.FASTA_Program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_FASTA_program" .
+
+<http://weprov.csiro.au/program/Make_FASTA_program_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Make_FASTA_program_list.split:Select_FASTA_program.valueList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Make_FASTA_program_list" .
+
+<http://weprov.csiro.au/program/Make_database_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Make_database_list.split:Select_database.valueList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Make_database_list" .
+
+<http://weprov.csiro.au/program/Select_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_database.answer:EBI_FASTA.Database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_database" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edc552fb-32b2-45c0-8ccc-7e0095846a2a-v0/FASTA_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FASTA_report" .
+
+<http://weprov.csiro.au/controller/Ask_for_email.answer:EBI_FASTA.E-mail>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ask_for_email.answer:EBI_FASTA.E-mail" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_FASTA> .
+
+<http://weprov.csiro.au/controller/Ask_for_sequence.answer:EBI_FASTA.Sequence_or_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ask_for_sequence.answer:EBI_FASTA.Sequence_or_ID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_FASTA> .
+
+<http://weprov.csiro.au/controller/Make_FASTA_program_list.split:Select_FASTA_program.valueList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Make_FASTA_program_list.split:Select_FASTA_program.valueList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_FASTA_program> .
+
+<http://weprov.csiro.au/controller/Make_database_list.split:Select_database.valueList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Make_database_list.split:Select_database.valueList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_database> .
+
+<http://weprov.csiro.au/controller/Select_FASTA_program.answer:EBI_FASTA.FASTA_Program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_FASTA_program.answer:EBI_FASTA.FASTA_Program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_FASTA> .
+
+<http://weprov.csiro.au/controller/Select_database.answer:EBI_FASTA.Database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_database.answer:EBI_FASTA.Database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_FASTA> .
+
+<http://weprov.csiro.au/controller/EBI_FASTA.FASTA_Text_Result:FASTA_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_FASTA.FASTA_Text_Result:FASTA_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

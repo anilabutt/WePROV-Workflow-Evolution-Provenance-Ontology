@@ -1,0 +1,77 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/input_list_1> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/input_list_2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/unique_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/Concatenate_two_strings> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in two list of strings and then concatenates them together. Any duplicates that are present are then removed, and the resulting file is returned back to the user." ;
+        <http://purl.org/dc/terms/title>
+                "Remove duplicate strings" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input_list_1:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/input_list_2:Concatenate_two_strings.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:unique_list> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:unique_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/input_list_1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input_list_1" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/input_list_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input_list_2" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:GTD7HTDVUX48-v1/unique_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "unique_list" .
+
+<http://weprov.csiro.au/controller/input_list_1:Concatenate_two_strings.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input_list_1:Concatenate_two_strings.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/input_list_1:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/input_list_2:Concatenate_two_strings.string2> .
+
+<http://weprov.csiro.au/controller/input_list_2:Concatenate_two_strings.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input_list_2:Concatenate_two_strings.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings.output:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings.output:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:unique_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:unique_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

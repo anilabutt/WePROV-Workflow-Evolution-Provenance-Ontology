@@ -1,0 +1,107 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbFlatFile> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/RCSBSuffix> , <http://weprov.csiro.au/program/RCSBPrefix> , <http://weprov.csiro.au/program/FetchPage> , <http://weprov.csiro.au/program/AddSuffix> , <http://weprov.csiro.au/program/AddPrefixToID> ;
+        <http://purl.org/dc/terms/description>
+                "Given an identifier such as '1crn' fetches the PDB format flatfile from the RCSB" ;
+        <http://purl.org/dc/terms/title>
+                "Fetch PDB flatfile from RCSB server" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1> , <http://weprov.csiro.au/controller/pdbID:AddPrefixToID.string2> , <http://weprov.csiro.au/controller/AddPrefixToID.output:AddSuffix.string1> , <http://weprov.csiro.au/controller/RCSBSuffix.value:AddSuffix.string2> , <http://weprov.csiro.au/controller/AddSuffix.output:FetchPage.url> , <http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/RCSBSuffix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/RCSBSuffix.value:AddSuffix.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "RCSBSuffix" .
+
+<http://weprov.csiro.au/program/RCSBPrefix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "RCSBPrefix" .
+
+<http://weprov.csiro.au/program/FetchPage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FetchPage" .
+
+<http://weprov.csiro.au/program/AddSuffix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AddSuffix.output:FetchPage.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AddSuffix" .
+
+<http://weprov.csiro.au/program/AddPrefixToID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AddPrefixToID.output:AddSuffix.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AddPrefixToID" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pdbID" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbFlatFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdbFlatFile" .
+
+<http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RCSBPrefix.value:AddPrefixToID.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddPrefixToID> .
+
+<http://weprov.csiro.au/controller/pdbID:AddPrefixToID.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdbID:AddPrefixToID.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddPrefixToID> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pdbID:AddPrefixToID.string2> .
+
+<http://weprov.csiro.au/controller/AddPrefixToID.output:AddSuffix.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AddPrefixToID.output:AddSuffix.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddSuffix> .
+
+<http://weprov.csiro.au/controller/RCSBSuffix.value:AddSuffix.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RCSBSuffix.value:AddSuffix.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddSuffix> .
+
+<http://weprov.csiro.au/controller/AddSuffix.output:FetchPage.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AddSuffix.output:FetchPage.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FetchPage> .
+
+<http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FetchPage.contents:pdbFlatFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

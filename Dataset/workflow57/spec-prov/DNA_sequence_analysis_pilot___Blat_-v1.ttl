@@ -1,0 +1,218 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/sffTar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/patternFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/referenceTar> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/BlatTarFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/qualOutputTarFile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/txtOutputTarFile> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/BlatConfigFile> , <http://weprov.csiro.au/program/sff2fasta_configfile> , <http://weprov.csiro.au/program/empty> , <http://weprov.csiro.au/program/patternMatch_configfile> , <http://weprov.csiro.au/program/patternMatch> , <http://weprov.csiro.au/program/sffToFasta> , <http://weprov.csiro.au/program/Blat> , <http://weprov.csiro.au/program/sffExecutable> , <http://weprov.csiro.au/program/blatExe> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "sffToFasta_PatternMatch_Blat" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/patternFile:patternMatch.input2> , <http://weprov.csiro.au/controller/empty.value:sffToFasta.command-line> , <http://weprov.csiro.au/controller/sff2fasta_configfile.value:sffToFasta.config-file> , <http://weprov.csiro.au/controller/sffTar:sffToFasta.input0> , <http://weprov.csiro.au/controller/BlatConfigFile.value:Blat.config-file> , <http://weprov.csiro.au/controller/patternMatch.result0:Blat.input0> , <http://weprov.csiro.au/controller/patternMatch_configfile.value:patternMatch.config-file> , <http://weprov.csiro.au/controller/referenceTar:Blat.input2> , <http://weprov.csiro.au/controller/blatExe.value:Blat.input1> , <http://weprov.csiro.au/controller/sffExecutable.value:sffToFasta.input1> , <http://weprov.csiro.au/controller/patternMatch.result1:qualOutputTarFile> , <http://weprov.csiro.au/controller/patternMatch.result2:txtOutputTarFile> , <http://weprov.csiro.au/controller/sffToFasta.result0:patternMatch.input0> , <http://weprov.csiro.au/controller/sffToFasta.result1:patternMatch.input1> , <http://weprov.csiro.au/controller/Blat.result0:BlatTarFile> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/BlatConfigFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BlatConfigFile.value:Blat.config-file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BlatConfigFile" .
+
+<http://weprov.csiro.au/program/sff2fasta_configfile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sff2fasta_configfile.value:sffToFasta.config-file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sff2fasta_configfile" .
+
+<http://weprov.csiro.au/program/empty>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/empty.value:sffToFasta.command-line> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "empty" .
+
+<http://weprov.csiro.au/program/patternMatch_configfile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/patternMatch_configfile.value:patternMatch.config-file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "patternMatch_configfile" .
+
+<http://weprov.csiro.au/program/patternMatch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/patternMatch.result0:Blat.input0> , <http://weprov.csiro.au/controller/patternMatch.result1:qualOutputTarFile> , <http://weprov.csiro.au/controller/patternMatch.result2:txtOutputTarFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "patternMatch" .
+
+<http://weprov.csiro.au/program/sffToFasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sffToFasta.result0:patternMatch.input0> , <http://weprov.csiro.au/controller/sffToFasta.result1:patternMatch.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sffToFasta" .
+
+<http://weprov.csiro.au/program/Blat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Blat.result0:BlatTarFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Blat" .
+
+<http://weprov.csiro.au/program/sffExecutable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sffExecutable.value:sffToFasta.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sffExecutable" .
+
+<http://weprov.csiro.au/program/blatExe>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blatExe.value:Blat.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blatExe" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/sffTar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sffTar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/patternFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "patternFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/referenceTar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "referenceTar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/BlatTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlatTarFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/qualOutputTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qualOutputTarFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b153ba75-0a05-4ed1-a7ce-5fc3ed950aa7-v0/txtOutputTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "txtOutputTarFile" .
+
+<http://weprov.csiro.au/controller/patternFile:patternMatch.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "patternFile:patternMatch.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/patternMatch> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/patternFile:patternMatch.input2> , <http://weprov.csiro.au/controller/sffTar:sffToFasta.input0> , <http://weprov.csiro.au/controller/referenceTar:Blat.input2> .
+
+<http://weprov.csiro.au/controller/empty.value:sffToFasta.command-line>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "empty.value:sffToFasta.command-line" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sffToFasta> .
+
+<http://weprov.csiro.au/controller/sff2fasta_configfile.value:sffToFasta.config-file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sff2fasta_configfile.value:sffToFasta.config-file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sffToFasta> .
+
+<http://weprov.csiro.au/controller/sffTar:sffToFasta.input0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sffTar:sffToFasta.input0" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sffToFasta> .
+
+<http://weprov.csiro.au/controller/BlatConfigFile.value:Blat.config-file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BlatConfigFile.value:Blat.config-file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/patternMatch.result0:Blat.input0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "patternMatch.result0:Blat.input0" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/patternMatch_configfile.value:patternMatch.config-file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "patternMatch_configfile.value:patternMatch.config-file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/patternMatch> .
+
+<http://weprov.csiro.au/controller/referenceTar:Blat.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "referenceTar:Blat.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/blatExe.value:Blat.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blatExe.value:Blat.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Blat> .
+
+<http://weprov.csiro.au/controller/sffExecutable.value:sffToFasta.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sffExecutable.value:sffToFasta.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sffToFasta> .
+
+<http://weprov.csiro.au/controller/patternMatch.result1:qualOutputTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "patternMatch.result1:qualOutputTarFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/patternMatch.result2:txtOutputTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "patternMatch.result2:txtOutputTarFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/sffToFasta.result0:patternMatch.input0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sffToFasta.result0:patternMatch.input0" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/patternMatch> .
+
+<http://weprov.csiro.au/controller/sffToFasta.result1:patternMatch.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sffToFasta.result1:patternMatch.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/patternMatch> .
+
+<http://weprov.csiro.au/controller/Blat.result0:BlatTarFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blat.result0:BlatTarFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

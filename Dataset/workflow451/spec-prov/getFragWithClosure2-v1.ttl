@@ -1,0 +1,89 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:809f3728-8933-4ffb-9a7d-bde2d64f142d-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:809f3728-8933-4ffb-9a7d-bde2d64f142d-v0/output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/group> , <http://weprov.csiro.au/program/smilesURL> , <http://weprov.csiro.au/program/closure> , <http://weprov.csiro.au/program/getFragmentWithClosure> , <http://weprov.csiro.au/program/Get_web_page_from_URL> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "getFragWithClosure" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getFragmentWithClosure.smiles> , <http://weprov.csiro.au/controller/closure.value:getFragmentWithClosure.closureNumber> , <http://weprov.csiro.au/controller/group.value:getFragmentWithClosure.group> , <http://weprov.csiro.au/controller/smilesURL.value:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/getFragmentWithClosure.getFragmentWithClosureReturn:output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/group.value:getFragmentWithClosure.group> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "group" .
+
+<http://weprov.csiro.au/program/smilesURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/smilesURL.value:Get_web_page_from_URL.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "smilesURL" .
+
+<http://weprov.csiro.au/program/closure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/closure.value:getFragmentWithClosure.closureNumber> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "closure" .
+
+<http://weprov.csiro.au/program/getFragmentWithClosure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getFragmentWithClosure.getFragmentWithClosureReturn:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getFragmentWithClosure" .
+
+<http://weprov.csiro.au/program/Get_web_page_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getFragmentWithClosure.smiles> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_web_page_from_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:809f3728-8933-4ffb-9a7d-bde2d64f142d-v0/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:getFragmentWithClosure.smiles>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:getFragmentWithClosure.smiles" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getFragmentWithClosure> .
+
+<http://weprov.csiro.au/controller/closure.value:getFragmentWithClosure.closureNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "closure.value:getFragmentWithClosure.closureNumber" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getFragmentWithClosure> .
+
+<http://weprov.csiro.au/controller/group.value:getFragmentWithClosure.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "group.value:getFragmentWithClosure.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getFragmentWithClosure> .
+
+<http://weprov.csiro.au/controller/smilesURL.value:Get_web_page_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "smilesURL.value:Get_web_page_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> .
+
+<http://weprov.csiro.au/controller/getFragmentWithClosure.getFragmentWithClosureReturn:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getFragmentWithClosure.getFragmentWithClosureReturn:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

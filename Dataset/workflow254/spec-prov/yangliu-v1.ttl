@@ -1,0 +1,101 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/geneidentifier> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/database> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/programme> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/fastasequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/Blast_report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_Protein_FASTA> , <http://weprov.csiro.au/program/searchSimple> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "yangliu" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/geneidentifier:Get_Protein_FASTA.id> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query> , <http://weprov.csiro.au/controller/database:searchSimple.database> , <http://weprov.csiro.au/controller/programme:searchSimple.program> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastasequence> , <http://weprov.csiro.au/controller/searchSimple.Result:Blast_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_Protein_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastasequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Protein_FASTA" .
+
+<http://weprov.csiro.au/program/searchSimple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchSimple.Result:Blast_report> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchSimple" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/geneidentifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "geneidentifier" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/programme>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "programme" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/fastasequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fastasequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:883ec215-99f7-418a-850d-82963f093dfb-v0/Blast_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blast_report" .
+
+<http://weprov.csiro.au/controller/geneidentifier:Get_Protein_FASTA.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "geneidentifier:Get_Protein_FASTA.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Protein_FASTA> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/geneidentifier:Get_Protein_FASTA.id> , <http://weprov.csiro.au/controller/database:searchSimple.database> , <http://weprov.csiro.au/controller/programme:searchSimple.program> .
+
+<http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Protein_FASTA.outputText:searchSimple.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/database:searchSimple.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database:searchSimple.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/programme:searchSimple.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "programme:searchSimple.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastasequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Protein_FASTA.outputText:fastasequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:Blast_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:Blast_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

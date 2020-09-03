@@ -1,0 +1,89 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d049d11a-a0d5-4b14-81f8-4304781a97ba-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d049d11a-a0d5-4b14-81f8-4304781a97ba-v0/WeatherInfo> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GetWeather> , <http://weprov.csiro.au/program/CountryAndCity> , <http://weprov.csiro.au/program/GetWeatherResult> , <http://weprov.csiro.au/program/CountryName> , <http://weprov.csiro.au/program/CityName> ;
+        <http://purl.org/dc/terms/description>
+                "Get the weather forcast of the day for you city. \nInfo display:  wind, visibility, temperature, sky conditions and pressure. \nThe default value is my home town. \nTo find out any supported city run the 'Get cities by country name' workflow" ;
+        <http://purl.org/dc/terms/title>
+                "Get weather information" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/CityName.value:CountryAndCity.CityName> , <http://weprov.csiro.au/controller/CountryAndCity.output:GetWeather.parameters> , <http://weprov.csiro.au/controller/CountryName.value:CountryAndCity.CountryName> , <http://weprov.csiro.au/controller/GetWeather.parameters:GetWeatherResult.input> , <http://weprov.csiro.au/controller/GetWeatherResult.GetWeatherResult:WeatherInfo> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GetWeather>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetWeather.parameters:GetWeatherResult.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetWeather" .
+
+<http://weprov.csiro.au/program/CountryAndCity>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountryAndCity.output:GetWeather.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountryAndCity" .
+
+<http://weprov.csiro.au/program/GetWeatherResult>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetWeatherResult.GetWeatherResult:WeatherInfo> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetWeatherResult" .
+
+<http://weprov.csiro.au/program/CountryName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountryName.value:CountryAndCity.CountryName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountryName" .
+
+<http://weprov.csiro.au/program/CityName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CityName.value:CountryAndCity.CityName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CityName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d049d11a-a0d5-4b14-81f8-4304781a97ba-v0/WeatherInfo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WeatherInfo" .
+
+<http://weprov.csiro.au/controller/CityName.value:CountryAndCity.CityName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CityName.value:CountryAndCity.CityName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountryAndCity> .
+
+<http://weprov.csiro.au/controller/CountryAndCity.output:GetWeather.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountryAndCity.output:GetWeather.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetWeather> .
+
+<http://weprov.csiro.au/controller/CountryName.value:CountryAndCity.CountryName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountryName.value:CountryAndCity.CountryName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountryAndCity> .
+
+<http://weprov.csiro.au/controller/GetWeather.parameters:GetWeatherResult.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetWeather.parameters:GetWeatherResult.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetWeatherResult> .
+
+<http://weprov.csiro.au/controller/GetWeatherResult.GetWeatherResult:WeatherInfo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetWeatherResult.GetWeatherResult:WeatherInfo" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

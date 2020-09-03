@@ -1,0 +1,142 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:63e5e4d3-a75c-497a-8834-d6e4053b0343-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63e5e4d3-a75c-497a-8834-d6e4053b0343-v1/Protein_sequences> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63e5e4d3-a75c-497a-8834-d6e4053b0343-v1/Blast_reports> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Split_string_into_list> , <http://weprov.csiro.au/program/Concatenate_two_strings> , <http://weprov.csiro.au/program/Program> , <http://weprov.csiro.au/program/Regex> , <http://weprov.csiro.au/program/Database> , <http://weprov.csiro.au/program/searchSimple> , <http://weprov.csiro.au/program/Remove_first_character> ;
+        <http://purl.org/dc/terms/description>
+                "This is a workflow to automate multiple BLASTp jobs on a large list of protein sequences in FASTA format." ;
+        <http://purl.org/dc/terms/title>
+                "Multiple Blastp" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:searchSimple.query> , <http://weprov.csiro.au/controller/Database.value:searchSimple.database> , <http://weprov.csiro.au/controller/Program.value:searchSimple.program> , <http://weprov.csiro.au/controller/Protein_sequences:Remove_first_character.input> , <http://weprov.csiro.au/controller/Regex.value:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/Regex.value:Split_string_into_list.regex> , <http://weprov.csiro.au/controller/Remove_first_character.fasta:Split_string_into_list.string> , <http://weprov.csiro.au/controller/Split_string_into_list.split:Concatenate_two_strings.string2> , <http://weprov.csiro.au/controller/searchSimple.Result:Blast_reports> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Split_string_into_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_list.split:Concatenate_two_strings.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_list" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:searchSimple.query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings" .
+
+<http://weprov.csiro.au/program/Program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Program.value:searchSimple.program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Program" .
+
+<http://weprov.csiro.au/program/Regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Regex.value:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/Regex.value:Split_string_into_list.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Regex" .
+
+<http://weprov.csiro.au/program/Database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Database.value:searchSimple.database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Database" .
+
+<http://weprov.csiro.au/program/searchSimple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchSimple.Result:Blast_reports> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchSimple" .
+
+<http://weprov.csiro.au/program/Remove_first_character>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_first_character.fasta:Split_string_into_list.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_first_character" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63e5e4d3-a75c-497a-8834-d6e4053b0343-v1/Protein_sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Protein_sequences" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63e5e4d3-a75c-497a-8834-d6e4053b0343-v1/Blast_reports>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blast_reports" .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings.output:searchSimple.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings.output:searchSimple.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/Database.value:searchSimple.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Database.value:searchSimple.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/Program.value:searchSimple.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Program.value:searchSimple.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/Protein_sequences:Remove_first_character.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protein_sequences:Remove_first_character.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_first_character> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Protein_sequences:Remove_first_character.input> .
+
+<http://weprov.csiro.au/controller/Regex.value:Concatenate_two_strings.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Regex.value:Concatenate_two_strings.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/Regex.value:Split_string_into_list.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Regex.value:Split_string_into_list.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_list> .
+
+<http://weprov.csiro.au/controller/Remove_first_character.fasta:Split_string_into_list.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_first_character.fasta:Split_string_into_list.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_list> .
+
+<http://weprov.csiro.au/controller/Split_string_into_list.split:Concatenate_two_strings.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_list.split:Concatenate_two_strings.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:Blast_reports>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:Blast_reports" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

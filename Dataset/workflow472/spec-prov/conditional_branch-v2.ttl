@@ -1,0 +1,115 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/condition> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/tempF> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/tempC> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/tempF> , <http://weprov.csiro.au/program/tempC> , <http://weprov.csiro.au/program/CtoF> , <http://weprov.csiro.au/program/FtoC> ;
+        <http://purl.org/dc/terms/description>
+                "If the input is true then the string 'foo' is emited, if false then 'bar'. Just a simple example to show how the monster works, so to speak." ;
+        <http://purl.org/dc/terms/title>
+                "Example of a conditional execution workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/condition:Fail_if_false.test> , <http://weprov.csiro.au/controller/condition:Fail_if_true.test> , <http://weprov.csiro.au/controller/CtoF.return:tempF> , <http://weprov.csiro.au/controller/FtoC.return:tempC> , <http://weprov.csiro.au/controller/tempC.value:CtoF.temp> , <http://weprov.csiro.au/controller/tempF.value:FtoC.temp> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/tempF>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tempF.value:FtoC.temp> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tempF" .
+
+<http://weprov.csiro.au/program/tempC>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tempC.value:CtoF.temp> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tempC" .
+
+<http://weprov.csiro.au/program/CtoF>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CtoF.return:tempF> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CtoF" .
+
+<http://weprov.csiro.au/program/FtoC>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FtoC.return:tempC> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FtoC" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/condition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "condition" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/tempF>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tempF" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:W0TIAJ5S3K0-v1/tempC>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tempC" .
+
+<http://weprov.csiro.au/controller/condition:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "condition:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/condition:Fail_if_false.test> , <http://weprov.csiro.au/controller/condition:Fail_if_true.test> .
+
+<http://weprov.csiro.au/controller/condition:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "condition:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/controller/CtoF.return:tempF>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CtoF.return:tempF" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/FtoC.return:tempC>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FtoC.return:tempC" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/tempC.value:CtoF.temp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tempC.value:CtoF.temp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CtoF> .
+
+<http://weprov.csiro.au/controller/tempF.value:FtoC.temp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tempF.value:FtoC.temp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FtoC> .

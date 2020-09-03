@@ -1,0 +1,110 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Structure_or_ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Fail_if_identifer> , <http://weprov.csiro.au/program/Fail_if_structure> , <http://weprov.csiro.au/program/Is_structure> , <http://weprov.csiro.au/program/fetchData> , <http://weprov.csiro.au/program/Use_structure> ;
+        <http://purl.org/dc/terms/description>
+                "Given a structure or structure entry identifer (e.g. PDB:1crn), return the structure in PDB format.\n\nIf a structure identifier, in database:identifier format, is input the EBI's WSDbfetch web service (see http://www.ebi.ac.uk/Tools/webservices/services/dbfetch) is used to retrive the structure in PDB format. Otherwise the input is assumed to be a formated structure and is passed through to the output." ;
+        <http://purl.org/dc/terms/title>
+                "Structure_or_ID" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Structure_or_ID:Is_structure.structure> , <http://weprov.csiro.au/controller/Structure_or_ID:fetchData.query> , <http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_identifer.test> , <http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_structure.test> , <http://weprov.csiro.au/controller/Structure_or_ID:Use_structure.in_structure> , <http://weprov.csiro.au/controller/Use_structure.out_structure:Structure> , <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Structure> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Fail_if_identifer>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_identifer" .
+
+<http://weprov.csiro.au/program/Fail_if_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_structure" .
+
+<http://weprov.csiro.au/program/Is_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_identifer.test> , <http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_structure.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Is_structure" .
+
+<http://weprov.csiro.au/program/fetchData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Structure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetchData" .
+
+<http://weprov.csiro.au/program/Use_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Use_structure.out_structure:Structure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Use_structure" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Structure_or_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Structure_or_ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Structure" .
+
+<http://weprov.csiro.au/controller/Structure_or_ID:Is_structure.structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Structure_or_ID:Is_structure.structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Is_structure> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Structure_or_ID:Is_structure.structure> , <http://weprov.csiro.au/controller/Structure_or_ID:fetchData.query> , <http://weprov.csiro.au/controller/Structure_or_ID:Use_structure.in_structure> .
+
+<http://weprov.csiro.au/controller/Structure_or_ID:fetchData.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Structure_or_ID:fetchData.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchData> .
+
+<http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_identifer.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is_structure.is_structure:Fail_if_identifer.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_identifer> .
+
+<http://weprov.csiro.au/controller/Is_structure.is_structure:Fail_if_structure.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is_structure.is_structure:Fail_if_structure.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_structure> .
+
+<http://weprov.csiro.au/controller/Structure_or_ID:Use_structure.in_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Structure_or_ID:Use_structure.in_structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Use_structure> .
+
+<http://weprov.csiro.au/controller/Use_structure.out_structure:Structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Use_structure.out_structure:Structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchData.fetchDataReturn:Structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

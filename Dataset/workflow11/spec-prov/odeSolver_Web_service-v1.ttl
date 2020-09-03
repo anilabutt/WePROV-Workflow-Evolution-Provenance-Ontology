@@ -1,0 +1,205 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/model> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/simt> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/simtp> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/atol> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/rtol> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/sensitivityAnalysis> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/error> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/timepointsXml> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/variablesList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/odeSolver> , <http://weprov.csiro.au/program/odeSolverResultXML> , <http://weprov.csiro.au/program/odeSolverParamsXML> , <http://weprov.csiro.au/program/trajectoriesXML> , <http://weprov.csiro.au/program/getVariablesNames> , <http://weprov.csiro.au/program/variablesNamesXPath> ;
+        <http://purl.org/dc/terms/description>
+                "SBML ODE Solver Library (http://www.tbi.univie.ac.at/~raim/odeSolver/) Web service." ;
+        <http://purl.org/dc/terms/title>
+                "odeSolver Web service" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/atol:odeSolverParamsXML.atol> , <http://weprov.csiro.au/controller/model:odeSolverParamsXML.model> , <http://weprov.csiro.au/controller/odeSolver.odeSolverResult:odeSolverResultXML.input> , <http://weprov.csiro.au/controller/odeSolverParamsXML.output:odeSolver.odeSolverParams> , <http://weprov.csiro.au/controller/rtol:odeSolverParamsXML.rtol> , <http://weprov.csiro.au/controller/sensitivityAnalysis:odeSolverParamsXML.sensitivityAnalysis> , <http://weprov.csiro.au/controller/simt:odeSolverParamsXML.simt> , <http://weprov.csiro.au/controller/simtp:odeSolverParamsXML.simtp> , <http://weprov.csiro.au/controller/getVariablesNames.nodelist:variablesList> , <http://weprov.csiro.au/controller/odeSolverResultXML.trajectories:trajectoriesXML.input> , <http://weprov.csiro.au/controller/trajectoriesXML.variables:getVariablesNames.xml-text> , <http://weprov.csiro.au/controller/variablesNamesXPath.value:getVariablesNames.xpath> , <http://weprov.csiro.au/controller/odeSolverResultXML.error:error> , <http://weprov.csiro.au/controller/trajectoriesXML.timepoints:timepointsXml> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/odeSolver>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/odeSolver.odeSolverResult:odeSolverResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "odeSolver" .
+
+<http://weprov.csiro.au/program/odeSolverResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/odeSolverResultXML.trajectories:trajectoriesXML.input> , <http://weprov.csiro.au/controller/odeSolverResultXML.error:error> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "odeSolverResultXML" .
+
+<http://weprov.csiro.au/program/odeSolverParamsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/odeSolverParamsXML.output:odeSolver.odeSolverParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "odeSolverParamsXML" .
+
+<http://weprov.csiro.au/program/trajectoriesXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/trajectoriesXML.variables:getVariablesNames.xml-text> , <http://weprov.csiro.au/controller/trajectoriesXML.timepoints:timepointsXml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "trajectoriesXML" .
+
+<http://weprov.csiro.au/program/getVariablesNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getVariablesNames.nodelist:variablesList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getVariablesNames" .
+
+<http://weprov.csiro.au/program/variablesNamesXPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/variablesNamesXPath.value:getVariablesNames.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "variablesNamesXPath" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "model" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/simt>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "simt" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/simtp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "simtp" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/atol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "atol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/rtol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "rtol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/sensitivityAnalysis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sensitivityAnalysis" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "error" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/timepointsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "timepointsXml" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5881c5b6-38b4-47c9-8dd4-c9932e6b9b92-v0/variablesList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "variablesList" .
+
+<http://weprov.csiro.au/controller/atol:odeSolverParamsXML.atol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "atol:odeSolverParamsXML.atol" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/atol:odeSolverParamsXML.atol> , <http://weprov.csiro.au/controller/model:odeSolverParamsXML.model> , <http://weprov.csiro.au/controller/rtol:odeSolverParamsXML.rtol> , <http://weprov.csiro.au/controller/sensitivityAnalysis:odeSolverParamsXML.sensitivityAnalysis> , <http://weprov.csiro.au/controller/simt:odeSolverParamsXML.simt> , <http://weprov.csiro.au/controller/simtp:odeSolverParamsXML.simtp> .
+
+<http://weprov.csiro.au/controller/model:odeSolverParamsXML.model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "model:odeSolverParamsXML.model" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/controller/odeSolver.odeSolverResult:odeSolverResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "odeSolver.odeSolverResult:odeSolverResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverResultXML> .
+
+<http://weprov.csiro.au/controller/odeSolverParamsXML.output:odeSolver.odeSolverParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "odeSolverParamsXML.output:odeSolver.odeSolverParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolver> .
+
+<http://weprov.csiro.au/controller/rtol:odeSolverParamsXML.rtol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rtol:odeSolverParamsXML.rtol" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/controller/sensitivityAnalysis:odeSolverParamsXML.sensitivityAnalysis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sensitivityAnalysis:odeSolverParamsXML.sensitivityAnalysis" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/controller/simt:odeSolverParamsXML.simt>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "simt:odeSolverParamsXML.simt" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/controller/simtp:odeSolverParamsXML.simtp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "simtp:odeSolverParamsXML.simtp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/odeSolverParamsXML> .
+
+<http://weprov.csiro.au/controller/getVariablesNames.nodelist:variablesList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getVariablesNames.nodelist:variablesList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/odeSolverResultXML.trajectories:trajectoriesXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "odeSolverResultXML.trajectories:trajectoriesXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/trajectoriesXML> .
+
+<http://weprov.csiro.au/controller/trajectoriesXML.variables:getVariablesNames.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "trajectoriesXML.variables:getVariablesNames.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getVariablesNames> .
+
+<http://weprov.csiro.au/controller/variablesNamesXPath.value:getVariablesNames.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "variablesNamesXPath.value:getVariablesNames.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getVariablesNames> .
+
+<http://weprov.csiro.au/controller/odeSolverResultXML.error:error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "odeSolverResultXML.error:error" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/trajectoriesXML.timepoints:timepointsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "trajectoriesXML.timepoints:timepointsXml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

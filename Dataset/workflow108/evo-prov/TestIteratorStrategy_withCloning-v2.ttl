@@ -1,0 +1,33 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-1>
+        <http://www.csiro.au/digiscape/weprov#version>
+                "1" ;
+        <http://www.w3.org/ns/prov#qualifiedRevision>
+                <http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> ;
+        <http://www.w3.org/ns/prov#wasRevisionOf>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-0> .
+
+<http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.w3.org/ns/prov#Revision> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:59:25.289Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.csiro.au/digiscape/weprov#Modification> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:59:25.264Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Marco Roos (AID)> .
+
+<http://weprov.csiro.au/agent/Marco Roos (AID)>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Marco Roos (AID)" .
+
+<http://weprov.csiro.au/evolution/renaming/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.csiro.au/digiscape/weprov#Renaming> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow implements a strategy for this problem:\n> I would like to perform an iteration including a dot product between\n>     a list and a list of lists; example:\n>     Input:\n>\n>         [1]\t\t\t(1)\n>         [A,B,C]\t\t(2)\n>         [[a,b],[c,d],[e,f]]\t\t(3)\n>\n>     Desired output:\n>\n>         [1Aa, 1Ab, 1Bc, 1Bd, 1Ce, 1Cf]\n\nIn this implementation a java beanshell is used to clone the items in list 2 as many times per item as there are items in the sublists of list 3. The iteration strategy for Clone is set top dot product.\nThus a count on list 2 produces: [2,2,2]\nClone with input: [2,2,2] . [A,B,C] produces [[A,A],[B,B],[C,C]] (note the dot product) (4)\nThen concatenation of (1)*((4).(3)) produces: [[1Aa,1Ab],[1Bc,1Bd],[1Ce,1Cf]]" ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> .

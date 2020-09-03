@@ -1,0 +1,187 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/query> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/token> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/ChemSpider_compound_info> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/ChemSpider_compound_image> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/SimpleSearch> , <http://weprov.csiro.au/program/SimpleSearch_in> , <http://weprov.csiro.au/program/SimpleSearch_out> , <http://weprov.csiro.au/program/GetCompoundThumbnail> , <http://weprov.csiro.au/program/GetExtendedCompoundInfoArray> , <http://weprov.csiro.au/program/GetInfoArray_in> , <http://weprov.csiro.au/program/GetCompoundThumbnail_in> , <http://weprov.csiro.au/program/GetCompoundThumbnail_out> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Search InChI in ChemSpider" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GetCompoundThumbnail.parameters:GetCompoundThumbnail_out.input> , <http://weprov.csiro.au/controller/SimpleSearch.parameters:SimpleSearch_out.input> , <http://weprov.csiro.au/controller/SimpleSearch_in.output:SimpleSearch.parameters> , <http://weprov.csiro.au/controller/query:SimpleSearch_in.query> , <http://weprov.csiro.au/controller/token:SimpleSearch_in.token> , <http://weprov.csiro.au/controller/GetCompoundThumbnail_in.output:GetCompoundThumbnail.parameters> , <http://weprov.csiro.au/controller/GetInfoArray_in.output:GetExtendedCompoundInfoArray.parameters> , <http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetInfoArray_in.CSIDs> , <http://weprov.csiro.au/controller/token:GetInfoArray_in.token> , <http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetCompoundThumbnail_in.id> , <http://weprov.csiro.au/controller/token:GetCompoundThumbnail_in.token> , <http://weprov.csiro.au/controller/GetCompoundThumbnail_out.GetCompoundThumbnailResult:ChemSpider_compound_image> , <http://weprov.csiro.au/controller/GetExtendedCompoundInfoArray.parameters:ChemSpider_compound_info> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/SimpleSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SimpleSearch.parameters:SimpleSearch_out.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SimpleSearch" .
+
+<http://weprov.csiro.au/program/SimpleSearch_in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SimpleSearch_in.output:SimpleSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SimpleSearch_in" .
+
+<http://weprov.csiro.au/program/SimpleSearch_out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetInfoArray_in.CSIDs> , <http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetCompoundThumbnail_in.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SimpleSearch_out" .
+
+<http://weprov.csiro.au/program/GetCompoundThumbnail>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCompoundThumbnail.parameters:GetCompoundThumbnail_out.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCompoundThumbnail" .
+
+<http://weprov.csiro.au/program/GetExtendedCompoundInfoArray>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetExtendedCompoundInfoArray.parameters:ChemSpider_compound_info> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetExtendedCompoundInfoArray" .
+
+<http://weprov.csiro.au/program/GetInfoArray_in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetInfoArray_in.output:GetExtendedCompoundInfoArray.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetInfoArray_in" .
+
+<http://weprov.csiro.au/program/GetCompoundThumbnail_in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCompoundThumbnail_in.output:GetCompoundThumbnail.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCompoundThumbnail_in" .
+
+<http://weprov.csiro.au/program/GetCompoundThumbnail_out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCompoundThumbnail_out.GetCompoundThumbnailResult:ChemSpider_compound_image> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCompoundThumbnail_out" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/token>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "token" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/ChemSpider_compound_info>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ChemSpider_compound_info" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c5593f74-d3d9-48b1-abc2-78279c9fc966-v0/ChemSpider_compound_image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ChemSpider_compound_image" .
+
+<http://weprov.csiro.au/controller/GetCompoundThumbnail.parameters:GetCompoundThumbnail_out.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCompoundThumbnail.parameters:GetCompoundThumbnail_out.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundThumbnail_out> .
+
+<http://weprov.csiro.au/controller/SimpleSearch.parameters:SimpleSearch_out.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SimpleSearch.parameters:SimpleSearch_out.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SimpleSearch_out> .
+
+<http://weprov.csiro.au/controller/SimpleSearch_in.output:SimpleSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SimpleSearch_in.output:SimpleSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SimpleSearch> .
+
+<http://weprov.csiro.au/controller/query:SimpleSearch_in.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query:SimpleSearch_in.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SimpleSearch_in> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query:SimpleSearch_in.query> , <http://weprov.csiro.au/controller/token:SimpleSearch_in.token> , <http://weprov.csiro.au/controller/token:GetInfoArray_in.token> , <http://weprov.csiro.au/controller/token:GetCompoundThumbnail_in.token> .
+
+<http://weprov.csiro.au/controller/token:SimpleSearch_in.token>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token:SimpleSearch_in.token" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SimpleSearch_in> .
+
+<http://weprov.csiro.au/controller/GetCompoundThumbnail_in.output:GetCompoundThumbnail.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCompoundThumbnail_in.output:GetCompoundThumbnail.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundThumbnail> .
+
+<http://weprov.csiro.au/controller/GetInfoArray_in.output:GetExtendedCompoundInfoArray.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetInfoArray_in.output:GetExtendedCompoundInfoArray.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetExtendedCompoundInfoArray> .
+
+<http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetInfoArray_in.CSIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SimpleSearch_out.SimpleSearchResult:GetInfoArray_in.CSIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetInfoArray_in> .
+
+<http://weprov.csiro.au/controller/token:GetInfoArray_in.token>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token:GetInfoArray_in.token" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetInfoArray_in> .
+
+<http://weprov.csiro.au/controller/SimpleSearch_out.SimpleSearchResult:GetCompoundThumbnail_in.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SimpleSearch_out.SimpleSearchResult:GetCompoundThumbnail_in.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundThumbnail_in> .
+
+<http://weprov.csiro.au/controller/token:GetCompoundThumbnail_in.token>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token:GetCompoundThumbnail_in.token" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundThumbnail_in> .
+
+<http://weprov.csiro.au/controller/GetCompoundThumbnail_out.GetCompoundThumbnailResult:ChemSpider_compound_image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCompoundThumbnail_out.GetCompoundThumbnailResult:ChemSpider_compound_image" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetExtendedCompoundInfoArray.parameters:ChemSpider_compound_info>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetExtendedCompoundInfoArray.parameters:ChemSpider_compound_info" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

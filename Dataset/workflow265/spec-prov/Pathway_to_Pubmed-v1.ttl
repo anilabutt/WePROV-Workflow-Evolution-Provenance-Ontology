@@ -1,0 +1,499 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pathway_descriptions> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pathway_abstracts> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/regex> , <http://weprov.csiro.au/program/merge_outputs_2> , <http://weprov.csiro.au/program/remove_nulls> , <http://weprov.csiro.au/program/split_search_terms> , <http://weprov.csiro.au/program/pathway_and_abstract> , <http://weprov.csiro.au/program/extract_terms> , <http://weprov.csiro.au/program/add_MeSH_to_string> , <http://weprov.csiro.au/program/Search_PubMed> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in a list of KEGG pathway descriptions and searches the PubMed database for corresponding articles. Any matches to the pathways are then retrieved (abstracts only). These abstracts are then returned to the user." ;
+        <http://purl.org/dc/terms/title>
+                "Pathway to Pubmed" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Search_PubMed.concat_data:pathway_and_abstract.abstracts> , <http://weprov.csiro.au/controller/add_MeSH_to_string.output:split_search_terms.string> , <http://weprov.csiro.au/controller/extract_terms.output:add_MeSH_to_string.input> , <http://weprov.csiro.au/controller/pathway_descriptions:extract_terms.input> , <http://weprov.csiro.au/controller/merge_outputs_2.concatenated:pathway_abstracts> , <http://weprov.csiro.au/controller/pathway_and_abstract.output:remove_nulls.input> , <http://weprov.csiro.au/controller/regex.value:split_search_terms.regex> , <http://weprov.csiro.au/controller/remove_nulls.output:merge_outputs_2.stringlist> , <http://weprov.csiro.au/controller/split_search_terms.split:Search_PubMed.Pathway_search_term> , <http://weprov.csiro.au/controller/split_search_terms.split:pathway_and_abstract.pathway> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/regex.value:split_search_terms.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "regex" .
+
+<http://weprov.csiro.au/program/merge_outputs_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_outputs_2.concatenated:pathway_abstracts> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_outputs_2" .
+
+<http://weprov.csiro.au/program/remove_nulls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/remove_nulls.output:merge_outputs_2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "remove_nulls" .
+
+<http://weprov.csiro.au/program/split_search_terms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_search_terms.split:Search_PubMed.Pathway_search_term> , <http://weprov.csiro.au/controller/split_search_terms.split:pathway_and_abstract.pathway> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_search_terms" .
+
+<http://weprov.csiro.au/program/pathway_and_abstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pathway_and_abstract.output:remove_nulls.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pathway_and_abstract" .
+
+<http://weprov.csiro.au/program/extract_terms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extract_terms.output:add_MeSH_to_string.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extract_terms" .
+
+<http://weprov.csiro.au/program/add_MeSH_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/add_MeSH_to_string.output:split_search_terms.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "add_MeSH_to_string" .
+
+<http://weprov.csiro.au/program/Search_PubMed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Search_PubMed.concat_data:pathway_and_abstract.abstracts> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Search_PubMed" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0/Pathway_search_term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0/concat_data> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/extractPMID> , <http://weprov.csiro.au/program/xpath> , <http://weprov.csiro.au/program/merge_abstract_ids> , <http://weprov.csiro.au/program/pubmed_database> , <http://weprov.csiro.au/program/concat_abstract_ids> , <http://weprov.csiro.au/program/max_return> , <http://weprov.csiro.au/program/merge_abstracts> , <http://weprov.csiro.au/program/parametersXML_eFecth> , <http://weprov.csiro.au/program/run_eSearch> , <http://weprov.csiro.au/program/merge_dates> , <http://weprov.csiro.au/program/Retrive_abstracts> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in a list of KEGG pathway descriptions and a stop_list of KEGG pathway descriptions. These patwhays are then compared, and those in the stop list are removed. The workflow then extracts the pathway process from the KEGG formatted pathway descriptions output. It takes in a list of KEGG pathway descriptions and returns a list of pathways, without the KEGG pathway identifier or the species from which it came (e.g. - mus musculus (mouse) ). These are passed to the eSearch function and searched for in PubMed. Those abstracts found are returned to the user" ;
+        <http://purl.org/dc/terms/title>
+                "Pathway to PubMed" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Pathway_search_term:parametersXML_eFecth.term> , <http://weprov.csiro.au/controller/Retrive_abstracts.abstract:merge_abstracts.stringlist> , <http://weprov.csiro.au/controller/Retrive_abstracts.date:merge_dates.stringlist> , <http://weprov.csiro.au/controller/concat_abstract_ids.output:merge_abstract_ids.stringlist> , <http://weprov.csiro.au/controller/extractPMID.nodelist:Retrive_abstracts.pubmed_ids> , <http://weprov.csiro.au/controller/extractPMID.nodelist:concat_abstract_ids.id> , <http://weprov.csiro.au/controller/max_return.value:parametersXML_eFecth.RetMax> , <http://weprov.csiro.au/controller/merge_abstract_ids.concatenated:concat_data> , <http://weprov.csiro.au/controller/merge_abstracts.concatenated:concat_abstract_ids.abstract_text> , <http://weprov.csiro.au/controller/merge_dates.concatenated:concat_abstract_ids.date_text> , <http://weprov.csiro.au/controller/parametersXML_eFecth.output:run_eSearch.parameters> , <http://weprov.csiro.au/controller/pubmed_database.value:parametersXML_eFecth.db> , <http://weprov.csiro.au/controller/run_eSearch.parameters:extractPMID.xml-text> , <http://weprov.csiro.au/controller/xpath.value:extractPMID.xpath> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/extractPMID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractPMID.nodelist:Retrive_abstracts.pubmed_ids> , <http://weprov.csiro.au/controller/extractPMID.nodelist:concat_abstract_ids.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractPMID" .
+
+<http://weprov.csiro.au/program/xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/xpath.value:extractAbstract.xpath> , <http://weprov.csiro.au/controller/xpath.value:extractPMID.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xpath" .
+
+<http://weprov.csiro.au/program/merge_abstract_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_abstract_ids.concatenated:concat_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_abstract_ids" .
+
+<http://weprov.csiro.au/program/pubmed_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pubmed_database.value:parametersXML_eFecth.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pubmed_database" .
+
+<http://weprov.csiro.au/program/concat_abstract_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/concat_abstract_ids.output:merge_abstract_ids.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "concat_abstract_ids" .
+
+<http://weprov.csiro.au/program/max_return>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/max_return.value:parametersXML_eFecth.RetMax> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "max_return" .
+
+<http://weprov.csiro.au/program/merge_abstracts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_abstracts.concatenated:concat_abstract_ids.abstract_text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_abstracts" .
+
+<http://weprov.csiro.au/program/parametersXML_eFecth>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML_eFecth.output:run_eSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML_eFecth" .
+
+<http://weprov.csiro.au/program/run_eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSearch.parameters:extractPMID.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSearch" .
+
+<http://weprov.csiro.au/program/merge_dates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_dates.concatenated:concat_abstract_ids.date_text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_dates" .
+
+<http://weprov.csiro.au/program/Retrive_abstracts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrive_abstracts.abstract:merge_abstracts.stringlist> , <http://weprov.csiro.au/controller/Retrive_abstracts.date:merge_dates.stringlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrive_abstracts" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/pubmed_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/abstract> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/date> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/xpath> , <http://weprov.csiro.au/program/database> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/extractAbstract> , <http://weprov.csiro.au/program/xpath_2> , <http://weprov.csiro.au/program/extractDates> , <http://weprov.csiro.au/program/run_eFetch> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in a number of search terms (as used in the normal PubMed interface) and retrieves a list of PubMed ids in a list format." ;
+        <http://purl.org/dc/terms/title>
+                "XPath Pubmed Ids" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/database.value:parametersXML.db> , <http://weprov.csiro.au/controller/extractAbstract.nodelist:abstract> , <http://weprov.csiro.au/controller/extractDates.nodelist:date> , <http://weprov.csiro.au/controller/parametersXML.output:run_eFetch.parameters> , <http://weprov.csiro.au/controller/pubmed_ids:parametersXML.id> , <http://weprov.csiro.au/controller/run_eFetch.parameters:extractAbstract.xml-text> , <http://weprov.csiro.au/controller/run_eFetch.parameters:extractDates.xml-text> , <http://weprov.csiro.au/controller/xpath.value:extractAbstract.xpath> , <http://weprov.csiro.au/controller/xpath_2.value:extractDates.xpath> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/database.value:parametersXML.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:run_eFetch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/extractAbstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractAbstract.nodelist:abstract> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractAbstract" .
+
+<http://weprov.csiro.au/program/xpath_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/xpath_2.value:extractDates.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xpath_2" .
+
+<http://weprov.csiro.au/program/extractDates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractDates.nodelist:date> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractDates" .
+
+<http://weprov.csiro.au/program/run_eFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eFetch.parameters:extractAbstract.xml-text> , <http://weprov.csiro.au/controller/run_eFetch.parameters:extractDates.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eFetch" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/pubmed_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pubmed_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/abstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "abstract" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:SOWUXPE5TJ0-v0/date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "date" .
+
+<http://weprov.csiro.au/controller/database.value:parametersXML.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database.value:parametersXML.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/extractAbstract.nodelist:abstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractAbstract.nodelist:abstract" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pubmed_ids:parametersXML.id> , <http://weprov.csiro.au/controller/Pathway_search_term:parametersXML_eFecth.term> , <http://weprov.csiro.au/controller/pathway_descriptions:extract_terms.input> .
+
+<http://weprov.csiro.au/controller/extractDates.nodelist:date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractDates.nodelist:date" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:run_eFetch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:run_eFetch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eFetch> .
+
+<http://weprov.csiro.au/controller/pubmed_ids:parametersXML.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pubmed_ids:parametersXML.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/run_eFetch.parameters:extractAbstract.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eFetch.parameters:extractAbstract.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractAbstract> .
+
+<http://weprov.csiro.au/controller/run_eFetch.parameters:extractDates.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eFetch.parameters:extractDates.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractDates> .
+
+<http://weprov.csiro.au/controller/xpath.value:extractAbstract.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xpath.value:extractAbstract.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractAbstract> .
+
+<http://weprov.csiro.au/controller/xpath_2.value:extractDates.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xpath_2.value:extractDates.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractDates> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0/Pathway_search_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Pathway_search_term" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cb167580-7e96-4651-afef-a0a16d1d2f97-v0/concat_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concat_data" .
+
+<http://weprov.csiro.au/controller/Pathway_search_term:parametersXML_eFecth.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Pathway_search_term:parametersXML_eFecth.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML_eFecth> .
+
+<http://weprov.csiro.au/controller/Retrive_abstracts.abstract:merge_abstracts.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrive_abstracts.abstract:merge_abstracts.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_abstracts> .
+
+<http://weprov.csiro.au/controller/Retrive_abstracts.date:merge_dates.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrive_abstracts.date:merge_dates.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_dates> .
+
+<http://weprov.csiro.au/controller/concat_abstract_ids.output:merge_abstract_ids.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concat_abstract_ids.output:merge_abstract_ids.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_abstract_ids> .
+
+<http://weprov.csiro.au/controller/extractPMID.nodelist:Retrive_abstracts.pubmed_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractPMID.nodelist:Retrive_abstracts.pubmed_ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrive_abstracts> .
+
+<http://weprov.csiro.au/controller/extractPMID.nodelist:concat_abstract_ids.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractPMID.nodelist:concat_abstract_ids.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_abstract_ids> .
+
+<http://weprov.csiro.au/controller/max_return.value:parametersXML_eFecth.RetMax>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "max_return.value:parametersXML_eFecth.RetMax" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML_eFecth> .
+
+<http://weprov.csiro.au/controller/merge_abstract_ids.concatenated:concat_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_abstract_ids.concatenated:concat_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/merge_abstracts.concatenated:concat_abstract_ids.abstract_text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_abstracts.concatenated:concat_abstract_ids.abstract_text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_abstract_ids> .
+
+<http://weprov.csiro.au/controller/merge_dates.concatenated:concat_abstract_ids.date_text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_dates.concatenated:concat_abstract_ids.date_text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_abstract_ids> .
+
+<http://weprov.csiro.au/controller/parametersXML_eFecth.output:run_eSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML_eFecth.output:run_eSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch> .
+
+<http://weprov.csiro.au/controller/pubmed_database.value:parametersXML_eFecth.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pubmed_database.value:parametersXML_eFecth.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML_eFecth> .
+
+<http://weprov.csiro.au/controller/run_eSearch.parameters:extractPMID.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch.parameters:extractPMID.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractPMID> .
+
+<http://weprov.csiro.au/controller/xpath.value:extractPMID.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xpath.value:extractPMID.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractPMID> .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pathway_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pathway_descriptions" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pathway_abstracts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_abstracts" .
+
+<http://weprov.csiro.au/controller/Search_PubMed.concat_data:pathway_and_abstract.abstracts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Search_PubMed.concat_data:pathway_and_abstract.abstracts" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pathway_and_abstract> .
+
+<http://weprov.csiro.au/controller/add_MeSH_to_string.output:split_search_terms.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_MeSH_to_string.output:split_search_terms.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_search_terms> .
+
+<http://weprov.csiro.au/controller/extract_terms.output:add_MeSH_to_string.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract_terms.output:add_MeSH_to_string.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_MeSH_to_string> .
+
+<http://weprov.csiro.au/controller/pathway_descriptions:extract_terms.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_descriptions:extract_terms.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract_terms> .
+
+<http://weprov.csiro.au/controller/merge_outputs_2.concatenated:pathway_abstracts>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_outputs_2.concatenated:pathway_abstracts" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/pathway_and_abstract.output:remove_nulls.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_and_abstract.output:remove_nulls.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/remove_nulls> .
+
+<http://weprov.csiro.au/controller/regex.value:split_search_terms.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex.value:split_search_terms.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_search_terms> .
+
+<http://weprov.csiro.au/controller/remove_nulls.output:merge_outputs_2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "remove_nulls.output:merge_outputs_2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_outputs_2> .
+
+<http://weprov.csiro.au/controller/split_search_terms.split:Search_PubMed.Pathway_search_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_search_terms.split:Search_PubMed.Pathway_search_term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Search_PubMed> .
+
+<http://weprov.csiro.au/controller/split_search_terms.split:pathway_and_abstract.pathway>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_search_terms.split:pathway_and_abstract.pathway" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pathway_and_abstract> .

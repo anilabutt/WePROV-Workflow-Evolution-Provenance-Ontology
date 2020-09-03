@@ -1,0 +1,363 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/Sequence> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/PICR_result> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/UniParc_entry> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/InterPro_matches> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Spit_PICR_result> , <http://weprov.csiro.au/program/EBI_dbfetch_UniParc> , <http://weprov.csiro.au/program/EBI_Fetch_InterPro_Matches_UniParc> , <http://weprov.csiro.au/program/EBI_PICR_sequence_to_ID> ;
+        <http://purl.org/dc/terms/description>
+                "Given a protein sequence get some information about it:\n\n1. Does this protein sequence occur in any of the protein databases (e.g. UniProtKB, PDB, etc.). Using the PICR web service (see http://www.ebi.ac.uk/Tools/picr/) map the sequence to a UniParc identifer.\n\n2. Which entries in the protein databases have this sequence. Using the UniParc database (see http://www.ebi.ac.uk/uniprot/database/DBDescription.html#uniparc) a summary of the databases and the entries in those databases which have this sequence is obtained.\n\n3. Does any protein domain or family information exist for this sequence. Using the InterPro Matches UniParc database (see http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+LibInfo+-lib+IPRMC_UNIPARC) a summary of the known signature matches is obtained." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_PICR_Sequence_to_UniParc_and_InterPro" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Sequence:EBI_PICR_sequence_to_ID.Sequence> , <http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:Spit_PICR_result.input> , <http://weprov.csiro.au/controller/EBI_Fetch_InterPro_Matches_UniParc.InterPro_Matches:InterPro_matches> , <http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:PICR_result> , <http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_Fetch_InterPro_Matches_UniParc.UniParc_ID> , <http://weprov.csiro.au/controller/EBI_dbfetch_UniParc.UniParc_entries:UniParc_entry> , <http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_dbfetch_UniParc.ID_list> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Spit_PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_Fetch_InterPro_Matches_UniParc.UniParc_ID> , <http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_dbfetch_UniParc.ID_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Spit_PICR_result" .
+
+<http://weprov.csiro.au/program/EBI_dbfetch_UniParc>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_dbfetch_UniParc.UniParc_entries:UniParc_entry> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_dbfetch_UniParc" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/ID_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/UniParc_entries> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/UniParc_entries_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Extract_entries> , <http://weprov.csiro.au/program/Format_list_for_dbfetch> , <http://weprov.csiro.au/program/fetchBatch> ;
+        <http://purl.org/dc/terms/description>
+                "From a list of UniParc entry identifers get the complete entries using the EBI's WSDbfetch service." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_dbfetch_UniParc" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Format_list_for_dbfetch.concatenated:fetchBatch.ids> , <http://weprov.csiro.au/controller/ID_list:Format_list_for_dbfetch.stringlist> , <http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:Extract_entries.xml-text> , <http://weprov.csiro.au/controller/Extract_entries.nodelistAsXML:UniParc_entries_list> , <http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:UniParc_entries> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Extract_entries>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_entries.nodelistAsXML:UniParc_entries_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_entries" .
+
+<http://weprov.csiro.au/program/Format_list_for_dbfetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Format_list_for_dbfetch.concatenated:fetchBatch.ids> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Format_list_for_dbfetch" .
+
+<http://weprov.csiro.au/program/fetchBatch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:Extract_entries.xml-text> , <http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:UniParc_entries> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetchBatch" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/ID_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ID_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/UniParc_entries>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniParc_entries" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5edb205c-2be5-483f-9f89-712f1130ffb1-v0/UniParc_entries_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniParc_entries_list" .
+
+<http://weprov.csiro.au/controller/Format_list_for_dbfetch.concatenated:fetchBatch.ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Format_list_for_dbfetch.concatenated:fetchBatch.ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchBatch> .
+
+<http://weprov.csiro.au/controller/ID_list:Format_list_for_dbfetch.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ID_list:Format_list_for_dbfetch.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Format_list_for_dbfetch> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ID_list:Format_list_for_dbfetch.stringlist> , <http://weprov.csiro.au/controller/UniParc_ID:Build_InterPro_Matches_UniParc_URL.uniparc_id> , <http://weprov.csiro.au/controller/Sequence:PICR_input_params.sequence> , <http://weprov.csiro.au/controller/Sequence:EBI_PICR_sequence_to_ID.Sequence> .
+
+<http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:Extract_entries.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchBatch.fetchBatchReturn:Extract_entries.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_entries> .
+
+<http://weprov.csiro.au/controller/Extract_entries.nodelistAsXML:UniParc_entries_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_entries.nodelistAsXML:UniParc_entries_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fetchBatch.fetchBatchReturn:UniParc_entries>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchBatch.fetchBatchReturn:UniParc_entries" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/EBI_Fetch_InterPro_Matches_UniParc>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_Fetch_InterPro_Matches_UniParc.InterPro_Matches:InterPro_matches> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_Fetch_InterPro_Matches_UniParc" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0/UniParc_ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0/InterPro_Matches> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_entry_from_SRS> , <http://weprov.csiro.au/program/Build_InterPro_Matches_UniParc_URL> , <http://weprov.csiro.au/program/Check_for_SRS_error> ;
+        <http://purl.org/dc/terms/description>
+                "For a UniParc (see http://www.ebi.ac.uk/uniprot/database/DBDescription.html#uniparc) identifier/accession fetch the assocated InterPro Matches from SRS@EBI (see http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+LibInfo+-lib+IPRMC_UNIPARC)." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_Fetch_InterPro_Matches_UniParc" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/UniParc_ID:Build_InterPro_Matches_UniParc_URL.uniparc_id> , <http://weprov.csiro.au/controller/Build_InterPro_Matches_UniParc_URL.iprmc_uniparc_url:Get_entry_from_SRS.url> , <http://weprov.csiro.au/controller/Get_entry_from_SRS.contents:Check_for_SRS_error.input> , <http://weprov.csiro.au/controller/Check_for_SRS_error.output:InterPro_Matches> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_entry_from_SRS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_entry_from_SRS.contents:Check_for_SRS_error.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_entry_from_SRS" .
+
+<http://weprov.csiro.au/program/Build_InterPro_Matches_UniParc_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Build_InterPro_Matches_UniParc_URL.iprmc_uniparc_url:Get_entry_from_SRS.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Build_InterPro_Matches_UniParc_URL" .
+
+<http://weprov.csiro.au/program/Check_for_SRS_error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Check_for_SRS_error.output:InterPro_Matches> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Check_for_SRS_error" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0/UniParc_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "UniParc_ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ab14daa5-e903-4d04-803f-9adca01415db-v0/InterPro_Matches>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InterPro_Matches" .
+
+<http://weprov.csiro.au/controller/UniParc_ID:Build_InterPro_Matches_UniParc_URL.uniparc_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniParc_ID:Build_InterPro_Matches_UniParc_URL.uniparc_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Build_InterPro_Matches_UniParc_URL> .
+
+<http://weprov.csiro.au/controller/Build_InterPro_Matches_UniParc_URL.iprmc_uniparc_url:Get_entry_from_SRS.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Build_InterPro_Matches_UniParc_URL.iprmc_uniparc_url:Get_entry_from_SRS.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_entry_from_SRS> .
+
+<http://weprov.csiro.au/controller/Get_entry_from_SRS.contents:Check_for_SRS_error.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_entry_from_SRS.contents:Check_for_SRS_error.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_for_SRS_error> .
+
+<http://weprov.csiro.au/controller/Check_for_SRS_error.output:InterPro_Matches>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Check_for_SRS_error.output:InterPro_Matches" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/EBI_PICR_sequence_to_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:Spit_PICR_result.input> , <http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:PICR_result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_PICR_sequence_to_ID" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0/Sequence> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0/PICR_result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getUPIForSequence> , <http://weprov.csiro.au/program/PICR_input_params> , <http://weprov.csiro.au/program/Unwrap_PICR_result> ;
+        <http://purl.org/dc/terms/description>
+                "Map a protein sequence to the known identifiers of identical sequences.\n\nUses the EBI's PICR web service (see http://www.ebi.ac.uk/Tools/picr/) to perform the mapping." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_PICR_Sequence_to_ID" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/PICR_input_params.output:getUPIForSequence.parameters> , <http://weprov.csiro.au/controller/Sequence:PICR_input_params.sequence> , <http://weprov.csiro.au/controller/getUPIForSequence.parameters:Unwrap_PICR_result.input> , <http://weprov.csiro.au/controller/Unwrap_PICR_result.getUPIForSequenceReturn:PICR_result> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/getUPIForSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getUPIForSequence.parameters:Unwrap_PICR_result.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getUPIForSequence" .
+
+<http://weprov.csiro.au/program/PICR_input_params>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PICR_input_params.output:getUPIForSequence.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PICR_input_params" .
+
+<http://weprov.csiro.au/program/Unwrap_PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Unwrap_PICR_result.getUPIForSequenceReturn:PICR_result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Unwrap_PICR_result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0/Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:256aab34-9ba8-40be-a39c-f621100e3507-v0/PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PICR_result" .
+
+<http://weprov.csiro.au/controller/PICR_input_params.output:getUPIForSequence.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PICR_input_params.output:getUPIForSequence.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getUPIForSequence> .
+
+<http://weprov.csiro.au/controller/Sequence:PICR_input_params.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence:PICR_input_params.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/PICR_input_params> .
+
+<http://weprov.csiro.au/controller/getUPIForSequence.parameters:Unwrap_PICR_result.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getUPIForSequence.parameters:Unwrap_PICR_result.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Unwrap_PICR_result> .
+
+<http://weprov.csiro.au/controller/Unwrap_PICR_result.getUPIForSequenceReturn:PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unwrap_PICR_result.getUPIForSequenceReturn:PICR_result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PICR_result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/UniParc_entry>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniParc_entry" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:163686eb-6776-4f67-a5ec-52fa991f5d89-v0/InterPro_matches>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InterPro_matches" .
+
+<http://weprov.csiro.au/controller/Sequence:EBI_PICR_sequence_to_ID.Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence:EBI_PICR_sequence_to_ID.Sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_PICR_sequence_to_ID> .
+
+<http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:Spit_PICR_result.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_PICR_sequence_to_ID.PICR_result:Spit_PICR_result.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Spit_PICR_result> .
+
+<http://weprov.csiro.au/controller/EBI_Fetch_InterPro_Matches_UniParc.InterPro_Matches:InterPro_matches>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_Fetch_InterPro_Matches_UniParc.InterPro_Matches:InterPro_matches" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EBI_PICR_sequence_to_ID.PICR_result:PICR_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_PICR_sequence_to_ID.PICR_result:PICR_result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_Fetch_InterPro_Matches_UniParc.UniParc_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Spit_PICR_result.UPI:EBI_Fetch_InterPro_Matches_UniParc.UniParc_ID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_Fetch_InterPro_Matches_UniParc> .
+
+<http://weprov.csiro.au/controller/EBI_dbfetch_UniParc.UniParc_entries:UniParc_entry>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_dbfetch_UniParc.UniParc_entries:UniParc_entry" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Spit_PICR_result.UPI:EBI_dbfetch_UniParc.ID_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Spit_PICR_result.UPI:EBI_dbfetch_UniParc.ID_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_dbfetch_UniParc> .

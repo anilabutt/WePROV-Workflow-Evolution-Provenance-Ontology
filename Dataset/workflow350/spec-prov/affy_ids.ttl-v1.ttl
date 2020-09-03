@@ -1,0 +1,75 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/result_type> , <http://weprov.csiro.au/program/arguments> , <http://weprov.csiro.au/program/query> , <http://weprov.csiro.au/program/affy_ids> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/arguments.value:query.args> , <http://weprov.csiro.au/controller/query.return:affy_ids.data_direct_data> , <http://weprov.csiro.au/controller/result_type.value:query.resultType> , <http://weprov.csiro.au/controller/affy_ids.output:output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/result_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/result_type.value:query.resultType> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "result_type" .
+
+<http://weprov.csiro.au/program/arguments>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/arguments.value:query.args> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "arguments" .
+
+<http://weprov.csiro.au/program/query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query.return:affy_ids.data_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query" .
+
+<http://weprov.csiro.au/program/affy_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/affy_ids.output:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "affy_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/controller/arguments.value:query.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "arguments.value:query.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/query> .
+
+<http://weprov.csiro.au/controller/query.return:affy_ids.data_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query.return:affy_ids.data_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/affy_ids> .
+
+<http://weprov.csiro.au/controller/result_type.value:query.resultType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "result_type.value:query.resultType" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/query> .
+
+<http://weprov.csiro.au/controller/affy_ids.output:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "affy_ids.output:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

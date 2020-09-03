@@ -1,0 +1,38 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:baf26a73-b4d0-4267-ae8f-badc08df0668-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_classification_result_consider_different_origins> , <http://weprov.csiro.au/program/Get_molecule_ID_s_and_origin_from_database> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow load an ART2A classifcation results and creates a diagram showing the origin allocation within the different cluster or classes. This is usable for performing a chemical diversity analysis. The result is stored within an PDF which contains a diagram and a table of the classification result." ;
+        <http://purl.org/dc/terms/title>
+                "Get ART2A classification result showing the different origins of the vectors" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.moleculeIDs:Get_classification_result_consider_different_origins.MoleculeIDList> , <http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.origin:Get_classification_result_consider_different_origins.MoleculeOriginList> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_classification_result_consider_different_origins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_classification_result_consider_different_origins" .
+
+<http://weprov.csiro.au/program/Get_molecule_ID_s_and_origin_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.moleculeIDs:Get_classification_result_consider_different_origins.MoleculeIDList> , <http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.origin:Get_classification_result_consider_different_origins.MoleculeOriginList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_molecule_ID_s_and_origin_from_database" .
+
+<http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.moleculeIDs:Get_classification_result_consider_different_origins.MoleculeIDList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_molecule_ID_s_and_origin_from_database.moleculeIDs:Get_classification_result_consider_different_origins.MoleculeIDList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_classification_result_consider_different_origins> .
+
+<http://weprov.csiro.au/controller/Get_molecule_ID_s_and_origin_from_database.origin:Get_classification_result_consider_different_origins.MoleculeOriginList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_molecule_ID_s_and_origin_from_database.origin:Get_classification_result_consider_different_origins.MoleculeOriginList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_classification_result_consider_different_origins> .

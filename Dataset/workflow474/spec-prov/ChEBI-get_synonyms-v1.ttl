@@ -1,0 +1,107 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e3ebcf5e-d929-4e4d-8fd5-3e48d3334c79-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e3ebcf5e-d929-4e4d-8fd5-3e48d3334c79-v0/chebi_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e3ebcf5e-d929-4e4d-8fd5-3e48d3334c79-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getCompleteEntity> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/resultXML> , <http://weprov.csiro.au/program/returnXML> , <http://weprov.csiro.au/program/SynonymsXML> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "ChEBI-get_synonyms" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/chebi_id:parametersXML.chebiId> , <http://weprov.csiro.au/controller/SynonymsXML.data:out> , <http://weprov.csiro.au/controller/getCompleteEntity.result:resultXML.input> , <http://weprov.csiro.au/controller/parametersXML.output:getCompleteEntity.parameters> , <http://weprov.csiro.au/controller/resultXML.return:returnXML.input> , <http://weprov.csiro.au/controller/returnXML.Synonyms:SynonymsXML.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/getCompleteEntity>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getCompleteEntity.result:resultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getCompleteEntity" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:getCompleteEntity.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/resultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/resultXML.return:returnXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "resultXML" .
+
+<http://weprov.csiro.au/program/returnXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/returnXML.Synonyms:SynonymsXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "returnXML" .
+
+<http://weprov.csiro.au/program/SynonymsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SynonymsXML.data:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SynonymsXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e3ebcf5e-d929-4e4d-8fd5-3e48d3334c79-v0/chebi_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "chebi_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e3ebcf5e-d929-4e4d-8fd5-3e48d3334c79-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/chebi_id:parametersXML.chebiId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "chebi_id:parametersXML.chebiId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/chebi_id:parametersXML.chebiId> .
+
+<http://weprov.csiro.au/controller/SynonymsXML.data:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SynonymsXML.data:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getCompleteEntity.result:resultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCompleteEntity.result:resultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/resultXML> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:getCompleteEntity.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:getCompleteEntity.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCompleteEntity> .
+
+<http://weprov.csiro.au/controller/resultXML.return:returnXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultXML.return:returnXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/returnXML> .
+
+<http://weprov.csiro.au/controller/returnXML.Synonyms:SynonymsXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "returnXML.Synonyms:SynonymsXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SynonymsXML> .

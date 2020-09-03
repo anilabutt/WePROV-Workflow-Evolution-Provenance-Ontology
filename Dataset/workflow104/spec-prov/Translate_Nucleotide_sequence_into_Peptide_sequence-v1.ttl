@@ -1,0 +1,221 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/result_sequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/nucle_sequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_trans_report> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_detail_status> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_file> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/query> , <http://weprov.csiro.au/program/style> , <http://weprov.csiro.au/program/format> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/transeqXML> , <http://weprov.csiro.au/program/runAndWaitFor_param> , <http://weprov.csiro.au/program/sequenceXML> , <http://weprov.csiro.au/program/transeqResultXML> , <http://weprov.csiro.au/program/fetchData> , <http://weprov.csiro.au/program/runAndWaitFor> , <http://weprov.csiro.au/program/Merge_string_list_to_string> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "setp2" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:sequenceXML.sequence_direct_data> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:debug_file> , <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:nucle_sequence> , <http://weprov.csiro.au/controller/format.value:fetchData.format> , <http://weprov.csiro.au/controller/parametersXML.transeqResult:transeqResultXML.input> , <http://weprov.csiro.au/controller/query.value:fetchData.query> , <http://weprov.csiro.au/controller/runAndWaitFor.parameters:parametersXML.input> , <http://weprov.csiro.au/controller/runAndWaitFor_param.output:runAndWaitFor.parameters> , <http://weprov.csiro.au/controller/sequenceXML.output:transeqXML.sequence> , <http://weprov.csiro.au/controller/style.value:fetchData.style> , <http://weprov.csiro.au/controller/transeqXML.output:runAndWaitFor_param.transeq> , <http://weprov.csiro.au/controller/transeqResultXML.detailed_status:debug_detail_status> , <http://weprov.csiro.au/controller/transeqResultXML.outseq:result_sequence> , <http://weprov.csiro.au/controller/transeqResultXML.report:debug_trans_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query.value:fetchData.query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query" .
+
+<http://weprov.csiro.au/program/style>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/style.value:fetchData.style> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "style" .
+
+<http://weprov.csiro.au/program/format>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/format.value:fetchData.format> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "format" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.transeqResult:transeqResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/transeqXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/transeqXML.output:runAndWaitFor_param.transeq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "transeqXML" .
+
+<http://weprov.csiro.au/program/runAndWaitFor_param>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/runAndWaitFor_param.output:runAndWaitFor.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "runAndWaitFor_param" .
+
+<http://weprov.csiro.au/program/sequenceXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sequenceXML.output:transeqXML.sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sequenceXML" .
+
+<http://weprov.csiro.au/program/transeqResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/transeqResultXML.detailed_status:debug_detail_status> , <http://weprov.csiro.au/controller/transeqResultXML.outseq:result_sequence> , <http://weprov.csiro.au/controller/transeqResultXML.report:debug_trans_report> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "transeqResultXML" .
+
+<http://weprov.csiro.au/program/fetchData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:nucle_sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetchData" .
+
+<http://weprov.csiro.au/program/runAndWaitFor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/runAndWaitFor.parameters:parametersXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "runAndWaitFor" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:sequenceXML.sequence_direct_data> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:debug_file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/result_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "result_sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/nucle_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nucle_sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_trans_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "debug_trans_report" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_detail_status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "debug_detail_status" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1b667acc-d79d-4d7b-97cb-e8a5a638fc6f-v0/debug_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "debug_file" .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:sequenceXML.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:sequenceXML.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sequenceXML> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:debug_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:debug_file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Merge_string_list_to_string.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchData.fetchDataReturn:Merge_string_list_to_string.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .
+
+<http://weprov.csiro.au/controller/fetchData.fetchDataReturn:nucle_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchData.fetchDataReturn:nucle_sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/format.value:fetchData.format>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "format.value:fetchData.format" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchData> .
+
+<http://weprov.csiro.au/controller/parametersXML.transeqResult:transeqResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.transeqResult:transeqResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/transeqResultXML> .
+
+<http://weprov.csiro.au/controller/query.value:fetchData.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query.value:fetchData.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchData> .
+
+<http://weprov.csiro.au/controller/runAndWaitFor.parameters:parametersXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runAndWaitFor.parameters:parametersXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/runAndWaitFor_param.output:runAndWaitFor.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runAndWaitFor_param.output:runAndWaitFor.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/runAndWaitFor> .
+
+<http://weprov.csiro.au/controller/sequenceXML.output:transeqXML.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sequenceXML.output:transeqXML.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/transeqXML> .
+
+<http://weprov.csiro.au/controller/style.value:fetchData.style>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "style.value:fetchData.style" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchData> .
+
+<http://weprov.csiro.au/controller/transeqXML.output:runAndWaitFor_param.transeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeqXML.output:runAndWaitFor_param.transeq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/runAndWaitFor_param> .
+
+<http://weprov.csiro.au/controller/transeqResultXML.detailed_status:debug_detail_status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeqResultXML.detailed_status:debug_detail_status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/transeqResultXML.outseq:result_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeqResultXML.outseq:result_sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/transeqResultXML.report:debug_trans_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeqResultXML.report:debug_trans_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

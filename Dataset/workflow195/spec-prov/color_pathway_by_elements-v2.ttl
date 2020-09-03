@@ -1,0 +1,113 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/pathway_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/element_list> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/fg_color_list> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/bg_color_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/URL> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/image> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/color_pathway_by_elements> , <http://weprov.csiro.au/program/Get_image_from_URL> ;
+        <http://purl.org/dc/terms/description>
+                "Color the objects (rectangles and circles on a pathway map) corresponding to the given 'element_id_list' with the specified colors and return the URL of the colored image. \n\nExample of inputs:\n\npathway_id: \npath:bsu00010 \n\nelement_list: \n78 \n 79\n\nfg_color_llist: \nred\nblue\n\nbg_color_list: \ngreen\nyellow" ;
+        <http://purl.org/dc/terms/title>
+                "color_pathway_by_elements" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/bg_color_list:color_pathway_by_elements.bg_color_list> , <http://weprov.csiro.au/controller/element_list:color_pathway_by_elements.element_list> , <http://weprov.csiro.au/controller/fg_color_list:color_pathway_by_elements.fg_color_list> , <http://weprov.csiro.au/controller/pathway_id:color_pathway_by_elements.pathway_id> , <http://weprov.csiro.au/controller/color_pathway_by_elements.return:Get_image_from_URL.url> , <http://weprov.csiro.au/controller/Get_image_from_URL.image:image> , <http://weprov.csiro.au/controller/color_pathway_by_elements.return:URL> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/color_pathway_by_elements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/color_pathway_by_elements.return:Get_image_from_URL.url> , <http://weprov.csiro.au/controller/color_pathway_by_elements.return:URL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "color_pathway_by_elements" .
+
+<http://weprov.csiro.au/program/Get_image_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_image_from_URL.image:image> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_image_from_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pathway_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/element_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "element_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/fg_color_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fg_color_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/bg_color_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bg_color_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:0XYB476ROH0-v1/image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "image" .
+
+<http://weprov.csiro.au/controller/bg_color_list:color_pathway_by_elements.bg_color_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bg_color_list:color_pathway_by_elements.bg_color_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/color_pathway_by_elements> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bg_color_list:color_pathway_by_elements.bg_color_list> , <http://weprov.csiro.au/controller/element_list:color_pathway_by_elements.element_list> , <http://weprov.csiro.au/controller/fg_color_list:color_pathway_by_elements.fg_color_list> , <http://weprov.csiro.au/controller/pathway_id:color_pathway_by_elements.pathway_id> .
+
+<http://weprov.csiro.au/controller/element_list:color_pathway_by_elements.element_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "element_list:color_pathway_by_elements.element_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/color_pathway_by_elements> .
+
+<http://weprov.csiro.au/controller/fg_color_list:color_pathway_by_elements.fg_color_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fg_color_list:color_pathway_by_elements.fg_color_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/color_pathway_by_elements> .
+
+<http://weprov.csiro.au/controller/pathway_id:color_pathway_by_elements.pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_id:color_pathway_by_elements.pathway_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/color_pathway_by_elements> .
+
+<http://weprov.csiro.au/controller/color_pathway_by_elements.return:Get_image_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "color_pathway_by_elements.return:Get_image_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_image_from_URL> .
+
+<http://weprov.csiro.au/controller/Get_image_from_URL.image:image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_image_from_URL.image:image" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/color_pathway_by_elements.return:URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "color_pathway_by_elements.return:URL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

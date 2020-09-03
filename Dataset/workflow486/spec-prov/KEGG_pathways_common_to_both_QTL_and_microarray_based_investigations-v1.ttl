@@ -1,0 +1,77 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/qtl_pathways> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/microarray_pathways> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/intersecting_pathways> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/kegg_pathways> , <http://weprov.csiro.au/program/common_pathways> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in two lists of KEGG pathway ids. These are designed to come from pathways found from genes in a QTL (Quantitative Trait Loci) region, and from pathways found from genes differentially expressed in a microarray study. By identifying the intersecting pathways from both studies, a more informative picture is obtained of the candidate processes involved in the expression of a phenotype" ;
+        <http://purl.org/dc/terms/title>
+                "KEGG pathways common to both QTL and microarray based investigations" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/microarray_pathways:common_pathways.microarray_pathways_direct_data> , <http://weprov.csiro.au/controller/qtl_pathways:common_pathways.qtl_pathways_direct_data> , <http://weprov.csiro.au/controller/common_pathways.output:kegg_pathways.string> , <http://weprov.csiro.au/controller/kegg_pathways.return:intersecting_pathways> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/kegg_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/kegg_pathways.return:intersecting_pathways> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "kegg_pathways" .
+
+<http://weprov.csiro.au/program/common_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/common_pathways.output:kegg_pathways.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "common_pathways" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/qtl_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "qtl_pathways" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/microarray_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "microarray_pathways" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fc665a37-4096-4cb2-9215-a415eea297b2-v0/intersecting_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "intersecting_pathways" .
+
+<http://weprov.csiro.au/controller/microarray_pathways:common_pathways.microarray_pathways_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "microarray_pathways:common_pathways.microarray_pathways_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/common_pathways> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/microarray_pathways:common_pathways.microarray_pathways_direct_data> , <http://weprov.csiro.au/controller/qtl_pathways:common_pathways.qtl_pathways_direct_data> .
+
+<http://weprov.csiro.au/controller/qtl_pathways:common_pathways.qtl_pathways_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qtl_pathways:common_pathways.qtl_pathways_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/common_pathways> .
+
+<http://weprov.csiro.au/controller/common_pathways.output:kegg_pathways.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "common_pathways.output:kegg_pathways.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/kegg_pathways> .
+
+<http://weprov.csiro.au/controller/kegg_pathways.return:intersecting_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kegg_pathways.return:intersecting_pathways" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,63 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/url> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/qr_code> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/status_code> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/qrcode> ;
+        <http://purl.org/dc/terms/description>
+                "The latest (and greatest) version of the QR code generator workflow.  This workflow uses the QR code service provided by the CombeChem project." ;
+        <http://purl.org/dc/terms/title>
+                "QR code (matrix code) generator" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/url:qrcode.qrcode_data_string> , <http://weprov.csiro.au/controller/qrcode.qr_code:qr_code> , <http://weprov.csiro.au/controller/qrcode.qr_result:status_code> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "3" .
+
+<http://weprov.csiro.au/program/qrcode>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/qrcode.qr_code:qr_code> , <http://weprov.csiro.au/controller/qrcode.qr_result:status_code> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "qrcode" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/qr_code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qr_code" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2db92a5b-7d5d-4721-9619-39cd56a55424-v3/status_code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status_code" .
+
+<http://weprov.csiro.au/controller/url:qrcode.qrcode_data_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url:qrcode.qrcode_data_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/qrcode> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/url:qrcode.qrcode_data_string> .
+
+<http://weprov.csiro.au/controller/qrcode.qr_code:qr_code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qrcode.qr_code:qr_code" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/qrcode.qr_result:status_code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "qrcode.qr_result:status_code" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

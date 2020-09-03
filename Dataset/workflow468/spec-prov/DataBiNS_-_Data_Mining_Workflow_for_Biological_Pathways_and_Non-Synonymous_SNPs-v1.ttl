@@ -1,0 +1,819 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/namespace> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_codon_position> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_allele> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_strand> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_amino_acid_variant> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_amino_acid_position> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/swiss_prot_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term_accession> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term_definition> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/frequency> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/frequency_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_description> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_name> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_summary> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_synonyms> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/entrez_gene_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_author> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_pubmed_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_abstract> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_title> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_journal_name> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/kegg_gene_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_rasmol> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/base64_PNG> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_file> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/original_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Entrez_NS> , <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/Remove_duplicate_strings2> , <http://weprov.csiro.au/program/entrez_gene_id_list_flatter> , <http://weprov.csiro.au/program/entrez_gene_list_flatter2> , <http://weprov.csiro.au/program/Parse_Moby_Data_Swiss_Prot> , <http://weprov.csiro.au/program/Parse_Moby_Data_Frequencies> , <http://weprov.csiro.au/program/Parse_Moby_Data_nsSNP> , <http://weprov.csiro.au/program/Parse_Moby_Data_GO_Term> , <http://weprov.csiro.au/program/convertSnp2EntrezGeneID> , <http://weprov.csiro.au/program/Parse_Moby_Data_pdb_id> , <http://weprov.csiro.au/program/convertKeggGeneId2ProtId> , <http://weprov.csiro.au/program/Gene2PubMed> , <http://weprov.csiro.au/program/convertKeggGeneId2PDBId> , <http://weprov.csiro.au/program/getGeneInformationByEntrezGeneID> , <http://weprov.csiro.au/program/Gene2Ontology> , <http://weprov.csiro.au/program/getSnpsBySwissProtId> , <http://weprov.csiro.au/program/PDB_id2RasMolScript> , <http://weprov.csiro.au/program/Parse_Moby_Data_Kegg> , <http://weprov.csiro.au/program/snp2Frequencies> , <http://weprov.csiro.au/program/convertIdentifier2KeggID> , <http://weprov.csiro.au/program/getEntryFromPDB> , <http://weprov.csiro.au/program/Parse_Moby_Data_Publication> , <http://weprov.csiro.au/program/getBase64SnpFrequencyImage> , <http://weprov.csiro.au/program/Parse_Moby_Data_rasmol> , <http://weprov.csiro.au/program/CreateMobyObject> , <http://weprov.csiro.au/program/Parse_Moby_Data_gene_ref> , <http://weprov.csiro.au/program/CreateEntrezGeneDataType> , <http://weprov.csiro.au/program/Parse_Moby_Data_b64_Encoded_PNG> , <http://weprov.csiro.au/program/Parse_Moby_Data_PDB_Text> , <http://weprov.csiro.au/program/Parse_Moby_Data_entrez_gene> ;
+        <http://purl.org/dc/terms/description>
+                "DataBiNS (Data Mining Workflow for Biological Pathways and Non-Synonymous SNPs)  is a workflow that takes an identifier (list of gene ids, or list of KEGG pathway ids) and proceeds to mine for Single Nucleotide Polymorphism (SNP) data that is associated with the identifiers.  \n\nThis particular variation of DataBiNS can take in several gene identifiers.  The version of DataBiNS that takes in a KEGG pathway id can be found as a separate workflow on myExperiment.  The identifers can be from the following sources:\n\n1) KEGG (Kyoto Encyclopedia of Genes and Genomes)\n2) OMIM (Online Mendelian Inheritance in Man)\n3) PMID (Pubmed Identifier) \n4) UniGene \n5) UniProt\n6) GenBank\n7) NCBI_gi\n\nWhen entering the inputs for the workflow, enter the id in the id input, and the source of the identifer into the namespace.  The source name must be EXACTLY the same name as the mentioned above.  So for example, searching by kegg id hsa:10, the namespace input must be KEGG.  Searching by OMIM id 603028, the namespace must be OMIM, etc. etc.  See also the related workflow on KEGG pathway id." ;
+        <http://purl.org/dc/terms/title>
+                "DataBiNS with Single Unique Idenitifers" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2Ontology.Object(gene)> , <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2PubMed.Object(geneid)> , <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:getGeneInformationByEntrezGeneID.Object(geneid)> , <http://weprov.csiro.au/controller/Entrez_NS.value:CreateEntrezGeneDataType.namespace> , <http://weprov.csiro.au/controller/Gene2Ontology.GO_Term(Collection - 'terms' As Simples):Parse_Moby_Data_GO_Term.mobyData('GO_Term')> , <http://weprov.csiro.au/controller/Gene2PubMed.Publication(Collection - 'publications' As Simples):Parse_Moby_Data_Publication.mobyData('Publication')> , <http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):Parse_Moby_Data_rasmol.mobyData('text-formatted')> , <http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):getEntryFromPDB.Object(id)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_id_list_flatter.inputlist> , <http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_list_flatter2.inputlist> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:CreateEntrezGeneDataType.id> , <http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):PDB_id2RasMolScript.Object(pdb_id)> , <http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):Parse_Moby_Data_pdb_id.mobyData('Object')> , <http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):Parse_Moby_Data_Swiss_Prot.mobyData('Object')> , <http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):getSnpsBySwissProtId.Object(id)> , <http://weprov.csiro.au/controller/convertSnp2EntrezGeneID.Object(geneid):Parse_Moby_Data_entrez_gene.mobyData('Object')> , <http://weprov.csiro.au/controller/getBase64SnpFrequencyImage.b64_Encoded_PNG(image):Parse_Moby_Data_b64_Encoded_PNG.mobyData('b64_Encoded_PNG')> , <http://weprov.csiro.au/controller/getEntryFromPDB.PDB-Text(entry):Parse_Moby_Data_PDB_Text.mobyData('PDB-Text')> , <http://weprov.csiro.au/controller/getGeneInformationByEntrezGeneID.gene_ref(gene_info):Parse_Moby_Data_gene_ref.mobyData('gene_ref')> , <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):Parse_Moby_Data_nsSNP.mobyData('nsSNP')> , <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):convertSnp2EntrezGeneID.Object(snp)> , <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):snp2Frequencies.Object(snpid)> , <http://weprov.csiro.au/controller/id:CreateMobyObject.id> , <http://weprov.csiro.au/controller/entrez_gene_id_list_flatter.outputlist:Remove_duplicate_strings2.stringlist> , <http://weprov.csiro.au/controller/entrez_gene_list_flatter2.outputlist:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/namespace:CreateMobyObject.namespace> , <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2PDBId.Object(kegg_gene)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency':frequency> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency'_id:frequency_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.id:go_term_accession> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Definition':go_term_definition> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Term':go_term> , <http://weprov.csiro.au/controller/Parse_Moby_Data_PDB_Text.entry_'content':pdb_file> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.id:publication_pubmed_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Abstract':publication_abstract> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Author':publication_author> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Journal':publication_journal_name> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Title':publication_title> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Swiss_Prot.id:swiss_prot_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_Encoded_PNG.image_'content':base64_PNG> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'description':gene_description> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'name':gene_name> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'summary':gene_summary> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'synonyms':gene_synonyms> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.id:gene_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.id:nsSNP_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_pos':nsSNP_amino_acid_position> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_var':nsSNP_amino_acid_variant> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'allele':nsSNP_allele> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'codon_pos':nsSNP_codon_position> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'strand':nsSNP_strand> , <http://weprov.csiro.au/controller/Parse_Moby_Data_pdb_id.id:pdb_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_rasmol.rasmol_text_'content':pdb_rasmol> , <http://weprov.csiro.au/controller/Remove_duplicate_strings2.strippedlist:entrez_gene_id> , <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2ProtId.Object(kegg_gene)> , <http://weprov.csiro.au/controller/id:original_id> , <http://weprov.csiro.au/controller/CreateMobyObject.mobyData:convertIdentifier2KeggID.Object(identifier)> , <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):Parse_Moby_Data_Kegg.mobyData('Object')> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Kegg.id:kegg_gene_id> , <http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):Parse_Moby_Data_Frequencies.mobyData('Frequencies')> , <http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):getBase64SnpFrequencyImage.Object(snpId)> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Entrez_NS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Entrez_NS.value:CreateEntrezGeneDataType.namespace> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Entrez_NS" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:CreateEntrezGeneDataType.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings2.strippedlist:entrez_gene_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings2" .
+
+<http://weprov.csiro.au/program/entrez_gene_id_list_flatter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/entrez_gene_id_list_flatter.outputlist:Remove_duplicate_strings2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "entrez_gene_id_list_flatter" .
+
+<http://weprov.csiro.au/program/entrez_gene_list_flatter2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/entrez_gene_list_flatter2.outputlist:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "entrez_gene_list_flatter2" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Swiss_Prot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Swiss_Prot.id:swiss_prot_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Swiss_Prot" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Frequencies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency':frequency> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency'_id:frequency_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Frequencies" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_nsSNP>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.id:nsSNP_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_pos':nsSNP_amino_acid_position> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_var':nsSNP_amino_acid_variant> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'allele':nsSNP_allele> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'codon_pos':nsSNP_codon_position> , <http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'strand':nsSNP_strand> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_nsSNP" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_GO_Term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.id:go_term_accession> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Definition':go_term_definition> , <http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Term':go_term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_GO_Term" .
+
+<http://weprov.csiro.au/program/convertSnp2EntrezGeneID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/convertSnp2EntrezGeneID.Object(geneid):Parse_Moby_Data_entrez_gene.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "convertSnp2EntrezGeneID" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_pdb_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_pdb_id.id:pdb_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_pdb_id" .
+
+<http://weprov.csiro.au/program/convertKeggGeneId2ProtId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):Parse_Moby_Data_Swiss_Prot.mobyData('Object')> , <http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):getSnpsBySwissProtId.Object(id)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "convertKeggGeneId2ProtId" .
+
+<http://weprov.csiro.au/program/Gene2PubMed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Gene2PubMed.Publication(Collection - 'publications' As Simples):Parse_Moby_Data_Publication.mobyData('Publication')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Gene2PubMed" .
+
+<http://weprov.csiro.au/program/convertKeggGeneId2PDBId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):PDB_id2RasMolScript.Object(pdb_id)> , <http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):Parse_Moby_Data_pdb_id.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "convertKeggGeneId2PDBId" .
+
+<http://weprov.csiro.au/program/getGeneInformationByEntrezGeneID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getGeneInformationByEntrezGeneID.gene_ref(gene_info):Parse_Moby_Data_gene_ref.mobyData('gene_ref')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getGeneInformationByEntrezGeneID" .
+
+<http://weprov.csiro.au/program/Gene2Ontology>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Gene2Ontology.GO_Term(Collection - 'terms' As Simples):Parse_Moby_Data_GO_Term.mobyData('GO_Term')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Gene2Ontology" .
+
+<http://weprov.csiro.au/program/getSnpsBySwissProtId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):Parse_Moby_Data_nsSNP.mobyData('nsSNP')> , <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):convertSnp2EntrezGeneID.Object(snp)> , <http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):snp2Frequencies.Object(snpid)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSnpsBySwissProtId" .
+
+<http://weprov.csiro.au/program/PDB_id2RasMolScript>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):Parse_Moby_Data_rasmol.mobyData('text-formatted')> , <http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):getEntryFromPDB.Object(id)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PDB_id2RasMolScript" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Kegg>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Kegg.id:kegg_gene_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Kegg" .
+
+<http://weprov.csiro.au/program/snp2Frequencies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):Parse_Moby_Data_Frequencies.mobyData('Frequencies')> , <http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):getBase64SnpFrequencyImage.Object(snpId)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "snp2Frequencies" .
+
+<http://weprov.csiro.au/program/convertIdentifier2KeggID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2PDBId.Object(kegg_gene)> , <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2ProtId.Object(kegg_gene)> , <http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):Parse_Moby_Data_Kegg.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "convertIdentifier2KeggID" .
+
+<http://weprov.csiro.au/program/getEntryFromPDB>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getEntryFromPDB.PDB-Text(entry):Parse_Moby_Data_PDB_Text.mobyData('PDB-Text')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getEntryFromPDB" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Publication>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.id:publication_pubmed_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Abstract':publication_abstract> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Author':publication_author> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Journal':publication_journal_name> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Title':publication_title> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Publication" .
+
+<http://weprov.csiro.au/program/getBase64SnpFrequencyImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getBase64SnpFrequencyImage.b64_Encoded_PNG(image):Parse_Moby_Data_b64_Encoded_PNG.mobyData('b64_Encoded_PNG')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getBase64SnpFrequencyImage" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_rasmol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_rasmol.rasmol_text_'content':pdb_rasmol> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_rasmol" .
+
+<http://weprov.csiro.au/program/CreateMobyObject>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CreateMobyObject.mobyData:convertIdentifier2KeggID.Object(identifier)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CreateMobyObject" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_gene_ref>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'description':gene_description> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'name':gene_name> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'summary':gene_summary> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'synonyms':gene_synonyms> , <http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.id:gene_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_gene_ref" .
+
+<http://weprov.csiro.au/program/CreateEntrezGeneDataType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2Ontology.Object(gene)> , <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2PubMed.Object(geneid)> , <http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:getGeneInformationByEntrezGeneID.Object(geneid)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CreateEntrezGeneDataType" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_b64_Encoded_PNG>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_Encoded_PNG.image_'content':base64_PNG> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_b64_Encoded_PNG" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_PDB_Text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_PDB_Text.entry_'content':pdb_file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_PDB_Text" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_entrez_gene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_id_list_flatter.inputlist> , <http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_list_flatter2.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_entrez_gene" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/namespace>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "namespace" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_codon_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_codon_position" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_allele>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_allele" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_strand>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_strand" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_amino_acid_variant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_amino_acid_variant" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/nsSNP_amino_acid_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nsSNP_amino_acid_position" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/swiss_prot_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "swiss_prot_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term_accession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "go_term_accession" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "go_term" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/go_term_definition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "go_term_definition" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/frequency>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "frequency" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/frequency_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "frequency_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_description" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_name" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_summary" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/gene_synonyms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_synonyms" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/entrez_gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "entrez_gene_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_author>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication_author" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_pubmed_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication_pubmed_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_abstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication_abstract" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication_title" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/publication_journal_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "publication_journal_name" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/kegg_gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kegg_gene_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdb_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_rasmol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdb_rasmol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/base64_PNG>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "base64_PNG" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/pdb_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdb_file" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:71493043-d58e-47f8-ae31-5ea403d16a3f-v0/original_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "original_id" .
+
+<http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2Ontology.Object(gene)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateEntrezGeneDataType.mobyData:Gene2Ontology.Object(gene)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Gene2Ontology> .
+
+<http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:Gene2PubMed.Object(geneid)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateEntrezGeneDataType.mobyData:Gene2PubMed.Object(geneid)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Gene2PubMed> .
+
+<http://weprov.csiro.au/controller/CreateEntrezGeneDataType.mobyData:getGeneInformationByEntrezGeneID.Object(geneid)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateEntrezGeneDataType.mobyData:getGeneInformationByEntrezGeneID.Object(geneid)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getGeneInformationByEntrezGeneID> .
+
+<http://weprov.csiro.au/controller/Entrez_NS.value:CreateEntrezGeneDataType.namespace>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Entrez_NS.value:CreateEntrezGeneDataType.namespace" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateEntrezGeneDataType> .
+
+<http://weprov.csiro.au/controller/Gene2Ontology.GO_Term(Collection - 'terms' As Simples):Parse_Moby_Data_GO_Term.mobyData('GO_Term')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Gene2Ontology.GO_Term(Collection - 'terms' As Simples):Parse_Moby_Data_GO_Term.mobyData('GO_Term')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_GO_Term> .
+
+<http://weprov.csiro.au/controller/Gene2PubMed.Publication(Collection - 'publications' As Simples):Parse_Moby_Data_Publication.mobyData('Publication')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Gene2PubMed.Publication(Collection - 'publications' As Simples):Parse_Moby_Data_Publication.mobyData('Publication')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Publication> .
+
+<http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):Parse_Moby_Data_rasmol.mobyData('text-formatted')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PDB_id2RasMolScript.text-formatted(rasmol_text):Parse_Moby_Data_rasmol.mobyData('text-formatted')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_rasmol> .
+
+<http://weprov.csiro.au/controller/PDB_id2RasMolScript.text-formatted(rasmol_text):getEntryFromPDB.Object(id)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PDB_id2RasMolScript.text-formatted(rasmol_text):getEntryFromPDB.Object(id)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getEntryFromPDB> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_id_list_flatter.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_entrez_gene.id:entrez_gene_id_list_flatter.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/entrez_gene_id_list_flatter> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_entrez_gene.id:entrez_gene_list_flatter2.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_entrez_gene.id:entrez_gene_list_flatter2.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/entrez_gene_list_flatter2> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:CreateEntrezGeneDataType.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:CreateEntrezGeneDataType.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateEntrezGeneDataType> .
+
+<http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):PDB_id2RasMolScript.Object(pdb_id)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):PDB_id2RasMolScript.Object(pdb_id)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/PDB_id2RasMolScript> .
+
+<http://weprov.csiro.au/controller/convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):Parse_Moby_Data_pdb_id.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertKeggGeneId2PDBId.Object(Collection - 'pdb_ids' As Simples):Parse_Moby_Data_pdb_id.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_pdb_id> .
+
+<http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):Parse_Moby_Data_Swiss_Prot.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertKeggGeneId2ProtId.Object(prot_id):Parse_Moby_Data_Swiss_Prot.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Swiss_Prot> .
+
+<http://weprov.csiro.au/controller/convertKeggGeneId2ProtId.Object(prot_id):getSnpsBySwissProtId.Object(id)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertKeggGeneId2ProtId.Object(prot_id):getSnpsBySwissProtId.Object(id)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSnpsBySwissProtId> .
+
+<http://weprov.csiro.au/controller/convertSnp2EntrezGeneID.Object(geneid):Parse_Moby_Data_entrez_gene.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertSnp2EntrezGeneID.Object(geneid):Parse_Moby_Data_entrez_gene.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_entrez_gene> .
+
+<http://weprov.csiro.au/controller/getBase64SnpFrequencyImage.b64_Encoded_PNG(image):Parse_Moby_Data_b64_Encoded_PNG.mobyData('b64_Encoded_PNG')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getBase64SnpFrequencyImage.b64_Encoded_PNG(image):Parse_Moby_Data_b64_Encoded_PNG.mobyData('b64_Encoded_PNG')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_b64_Encoded_PNG> .
+
+<http://weprov.csiro.au/controller/getEntryFromPDB.PDB-Text(entry):Parse_Moby_Data_PDB_Text.mobyData('PDB-Text')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getEntryFromPDB.PDB-Text(entry):Parse_Moby_Data_PDB_Text.mobyData('PDB-Text')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_PDB_Text> .
+
+<http://weprov.csiro.au/controller/getGeneInformationByEntrezGeneID.gene_ref(gene_info):Parse_Moby_Data_gene_ref.mobyData('gene_ref')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getGeneInformationByEntrezGeneID.gene_ref(gene_info):Parse_Moby_Data_gene_ref.mobyData('gene_ref')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_gene_ref> .
+
+<http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):Parse_Moby_Data_nsSNP.mobyData('nsSNP')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):Parse_Moby_Data_nsSNP.mobyData('nsSNP')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_nsSNP> .
+
+<http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):convertSnp2EntrezGeneID.Object(snp)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):convertSnp2EntrezGeneID.Object(snp)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/convertSnp2EntrezGeneID> .
+
+<http://weprov.csiro.au/controller/getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):snp2Frequencies.Object(snpid)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSnpsBySwissProtId.nsSNP(Collection - 'snps' As Simples):snp2Frequencies.Object(snpid)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/snp2Frequencies> .
+
+<http://weprov.csiro.au/controller/id:CreateMobyObject.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "id:CreateMobyObject.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateMobyObject> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/id:CreateMobyObject.id> , <http://weprov.csiro.au/controller/namespace:CreateMobyObject.namespace> , <http://weprov.csiro.au/controller/id:original_id> .
+
+<http://weprov.csiro.au/controller/entrez_gene_id_list_flatter.outputlist:Remove_duplicate_strings2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "entrez_gene_id_list_flatter.outputlist:Remove_duplicate_strings2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings2> .
+
+<http://weprov.csiro.au/controller/entrez_gene_list_flatter2.outputlist:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "entrez_gene_list_flatter2.outputlist:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/namespace:CreateMobyObject.namespace>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "namespace:CreateMobyObject.namespace" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateMobyObject> .
+
+<http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2PDBId.Object(kegg_gene)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2PDBId.Object(kegg_gene)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/convertKeggGeneId2PDBId> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency':frequency>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Frequencies.Frequencies_'Frequency':frequency" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Frequencies.Frequencies_'Frequency'_id:frequency_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Frequencies.Frequencies_'Frequency'_id:frequency_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.id:go_term_accession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GO_Term.id:go_term_accession" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Definition':go_term_definition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GO_Term.terms_'Definition':go_term_definition" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_GO_Term.terms_'Term':go_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_GO_Term.terms_'Term':go_term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_PDB_Text.entry_'content':pdb_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_PDB_Text.entry_'content':pdb_file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.id:publication_pubmed_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Publication.id:publication_pubmed_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Abstract':publication_abstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Publication.publications_'Abstract':publication_abstract" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Author':publication_author>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Publication.publications_'Author':publication_author" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Journal':publication_journal_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Publication.publications_'Journal':publication_journal_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Publication.publications_'Title':publication_title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Publication.publications_'Title':publication_title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Swiss_Prot.id:swiss_prot_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Swiss_Prot.id:swiss_prot_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_b64_Encoded_PNG.image_'content':base64_PNG>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_b64_Encoded_PNG.image_'content':base64_PNG" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'description':gene_description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_gene_ref.gene_info_'description':gene_description" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'name':gene_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_gene_ref.gene_info_'name':gene_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'summary':gene_summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_gene_ref.gene_info_'summary':gene_summary" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.gene_info_'synonyms':gene_synonyms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_gene_ref.gene_info_'synonyms':gene_synonyms" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_gene_ref.id:gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_gene_ref.id:gene_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.id:nsSNP_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.id:nsSNP_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_pos':nsSNP_amino_acid_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.snps_'aa_pos':nsSNP_amino_acid_position" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'aa_var':nsSNP_amino_acid_variant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.snps_'aa_var':nsSNP_amino_acid_variant" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'allele':nsSNP_allele>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.snps_'allele':nsSNP_allele" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'codon_pos':nsSNP_codon_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.snps_'codon_pos':nsSNP_codon_position" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_nsSNP.snps_'strand':nsSNP_strand>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_nsSNP.snps_'strand':nsSNP_strand" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_pdb_id.id:pdb_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_pdb_id.id:pdb_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_rasmol.rasmol_text_'content':pdb_rasmol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_rasmol.rasmol_text_'content':pdb_rasmol" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings2.strippedlist:entrez_gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings2.strippedlist:entrez_gene_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2ProtId.Object(kegg_gene)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertIdentifier2KeggID.Object(keggID):convertKeggGeneId2ProtId.Object(kegg_gene)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/convertKeggGeneId2ProtId> .
+
+<http://weprov.csiro.au/controller/id:original_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "id:original_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/CreateMobyObject.mobyData:convertIdentifier2KeggID.Object(identifier)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateMobyObject.mobyData:convertIdentifier2KeggID.Object(identifier)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/convertIdentifier2KeggID> .
+
+<http://weprov.csiro.au/controller/convertIdentifier2KeggID.Object(keggID):Parse_Moby_Data_Kegg.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "convertIdentifier2KeggID.Object(keggID):Parse_Moby_Data_Kegg.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Kegg> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Kegg.id:kegg_gene_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Kegg.id:kegg_gene_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):Parse_Moby_Data_Frequencies.mobyData('Frequencies')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "snp2Frequencies.Frequencies(Frequencies):Parse_Moby_Data_Frequencies.mobyData('Frequencies')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Frequencies> .
+
+<http://weprov.csiro.au/controller/snp2Frequencies.Frequencies(Frequencies):getBase64SnpFrequencyImage.Object(snpId)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "snp2Frequencies.Frequencies(Frequencies):getBase64SnpFrequencyImage.Object(snpId)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getBase64SnpFrequencyImage> .

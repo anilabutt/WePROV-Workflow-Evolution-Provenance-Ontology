@@ -1,0 +1,149 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e1620c56-6bb6-4862-8293-3c3d9462c7e9-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Iterative_Molecule_from_database_reader> , <http://weprov.csiro.au/program/Nested_Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow load molecules from the database and than checks whether the perception of the atom types works or not. After the extraction of the database identifier from all molecules which caused problems during this process will the identifier be written to a file." ;
+        <http://purl.org/dc/terms/title>
+                "Extraction of atom typing problems after loading of molecules from database" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Iterative_Molecule_from_database_reader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Iterative_Molecule_from_database_reader" .
+
+<http://weprov.csiro.au/program/Nested_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Nested_Workflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0/DatabaseReaderID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Has_Next_Molecule_from_database> , <http://weprov.csiro.au/program/Perceive_atom_types> , <http://weprov.csiro.au/program/Get_Molecule_from_database> , <http://weprov.csiro.au/program/Iterative_File_Writer1> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule> , <http://weprov.csiro.au/program/Iterative_File_Writer> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content> , <http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures> , <http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test> , <http://weprov.csiro.au/controller/Perceive_atom_types.NOTallAtomTypesPerceived:Extract_the_database_ID_from_the_molcule.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.comment:Iterative_File_Writer1.content> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Has_Next_Molecule_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Has_Next_Molecule_from_database" .
+
+<http://weprov.csiro.au/program/Perceive_atom_types>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Perceive_atom_types.NOTallAtomTypesPerceived:Extract_the_database_ID_from_the_molcule.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.comment:Iterative_File_Writer1.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Perceive_atom_types" .
+
+<http://weprov.csiro.au/program/Get_Molecule_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Molecule_from_database" .
+
+<http://weprov.csiro.au/program/Iterative_File_Writer1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Iterative_File_Writer1" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_the_database_ID_from_the_molcule" .
+
+<http://weprov.csiro.au/program/Iterative_File_Writer>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Iterative_File_Writer" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1bcdb2b0-666b-4bd4-ae64-be78ab75c55f-v0/DatabaseReaderID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DatabaseReaderID" .
+
+<http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Molecule_from_database> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DatabaseReaderID:Get_Molecule_from_database.DatabaseConnectionID> , <http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID> .
+
+<http://weprov.csiro.au/controller/DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatabaseReaderID:Has_Next_Molecule_from_database.DatabaseConnectionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Has_Next_Molecule_from_database> .
+
+<http://weprov.csiro.au/controller/Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_the_database_ID_from_the_molcule.databaseIDs:Iterative_File_Writer.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Iterative_File_Writer> .
+
+<http://weprov.csiro.au/controller/Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Molecule_from_database.molecules:Perceive_atom_types.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Perceive_atom_types> .
+
+<http://weprov.csiro.au/controller/Has_Next_Molecule_from_database.hasNext:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Has_Next_Molecule_from_database.hasNext:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/controller/Perceive_atom_types.NOTallAtomTypesPerceived:Extract_the_database_ID_from_the_molcule.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Perceive_atom_types.NOTallAtomTypesPerceived:Extract_the_database_ID_from_the_molcule.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_the_database_ID_from_the_molcule> .
+
+<http://weprov.csiro.au/controller/Perceive_atom_types.comment:Iterative_File_Writer1.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Perceive_atom_types.comment:Iterative_File_Writer1.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Iterative_File_Writer1> .
+
+<http://weprov.csiro.au/controller/Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Iterative_Molecule_from_database_reader.DatabaseConnectionID:Nested_Workflow.DatabaseReaderID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .

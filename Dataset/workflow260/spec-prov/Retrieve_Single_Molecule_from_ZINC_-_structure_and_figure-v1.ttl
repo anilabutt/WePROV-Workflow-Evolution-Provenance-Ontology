@@ -1,0 +1,377 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Molecule_Figure> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Data_SMILES_String> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Data_MOL2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/InternalID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_URL_SMILES> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_URL_MOL2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Form_URL_Image> , <http://weprov.csiro.au/program/Retrieve_ZINC_Molecule_Figure> , <http://weprov.csiro.au/program/Retrieve_ZINC_Molecular_Summary_Page> , <http://weprov.csiro.au/program/Form_URL_Summary> , <http://weprov.csiro.au/program/ZINC_URL_Single_Molecule_Figure> , <http://weprov.csiro.au/program/Regex_for_internal_id> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/LineBreak> , <http://weprov.csiro.au/program/Filter_list_of_strings_by_regex> , <http://weprov.csiro.au/program/ZINC_URL_Fetch> , <http://weprov.csiro.au/program/ZINC_Fetch_Param_SMILE> , <http://weprov.csiro.au/program/ZINC_Fetch_Param_MOL2> , <http://weprov.csiro.au/program/Retrieve_Internal_ID> , <http://weprov.csiro.au/program/ZINC_URL_Single_Molecule> , <http://weprov.csiro.au/program/ZINC_URL_Fetch_Prefix> , <http://weprov.csiro.au/program/ZINC_URL_SMILES> , <http://weprov.csiro.au/program/ZINC_URL_MOL2> , <http://weprov.csiro.au/program/Regex_for_internal_id_with_group> , <http://weprov.csiro.au/program/Fetch_MOL2_Data_from_URL> , <http://weprov.csiro.au/program/Fetch_SMILES_Data_from_URL> ;
+        <http://purl.org/dc/terms/description>
+                "The ZINC database (http;//zinc.docking.org) is a collection of substances with known structures and some chemical characterisation that are commercially available. It is freely available and a much respected resource for computational screening for functional compounds.\n\nWith the ZINC ID at hand, the ZINC web site is contacted and from there the URL parsed the refence to the real data. This workflow does not scale for regular docking applications.  One would retrieve a collection of data instead. However, this workflow might find its audience for some experimental workflows towards docking experiments and their interpretation." ;
+        <http://purl.org/dc/terms/title>
+                "Retrieve Single Molecule from ZINC - structure and figure" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Summary.string2> , <http://weprov.csiro.au/controller/Retrieve_ZINC_Molecular_Summary_Page.contents:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_by_regex.stringlist> , <http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:Fetch_SMILES_Data_from_URL.url> , <http://weprov.csiro.au/controller/Fetch_MOL2_Data_from_URL.contents:ZINC_Data_MOL2> , <http://weprov.csiro.au/controller/Fetch_SMILES_Data_from_URL.contents:ZINC_Data_SMILES_String> , <http://weprov.csiro.au/controller/Filter_list_of_strings_by_regex.filteredlist:Retrieve_Internal_ID.stringlist> , <http://weprov.csiro.au/controller/Form_URL_Summary.output:Retrieve_ZINC_Molecular_Summary_Page.url> , <http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Image.string2> , <http://weprov.csiro.au/controller/Form_URL_Image.output:Retrieve_ZINC_Molecule_Figure.url> , <http://weprov.csiro.au/controller/LineBreak.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/Regex_for_internal_id.value:Filter_list_of_strings_by_regex.regex> , <http://weprov.csiro.au/controller/Regex_for_internal_id_with_group.value:Retrieve_Internal_ID.regex> , <http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:InternalID> , <http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:ZINC_URL_Fetch_Prefix.string2> , <http://weprov.csiro.au/controller/Retrieve_ZINC_Molecule_Figure.image:ZINC_Molecule_Figure> , <http://weprov.csiro.au/controller/ZINC_Fetch_Param_MOL2.value:ZINC_URL_MOL2.string2> , <http://weprov.csiro.au/controller/ZINC_Fetch_Param_SMILE.value:ZINC_URL_SMILES.string2> , <http://weprov.csiro.au/controller/ZINC_URL_Fetch.value:ZINC_URL_Fetch_Prefix.string1> , <http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_MOL2.string1> , <http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_SMILES.string1> , <http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:Fetch_MOL2_Data_from_URL.url> , <http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule.value:Form_URL_Summary.string1> , <http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule_Figure.value:Form_URL_Image.string1> , <http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:ZINC_URL_MOL2> , <http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:ZINC_URL_SMILES> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Form_URL_Image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Form_URL_Image.output:Retrieve_ZINC_Molecule_Figure.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Form_URL_Image" .
+
+<http://weprov.csiro.au/program/Retrieve_ZINC_Molecule_Figure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve_ZINC_Molecule_Figure.image:ZINC_Molecule_Figure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve_ZINC_Molecule_Figure" .
+
+<http://weprov.csiro.au/program/Retrieve_ZINC_Molecular_Summary_Page>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve_ZINC_Molecular_Summary_Page.contents:Split_string_into_string_list_by_regular_expression.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve_ZINC_Molecular_Summary_Page" .
+
+<http://weprov.csiro.au/program/Form_URL_Summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Form_URL_Summary.output:Retrieve_ZINC_Molecular_Summary_Page.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Form_URL_Summary" .
+
+<http://weprov.csiro.au/program/ZINC_URL_Single_Molecule_Figure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule_Figure.value:Form_URL_Image.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_Single_Molecule_Figure" .
+
+<http://weprov.csiro.au/program/Regex_for_internal_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Regex_for_internal_id.value:Filter_list_of_strings_by_regex.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Regex_for_internal_id" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_by_regex.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/LineBreak>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/LineBreak.value:Split_string_into_string_list_by_regular_expression.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "LineBreak" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_by_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_by_regex.filteredlist:Retrieve_Internal_ID.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_by_regex" .
+
+<http://weprov.csiro.au/program/ZINC_URL_Fetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_Fetch.value:ZINC_URL_Fetch_Prefix.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_Fetch" .
+
+<http://weprov.csiro.au/program/ZINC_Fetch_Param_SMILE>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_Fetch_Param_SMILE.value:ZINC_URL_SMILES.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_Fetch_Param_SMILE" .
+
+<http://weprov.csiro.au/program/ZINC_Fetch_Param_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_Fetch_Param_MOL2.value:ZINC_URL_MOL2.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_Fetch_Param_MOL2" .
+
+<http://weprov.csiro.au/program/Retrieve_Internal_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:InternalID> , <http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:ZINC_URL_Fetch_Prefix.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve_Internal_ID" .
+
+<http://weprov.csiro.au/program/ZINC_URL_Single_Molecule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule.value:Form_URL_Summary.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_Single_Molecule" .
+
+<http://weprov.csiro.au/program/ZINC_URL_Fetch_Prefix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_MOL2.string1> , <http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_SMILES.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_Fetch_Prefix" .
+
+<http://weprov.csiro.au/program/ZINC_URL_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:Fetch_SMILES_Data_from_URL.url> , <http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:ZINC_URL_SMILES> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_SMILES" .
+
+<http://weprov.csiro.au/program/ZINC_URL_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:Fetch_MOL2_Data_from_URL.url> , <http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:ZINC_URL_MOL2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_URL_MOL2" .
+
+<http://weprov.csiro.au/program/Regex_for_internal_id_with_group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Regex_for_internal_id_with_group.value:Retrieve_Internal_ID.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Regex_for_internal_id_with_group" .
+
+<http://weprov.csiro.au/program/Fetch_MOL2_Data_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Fetch_MOL2_Data_from_URL.contents:ZINC_Data_MOL2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fetch_MOL2_Data_from_URL" .
+
+<http://weprov.csiro.au/program/Fetch_SMILES_Data_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Fetch_SMILES_Data_from_URL.contents:ZINC_Data_SMILES_String> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fetch_SMILES_Data_from_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ZINC_ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Molecule_Figure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_Molecule_Figure" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Data_SMILES_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_Data_SMILES_String" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_Data_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_Data_MOL2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/InternalID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InternalID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_URL_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_SMILES" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5caecd13-e7bd-40d7-afc7-01af080ee0e0-v0/ZINC_URL_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_MOL2" .
+
+<http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Summary.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_ID:Form_URL_Summary.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Form_URL_Summary> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Summary.string2> , <http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Image.string2> .
+
+<http://weprov.csiro.au/controller/Retrieve_ZINC_Molecular_Summary_Page.contents:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_ZINC_Molecular_Summary_Page.contents:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_by_regex.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_by_regex.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_by_regex> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:Fetch_SMILES_Data_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_SMILES.output:Fetch_SMILES_Data_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fetch_SMILES_Data_from_URL> .
+
+<http://weprov.csiro.au/controller/Fetch_MOL2_Data_from_URL.contents:ZINC_Data_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Fetch_MOL2_Data_from_URL.contents:ZINC_Data_MOL2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Fetch_SMILES_Data_from_URL.contents:ZINC_Data_SMILES_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Fetch_SMILES_Data_from_URL.contents:ZINC_Data_SMILES_String" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_by_regex.filteredlist:Retrieve_Internal_ID.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_by_regex.filteredlist:Retrieve_Internal_ID.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_Internal_ID> .
+
+<http://weprov.csiro.au/controller/Form_URL_Summary.output:Retrieve_ZINC_Molecular_Summary_Page.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Form_URL_Summary.output:Retrieve_ZINC_Molecular_Summary_Page.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_ZINC_Molecular_Summary_Page> .
+
+<http://weprov.csiro.au/controller/ZINC_ID:Form_URL_Image.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_ID:Form_URL_Image.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Form_URL_Image> .
+
+<http://weprov.csiro.au/controller/Form_URL_Image.output:Retrieve_ZINC_Molecule_Figure.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Form_URL_Image.output:Retrieve_ZINC_Molecule_Figure.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_ZINC_Molecule_Figure> .
+
+<http://weprov.csiro.au/controller/LineBreak.value:Split_string_into_string_list_by_regular_expression.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LineBreak.value:Split_string_into_string_list_by_regular_expression.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/Regex_for_internal_id.value:Filter_list_of_strings_by_regex.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Regex_for_internal_id.value:Filter_list_of_strings_by_regex.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_by_regex> .
+
+<http://weprov.csiro.au/controller/Regex_for_internal_id_with_group.value:Retrieve_Internal_ID.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Regex_for_internal_id_with_group.value:Retrieve_Internal_ID.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_Internal_ID> .
+
+<http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:InternalID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_Internal_ID.filteredlist:InternalID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Retrieve_Internal_ID.filteredlist:ZINC_URL_Fetch_Prefix.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_Internal_ID.filteredlist:ZINC_URL_Fetch_Prefix.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_Fetch_Prefix> .
+
+<http://weprov.csiro.au/controller/Retrieve_ZINC_Molecule_Figure.image:ZINC_Molecule_Figure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_ZINC_Molecule_Figure.image:ZINC_Molecule_Figure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ZINC_Fetch_Param_MOL2.value:ZINC_URL_MOL2.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_Fetch_Param_MOL2.value:ZINC_URL_MOL2.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_MOL2> .
+
+<http://weprov.csiro.au/controller/ZINC_Fetch_Param_SMILE.value:ZINC_URL_SMILES.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_Fetch_Param_SMILE.value:ZINC_URL_SMILES.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_SMILES> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_Fetch.value:ZINC_URL_Fetch_Prefix.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_Fetch.value:ZINC_URL_Fetch_Prefix.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_Fetch_Prefix> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_MOL2.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_Fetch_Prefix.output:ZINC_URL_MOL2.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_MOL2> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_Fetch_Prefix.output:ZINC_URL_SMILES.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_Fetch_Prefix.output:ZINC_URL_SMILES.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ZINC_URL_SMILES> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:Fetch_MOL2_Data_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_MOL2.output:Fetch_MOL2_Data_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fetch_MOL2_Data_from_URL> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule.value:Form_URL_Summary.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_Single_Molecule.value:Form_URL_Summary.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Form_URL_Summary> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_Single_Molecule_Figure.value:Form_URL_Image.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_Single_Molecule_Figure.value:Form_URL_Image.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Form_URL_Image> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_MOL2.output:ZINC_URL_MOL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_MOL2.output:ZINC_URL_MOL2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ZINC_URL_SMILES.output:ZINC_URL_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ZINC_URL_SMILES.output:ZINC_URL_SMILES" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

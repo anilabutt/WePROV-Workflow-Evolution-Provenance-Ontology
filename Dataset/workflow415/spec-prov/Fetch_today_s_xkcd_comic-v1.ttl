@@ -1,0 +1,110 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:9ffd1b18-abc9-4125-92ec-94b4f01e993e-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9ffd1b18-abc9-4125-92ec-94b4f01e993e-v0/todaysXkcd> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/comicURLRegex> , <http://weprov.csiro.au/program/xkcdURL> , <http://weprov.csiro.au/program/getImageLinks> , <http://weprov.csiro.au/program/getComicStrip> , <http://weprov.csiro.au/program/findComicURL> , <http://weprov.csiro.au/program/getPage> ;
+        <http://purl.org/dc/terms/description>
+                "Use the local java plugins and some filtering operations to fetch the comic strip image from http://xkcd.com/\n\nBased on the FetchDailyDilbert workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Fetch today's xkcd comic" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/comicURLRegex.value:findComicURL.regex> , <http://weprov.csiro.au/controller/findComicURL.filteredlist:getComicStrip.url> , <http://weprov.csiro.au/controller/getComicStrip.image:todaysXkcd> , <http://weprov.csiro.au/controller/getImageLinks.imagelinks:findComicURL.stringlist> , <http://weprov.csiro.au/controller/getPage.contents:getImageLinks.document> , <http://weprov.csiro.au/controller/xkcdURL.value:getComicStrip.base> , <http://weprov.csiro.au/controller/xkcdURL.value:getPage.url> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/comicURLRegex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/comicURLRegex.value:findComicURL.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "comicURLRegex" .
+
+<http://weprov.csiro.au/program/xkcdURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/xkcdURL.value:getComicStrip.base> , <http://weprov.csiro.au/controller/xkcdURL.value:getPage.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xkcdURL" .
+
+<http://weprov.csiro.au/program/getImageLinks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getImageLinks.imagelinks:findComicURL.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getImageLinks" .
+
+<http://weprov.csiro.au/program/getComicStrip>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getComicStrip.image:todaysXkcd> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getComicStrip" .
+
+<http://weprov.csiro.au/program/findComicURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findComicURL.filteredlist:getComicStrip.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findComicURL" .
+
+<http://weprov.csiro.au/program/getPage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPage.contents:getImageLinks.document> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPage" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9ffd1b18-abc9-4125-92ec-94b4f01e993e-v0/todaysXkcd>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "todaysXkcd" .
+
+<http://weprov.csiro.au/controller/comicURLRegex.value:findComicURL.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "comicURLRegex.value:findComicURL.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findComicURL> .
+
+<http://weprov.csiro.au/controller/findComicURL.filteredlist:getComicStrip.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findComicURL.filteredlist:getComicStrip.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getComicStrip> .
+
+<http://weprov.csiro.au/controller/getComicStrip.image:todaysXkcd>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getComicStrip.image:todaysXkcd" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getImageLinks.imagelinks:findComicURL.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getImageLinks.imagelinks:findComicURL.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findComicURL> .
+
+<http://weprov.csiro.au/controller/getPage.contents:getImageLinks.document>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPage.contents:getImageLinks.document" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getImageLinks> .
+
+<http://weprov.csiro.au/controller/xkcdURL.value:getComicStrip.base>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xkcdURL.value:getComicStrip.base" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getComicStrip> .
+
+<http://weprov.csiro.au/controller/xkcdURL.value:getPage.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xkcdURL.value:getPage.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPage> .

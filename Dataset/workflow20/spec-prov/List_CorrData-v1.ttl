@@ -1,0 +1,250 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a5397afb-aa99-45c0-b7bc-73e2f8c65011-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a5397afb-aa99-45c0-b7bc-73e2f8c65011-v0/CorrList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/ChooseCorrMethod> , <http://weprov.csiro.au/program/PeakFileMessage> , <http://weprov.csiro.au/program/DataFileMessage> , <http://weprov.csiro.au/program/Select_PeakFile> , <http://weprov.csiro.au/program/PeakFile> , <http://weprov.csiro.au/program/rtdiff> , <http://weprov.csiro.au/program/Read_PeakFile> , <http://weprov.csiro.au/program/DataFile> , <http://weprov.csiro.au/program/Split_DataFile> , <http://weprov.csiro.au/program/CorrLim> , <http://weprov.csiro.au/program/PeakFile_Type> , <http://weprov.csiro.au/program/Split_PeakFile> , <http://weprov.csiro.au/program/DataFile_Type> , <http://weprov.csiro.au/program/Select_DataFile> , <http://weprov.csiro.au/program/Read_DataFile> , <http://weprov.csiro.au/program/List_CorrData> ;
+        <http://purl.org/dc/terms/description>
+                "This test workflow demonstrates the ability to read a file." ;
+        <http://purl.org/dc/terms/title>
+                "List_CorrData" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ChooseCorrMethod.value:List_CorrData.calccorr> , <http://weprov.csiro.au/controller/CorrLim.value:List_CorrData.corrcheck> , <http://weprov.csiro.au/controller/DataFile.value:Select_DataFile.title> , <http://weprov.csiro.au/controller/DataFileMessage.value:Select_DataFile.fileExtLabels> , <http://weprov.csiro.au/controller/DataFile_Type.value:List_CorrData.filetype> , <http://weprov.csiro.au/controller/DataFile_Type.value:Select_DataFile.fileExtensions> , <http://weprov.csiro.au/controller/List_CorrData.corrlist:CorrList> , <http://weprov.csiro.au/controller/PeakFile.value:Select_PeakFile.title> , <http://weprov.csiro.au/controller/PeakFileMessage.value:Select_PeakFile.fileExtLabels> , <http://weprov.csiro.au/controller/PeakFile_Type.value:Select_PeakFile.fileExtensions> , <http://weprov.csiro.au/controller/Read_DataFile.filecontents:Split_DataFile.string> , <http://weprov.csiro.au/controller/Read_PeakFile.filecontents:Split_PeakFile.string> , <http://weprov.csiro.au/controller/Select_DataFile.selectedFile:Read_DataFile.fileurl> , <http://weprov.csiro.au/controller/Select_PeakFile.selectedFile:Read_PeakFile.fileurl> , <http://weprov.csiro.au/controller/Split_DataFile.split:List_CorrData.mydata> , <http://weprov.csiro.au/controller/Split_PeakFile.split:List_CorrData.indata> , <http://weprov.csiro.au/controller/rtdiff.value:List_CorrData.rtread> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/ChooseCorrMethod>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ChooseCorrMethod.value:List_CorrData.calccorr> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ChooseCorrMethod" .
+
+<http://weprov.csiro.au/program/PeakFileMessage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PeakFileMessage.value:Select_PeakFile.fileExtLabels> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PeakFileMessage" .
+
+<http://weprov.csiro.au/program/DataFileMessage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataFileMessage.value:Select_DataFile.fileExtLabels> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataFileMessage" .
+
+<http://weprov.csiro.au/program/Select_PeakFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_PeakFile.selectedFile:Read_PeakFile.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_PeakFile" .
+
+<http://weprov.csiro.au/program/PeakFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PeakFile.value:Select_PeakFile.title> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PeakFile" .
+
+<http://weprov.csiro.au/program/rtdiff>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/rtdiff.value:List_CorrData.rtread> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "rtdiff" .
+
+<http://weprov.csiro.au/program/Read_PeakFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_PeakFile.filecontents:Split_PeakFile.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_PeakFile" .
+
+<http://weprov.csiro.au/program/DataFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataFile.value:Select_DataFile.title> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataFile" .
+
+<http://weprov.csiro.au/program/Split_DataFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_DataFile.split:List_CorrData.mydata> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_DataFile" .
+
+<http://weprov.csiro.au/program/CorrLim>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CorrLim.value:List_CorrData.corrcheck> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CorrLim" .
+
+<http://weprov.csiro.au/program/PeakFile_Type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PeakFile_Type.value:Select_PeakFile.fileExtensions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PeakFile_Type" .
+
+<http://weprov.csiro.au/program/Split_PeakFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_PeakFile.split:List_CorrData.indata> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_PeakFile" .
+
+<http://weprov.csiro.au/program/DataFile_Type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DataFile_Type.value:List_CorrData.filetype> , <http://weprov.csiro.au/controller/DataFile_Type.value:Select_DataFile.fileExtensions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DataFile_Type" .
+
+<http://weprov.csiro.au/program/Select_DataFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_DataFile.selectedFile:Read_DataFile.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_DataFile" .
+
+<http://weprov.csiro.au/program/Read_DataFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_DataFile.filecontents:Split_DataFile.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_DataFile" .
+
+<http://weprov.csiro.au/program/List_CorrData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/List_CorrData.corrlist:CorrList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "List_CorrData" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a5397afb-aa99-45c0-b7bc-73e2f8c65011-v0/CorrList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CorrList" .
+
+<http://weprov.csiro.au/controller/ChooseCorrMethod.value:List_CorrData.calccorr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ChooseCorrMethod.value:List_CorrData.calccorr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .
+
+<http://weprov.csiro.au/controller/CorrLim.value:List_CorrData.corrcheck>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CorrLim.value:List_CorrData.corrcheck" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .
+
+<http://weprov.csiro.au/controller/DataFile.value:Select_DataFile.title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataFile.value:Select_DataFile.title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_DataFile> .
+
+<http://weprov.csiro.au/controller/DataFileMessage.value:Select_DataFile.fileExtLabels>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataFileMessage.value:Select_DataFile.fileExtLabels" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_DataFile> .
+
+<http://weprov.csiro.au/controller/DataFile_Type.value:List_CorrData.filetype>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataFile_Type.value:List_CorrData.filetype" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .
+
+<http://weprov.csiro.au/controller/DataFile_Type.value:Select_DataFile.fileExtensions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataFile_Type.value:Select_DataFile.fileExtensions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_DataFile> .
+
+<http://weprov.csiro.au/controller/List_CorrData.corrlist:CorrList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "List_CorrData.corrlist:CorrList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/PeakFile.value:Select_PeakFile.title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PeakFile.value:Select_PeakFile.title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_PeakFile> .
+
+<http://weprov.csiro.au/controller/PeakFileMessage.value:Select_PeakFile.fileExtLabels>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PeakFileMessage.value:Select_PeakFile.fileExtLabels" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_PeakFile> .
+
+<http://weprov.csiro.au/controller/PeakFile_Type.value:Select_PeakFile.fileExtensions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PeakFile_Type.value:Select_PeakFile.fileExtensions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_PeakFile> .
+
+<http://weprov.csiro.au/controller/Read_DataFile.filecontents:Split_DataFile.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_DataFile.filecontents:Split_DataFile.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_DataFile> .
+
+<http://weprov.csiro.au/controller/Read_PeakFile.filecontents:Split_PeakFile.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_PeakFile.filecontents:Split_PeakFile.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_PeakFile> .
+
+<http://weprov.csiro.au/controller/Select_DataFile.selectedFile:Read_DataFile.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_DataFile.selectedFile:Read_DataFile.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_DataFile> .
+
+<http://weprov.csiro.au/controller/Select_PeakFile.selectedFile:Read_PeakFile.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_PeakFile.selectedFile:Read_PeakFile.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_PeakFile> .
+
+<http://weprov.csiro.au/controller/Split_DataFile.split:List_CorrData.mydata>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_DataFile.split:List_CorrData.mydata" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .
+
+<http://weprov.csiro.au/controller/Split_PeakFile.split:List_CorrData.indata>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_PeakFile.split:List_CorrData.indata" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .
+
+<http://weprov.csiro.au/controller/rtdiff.value:List_CorrData.rtread>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rtdiff.value:List_CorrData.rtread" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/List_CorrData> .

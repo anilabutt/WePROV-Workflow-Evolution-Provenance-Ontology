@@ -1,0 +1,65 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:CXNOO62N3A0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:CXNOO62N3A0-v0/blast_file> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:CXNOO62N3A0-v0/simplified_output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/blastsimplifier> , <http://weprov.csiro.au/program/gi_option> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/blast_file:blastsimplifier.new_direct_data> , <http://weprov.csiro.au/controller/blastsimplifier.output:simplified_output> , <http://weprov.csiro.au/controller/gi_option.value:blastsimplifier.gi> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/blastsimplifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blastsimplifier.output:simplified_output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blastsimplifier" .
+
+<http://weprov.csiro.au/program/gi_option>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gi_option.value:blastsimplifier.gi> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gi_option" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:CXNOO62N3A0-v0/blast_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blast_file" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:CXNOO62N3A0-v0/simplified_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "simplified_output" .
+
+<http://weprov.csiro.au/controller/blast_file:blastsimplifier.new_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_file:blastsimplifier.new_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blast_file:blastsimplifier.new_direct_data> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:simplified_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:simplified_output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/gi_option.value:blastsimplifier.gi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gi_option.value:blastsimplifier.gi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .

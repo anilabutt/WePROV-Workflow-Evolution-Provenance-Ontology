@@ -1,0 +1,65 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v0/query_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v0/optimized_lucene_query> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Lucene_year_priorities> , <http://weprov.csiro.au/program/Prioritise_lucene_query> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow does four things:\n1. it retrieves documents relevant for the query string\n2. it discovers entities in those documents, these are considered relevant entities\n3. it filters proteins from those entities (on the tag protein_molecule)\n4. it removes all terms from the list produced by 3 (query terms temporarily considered proteins)\n\nToDo\n* Replace step 4 by the following procedure:\n  1. remove the query terms from the output of NER (probably by a regexp matching on what is inside the tag, possibly case-insensitive)\n  2. remove tag_as_protein_molecule (obsolete)\n* Add synonym service/workflow\n\nNote that Remove_inputquery has an alternative iteration strategy (dot product instead of cross product). Idem for 'Join' in 'SplitQuery'." ;
+        <http://purl.org/dc/terms/title>
+                "Lucene_bioquery_optimizer_MR1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string> , <http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string> , <http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Lucene_year_priorities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Lucene_year_priorities" .
+
+<http://weprov.csiro.au/program/Prioritise_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Prioritise_lucene_query" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v0/query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v0/optimized_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "optimized_lucene_query" .
+
+<http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Lucene_year_priorities.value:Prioritise_lucene_query.priority_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prioritise_lucene_query> .
+
+<http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_string:Prioritise_lucene_query.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prioritise_lucene_query> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string> .
+
+<http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Prioritise_lucene_query.lucene_query:optimized_lucene_query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

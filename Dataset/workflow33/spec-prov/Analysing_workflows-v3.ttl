@@ -1,0 +1,504 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/FirstID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/LastID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/emptyWorkflows> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/totalNumberOfTasks> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/averageNumberOfTasks> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/sdNumberOfTasks> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/totalNumberOfWorkflows> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/workflowSizes> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/taskUsageRelative> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/taskUsageTotal> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/localUsage> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/serviceUsage> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/scriptingUsage> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Create_R_Table> , <http://weprov.csiro.au/program/Generate_URLs> , <http://weprov.csiro.au/program/Analyse_Workflows> , <http://weprov.csiro.au/program/Analyse_Single_Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "This workflows analyses workflows stored at the myExperiment site. It is used in the paper submitted to the Workshop on Scientific Workflow 2009.\n\nThe workflow shows the task usage in the Taverna workflows stored at the myExperiment site\n* The amount of services used\n* The amount of local processors used\n* The amount of scripting tasks\n* The amount of sub workflows" ;
+        <http://purl.org/dc/terms/title>
+                "Analysing workflows" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Analyse_Single_Workflow.processors:Create_R_Table.processorsPerWorkflows> , <http://weprov.csiro.au/controller/Analyse_Workflows.scriptingUsage:scriptingUsage> , <http://weprov.csiro.au/controller/Analyse_Workflows.serviceUsage:serviceUsage> , <http://weprov.csiro.au/controller/Analyse_Workflows.standardDeviationOfTasks:sdNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.taskUsageRelative:taskUsageRelative> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfTasks:totalNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfWorkflows:totalNumberOfWorkflows> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalTaskUsage:taskUsageTotal> , <http://weprov.csiro.au/controller/Analyse_Workflows.workflowSizes:workflowSizes> , <http://weprov.csiro.au/controller/Create_R_Table.emptyWorkflows:emptyWorkflows> , <http://weprov.csiro.au/controller/Create_R_Table.rTable:Analyse_Workflows.rTable> , <http://weprov.csiro.au/controller/FirstID:Generate_URLs.FirstID> , <http://weprov.csiro.au/controller/LastID:Generate_URLs.LastID> , <http://weprov.csiro.au/controller/Analyse_Workflows.averageNumberOfTasks:averageNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.localUsage:localUsage> , <http://weprov.csiro.au/controller/Generate_URLs.WorkflowIDs:Create_R_Table.workflowIDs> , <http://weprov.csiro.au/controller/Generate_URLs.WorkflowURLs:Analyse_Single_Workflow.workflowUrl> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "2" .
+
+<http://weprov.csiro.au/program/Create_R_Table>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Create_R_Table.emptyWorkflows:emptyWorkflows> , <http://weprov.csiro.au/controller/Create_R_Table.rTable:Analyse_Workflows.rTable> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_R_Table" .
+
+<http://weprov.csiro.au/program/Generate_URLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Generate_URLs.WorkflowIDs:Create_R_Table.workflowIDs> , <http://weprov.csiro.au/controller/Generate_URLs.WorkflowURLs:Analyse_Single_Workflow.workflowUrl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Generate_URLs" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/FirstID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/LastID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/WorkflowURLs> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/WorkflowIDs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Generate_IDs> , <http://weprov.csiro.au/program/Generate_URL> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Untitled workflow #144" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/FirstID:Generate_IDs.firstID> , <http://weprov.csiro.au/controller/LastID:Generate_IDs.lastID> , <http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:Generate_URL.id> , <http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:WorkflowIDs> , <http://weprov.csiro.au/controller/Generate_URL.url:WorkflowURLs> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "2" .
+
+<http://weprov.csiro.au/program/Generate_IDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:Generate_URL.id> , <http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:WorkflowIDs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Generate_IDs" .
+
+<http://weprov.csiro.au/program/Generate_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Generate_URL.url:WorkflowURLs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Generate_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/FirstID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FirstID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/LastID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "LastID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/WorkflowURLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WorkflowURLs" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3daf607d-d5b7-44b5-94f9-4dc16ca777bb-v2/WorkflowIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WorkflowIDs" .
+
+<http://weprov.csiro.au/controller/FirstID:Generate_IDs.firstID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FirstID:Generate_IDs.firstID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_IDs> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FirstID:Generate_IDs.firstID> , <http://weprov.csiro.au/controller/LastID:Generate_IDs.lastID> , <http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url> , <http://weprov.csiro.au/controller/FirstID:Generate_URLs.FirstID> , <http://weprov.csiro.au/controller/LastID:Generate_URLs.LastID> .
+
+<http://weprov.csiro.au/controller/LastID:Generate_IDs.lastID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LastID:Generate_IDs.lastID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_IDs> .
+
+<http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:Generate_URL.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_IDs.workflowIDs:Generate_URL.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_URL> .
+
+<http://weprov.csiro.au/controller/Generate_IDs.workflowIDs:WorkflowIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_IDs.workflowIDs:WorkflowIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Generate_URL.url:WorkflowURLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_URL.url:WorkflowURLs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Analyse_Workflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Analyse_Workflows.scriptingUsage:scriptingUsage> , <http://weprov.csiro.au/controller/Analyse_Workflows.serviceUsage:serviceUsage> , <http://weprov.csiro.au/controller/Analyse_Workflows.standardDeviationOfTasks:sdNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.taskUsageRelative:taskUsageRelative> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfTasks:totalNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfWorkflows:totalNumberOfWorkflows> , <http://weprov.csiro.au/controller/Analyse_Workflows.totalTaskUsage:taskUsageTotal> , <http://weprov.csiro.au/controller/Analyse_Workflows.workflowSizes:workflowSizes> , <http://weprov.csiro.au/controller/Analyse_Workflows.averageNumberOfTasks:averageNumberOfTasks> , <http://weprov.csiro.au/controller/Analyse_Workflows.localUsage:localUsage> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Analyse_Workflows" .
+
+<http://weprov.csiro.au/program/Analyse_Single_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Analyse_Single_Workflow.processors:Create_R_Table.processorsPerWorkflows> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Analyse_Single_Workflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/workflowUrl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/processors> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/scufl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/echoWorkflowContent> , <http://weprov.csiro.au/program/getElementName> , <http://weprov.csiro.au/program/Fail_if_true> , <http://weprov.csiro.au/program/emptyList> , <http://weprov.csiro.au/program/isScufl> , <http://weprov.csiro.au/program/filterElementNames> , <http://weprov.csiro.au/program/emptyString> , <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/getProcessors> , <http://weprov.csiro.au/program/readWorkflowFromNet> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "analyseWFS" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/getProcessors.nodelistAsXML:getElementName.element> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getProcessors.xml-text> , <http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url> , <http://weprov.csiro.au/controller/getElementName.processorName:filterElementNames.elementNames> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input> , <http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl> , <http://weprov.csiro.au/controller/emptyList.list:processors> , <http://weprov.csiro.au/controller/emptyString.value:scufl> , <http://weprov.csiro.au/controller/filterElementNames.filtered:processors> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "2" .
+
+<http://weprov.csiro.au/program/echoWorkflowContent>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echoWorkflowContent" .
+
+<http://weprov.csiro.au/program/getElementName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getElementName.processorName:filterElementNames.elementNames> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getElementName" .
+
+<http://weprov.csiro.au/program/Fail_if_true>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true" .
+
+<http://weprov.csiro.au/program/emptyList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emptyList.list:processors> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emptyList" .
+
+<http://weprov.csiro.au/program/isScufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test> , <http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isScufl" .
+
+<http://weprov.csiro.au/program/filterElementNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/filterElementNames.filtered:processors> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "filterElementNames" .
+
+<http://weprov.csiro.au/program/emptyString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emptyString.value:scufl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emptyString" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/getProcessors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getProcessors.nodelistAsXML:getElementName.element> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getProcessors" .
+
+<http://weprov.csiro.au/program/readWorkflowFromNet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getProcessors.xml-text> , <http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "readWorkflowFromNet" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/workflowUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "workflowUrl" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/processors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "processors" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2e6f49f6-b166-4780-9a30-55c5514075ea-v2/scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "scufl" .
+
+<http://weprov.csiro.au/controller/getProcessors.nodelistAsXML:getElementName.element>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getProcessors.nodelistAsXML:getElementName.element" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getElementName> .
+
+<http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isScufl.isEmpty:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/controller/isScufl.isEmpty:Fail_if_true.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isScufl.isEmpty:Fail_if_true.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:echoWorkflowContent.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:echoWorkflowContent.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echoWorkflowContent> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:getProcessors.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:getProcessors.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getProcessors> .
+
+<http://weprov.csiro.au/controller/workflowUrl:readWorkflowFromNet.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "workflowUrl:readWorkflowFromNet.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readWorkflowFromNet> .
+
+<http://weprov.csiro.au/controller/getElementName.processorName:filterElementNames.elementNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getElementName.processorName:filterElementNames.elementNames" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/filterElementNames> .
+
+<http://weprov.csiro.au/controller/readWorkflowFromNet.contents:isScufl.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readWorkflowFromNet.contents:isScufl.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isScufl> .
+
+<http://weprov.csiro.au/controller/echoWorkflowContent.output:scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echoWorkflowContent.output:scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/emptyList.list:processors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emptyList.list:processors" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/emptyString.value:scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emptyString.value:scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/filterElementNames.filtered:processors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filterElementNames.filtered:processors" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/FirstID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FirstID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/LastID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "LastID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/emptyWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emptyWorkflows" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/totalNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "totalNumberOfTasks" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/averageNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "averageNumberOfTasks" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/sdNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sdNumberOfTasks" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/totalNumberOfWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "totalNumberOfWorkflows" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/workflowSizes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "workflowSizes" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/taskUsageRelative>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "taskUsageRelative" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/taskUsageTotal>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "taskUsageTotal" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/localUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "localUsage" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/serviceUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "serviceUsage" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:128de0a2-4f77-49eb-99cf-954e95b32260-v2/scriptingUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "scriptingUsage" .
+
+<http://weprov.csiro.au/controller/Analyse_Single_Workflow.processors:Create_R_Table.processorsPerWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Single_Workflow.processors:Create_R_Table.processorsPerWorkflows" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_R_Table> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.scriptingUsage:scriptingUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.scriptingUsage:scriptingUsage" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.serviceUsage:serviceUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.serviceUsage:serviceUsage" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.standardDeviationOfTasks:sdNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.standardDeviationOfTasks:sdNumberOfTasks" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.taskUsageRelative:taskUsageRelative>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.taskUsageRelative:taskUsageRelative" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfTasks:totalNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.totalNumberOfTasks:totalNumberOfTasks" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.totalNumberOfWorkflows:totalNumberOfWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.totalNumberOfWorkflows:totalNumberOfWorkflows" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.totalTaskUsage:taskUsageTotal>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.totalTaskUsage:taskUsageTotal" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.workflowSizes:workflowSizes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.workflowSizes:workflowSizes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Create_R_Table.emptyWorkflows:emptyWorkflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_R_Table.emptyWorkflows:emptyWorkflows" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Create_R_Table.rTable:Analyse_Workflows.rTable>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Create_R_Table.rTable:Analyse_Workflows.rTable" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Analyse_Workflows> .
+
+<http://weprov.csiro.au/controller/FirstID:Generate_URLs.FirstID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FirstID:Generate_URLs.FirstID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_URLs> .
+
+<http://weprov.csiro.au/controller/LastID:Generate_URLs.LastID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LastID:Generate_URLs.LastID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generate_URLs> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.averageNumberOfTasks:averageNumberOfTasks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.averageNumberOfTasks:averageNumberOfTasks" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Analyse_Workflows.localUsage:localUsage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analyse_Workflows.localUsage:localUsage" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Generate_URLs.WorkflowIDs:Create_R_Table.workflowIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_URLs.WorkflowIDs:Create_R_Table.workflowIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_R_Table> .
+
+<http://weprov.csiro.au/controller/Generate_URLs.WorkflowURLs:Analyse_Single_Workflow.workflowUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generate_URLs.WorkflowURLs:Analyse_Single_Workflow.workflowUrl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Analyse_Single_Workflow> .

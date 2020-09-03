@@ -1,0 +1,162 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/file_type> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/revision> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/file_name> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/pathway_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/writtenFile> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/concat_filetype> , <http://weprov.csiro.au/program/concat_dot> , <http://weprov.csiro.au/program/writeFile> , <http://weprov.csiro.au/program/getPathwayAsOutput> , <http://weprov.csiro.au/program/getPathwayAs> , <http://weprov.csiro.au/program/getPathwayAs_input> ;
+        <http://purl.org/dc/terms/description>
+                "Downloads and writes a pathway from WikiPathways to a local disk in the given file type." ;
+        <http://purl.org/dc/terms/title>
+                "Write pathway to disk" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/file_name:concat_dot.string1> , <http://weprov.csiro.au/controller/concat_dot.output:concat_filetype.string1> , <http://weprov.csiro.au/controller/file_type:concat_filetype.string2> , <http://weprov.csiro.au/controller/concat_filetype.output:writeFile.fileName> , <http://weprov.csiro.au/controller/file_type:getPathwayAs_input.fileType> , <http://weprov.csiro.au/controller/getPathwayAsOutput.data:writeFile.data> , <http://weprov.csiro.au/controller/pathway_id:getPathwayAs_input.pwId> , <http://weprov.csiro.au/controller/revision:getPathwayAs_input.revision> , <http://weprov.csiro.au/controller/getPathwayAs.parameters:getPathwayAsOutput.input> , <http://weprov.csiro.au/controller/getPathwayAs_input.output:getPathwayAs.parameters> , <http://weprov.csiro.au/controller/concat_filetype.output:writtenFile> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/concat_filetype>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/concat_filetype.output:writeFile.fileName> , <http://weprov.csiro.au/controller/concat_filetype.output:writtenFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "concat_filetype" .
+
+<http://weprov.csiro.au/program/concat_dot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/concat_dot.output:concat_filetype.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "concat_dot" .
+
+<http://weprov.csiro.au/program/writeFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "writeFile" .
+
+<http://weprov.csiro.au/program/getPathwayAsOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPathwayAsOutput.data:writeFile.data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPathwayAsOutput" .
+
+<http://weprov.csiro.au/program/getPathwayAs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPathwayAs.parameters:getPathwayAsOutput.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPathwayAs" .
+
+<http://weprov.csiro.au/program/getPathwayAs_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPathwayAs_input.output:getPathwayAs.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPathwayAs_input" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/file_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "file_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/revision>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "revision" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/file_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "file_name" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pathway_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:74716b28-2176-4490-b00f-65f77420292f-v1/writtenFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "writtenFile" .
+
+<http://weprov.csiro.au/controller/file_name:concat_dot.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "file_name:concat_dot.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_dot> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/file_name:concat_dot.string1> , <http://weprov.csiro.au/controller/file_type:concat_filetype.string2> , <http://weprov.csiro.au/controller/file_type:getPathwayAs_input.fileType> , <http://weprov.csiro.au/controller/pathway_id:getPathwayAs_input.pwId> , <http://weprov.csiro.au/controller/revision:getPathwayAs_input.revision> .
+
+<http://weprov.csiro.au/controller/concat_dot.output:concat_filetype.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concat_dot.output:concat_filetype.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_filetype> .
+
+<http://weprov.csiro.au/controller/file_type:concat_filetype.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "file_type:concat_filetype.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/concat_filetype> .
+
+<http://weprov.csiro.au/controller/concat_filetype.output:writeFile.fileName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concat_filetype.output:writeFile.fileName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeFile> .
+
+<http://weprov.csiro.au/controller/file_type:getPathwayAs_input.fileType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "file_type:getPathwayAs_input.fileType" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayAs_input> .
+
+<http://weprov.csiro.au/controller/getPathwayAsOutput.data:writeFile.data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPathwayAsOutput.data:writeFile.data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeFile> .
+
+<http://weprov.csiro.au/controller/pathway_id:getPathwayAs_input.pwId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_id:getPathwayAs_input.pwId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayAs_input> .
+
+<http://weprov.csiro.au/controller/revision:getPathwayAs_input.revision>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "revision:getPathwayAs_input.revision" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayAs_input> .
+
+<http://weprov.csiro.au/controller/getPathwayAs.parameters:getPathwayAsOutput.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPathwayAs.parameters:getPathwayAsOutput.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayAsOutput> .
+
+<http://weprov.csiro.au/controller/getPathwayAs_input.output:getPathwayAs.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPathwayAs_input.output:getPathwayAs.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayAs> .
+
+<http://weprov.csiro.au/controller/concat_filetype.output:writtenFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concat_filetype.output:writtenFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

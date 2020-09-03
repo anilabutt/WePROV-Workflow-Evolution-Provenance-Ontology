@@ -1,0 +1,115 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/sbmlModel> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/maxAmount> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/prismModel> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/warnings> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/error> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/sbml2Prism> , <http://weprov.csiro.au/program/sbml2PrismResultXML> , <http://weprov.csiro.au/program/sbml2PrismParamsXML> ;
+        <http://purl.org/dc/terms/description>
+                "For example of the SBML to PRISM translation and the description of its details see http://www.prismmodelchecker.org/manual/RunningPRISM/SupportForSBML ." ;
+        <http://purl.org/dc/terms/title>
+                "sbml2Prism Web service" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/maxAmount:sbml2PrismParamsXML.maxAmount> , <http://weprov.csiro.au/controller/sbml2Prism.sbml2PrismResult:sbml2PrismResultXML.input> , <http://weprov.csiro.au/controller/sbml2PrismParamsXML.output:sbml2Prism.sbml2PrismParams> , <http://weprov.csiro.au/controller/sbmlModel:sbml2PrismParamsXML.sbmlModel> , <http://weprov.csiro.au/controller/sbml2PrismResultXML.error:error> , <http://weprov.csiro.au/controller/sbml2PrismResultXML.prismModel:prismModel> , <http://weprov.csiro.au/controller/sbml2PrismResultXML.warnings:warnings> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/sbml2Prism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sbml2Prism.sbml2PrismResult:sbml2PrismResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbml2Prism" .
+
+<http://weprov.csiro.au/program/sbml2PrismResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sbml2PrismResultXML.error:error> , <http://weprov.csiro.au/controller/sbml2PrismResultXML.prismModel:prismModel> , <http://weprov.csiro.au/controller/sbml2PrismResultXML.warnings:warnings> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbml2PrismResultXML" .
+
+<http://weprov.csiro.au/program/sbml2PrismParamsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sbml2PrismParamsXML.output:sbml2Prism.sbml2PrismParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbml2PrismParamsXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/sbmlModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbmlModel" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/maxAmount>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxAmount" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/prismModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prismModel" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/warnings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "warnings" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5af6daaf-6745-4a26-a914-d93d7a8e8216-v0/error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "error" .
+
+<http://weprov.csiro.au/controller/maxAmount:sbml2PrismParamsXML.maxAmount>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxAmount:sbml2PrismParamsXML.maxAmount" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sbml2PrismParamsXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/maxAmount:sbml2PrismParamsXML.maxAmount> , <http://weprov.csiro.au/controller/sbmlModel:sbml2PrismParamsXML.sbmlModel> .
+
+<http://weprov.csiro.au/controller/sbml2Prism.sbml2PrismResult:sbml2PrismResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml2Prism.sbml2PrismResult:sbml2PrismResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sbml2PrismResultXML> .
+
+<http://weprov.csiro.au/controller/sbml2PrismParamsXML.output:sbml2Prism.sbml2PrismParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml2PrismParamsXML.output:sbml2Prism.sbml2PrismParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sbml2Prism> .
+
+<http://weprov.csiro.au/controller/sbmlModel:sbml2PrismParamsXML.sbmlModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbmlModel:sbml2PrismParamsXML.sbmlModel" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sbml2PrismParamsXML> .
+
+<http://weprov.csiro.au/controller/sbml2PrismResultXML.error:error>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml2PrismResultXML.error:error" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/sbml2PrismResultXML.prismModel:prismModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml2PrismResultXML.prismModel:prismModel" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/sbml2PrismResultXML.warnings:warnings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml2PrismResultXML.warnings:warnings" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

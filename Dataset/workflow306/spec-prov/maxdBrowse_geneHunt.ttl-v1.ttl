@@ -1,0 +1,89 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/probesets> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/return_type> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/Measurements> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/expression_values> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/maxdbrowse_expressions> , <http://weprov.csiro.au/program/maxdBrowse_geneHunt> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Measurements:maxdBrowse_geneHunt.measurementNames> , <http://weprov.csiro.au/controller/probesets:maxdBrowse_geneHunt.gene> , <http://weprov.csiro.au/controller/return_type:maxdBrowse_geneHunt.format> , <http://weprov.csiro.au/controller/maxdBrowse_geneHunt.return:maxdbrowse_expressions.data_direct_data> , <http://weprov.csiro.au/controller/maxdbrowse_expressions.output:expression_values> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/maxdbrowse_expressions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/maxdbrowse_expressions.output:expression_values> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxdbrowse_expressions" .
+
+<http://weprov.csiro.au/program/maxdBrowse_geneHunt>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/maxdBrowse_geneHunt.return:maxdbrowse_expressions.data_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxdBrowse_geneHunt" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/probesets>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "probesets" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/return_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "return_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/Measurements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Measurements" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:N4RV9RBFGB0-v0/expression_values>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "expression_values" .
+
+<http://weprov.csiro.au/controller/Measurements:maxdBrowse_geneHunt.measurementNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Measurements:maxdBrowse_geneHunt.measurementNames" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/maxdBrowse_geneHunt> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Measurements:maxdBrowse_geneHunt.measurementNames> , <http://weprov.csiro.au/controller/probesets:maxdBrowse_geneHunt.gene> , <http://weprov.csiro.au/controller/return_type:maxdBrowse_geneHunt.format> .
+
+<http://weprov.csiro.au/controller/probesets:maxdBrowse_geneHunt.gene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "probesets:maxdBrowse_geneHunt.gene" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/maxdBrowse_geneHunt> .
+
+<http://weprov.csiro.au/controller/return_type:maxdBrowse_geneHunt.format>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "return_type:maxdBrowse_geneHunt.format" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/maxdBrowse_geneHunt> .
+
+<http://weprov.csiro.au/controller/maxdBrowse_geneHunt.return:maxdbrowse_expressions.data_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxdBrowse_geneHunt.return:maxdbrowse_expressions.data_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/maxdbrowse_expressions> .
+
+<http://weprov.csiro.au/controller/maxdbrowse_expressions.output:expression_values>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxdbrowse_expressions.output:expression_values" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

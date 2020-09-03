@@ -1,0 +1,101 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:HX2A7UP3X327-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:HX2A7UP3X327-v0/output> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:HX2A7UP3X327-v0/report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/srslinks> , <http://weprov.csiro.au/program/databank> , <http://weprov.csiro.au/program/xref_databank> , <http://weprov.csiro.au/program/searchterm> , <http://weprov.csiro.au/program/fieldname> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/databank.value:srslinks.databank> , <http://weprov.csiro.au/controller/fieldname.value:srslinks.fieldname> , <http://weprov.csiro.au/controller/searchterm.value:srslinks.searchterm> , <http://weprov.csiro.au/controller/srslinks.report:report> , <http://weprov.csiro.au/controller/srslinks.result:output> , <http://weprov.csiro.au/controller/xref_databank.value:srslinks.xrefDatabank> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/srslinks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/srslinks.report:report> , <http://weprov.csiro.au/controller/srslinks.result:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "srslinks" .
+
+<http://weprov.csiro.au/program/databank>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/databank.value:srslinks.databank> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "databank" .
+
+<http://weprov.csiro.au/program/xref_databank>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/xref_databank.value:srslinks.xrefDatabank> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xref_databank" .
+
+<http://weprov.csiro.au/program/searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchterm.value:srslinks.searchterm> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchterm" .
+
+<http://weprov.csiro.au/program/fieldname>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fieldname.value:srslinks.fieldname> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fieldname" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:HX2A7UP3X327-v0/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:HX2A7UP3X327-v0/report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "report" .
+
+<http://weprov.csiro.au/controller/databank.value:srslinks.databank>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "databank.value:srslinks.databank" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/srslinks> .
+
+<http://weprov.csiro.au/controller/fieldname.value:srslinks.fieldname>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fieldname.value:srslinks.fieldname" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/srslinks> .
+
+<http://weprov.csiro.au/controller/searchterm.value:srslinks.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchterm.value:srslinks.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/srslinks> .
+
+<http://weprov.csiro.au/controller/srslinks.report:report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "srslinks.report:report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/srslinks.result:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "srslinks.result:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/xref_databank.value:srslinks.xrefDatabank>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xref_databank.value:srslinks.xrefDatabank" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/srslinks> .

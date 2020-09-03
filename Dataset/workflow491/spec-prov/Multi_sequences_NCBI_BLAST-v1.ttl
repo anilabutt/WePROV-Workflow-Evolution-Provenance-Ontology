@@ -1,0 +1,146 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Sequence_file> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Hit_id_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Blast_result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/EBI_ncbiblast> , <http://weprov.csiro.au/program/Ask_for_email_address> , <http://weprov.csiro.au/program/Search_database_list> , <http://weprov.csiro.au/program/Select_database> , <http://weprov.csiro.au/program/Blast_program_list> , <http://weprov.csiro.au/program/Select_blast_program> ;
+        <http://purl.org/dc/terms/description>
+                "Run a BLAST analysis using the EBI's WSNCBIBlast service (see http://www.ebi.ac.uk/Tools/webservices/services/ncbiblast). This workflow wraps the EBI_NCBI_BLAST workflow to provide a basic user interface which prompts for the required inputs: sequence file, database, BLAST program and user e-mail. Other parameters (e.g. matrix, sort, gap penalties, etc.) are allowed to default." ;
+        <http://purl.org/dc/terms/title>
+                "Multi sequences NCBI BLAST" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Ask_for_email_address.answer:EBI_ncbiblast.Email> , <http://weprov.csiro.au/controller/Blast_program_list.split:Select_blast_program.valueList> , <http://weprov.csiro.au/controller/EBI_ncbiblast.Hit_id_list:Hit_id_list> , <http://weprov.csiro.au/controller/EBI_ncbiblast.Text_result:Blast_result> , <http://weprov.csiro.au/controller/Search_database_list.split:Select_database.valueList> , <http://weprov.csiro.au/controller/Select_blast_program.answer:EBI_ncbiblast.BLAST_program> , <http://weprov.csiro.au/controller/Select_database.answer:EBI_ncbiblast.Search_database> , <http://weprov.csiro.au/controller/Sequence_file:EBI_ncbiblast.Sequence> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/EBI_ncbiblast>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_ncbiblast.Hit_id_list:Hit_id_list> , <http://weprov.csiro.au/controller/EBI_ncbiblast.Text_result:Blast_result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/NCBI_blast.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_ncbiblast" .
+
+<http://weprov.csiro.au/workflow/NCBI_blast.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/D:/taverna/examples/EBIservices/NCBI_blast.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/Ask_for_email_address>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Ask_for_email_address.answer:EBI_ncbiblast.Email> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Ask_for_email_address" .
+
+<http://weprov.csiro.au/program/Search_database_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Search_database_list.split:Select_database.valueList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Search_database_list" .
+
+<http://weprov.csiro.au/program/Select_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_database.answer:EBI_ncbiblast.Search_database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_database" .
+
+<http://weprov.csiro.au/program/Blast_program_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Blast_program_list.split:Select_blast_program.valueList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Blast_program_list" .
+
+<http://weprov.csiro.au/program/Select_blast_program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_blast_program.answer:EBI_ncbiblast.BLAST_program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_blast_program" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Sequence_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequence_file" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Hit_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hit_id_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f37ba3c2-3f5d-4ea9-bf8a-767c2314d07a-v0/Blast_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blast_result" .
+
+<http://weprov.csiro.au/controller/Ask_for_email_address.answer:EBI_ncbiblast.Email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ask_for_email_address.answer:EBI_ncbiblast.Email" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_ncbiblast> .
+
+<http://weprov.csiro.au/controller/Blast_program_list.split:Select_blast_program.valueList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blast_program_list.split:Select_blast_program.valueList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_blast_program> .
+
+<http://weprov.csiro.au/controller/EBI_ncbiblast.Hit_id_list:Hit_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_ncbiblast.Hit_id_list:Hit_id_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Sequence_file:EBI_ncbiblast.Sequence> .
+
+<http://weprov.csiro.au/controller/EBI_ncbiblast.Text_result:Blast_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_ncbiblast.Text_result:Blast_result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Search_database_list.split:Select_database.valueList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Search_database_list.split:Select_database.valueList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Select_database> .
+
+<http://weprov.csiro.au/controller/Select_blast_program.answer:EBI_ncbiblast.BLAST_program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_blast_program.answer:EBI_ncbiblast.BLAST_program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_ncbiblast> .
+
+<http://weprov.csiro.au/controller/Select_database.answer:EBI_ncbiblast.Search_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_database.answer:EBI_ncbiblast.Search_database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_ncbiblast> .
+
+<http://weprov.csiro.au/controller/Sequence_file:EBI_ncbiblast.Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_file:EBI_ncbiblast.Sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_ncbiblast> .

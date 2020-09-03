@@ -1,0 +1,75 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Chromo> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Start> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/End> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Proteins> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/hsapiens_gene_ensembl> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow queries Biomart to retrieve the Ensembl gene id, protein id, gene name, description and amino acid sequence from the Ensembl Homo sapiens dataset. The user needs to specify a defined chromosomal region i.e. Chromo = 1, Start = 100000000, End = 250000000. This returns all unique entries in FASTA format." ;
+        <http://purl.org/dc/terms/title>
+                "Biomart Protein Sequence Retrieval" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Chromo:hsapiens_gene_ensembl.hsapiens_gene_ensembl.chromosome_name_filter> , <http://weprov.csiro.au/controller/End:hsapiens_gene_ensembl.hsapiens_gene_ensembl.end_filter> , <http://weprov.csiro.au/controller/Start:hsapiens_gene_ensembl.hsapiens_gene_ensembl.start_filter> , <http://weprov.csiro.au/controller/hsapiens_gene_ensembl.hsapiens_gene_ensembl:Proteins> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/hsapiens_gene_ensembl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/hsapiens_gene_ensembl.hsapiens_gene_ensembl:Proteins> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "hsapiens_gene_ensembl" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Chromo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Chromo" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Start>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Start" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/End>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "End" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:41C9I9O4UM0-v0/Proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Proteins" .
+
+<http://weprov.csiro.au/controller/Chromo:hsapiens_gene_ensembl.hsapiens_gene_ensembl.chromosome_name_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Chromo:hsapiens_gene_ensembl.hsapiens_gene_ensembl.chromosome_name_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hsapiens_gene_ensembl> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Chromo:hsapiens_gene_ensembl.hsapiens_gene_ensembl.chromosome_name_filter> , <http://weprov.csiro.au/controller/End:hsapiens_gene_ensembl.hsapiens_gene_ensembl.end_filter> , <http://weprov.csiro.au/controller/Start:hsapiens_gene_ensembl.hsapiens_gene_ensembl.start_filter> .
+
+<http://weprov.csiro.au/controller/End:hsapiens_gene_ensembl.hsapiens_gene_ensembl.end_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "End:hsapiens_gene_ensembl.hsapiens_gene_ensembl.end_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hsapiens_gene_ensembl> .
+
+<http://weprov.csiro.au/controller/Start:hsapiens_gene_ensembl.hsapiens_gene_ensembl.start_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Start:hsapiens_gene_ensembl.hsapiens_gene_ensembl.start_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hsapiens_gene_ensembl> .
+
+<http://weprov.csiro.au/controller/hsapiens_gene_ensembl.hsapiens_gene_ensembl:Proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hsapiens_gene_ensembl.hsapiens_gene_ensembl:Proteins" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

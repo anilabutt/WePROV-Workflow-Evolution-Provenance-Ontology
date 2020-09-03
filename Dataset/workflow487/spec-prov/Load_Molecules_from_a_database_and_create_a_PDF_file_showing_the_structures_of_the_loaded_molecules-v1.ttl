@@ -1,0 +1,31 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7d424a5a-f1f5-4670-b59b-29e9fa063ba0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_molecules_from_database> , <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow loads molecules from a database. The 2D structure of these molecules are shown within a table of a PDF document." ;
+        <http://purl.org/dc/terms/title>
+                "Load Molecules from a database and create a PDF file showing the structures of the loaded molecules" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_molecules_from_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_molecules_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_molecules_from_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_molecules_from_database" .
+
+<http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_PDF_File_with_2D_Structures" .
+
+<http://weprov.csiro.au/controller/Get_molecules_from_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_molecules_from_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> .

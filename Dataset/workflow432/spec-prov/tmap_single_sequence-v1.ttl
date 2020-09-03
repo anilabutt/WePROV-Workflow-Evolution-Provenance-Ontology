@@ -1,0 +1,164 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Sequence_or_ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Sequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/tmap_report> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/tmap_plot> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/tmap> , <http://weprov.csiro.au/program/Sequence_or_ID> , <http://weprov.csiro.au/program/Is_sequence> , <http://weprov.csiro.au/program/Fail_if_identifer> , <http://weprov.csiro.au/program/Fail_if_sequence> , <http://weprov.csiro.au/program/fetchData> , <http://weprov.csiro.au/program/seqret> ;
+        <http://purl.org/dc/terms/description>
+                "Simple workflow using tmap to find transmembrane regions, using a single sequence as input." , "Given a sequence or sequence entry identifer (e.g. uniprot:wap_rat), return the sequence in fasta format.\n\nIf a sequence identifier, in database:identifier format, is input the EBI's WSDbfetch web service (see http://www.ebi.ac.uk/Tools/webservices/services/dbfetch) is used to retrive the sequence in fasta format. Otherwise the input is assumed to be a sequence and if passed through the Soaplab EMBOSS seqret service to force the sequence into fasta format." ;
+        <http://purl.org/dc/terms/title>
+                "tmap_single_sequence" , "Sequence_or_ID" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Sequence_or_ID:Is_sequence.sequence> , <http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_identifer.test> , <http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_sequence.test> , <http://weprov.csiro.au/controller/Sequence_or_ID:fetchData.query> , <http://weprov.csiro.au/controller/Sequence_or_ID:seqret.sequence_direct_data> , <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Sequence> , <http://weprov.csiro.au/controller/seqret.outseq:Sequence> , <http://weprov.csiro.au/controller/Sequence_or_ID:Sequence_or_ID.Sequence_or_ID> , <http://weprov.csiro.au/controller/Sequence_or_ID.Sequence:tmap.sequences_direct_data> , <http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmap_plot> , <http://weprov.csiro.au/controller/tmap.outfile:tmap_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/tmap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmap_plot> , <http://weprov.csiro.au/controller/tmap.outfile:tmap_report> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tmap" .
+
+<http://weprov.csiro.au/program/Sequence_or_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Sequence_or_ID.Sequence:tmap.sequences_direct_data> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequence_or_ID" .
+
+<http://weprov.csiro.au/program/Is_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_identifer.test> , <http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_sequence.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Is_sequence" .
+
+<http://weprov.csiro.au/program/Fail_if_identifer>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_identifer" .
+
+<http://weprov.csiro.au/program/Fail_if_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_sequence" .
+
+<http://weprov.csiro.au/program/fetchData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetchData" .
+
+<http://weprov.csiro.au/program/seqret>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/seqret.outseq:Sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seqret" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Sequence_or_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sequence_or_ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence" .
+
+<http://weprov.csiro.au/controller/Sequence_or_ID:Is_sequence.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_or_ID:Is_sequence.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Is_sequence> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Sequence_or_ID:Is_sequence.sequence> , <http://weprov.csiro.au/controller/Sequence_or_ID:fetchData.query> , <http://weprov.csiro.au/controller/Sequence_or_ID:seqret.sequence_direct_data> , <http://weprov.csiro.au/controller/Sequence_or_ID:Sequence_or_ID.Sequence_or_ID> .
+
+<http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_identifer.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is_sequence.is_sequence:Fail_if_identifer.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_identifer> .
+
+<http://weprov.csiro.au/controller/Is_sequence.is_sequence:Fail_if_sequence.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is_sequence.is_sequence:Fail_if_sequence.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_sequence> .
+
+<http://weprov.csiro.au/controller/Sequence_or_ID:fetchData.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_or_ID:fetchData.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetchData> .
+
+<http://weprov.csiro.au/controller/Sequence_or_ID:seqret.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_or_ID:seqret.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/seqret> .
+
+<http://weprov.csiro.au/controller/fetchData.fetchDataReturn:Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetchData.fetchDataReturn:Sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/seqret.outseq:Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seqret.outseq:Sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/tmap_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmap_report" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:70d8a2a8-a369-4824-879d-dbfa36fcecc8-v0/tmap_plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmap_plot" .
+
+<http://weprov.csiro.au/controller/Sequence_or_ID:Sequence_or_ID.Sequence_or_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_or_ID:Sequence_or_ID.Sequence_or_ID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Sequence_or_ID> .
+
+<http://weprov.csiro.au/controller/Sequence_or_ID.Sequence:tmap.sequences_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sequence_or_ID.Sequence:tmap.sequences_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/tmap> .
+
+<http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmap_plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmap.Graphics_in_PNG:tmap_plot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/tmap.outfile:tmap_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmap.outfile:tmap_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

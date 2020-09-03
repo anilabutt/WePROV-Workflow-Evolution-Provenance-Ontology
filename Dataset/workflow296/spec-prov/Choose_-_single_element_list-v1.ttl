@@ -1,0 +1,47 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Choose> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> ;
+        <http://purl.org/dc/terms/description>
+                "The split_string_into_string_list_by_regular_expression parses the string 'a' and outputs the list ['a'].\n\nThe choose service displays a dialog with 'Some title' and 'Some message'.  The user is only able to choose the value 'a'.  When the user presses OK 'a' is passed to the answer port of the choose service and so to the output of the workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Choose - single element list" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Choose.answer:out> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Choose.selectionValues> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Choose>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Choose.answer:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Choose" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Choose.selectionValues> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Choose.answer:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Choose.answer:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Choose.selectionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:Choose.selectionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Choose> .

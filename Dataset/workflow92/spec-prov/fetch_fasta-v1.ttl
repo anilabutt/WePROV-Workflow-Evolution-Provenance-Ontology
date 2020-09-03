@@ -1,0 +1,312 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/sequenceIds> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/query_strain_id> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/email> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/nuc_fasta> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/alignment> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/isMRSA> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/Neighbours> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/tree> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_Nucleotide_FASTA> , <http://weprov.csiro.au/program/Write_Text_File> , <http://weprov.csiro.au/program/run_blastall> , <http://weprov.csiro.au/program/Read_FASTA> , <http://weprov.csiro.au/program/splitIDs> , <http://weprov.csiro.au/program/local_create_blastdb> , <http://weprov.csiro.au/program/ClustalW> , <http://weprov.csiro.au/program/Merge_FASTA> , <http://weprov.csiro.au/program/create_blastall_cmd_args> , <http://weprov.csiro.au/program/create_formatdb_cmdArgs> , <http://weprov.csiro.au/program/parametersXML2> , <http://weprov.csiro.au/program/Neighbours> , <http://weprov.csiro.au/program/getNeighbours> , <http://weprov.csiro.au/program/addSequenceToFasta> , <http://weprov.csiro.au/program/getSequences> , <http://weprov.csiro.au/program/isMRSA> , <http://weprov.csiro.au/program/EBI_TCoffee> , <http://weprov.csiro.au/program/draw_tree> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "fetch_fasta" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:Merge_FASTA.stringlist> , <http://weprov.csiro.au/controller/Merge_FASTA.concatenated:Write_Text_File.filecontents> , <http://weprov.csiro.au/controller/create_blastall_cmd_args.cmdArgsList:run_blastall.args> , <http://weprov.csiro.au/controller/create_formatdb_cmdArgs.cmdArgsList:local_create_blastdb.args> , <http://weprov.csiro.au/controller/sequenceIds:splitIDs.string> , <http://weprov.csiro.au/controller/parametersXML2.output:getSequences.parameters> , <http://weprov.csiro.au/controller/query_strain_id:isMRSA.sequenceId> , <http://weprov.csiro.au/controller/Read_FASTA.filecontents:EBI_TCoffee.Sequences> , <http://weprov.csiro.au/controller/email:EBI_TCoffee.Email_address> , <http://weprov.csiro.au/controller/getNeighbours.parameters:Neighbours.input> , <http://weprov.csiro.au/controller/splitIDs.split:Get_Nucleotide_FASTA.id> , <http://weprov.csiro.au/controller/ClustalW.result:tree> , <http://weprov.csiro.au/controller/EBI_TCoffee.TCoffee_alignment:alignment> , <http://weprov.csiro.au/controller/Merge_FASTA.concatenated:nuc_fasta> , <http://weprov.csiro.au/controller/Neighbours.return:Neighbours> , <http://weprov.csiro.au/controller/isMRSA.isMRSA:isMRSA> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_Nucleotide_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:Merge_FASTA.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Nucleotide_FASTA" .
+
+<http://weprov.csiro.au/program/Write_Text_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_Text_File" .
+
+<http://weprov.csiro.au/program/run_blastall>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_blastall" .
+
+<http://weprov.csiro.au/program/Read_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_FASTA.filecontents:EBI_TCoffee.Sequences> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_FASTA" .
+
+<http://weprov.csiro.au/program/splitIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/splitIDs.split:Get_Nucleotide_FASTA.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "splitIDs" .
+
+<http://weprov.csiro.au/program/local_create_blastdb>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "local_create_blastdb" .
+
+<http://weprov.csiro.au/program/ClustalW>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ClustalW.result:tree> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ClustalW" .
+
+<http://weprov.csiro.au/program/Merge_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_FASTA.concatenated:Write_Text_File.filecontents> , <http://weprov.csiro.au/controller/Merge_FASTA.concatenated:nuc_fasta> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_FASTA" .
+
+<http://weprov.csiro.au/program/create_blastall_cmd_args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_blastall_cmd_args.cmdArgsList:run_blastall.args> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_blastall_cmd_args" .
+
+<http://weprov.csiro.au/program/create_formatdb_cmdArgs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_formatdb_cmdArgs.cmdArgsList:local_create_blastdb.args> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_formatdb_cmdArgs" .
+
+<http://weprov.csiro.au/program/parametersXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML2.output:getSequences.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML2" .
+
+<http://weprov.csiro.au/program/Neighbours>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Neighbours.return:Neighbours> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Neighbours" .
+
+<http://weprov.csiro.au/program/getNeighbours>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getNeighbours.parameters:Neighbours.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getNeighbours" .
+
+<http://weprov.csiro.au/program/addSequenceToFasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "addSequenceToFasta" .
+
+<http://weprov.csiro.au/program/getSequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSequences" .
+
+<http://weprov.csiro.au/program/isMRSA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isMRSA.isMRSA:isMRSA> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/isMRSA.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isMRSA" .
+
+<http://weprov.csiro.au/workflow/isMRSA.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/C:/taverna-1.7.1/isMRSA.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/EBI_TCoffee>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EBI_TCoffee.TCoffee_alignment:alignment> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EBI_TCoffee" .
+
+<http://weprov.csiro.au/workflow/download?version=1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://www.myexperiment.org/workflows/222/download?version=1" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/draw_tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "draw_tree" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/sequenceIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sequenceIds" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/query_strain_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_strain_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "email" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/nuc_fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "nuc_fasta" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "alignment" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/isMRSA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isMRSA" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/Neighbours>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Neighbours" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6dede55f-d124-405f-8264-76e43f675d81-v0/tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tree" .
+
+<http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:Merge_FASTA.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Nucleotide_FASTA.outputText:Merge_FASTA.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_FASTA> .
+
+<http://weprov.csiro.au/controller/Merge_FASTA.concatenated:Write_Text_File.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_FASTA.concatenated:Write_Text_File.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_Text_File> .
+
+<http://weprov.csiro.au/controller/create_blastall_cmd_args.cmdArgsList:run_blastall.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_blastall_cmd_args.cmdArgsList:run_blastall.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_blastall> .
+
+<http://weprov.csiro.au/controller/create_formatdb_cmdArgs.cmdArgsList:local_create_blastdb.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_formatdb_cmdArgs.cmdArgsList:local_create_blastdb.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/local_create_blastdb> .
+
+<http://weprov.csiro.au/controller/sequenceIds:splitIDs.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sequenceIds:splitIDs.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/splitIDs> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sequenceIds:splitIDs.string> , <http://weprov.csiro.au/controller/query_strain_id:isMRSA.sequenceId> , <http://weprov.csiro.au/controller/email:EBI_TCoffee.Email_address> .
+
+<http://weprov.csiro.au/controller/parametersXML2.output:getSequences.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.output:getSequences.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSequences> .
+
+<http://weprov.csiro.au/controller/query_strain_id:isMRSA.sequenceId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_strain_id:isMRSA.sequenceId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isMRSA> .
+
+<http://weprov.csiro.au/controller/Read_FASTA.filecontents:EBI_TCoffee.Sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_FASTA.filecontents:EBI_TCoffee.Sequences" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_TCoffee> .
+
+<http://weprov.csiro.au/controller/email:EBI_TCoffee.Email_address>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "email:EBI_TCoffee.Email_address" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EBI_TCoffee> .
+
+<http://weprov.csiro.au/controller/getNeighbours.parameters:Neighbours.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getNeighbours.parameters:Neighbours.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Neighbours> .
+
+<http://weprov.csiro.au/controller/splitIDs.split:Get_Nucleotide_FASTA.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitIDs.split:Get_Nucleotide_FASTA.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Nucleotide_FASTA> .
+
+<http://weprov.csiro.au/controller/ClustalW.result:tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ClustalW.result:tree" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EBI_TCoffee.TCoffee_alignment:alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EBI_TCoffee.TCoffee_alignment:alignment" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_FASTA.concatenated:nuc_fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_FASTA.concatenated:nuc_fasta" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Neighbours.return:Neighbours>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Neighbours.return:Neighbours" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/isMRSA.isMRSA:isMRSA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isMRSA.isMRSA:isMRSA" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

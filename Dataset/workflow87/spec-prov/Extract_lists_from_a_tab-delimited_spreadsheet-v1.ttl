@@ -1,0 +1,145 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/TabDelimitedExcelFile> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/ColumnNameList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/DataPoints> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/RowNameList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/SplitColumnNamesIntoList> , <http://weprov.csiro.au/program/SplitRows> , <http://weprov.csiro.au/program/MakeColumnNameList> , <http://weprov.csiro.au/program/SplitDataRows> , <http://weprov.csiro.au/program/SplitDataPoints> , <http://weprov.csiro.au/program/SplitRowNames> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes an Excel spreadsheet exported as a tab delimited file.\n\nThe workflow outputs three lists. A list of column names, a list of row names, and a two deep list of data points that can be indexed by [row][column].\n\nThis workflow assumes that the first row and column contain row names and column names respectively, that cell A1 is blank or meaningless, and that all other rows are some sort of data.\n\nExample data:\n\nBlank\tA\tB\tC\tD\np\t1\t2\t3\t4\nq\t5\t6\t7\t8\nr\t9\t10\t11\t12\ns\t13\t14\t15\t16" ;
+        <http://purl.org/dc/terms/title>
+                "Extract lists from an Excel Spreadsheet" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/TabDelimitedExcelFile:SplitRows.string> , <http://weprov.csiro.au/controller/SplitColumnNamesIntoList.split:MakeColumnNameList.listoflists> , <http://weprov.csiro.au/controller/SplitDataPoints.split:SplitRowNames.datarows> , <http://weprov.csiro.au/controller/SplitDataRows.datarows:SplitDataPoints.string> , <http://weprov.csiro.au/controller/SplitDataRows.headerrow:SplitColumnNamesIntoList.string> , <http://weprov.csiro.au/controller/MakeColumnNameList.list:ColumnNameList> , <http://weprov.csiro.au/controller/SplitRowNames.datarows:DataPoints> , <http://weprov.csiro.au/controller/SplitRowNames.rownameslist:RowNameList> , <http://weprov.csiro.au/controller/SplitRows.split:SplitDataRows.rows> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/SplitColumnNamesIntoList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitColumnNamesIntoList.split:MakeColumnNameList.listoflists> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitColumnNamesIntoList" .
+
+<http://weprov.csiro.au/program/SplitRows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitRows.split:SplitDataRows.rows> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitRows" .
+
+<http://weprov.csiro.au/program/MakeColumnNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MakeColumnNameList.list:ColumnNameList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MakeColumnNameList" .
+
+<http://weprov.csiro.au/program/SplitDataRows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitDataRows.datarows:SplitDataPoints.string> , <http://weprov.csiro.au/controller/SplitDataRows.headerrow:SplitColumnNamesIntoList.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitDataRows" .
+
+<http://weprov.csiro.au/program/SplitDataPoints>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitDataPoints.split:SplitRowNames.datarows> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitDataPoints" .
+
+<http://weprov.csiro.au/program/SplitRowNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitRowNames.datarows:DataPoints> , <http://weprov.csiro.au/controller/SplitRowNames.rownameslist:RowNameList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitRowNames" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/TabDelimitedExcelFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "TabDelimitedExcelFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/ColumnNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ColumnNameList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/DataPoints>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DataPoints" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b0a9a56b-e529-41b2-86a9-ba348e5a0c6e-v0/RowNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RowNameList" .
+
+<http://weprov.csiro.au/controller/TabDelimitedExcelFile:SplitRows.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "TabDelimitedExcelFile:SplitRows.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitRows> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/TabDelimitedExcelFile:SplitRows.string> .
+
+<http://weprov.csiro.au/controller/SplitColumnNamesIntoList.split:MakeColumnNameList.listoflists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitColumnNamesIntoList.split:MakeColumnNameList.listoflists" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MakeColumnNameList> .
+
+<http://weprov.csiro.au/controller/SplitDataPoints.split:SplitRowNames.datarows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitDataPoints.split:SplitRowNames.datarows" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitRowNames> .
+
+<http://weprov.csiro.au/controller/SplitDataRows.datarows:SplitDataPoints.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitDataRows.datarows:SplitDataPoints.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitDataPoints> .
+
+<http://weprov.csiro.au/controller/SplitDataRows.headerrow:SplitColumnNamesIntoList.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitDataRows.headerrow:SplitColumnNamesIntoList.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitColumnNamesIntoList> .
+
+<http://weprov.csiro.au/controller/MakeColumnNameList.list:ColumnNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MakeColumnNameList.list:ColumnNameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/SplitRowNames.datarows:DataPoints>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitRowNames.datarows:DataPoints" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/SplitRowNames.rownameslist:RowNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitRowNames.rownameslist:RowNameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/SplitRows.split:SplitDataRows.rows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitRows.split:SplitDataRows.rows" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitDataRows> .

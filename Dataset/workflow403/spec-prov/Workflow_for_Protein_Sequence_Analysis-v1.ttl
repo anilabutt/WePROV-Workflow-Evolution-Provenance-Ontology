@@ -1,0 +1,534 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Input_Sequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/ListUser> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/N-J or UPGMA> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Blast Report> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Protein Description> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Image Alignment> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Output Tree (N or UPGMA)> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Distance Outfile> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Rooted_Tree> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Unrooted_Tree> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Not Protein Sequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/It is a DNA or RNA sequence> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Fail_if_false_DNA> , <http://weprov.csiro.au/program/Fail_if_false_Protein> , <http://weprov.csiro.au/program/Not_Protein_Sequence> , <http://weprov.csiro.au/program/Get_Protein_FASTA> , <http://weprov.csiro.au/program/Is_DNA_RNA> , <http://weprov.csiro.au/program/Fail_if_true_Protein> , <http://weprov.csiro.au/program/FlattenImage> , <http://weprov.csiro.au/program/Fail_if_true_DNA> , <http://weprov.csiro.au/program/Split_by_newline> , <http://weprov.csiro.au/program/MergeString> , <http://weprov.csiro.au/program/MergeUserList> , <http://weprov.csiro.au/program/Condition_Protein> , <http://weprov.csiro.au/program/toLowerCase> , <http://weprov.csiro.au/program/extract_number_sequences> , <http://weprov.csiro.au/program/Extract_Duplicates> , <http://weprov.csiro.au/program/insert_query_seq> , <http://weprov.csiro.au/program/Extract_GI_Evalue> , <http://weprov.csiro.au/program/Setting_fasta> , <http://weprov.csiro.au/program/Extract_Seq_Description> , <http://weprov.csiro.au/program/Condition_DNA_RNA> , <http://weprov.csiro.au/program/blastsimplifier> , <http://weprov.csiro.au/program/fdrawgram> , <http://weprov.csiro.au/program/fprotdist> , <http://weprov.csiro.au/program/fneighbor> , <http://weprov.csiro.au/program/fdrawtree> , <http://weprov.csiro.au/program/prettyplot> , <http://weprov.csiro.au/program/ClustalW> , <http://weprov.csiro.au/program/searchSimple> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow performs a generic protein sequence analysis. In order to do that a novel protein sequence enters into the software along with a list of known protein identifiers chosen by the biologist to perform a homology search, followed by a multiple sequence alignment and finally a phylogenetic analysis." ;
+        <http://purl.org/dc/terms/title>
+                "Workflow for Protein Sequence Analysis" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ClustalW.outseq:fprotdist.sequence_direct_data> , <http://weprov.csiro.au/controller/ClustalW.outseq:prettyplot.sequences_direct_data> , <http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_false_Protein.test> , <http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_true_Protein.test> , <http://weprov.csiro.au/controller/Extract_Duplicates.result:Split_by_newline.string> , <http://weprov.csiro.au/controller/Extract_GI_Evalue.result:Extract_Duplicates.BlastList> , <http://weprov.csiro.au/controller/Input_Sequence:Condition_DNA_RNA.sequence> , <http://weprov.csiro.au/controller/Input_Sequence:Condition_Protein.sequence> , <http://weprov.csiro.au/controller/Input_Sequence:Setting_fasta.sequence> , <http://weprov.csiro.au/controller/ListUser:MergeUserList.stringlist> , <http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_false_DNA.test> , <http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_true_DNA.test> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:MergeString.stringlist> , <http://weprov.csiro.au/controller/MergeString.concatenated:insert_query_seq.MergeString> , <http://weprov.csiro.au/controller/MergeUserList.concatenated:Extract_Duplicates.UserList> , <http://weprov.csiro.au/controller/N-J or UPGMA:toLowerCase.input> , <http://weprov.csiro.au/controller/Setting_fasta.fasta:insert_query_seq.fasta> , <http://weprov.csiro.au/controller/Setting_fasta.fasta:searchSimple.query> , <http://weprov.csiro.au/controller/Split_by_newline.split:Get_Protein_FASTA.id> , <http://weprov.csiro.au/controller/blastsimplifier.output:Extract_GI_Evalue.BlastReport> , <http://weprov.csiro.au/controller/extract_number_sequences.result:ClustalW.sequence_direct_data> , <http://weprov.csiro.au/controller/extract_number_sequences.result:Extract_Seq_Description.Sequences> , <http://weprov.csiro.au/controller/Extract_Seq_Description.result:Protein Description> , <http://weprov.csiro.au/controller/FlattenImage.outputlist:Image Alignment> , <http://weprov.csiro.au/controller/Is_DNA_RNA.value:It is a DNA or RNA sequence> , <http://weprov.csiro.au/controller/Not_Protein_Sequence.value:Not Protein Sequence> , <http://weprov.csiro.au/controller/fdrawgram.plotfile:Rooted_Tree> , <http://weprov.csiro.au/controller/fdrawtree.plotfile:Unrooted_Tree> , <http://weprov.csiro.au/controller/fneighbor.outfile:Distance Outfile> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:Output Tree (N or UPGMA)> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawgram.intreefile_direct_data> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawtree.intreefile_direct_data> , <http://weprov.csiro.au/controller/fprotdist.outfile:fneighbor.datafile_direct_data> , <http://weprov.csiro.au/controller/insert_query_seq.result:extract_number_sequences.insertSeq> , <http://weprov.csiro.au/controller/prettyplot.Graphics_in_PNG:FlattenImage.inputlist> , <http://weprov.csiro.au/controller/searchSimple.Result:Blast Report> , <http://weprov.csiro.au/controller/searchSimple.Result:blastsimplifier.new_direct_data> , <http://weprov.csiro.au/controller/toLowerCase.output:fneighbor.treetype> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Fail_if_false_DNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false_DNA" .
+
+<http://weprov.csiro.au/program/Fail_if_false_Protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false_Protein" .
+
+<http://weprov.csiro.au/program/Not_Protein_Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Not_Protein_Sequence.value:Not Protein Sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Not_Protein_Sequence" .
+
+<http://weprov.csiro.au/program/Get_Protein_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:MergeString.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Protein_FASTA" .
+
+<http://weprov.csiro.au/program/Is_DNA_RNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Is_DNA_RNA.value:It is a DNA or RNA sequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Is_DNA_RNA" .
+
+<http://weprov.csiro.au/program/Fail_if_true_Protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true_Protein" .
+
+<http://weprov.csiro.au/program/FlattenImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FlattenImage.outputlist:Image Alignment> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FlattenImage" .
+
+<http://weprov.csiro.au/program/Fail_if_true_DNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_true_DNA" .
+
+<http://weprov.csiro.au/program/Split_by_newline>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_by_newline.split:Get_Protein_FASTA.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_by_newline" .
+
+<http://weprov.csiro.au/program/MergeString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeString.concatenated:insert_query_seq.MergeString> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeString" .
+
+<http://weprov.csiro.au/program/MergeUserList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeUserList.concatenated:Extract_Duplicates.UserList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeUserList" .
+
+<http://weprov.csiro.au/program/Condition_Protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_false_Protein.test> , <http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_true_Protein.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Condition_Protein" .
+
+<http://weprov.csiro.au/program/toLowerCase>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/toLowerCase.output:fneighbor.treetype> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "toLowerCase" .
+
+<http://weprov.csiro.au/program/extract_number_sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extract_number_sequences.result:ClustalW.sequence_direct_data> , <http://weprov.csiro.au/controller/extract_number_sequences.result:Extract_Seq_Description.Sequences> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extract_number_sequences" .
+
+<http://weprov.csiro.au/program/Extract_Duplicates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_Duplicates.result:Split_by_newline.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_Duplicates" .
+
+<http://weprov.csiro.au/program/insert_query_seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/insert_query_seq.result:extract_number_sequences.insertSeq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "insert_query_seq" .
+
+<http://weprov.csiro.au/program/Extract_GI_Evalue>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_GI_Evalue.result:Extract_Duplicates.BlastList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_GI_Evalue" .
+
+<http://weprov.csiro.au/program/Setting_fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Setting_fasta.fasta:insert_query_seq.fasta> , <http://weprov.csiro.au/controller/Setting_fasta.fasta:searchSimple.query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Setting_fasta" .
+
+<http://weprov.csiro.au/program/Extract_Seq_Description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_Seq_Description.result:Protein Description> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_Seq_Description" .
+
+<http://weprov.csiro.au/program/Condition_DNA_RNA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_false_DNA.test> , <http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_true_DNA.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Condition_DNA_RNA" .
+
+<http://weprov.csiro.au/program/blastsimplifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blastsimplifier.output:Extract_GI_Evalue.BlastReport> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blastsimplifier" .
+
+<http://weprov.csiro.au/program/fdrawgram>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fdrawgram.plotfile:Rooted_Tree> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fdrawgram" .
+
+<http://weprov.csiro.au/program/fprotdist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fprotdist.outfile:fneighbor.datafile_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fprotdist" .
+
+<http://weprov.csiro.au/program/fneighbor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fneighbor.outfile:Distance Outfile> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:Output Tree (N or UPGMA)> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawgram.intreefile_direct_data> , <http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawtree.intreefile_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fneighbor" .
+
+<http://weprov.csiro.au/program/fdrawtree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fdrawtree.plotfile:Unrooted_Tree> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fdrawtree" .
+
+<http://weprov.csiro.au/program/prettyplot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prettyplot.Graphics_in_PNG:FlattenImage.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prettyplot" .
+
+<http://weprov.csiro.au/program/ClustalW>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ClustalW.outseq:fprotdist.sequence_direct_data> , <http://weprov.csiro.au/controller/ClustalW.outseq:prettyplot.sequences_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ClustalW" .
+
+<http://weprov.csiro.au/program/searchSimple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchSimple.Result:Blast Report> , <http://weprov.csiro.au/controller/searchSimple.Result:blastsimplifier.new_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchSimple" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Input_Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Input_Sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/ListUser>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ListUser" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/N-J or UPGMA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "N-J or UPGMA" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Blast Report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Blast Report" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Protein Description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protein Description" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Image Alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Image Alignment" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Output Tree (N or UPGMA)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Output Tree (N or UPGMA)" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Distance Outfile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Distance Outfile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Rooted_Tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Rooted_Tree" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Unrooted_Tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unrooted_Tree" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/Not Protein Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Not Protein Sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1284a957-6ffd-4c8b-b0a9-2b90697d1427-v0/It is a DNA or RNA sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "It is a DNA or RNA sequence" .
+
+<http://weprov.csiro.au/controller/ClustalW.outseq:fprotdist.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ClustalW.outseq:fprotdist.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fprotdist> .
+
+<http://weprov.csiro.au/controller/ClustalW.outseq:prettyplot.sequences_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ClustalW.outseq:prettyplot.sequences_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prettyplot> .
+
+<http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_false_Protein.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Condition_Protein.condition:Fail_if_false_Protein.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false_Protein> .
+
+<http://weprov.csiro.au/controller/Condition_Protein.condition:Fail_if_true_Protein.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Condition_Protein.condition:Fail_if_true_Protein.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true_Protein> .
+
+<http://weprov.csiro.au/controller/Extract_Duplicates.result:Split_by_newline.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_Duplicates.result:Split_by_newline.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_by_newline> .
+
+<http://weprov.csiro.au/controller/Extract_GI_Evalue.result:Extract_Duplicates.BlastList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_GI_Evalue.result:Extract_Duplicates.BlastList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_Duplicates> .
+
+<http://weprov.csiro.au/controller/Input_Sequence:Condition_DNA_RNA.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Input_Sequence:Condition_DNA_RNA.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Condition_DNA_RNA> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Input_Sequence:Condition_DNA_RNA.sequence> , <http://weprov.csiro.au/controller/Input_Sequence:Condition_Protein.sequence> , <http://weprov.csiro.au/controller/Input_Sequence:Setting_fasta.sequence> , <http://weprov.csiro.au/controller/ListUser:MergeUserList.stringlist> , <http://weprov.csiro.au/controller/N-J or UPGMA:toLowerCase.input> .
+
+<http://weprov.csiro.au/controller/Input_Sequence:Condition_Protein.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Input_Sequence:Condition_Protein.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Condition_Protein> .
+
+<http://weprov.csiro.au/controller/Input_Sequence:Setting_fasta.sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Input_Sequence:Setting_fasta.sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Setting_fasta> .
+
+<http://weprov.csiro.au/controller/ListUser:MergeUserList.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ListUser:MergeUserList.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeUserList> .
+
+<http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_false_DNA.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Condition_DNA_RNA.condition:Fail_if_false_DNA.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false_DNA> .
+
+<http://weprov.csiro.au/controller/Condition_DNA_RNA.condition:Fail_if_true_DNA.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Condition_DNA_RNA.condition:Fail_if_true_DNA.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_true_DNA> .
+
+<http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:MergeString.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Protein_FASTA.outputText:MergeString.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeString> .
+
+<http://weprov.csiro.au/controller/MergeString.concatenated:insert_query_seq.MergeString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeString.concatenated:insert_query_seq.MergeString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/insert_query_seq> .
+
+<http://weprov.csiro.au/controller/MergeUserList.concatenated:Extract_Duplicates.UserList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeUserList.concatenated:Extract_Duplicates.UserList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_Duplicates> .
+
+<http://weprov.csiro.au/controller/N-J or UPGMA:toLowerCase.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "N-J or UPGMA:toLowerCase.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/toLowerCase> .
+
+<http://weprov.csiro.au/controller/Setting_fasta.fasta:insert_query_seq.fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Setting_fasta.fasta:insert_query_seq.fasta" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/insert_query_seq> .
+
+<http://weprov.csiro.au/controller/Setting_fasta.fasta:searchSimple.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Setting_fasta.fasta:searchSimple.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/Split_by_newline.split:Get_Protein_FASTA.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_by_newline.split:Get_Protein_FASTA.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Protein_FASTA> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:Extract_GI_Evalue.BlastReport>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:Extract_GI_Evalue.BlastReport" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_GI_Evalue> .
+
+<http://weprov.csiro.au/controller/extract_number_sequences.result:ClustalW.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract_number_sequences.result:ClustalW.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ClustalW> .
+
+<http://weprov.csiro.au/controller/extract_number_sequences.result:Extract_Seq_Description.Sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract_number_sequences.result:Extract_Seq_Description.Sequences" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_Seq_Description> .
+
+<http://weprov.csiro.au/controller/Extract_Seq_Description.result:Protein Description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_Seq_Description.result:Protein Description" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/FlattenImage.outputlist:Image Alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenImage.outputlist:Image Alignment" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Is_DNA_RNA.value:It is a DNA or RNA sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Is_DNA_RNA.value:It is a DNA or RNA sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Not_Protein_Sequence.value:Not Protein Sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Not_Protein_Sequence.value:Not Protein Sequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fdrawgram.plotfile:Rooted_Tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fdrawgram.plotfile:Rooted_Tree" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fdrawtree.plotfile:Unrooted_Tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fdrawtree.plotfile:Unrooted_Tree" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fneighbor.outfile:Distance Outfile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fneighbor.outfile:Distance Outfile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fneighbor.outtreefile:Output Tree (N or UPGMA)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fneighbor.outtreefile:Output Tree (N or UPGMA)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawgram.intreefile_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fneighbor.outtreefile:fdrawgram.intreefile_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fdrawgram> .
+
+<http://weprov.csiro.au/controller/fneighbor.outtreefile:fdrawtree.intreefile_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fneighbor.outtreefile:fdrawtree.intreefile_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fdrawtree> .
+
+<http://weprov.csiro.au/controller/fprotdist.outfile:fneighbor.datafile_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fprotdist.outfile:fneighbor.datafile_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fneighbor> .
+
+<http://weprov.csiro.au/controller/insert_query_seq.result:extract_number_sequences.insertSeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "insert_query_seq.result:extract_number_sequences.insertSeq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract_number_sequences> .
+
+<http://weprov.csiro.au/controller/prettyplot.Graphics_in_PNG:FlattenImage.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prettyplot.Graphics_in_PNG:FlattenImage.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FlattenImage> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:Blast Report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:Blast Report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:blastsimplifier.new_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:blastsimplifier.new_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/controller/toLowerCase.output:fneighbor.treetype>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "toLowerCase.output:fneighbor.treetype" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fneighbor> .

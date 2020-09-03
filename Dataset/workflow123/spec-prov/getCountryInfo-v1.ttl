@@ -1,0 +1,77 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/countryCode> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/countryInfo> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/url> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> , <http://weprov.csiro.au/program/composeURL> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "getCountryInfo" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:countryInfo> , <http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/countryCode:composeURL.country> , <http://weprov.csiro.au/controller/composeURL.url:url> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_web_page_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:countryInfo> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_web_page_from_URL" .
+
+<http://weprov.csiro.au/program/composeURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/composeURL.url:url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "composeURL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/countryCode>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "countryCode" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/countryInfo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "countryInfo" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f3d2fd16-ad75-46ad-8613-dc92ba26357b-v0/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url" .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:countryInfo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:countryInfo" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/countryCode:composeURL.country> .
+
+<http://weprov.csiro.au/controller/composeURL.url:Get_web_page_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "composeURL.url:Get_web_page_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> .
+
+<http://weprov.csiro.au/controller/countryCode:composeURL.country>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "countryCode:composeURL.country" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/composeURL> .
+
+<http://weprov.csiro.au/controller/composeURL.url:url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "composeURL.url:url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

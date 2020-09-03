@@ -1,0 +1,166 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/number> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/distributionNameParamsList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/method> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/sampleList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/sampleDistributionParamsXML> , <http://weprov.csiro.au/program/sampleXML> , <http://weprov.csiro.au/program/sampleDistributionResultXML> , <http://weprov.csiro.au/program/sampleDistribution> , <http://weprov.csiro.au/program/setDistributionXml> , <http://weprov.csiro.au/program/headTail> , <http://weprov.csiro.au/program/echo2DList> ;
+        <http://purl.org/dc/terms/description>
+                "Probabilistic distribution sampling operation with a use of Mathematica (http://www.wolfram.com/mathematica/) software." ;
+        <http://purl.org/dc/terms/title>
+                "sampleDistribution Web service operation" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/distributionNameParamsList:echo2DList.in> , <http://weprov.csiro.au/controller/method:sampleDistributionParamsXML.method> , <http://weprov.csiro.au/controller/number:sampleDistributionParamsXML.number> , <http://weprov.csiro.au/controller/echo2DList.out:headTail.list> , <http://weprov.csiro.au/controller/headTail.head:setDistributionXml.name> , <http://weprov.csiro.au/controller/headTail.tail:setDistributionXml.parameterList> , <http://weprov.csiro.au/controller/sampleDistribution.sampleDistributionResult:sampleDistributionResultXML.input> , <http://weprov.csiro.au/controller/sampleDistributionParamsXML.output:sampleDistribution.sampleDistributionParams> , <http://weprov.csiro.au/controller/sampleDistributionResultXML.sample:sampleXML.input> , <http://weprov.csiro.au/controller/sampleXML.ArrayOfdecimal:sampleList> , <http://weprov.csiro.au/controller/setDistributionXml.distributionXml:sampleDistributionParamsXML.distribution> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/sampleDistributionParamsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sampleDistributionParamsXML.output:sampleDistribution.sampleDistributionParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sampleDistributionParamsXML" .
+
+<http://weprov.csiro.au/program/sampleXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sampleXML.ArrayOfdecimal:sampleList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sampleXML" .
+
+<http://weprov.csiro.au/program/sampleDistributionResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sampleDistributionResultXML.sample:sampleXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sampleDistributionResultXML" .
+
+<http://weprov.csiro.au/program/sampleDistribution>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sampleDistribution.sampleDistributionResult:sampleDistributionResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sampleDistribution" .
+
+<http://weprov.csiro.au/program/setDistributionXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/setDistributionXml.distributionXml:sampleDistributionParamsXML.distribution> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setDistributionXml" .
+
+<http://weprov.csiro.au/program/headTail>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/headTail.head:setDistributionXml.name> , <http://weprov.csiro.au/controller/headTail.tail:setDistributionXml.parameterList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "headTail" .
+
+<http://weprov.csiro.au/program/echo2DList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echo2DList.out:headTail.list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echo2DList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "number" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/distributionNameParamsList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "distributionNameParamsList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/method>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "method" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fdcff787-04fa-4454-b065-56c16e65ebda-v0/sampleList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sampleList" .
+
+<http://weprov.csiro.au/controller/distributionNameParamsList:echo2DList.in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "distributionNameParamsList:echo2DList.in" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echo2DList> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/distributionNameParamsList:echo2DList.in> , <http://weprov.csiro.au/controller/method:sampleDistributionParamsXML.method> , <http://weprov.csiro.au/controller/number:sampleDistributionParamsXML.number> .
+
+<http://weprov.csiro.au/controller/method:sampleDistributionParamsXML.method>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "method:sampleDistributionParamsXML.method" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleDistributionParamsXML> .
+
+<http://weprov.csiro.au/controller/number:sampleDistributionParamsXML.number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "number:sampleDistributionParamsXML.number" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleDistributionParamsXML> .
+
+<http://weprov.csiro.au/controller/echo2DList.out:headTail.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echo2DList.out:headTail.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/headTail> .
+
+<http://weprov.csiro.au/controller/headTail.head:setDistributionXml.name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "headTail.head:setDistributionXml.name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setDistributionXml> .
+
+<http://weprov.csiro.au/controller/headTail.tail:setDistributionXml.parameterList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "headTail.tail:setDistributionXml.parameterList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setDistributionXml> .
+
+<http://weprov.csiro.au/controller/sampleDistribution.sampleDistributionResult:sampleDistributionResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sampleDistribution.sampleDistributionResult:sampleDistributionResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleDistributionResultXML> .
+
+<http://weprov.csiro.au/controller/sampleDistributionParamsXML.output:sampleDistribution.sampleDistributionParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sampleDistributionParamsXML.output:sampleDistribution.sampleDistributionParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleDistribution> .
+
+<http://weprov.csiro.au/controller/sampleDistributionResultXML.sample:sampleXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sampleDistributionResultXML.sample:sampleXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleXML> .
+
+<http://weprov.csiro.au/controller/sampleXML.ArrayOfdecimal:sampleList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sampleXML.ArrayOfdecimal:sampleList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/setDistributionXml.distributionXml:sampleDistributionParamsXML.distribution>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "setDistributionXml.distributionXml:sampleDistributionParamsXML.distribution" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/sampleDistributionParamsXML> .

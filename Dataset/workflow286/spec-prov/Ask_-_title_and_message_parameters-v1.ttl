@@ -1,0 +1,33 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Ask> ;
+        <http://purl.org/dc/terms/description>
+                "The ask service displays a prompt with 'Some title' and the prompt message 'Some message'.  If the user presses cancel, then a service failure is generated.  If the user presses OK then their input, even if it is empty, is passed to the answer port of the ask service and so to the output of the workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Ask - title and message parameters" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Ask.answer:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Ask>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Ask.answer:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Ask" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:12dba187-99ad-4990-91ff-4708c7c2cb1f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Ask.answer:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ask.answer:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

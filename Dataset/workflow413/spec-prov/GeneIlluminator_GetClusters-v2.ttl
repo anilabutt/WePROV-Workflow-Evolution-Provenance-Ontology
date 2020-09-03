@@ -1,0 +1,65 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Clusters> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetClusters> , <http://weprov.csiro.au/program/Object> ;
+        <http://purl.org/dc/terms/description>
+                "Example workflow demonstrating how to use GeneIlluminator_GetClusters, a synchronous BioMOBY service for gene symbol disambiguation. If a gene symbol is ambiguous this service provides GI_Clusters describing which different genes, sharing the same symbol, exist in different parts of the tree of life. Provides also gene symbol aliases associated to the input gene symbol.\n\n(Use GeneIlluminator_GetGraph for a graphical representation of the clusters or GeneIlluminator_Disambiguate to get the most likely cluster for a certain species of interest in addition to the clusters.)\n  \nVisit http://www.bioinformatics.nl/gi/ for more info about GeneIlluminator.\n\nGeneIlluminator services use a secure connection over HTTPS. To make this work you *must* import our SSL certificates in your local Java keystores. More information can be found on https://www.bioinformatics.nl/phenolink/home/\n  " ;
+        <http://purl.org/dc/terms/title>
+                "GeneIlluminator_GetClusters" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/GeneIlluminator_GetClusters.GI_Cluster(Collection - 'gi_clusters'):Clusters> , <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetClusters.Object(gene_symbol)> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/GeneIlluminator_GetClusters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneIlluminator_GetClusters.GI_Cluster(Collection - 'gi_clusters'):Clusters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneIlluminator_GetClusters" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetClusters.Object(gene_symbol)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneSymbol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Clusters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Clusters" .
+
+<http://weprov.csiro.au/controller/GeneSymbol:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneSymbol:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_GetClusters.GI_Cluster(Collection - 'gi_clusters'):Clusters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_GetClusters.GI_Cluster(Collection - 'gi_clusters'):Clusters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetClusters.Object(gene_symbol)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:GeneIlluminator_GetClusters.Object(gene_symbol)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetClusters> .

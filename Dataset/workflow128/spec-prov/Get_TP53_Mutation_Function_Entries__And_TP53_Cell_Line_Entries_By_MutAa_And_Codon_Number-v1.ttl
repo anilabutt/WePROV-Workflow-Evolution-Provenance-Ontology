@@ -1,0 +1,451 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/MutAA> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/CodonNumber> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/TP53MutationFunctionEntriesCompleteOutput> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/TP53CellLineEntriesStatusCompleteOutput> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Tp53CellLineLib> , <http://weprov.csiro.au/program/StringListSeparator> , <http://weprov.csiro.au/program/Tp53MutantFunctionLib> , <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesMutAA> , <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesCodonNumber> , <http://weprov.csiro.au/program/SplitStringIntoStringListFromMutationFunctionCodonNumber> , <http://weprov.csiro.au/program/IdsSeparator> , <http://weprov.csiro.au/program/SplitStringIntoStringListFornMutationFunctionMutAA> , <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/IdsTokenPosition> , <http://weprov.csiro.au/program/Tp53CellLineFieldsIntersection> , <http://weprov.csiro.au/program/ExtractIdsFromCellLineMutAA> , <http://weprov.csiro.au/program/Tp53MutationFunctionFieldsIntersection> , <http://weprov.csiro.au/program/ExtractIdsFromCellLineCodonNumbers> , <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionMutAA> , <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionCodonNumbers> , <http://weprov.csiro.au/program/GetTp53CellLineIdsByMutAa> , <http://weprov.csiro.au/program/getP53MutationFunctionEntryById> , <http://weprov.csiro.au/program/getP53CellLinesStatusEntryById> , <http://weprov.csiro.au/program/GetMutantFunctionIdsByMutAA> , <http://weprov.csiro.au/program/GetTp53CellLineIdsByCodonNumber> , <http://weprov.csiro.au/program/GetMutantFunctionIdsByCodonNumber> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow retrieves from two different databases two distinct set of entries starting from the same inputs data (i.e. the Mutated Aminoacid encoded at the codon in which the mutation occurred, and the Codon Number where the mutation occurs). \nInput data: Mutant Amino Acid encoded at the codon in which the mutation occurred and Codon Number where the mutation is located.\nSpecial requirements on input data are:\n- the MutAA (Mutated Amino Acid) in three letters code (Gly, Ala, Trp, Phe etc.)\n- the Codon Number range is 1-393,\n- other values may lead to errors,\n- when specifying more than one MutAA or Codon Number, they must be in a unique input string but on distinct text lines" ;
+        <http://purl.org/dc/terms/title>
+                "Get TP53 Mutation Function Entries  And TP53 Cell Line Entries By MutAa And Codon Number" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/CodonNumber:GetMutantFunctionIdsByCodonNumber.codon> , <http://weprov.csiro.au/controller/CodonNumber:GetTp53CellLineIdsByCodonNumber.codon> , <http://weprov.csiro.au/controller/MutAA:Beanshell_scripting_host.input_str> , <http://weprov.csiro.au/controller/MutAA:GetTp53CellLineIdsByMutAa.mut_aa> , <http://weprov.csiro.au/controller/ExtractIdsFromCellLineCodonNumbers.filteredlist:Tp53CellLineFieldsIntersection.list2> , <http://weprov.csiro.au/controller/ExtractIdsFromCellLineMutAA.filteredlist:Tp53CellLineFieldsIntersection.list1> , <http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionCodonNumbers.filteredlist:Tp53MutationFunctionFieldsIntersection.list2> , <http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionMutAA.filteredlist:Tp53MutationFunctionFieldsIntersection.list1> , <http://weprov.csiro.au/controller/GetMutantFunctionIdsByCodonNumber.result:SplitStringIntoStringListFromMutationFunctionCodonNumber.string> , <http://weprov.csiro.au/controller/GetMutantFunctionIdsByMutAA.result:SplitStringIntoStringListFornMutationFunctionMutAA.string> , <http://weprov.csiro.au/controller/GetTp53CellLineIdsByCodonNumber.result:SplitStringIntoStringListForTp53CellLinesCodonNumber.string> , <http://weprov.csiro.au/controller/GetTp53CellLineIdsByMutAa.result:SplitStringIntoStringListForTp53CellLinesMutAA.string> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineCodonNumbers.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineMutAA.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionCodonNumbers.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionMutAA.regex> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineCodonNumbers.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineMutAA.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionCodonNumbers.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionMutAA.group> , <http://weprov.csiro.au/controller/MutAA:GetMutantFunctionIdsByMutAA.mut_aa> , <http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesCodonNumber.split:ExtractIdsFromCellLineCodonNumbers.stringlist> , <http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesMutAA.split:ExtractIdsFromCellLineMutAA.stringlist> , <http://weprov.csiro.au/controller/SplitStringIntoStringListFornMutationFunctionMutAA.split:ExtractIdsFromMutationFunctionMutAA.stringlist> , <http://weprov.csiro.au/controller/SplitStringIntoStringListFromMutationFunctionCodonNumber.split:ExtractIdsFromMutationFunctionCodonNumbers.stringlist> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesCodonNumber.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesMutAA.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFornMutationFunctionMutAA.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFromMutationFunctionCodonNumber.regex> , <http://weprov.csiro.au/controller/Tp53CellLineFieldsIntersection.intersection:getP53CellLinesStatusEntryById.id> , <http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByCodonNumber.libs> , <http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByMutAa.libs> , <http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByCodonNumber.libs> , <http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByMutAA.libs> , <http://weprov.csiro.au/controller/Tp53MutationFunctionFieldsIntersection.intersection:getP53MutationFunctionEntryById.id> , <http://weprov.csiro.au/controller/getP53CellLinesStatusEntryById.result:TP53CellLineEntriesStatusCompleteOutput> , <http://weprov.csiro.au/controller/getP53MutationFunctionEntryById.result:TP53MutationFunctionEntriesCompleteOutput> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Tp53CellLineLib>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByCodonNumber.libs> , <http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByMutAa.libs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tp53CellLineLib" .
+
+<http://weprov.csiro.au/program/StringListSeparator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesCodonNumber.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesMutAA.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFornMutationFunctionMutAA.regex> , <http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFromMutationFunctionCodonNumber.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "StringListSeparator" .
+
+<http://weprov.csiro.au/program/Tp53MutantFunctionLib>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByCodonNumber.libs> , <http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByMutAA.libs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tp53MutantFunctionLib" .
+
+<http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesMutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesMutAA.split:ExtractIdsFromCellLineMutAA.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitStringIntoStringListForTp53CellLinesMutAA" .
+
+<http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesCodonNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesCodonNumber.split:ExtractIdsFromCellLineCodonNumbers.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitStringIntoStringListForTp53CellLinesCodonNumber" .
+
+<http://weprov.csiro.au/program/SplitStringIntoStringListFromMutationFunctionCodonNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitStringIntoStringListFromMutationFunctionCodonNumber.split:ExtractIdsFromMutationFunctionCodonNumbers.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitStringIntoStringListFromMutationFunctionCodonNumber" .
+
+<http://weprov.csiro.au/program/IdsSeparator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineCodonNumbers.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineMutAA.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionCodonNumbers.regex> , <http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionMutAA.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "IdsSeparator" .
+
+<http://weprov.csiro.au/program/SplitStringIntoStringListFornMutationFunctionMutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitStringIntoStringListFornMutationFunctionMutAA.split:ExtractIdsFromMutationFunctionMutAA.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitStringIntoStringListFornMutationFunctionMutAA" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/IdsTokenPosition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineCodonNumbers.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineMutAA.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionCodonNumbers.group> , <http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionMutAA.group> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "IdsTokenPosition" .
+
+<http://weprov.csiro.au/program/Tp53CellLineFieldsIntersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Tp53CellLineFieldsIntersection.intersection:getP53CellLinesStatusEntryById.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tp53CellLineFieldsIntersection" .
+
+<http://weprov.csiro.au/program/ExtractIdsFromCellLineMutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ExtractIdsFromCellLineMutAA.filteredlist:Tp53CellLineFieldsIntersection.list1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ExtractIdsFromCellLineMutAA" .
+
+<http://weprov.csiro.au/program/Tp53MutationFunctionFieldsIntersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Tp53MutationFunctionFieldsIntersection.intersection:getP53MutationFunctionEntryById.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tp53MutationFunctionFieldsIntersection" .
+
+<http://weprov.csiro.au/program/ExtractIdsFromCellLineCodonNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ExtractIdsFromCellLineCodonNumbers.filteredlist:Tp53CellLineFieldsIntersection.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ExtractIdsFromCellLineCodonNumbers" .
+
+<http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionMutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionMutAA.filteredlist:Tp53MutationFunctionFieldsIntersection.list1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ExtractIdsFromMutationFunctionMutAA" .
+
+<http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionCodonNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionCodonNumbers.filteredlist:Tp53MutationFunctionFieldsIntersection.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ExtractIdsFromMutationFunctionCodonNumbers" .
+
+<http://weprov.csiro.au/program/GetTp53CellLineIdsByMutAa>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetTp53CellLineIdsByMutAa.result:SplitStringIntoStringListForTp53CellLinesMutAA.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetTp53CellLineIdsByMutAa" .
+
+<http://weprov.csiro.au/program/getP53MutationFunctionEntryById>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationFunctionEntryById.result:TP53MutationFunctionEntriesCompleteOutput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationFunctionEntryById" .
+
+<http://weprov.csiro.au/program/getP53CellLinesStatusEntryById>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53CellLinesStatusEntryById.result:TP53CellLineEntriesStatusCompleteOutput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53CellLinesStatusEntryById" .
+
+<http://weprov.csiro.au/program/GetMutantFunctionIdsByMutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetMutantFunctionIdsByMutAA.result:SplitStringIntoStringListFornMutationFunctionMutAA.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetMutantFunctionIdsByMutAA" .
+
+<http://weprov.csiro.au/program/GetTp53CellLineIdsByCodonNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetTp53CellLineIdsByCodonNumber.result:SplitStringIntoStringListForTp53CellLinesCodonNumber.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetTp53CellLineIdsByCodonNumber" .
+
+<http://weprov.csiro.au/program/GetMutantFunctionIdsByCodonNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetMutantFunctionIdsByCodonNumber.result:SplitStringIntoStringListFromMutationFunctionCodonNumber.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetMutantFunctionIdsByCodonNumber" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/MutAA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MutAA" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/CodonNumber>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CodonNumber" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/TP53MutationFunctionEntriesCompleteOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "TP53MutationFunctionEntriesCompleteOutput" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2PSRGO0WZ712-v0/TP53CellLineEntriesStatusCompleteOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "TP53CellLineEntriesStatusCompleteOutput" .
+
+<http://weprov.csiro.au/controller/CodonNumber:GetMutantFunctionIdsByCodonNumber.codon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CodonNumber:GetMutantFunctionIdsByCodonNumber.codon" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetMutantFunctionIdsByCodonNumber> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CodonNumber:GetMutantFunctionIdsByCodonNumber.codon> , <http://weprov.csiro.au/controller/CodonNumber:GetTp53CellLineIdsByCodonNumber.codon> , <http://weprov.csiro.au/controller/MutAA:Beanshell_scripting_host.input_str> , <http://weprov.csiro.au/controller/MutAA:GetTp53CellLineIdsByMutAa.mut_aa> , <http://weprov.csiro.au/controller/MutAA:GetMutantFunctionIdsByMutAA.mut_aa> .
+
+<http://weprov.csiro.au/controller/CodonNumber:GetTp53CellLineIdsByCodonNumber.codon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CodonNumber:GetTp53CellLineIdsByCodonNumber.codon" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetTp53CellLineIdsByCodonNumber> .
+
+<http://weprov.csiro.au/controller/MutAA:Beanshell_scripting_host.input_str>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MutAA:Beanshell_scripting_host.input_str" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/MutAA:GetTp53CellLineIdsByMutAa.mut_aa>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MutAA:GetTp53CellLineIdsByMutAa.mut_aa" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetTp53CellLineIdsByMutAa> .
+
+<http://weprov.csiro.au/controller/ExtractIdsFromCellLineCodonNumbers.filteredlist:Tp53CellLineFieldsIntersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExtractIdsFromCellLineCodonNumbers.filteredlist:Tp53CellLineFieldsIntersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Tp53CellLineFieldsIntersection> .
+
+<http://weprov.csiro.au/controller/ExtractIdsFromCellLineMutAA.filteredlist:Tp53CellLineFieldsIntersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExtractIdsFromCellLineMutAA.filteredlist:Tp53CellLineFieldsIntersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Tp53CellLineFieldsIntersection> .
+
+<http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionCodonNumbers.filteredlist:Tp53MutationFunctionFieldsIntersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExtractIdsFromMutationFunctionCodonNumbers.filteredlist:Tp53MutationFunctionFieldsIntersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Tp53MutationFunctionFieldsIntersection> .
+
+<http://weprov.csiro.au/controller/ExtractIdsFromMutationFunctionMutAA.filteredlist:Tp53MutationFunctionFieldsIntersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ExtractIdsFromMutationFunctionMutAA.filteredlist:Tp53MutationFunctionFieldsIntersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Tp53MutationFunctionFieldsIntersection> .
+
+<http://weprov.csiro.au/controller/GetMutantFunctionIdsByCodonNumber.result:SplitStringIntoStringListFromMutationFunctionCodonNumber.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetMutantFunctionIdsByCodonNumber.result:SplitStringIntoStringListFromMutationFunctionCodonNumber.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListFromMutationFunctionCodonNumber> .
+
+<http://weprov.csiro.au/controller/GetMutantFunctionIdsByMutAA.result:SplitStringIntoStringListFornMutationFunctionMutAA.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetMutantFunctionIdsByMutAA.result:SplitStringIntoStringListFornMutationFunctionMutAA.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListFornMutationFunctionMutAA> .
+
+<http://weprov.csiro.au/controller/GetTp53CellLineIdsByCodonNumber.result:SplitStringIntoStringListForTp53CellLinesCodonNumber.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetTp53CellLineIdsByCodonNumber.result:SplitStringIntoStringListForTp53CellLinesCodonNumber.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesCodonNumber> .
+
+<http://weprov.csiro.au/controller/GetTp53CellLineIdsByMutAa.result:SplitStringIntoStringListForTp53CellLinesMutAA.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetTp53CellLineIdsByMutAa.result:SplitStringIntoStringListForTp53CellLinesMutAA.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesMutAA> .
+
+<http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineCodonNumbers.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsSeparator.value:ExtractIdsFromCellLineCodonNumbers.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineCodonNumbers> .
+
+<http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromCellLineMutAA.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsSeparator.value:ExtractIdsFromCellLineMutAA.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineMutAA> .
+
+<http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionCodonNumbers.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsSeparator.value:ExtractIdsFromMutationFunctionCodonNumbers.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionCodonNumbers> .
+
+<http://weprov.csiro.au/controller/IdsSeparator.value:ExtractIdsFromMutationFunctionMutAA.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsSeparator.value:ExtractIdsFromMutationFunctionMutAA.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionMutAA> .
+
+<http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineCodonNumbers.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsTokenPosition.value:ExtractIdsFromCellLineCodonNumbers.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineCodonNumbers> .
+
+<http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromCellLineMutAA.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsTokenPosition.value:ExtractIdsFromCellLineMutAA.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineMutAA> .
+
+<http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionCodonNumbers.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsTokenPosition.value:ExtractIdsFromMutationFunctionCodonNumbers.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionCodonNumbers> .
+
+<http://weprov.csiro.au/controller/IdsTokenPosition.value:ExtractIdsFromMutationFunctionMutAA.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IdsTokenPosition.value:ExtractIdsFromMutationFunctionMutAA.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionMutAA> .
+
+<http://weprov.csiro.au/controller/MutAA:GetMutantFunctionIdsByMutAA.mut_aa>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MutAA:GetMutantFunctionIdsByMutAA.mut_aa" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetMutantFunctionIdsByMutAA> .
+
+<http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesCodonNumber.split:ExtractIdsFromCellLineCodonNumbers.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitStringIntoStringListForTp53CellLinesCodonNumber.split:ExtractIdsFromCellLineCodonNumbers.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineCodonNumbers> .
+
+<http://weprov.csiro.au/controller/SplitStringIntoStringListForTp53CellLinesMutAA.split:ExtractIdsFromCellLineMutAA.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitStringIntoStringListForTp53CellLinesMutAA.split:ExtractIdsFromCellLineMutAA.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromCellLineMutAA> .
+
+<http://weprov.csiro.au/controller/SplitStringIntoStringListFornMutationFunctionMutAA.split:ExtractIdsFromMutationFunctionMutAA.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitStringIntoStringListFornMutationFunctionMutAA.split:ExtractIdsFromMutationFunctionMutAA.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionMutAA> .
+
+<http://weprov.csiro.au/controller/SplitStringIntoStringListFromMutationFunctionCodonNumber.split:ExtractIdsFromMutationFunctionCodonNumbers.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitStringIntoStringListFromMutationFunctionCodonNumber.split:ExtractIdsFromMutationFunctionCodonNumbers.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ExtractIdsFromMutationFunctionCodonNumbers> .
+
+<http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesCodonNumber.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesCodonNumber.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesCodonNumber> .
+
+<http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesMutAA.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringListSeparator.value:SplitStringIntoStringListForTp53CellLinesMutAA.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListForTp53CellLinesMutAA> .
+
+<http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFornMutationFunctionMutAA.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringListSeparator.value:SplitStringIntoStringListFornMutationFunctionMutAA.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListFornMutationFunctionMutAA> .
+
+<http://weprov.csiro.au/controller/StringListSeparator.value:SplitStringIntoStringListFromMutationFunctionCodonNumber.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringListSeparator.value:SplitStringIntoStringListFromMutationFunctionCodonNumber.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitStringIntoStringListFromMutationFunctionCodonNumber> .
+
+<http://weprov.csiro.au/controller/Tp53CellLineFieldsIntersection.intersection:getP53CellLinesStatusEntryById.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53CellLineFieldsIntersection.intersection:getP53CellLinesStatusEntryById.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53CellLinesStatusEntryById> .
+
+<http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByCodonNumber.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53CellLineLib.value:GetTp53CellLineIdsByCodonNumber.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetTp53CellLineIdsByCodonNumber> .
+
+<http://weprov.csiro.au/controller/Tp53CellLineLib.value:GetTp53CellLineIdsByMutAa.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53CellLineLib.value:GetTp53CellLineIdsByMutAa.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetTp53CellLineIdsByMutAa> .
+
+<http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByCodonNumber.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53MutantFunctionLib.value:GetMutantFunctionIdsByCodonNumber.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetMutantFunctionIdsByCodonNumber> .
+
+<http://weprov.csiro.au/controller/Tp53MutantFunctionLib.value:GetMutantFunctionIdsByMutAA.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53MutantFunctionLib.value:GetMutantFunctionIdsByMutAA.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetMutantFunctionIdsByMutAA> .
+
+<http://weprov.csiro.au/controller/Tp53MutationFunctionFieldsIntersection.intersection:getP53MutationFunctionEntryById.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tp53MutationFunctionFieldsIntersection.intersection:getP53MutationFunctionEntryById.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationFunctionEntryById> .
+
+<http://weprov.csiro.au/controller/getP53CellLinesStatusEntryById.result:TP53CellLineEntriesStatusCompleteOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53CellLinesStatusEntryById.result:TP53CellLineEntriesStatusCompleteOutput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53MutationFunctionEntryById.result:TP53MutationFunctionEntriesCompleteOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationFunctionEntryById.result:TP53MutationFunctionEntriesCompleteOutput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

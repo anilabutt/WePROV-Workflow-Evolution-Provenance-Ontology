@@ -1,0 +1,563 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/topic1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/topic2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic1not2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic2not1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic1and2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/proteins_topic1not2_and_2not1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_protein_links> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/DiscoverProteinsTopic1not2> , <http://weprov.csiro.au/program/DiscoverProteinsTopic2not1> , <http://weprov.csiro.au/program/DiscoverProteinsTopic1and2> , <http://weprov.csiro.au/program/CombineTopics> , <http://weprov.csiro.au/program/IntersectProteinsTopic1not2and2not1> , <http://weprov.csiro.au/program/SubtractProteins> , <http://weprov.csiro.au/program/AddProteinTag> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow implements Swanson's prinicple with services from the AIDA toolbox. It tries to find proteins that link two topics, while they never mentioned together with both topics in any one of the top ranking papers related to either topic 1 or topic 2.\n\nIt uses the following logic:\nDiscovered Protein Link = (Protein[Topic1 AND NOT Topic2]  AND Protein[Topic2 AND NOT Topic1]) AND NOT Protein[Topic1 AND Topic2]\nwhere 'Protein[Topic1 OPERATOR Topic2]' represents a protein discovered in abstracts returned from Medline using 'Topic1 OPERATOR Topic2' as query.\n\nComments:\n- It may be useful to optimize the queries for the topics by experimenting with a DiscoverProteins subworkflow first. For example 'cancer' surprisingly does not return any proteins, possibly because clinical papers dominate the retrieval results. The query '+cancer -(therapy clinic) +(protein^10.0 proteins^10.0 gene^9 genes^9)' performs much better. It contains the Lucene priority operator '^[priority], where priority=1 is the default.\n- The nature of the Swansson algorithm makes it much more likely that this workflow returns no results or false positives, than that it returns true positives.\n- True positives returned by this workflow are true with respect to the results of the information retrieval step and information extraction step. Limits: 1. Information retrieval: limited number of documents returned, uses indexes for searching, searches and returns abstracts only; 2. entity recognition: not guaranteed to recognize all instances of proteins." ;
+        <http://purl.org/dc/terms/title>
+                "DiscoverProteinLink" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/AddProteinTag.protein_xml:discovered_protein_links> , <http://weprov.csiro.au/controller/CombineTopics.topic1and2:DiscoverProteinsTopic1and2.query_string> , <http://weprov.csiro.au/controller/topic1:CombineTopics.topic1> , <http://weprov.csiro.au/controller/topic2:CombineTopics.topic2> , <http://weprov.csiro.au/controller/CombineTopics.topic1not2:DiscoverProteinsTopic1not2.query_string> , <http://weprov.csiro.au/controller/CombineTopics.topic2not1:DiscoverProteinsTopic2not1.query_string> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:SubtractProteins.stringlist2> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:IntersectProteinsTopic1not2and2not1.list1> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:IntersectProteinsTopic1not2and2not1.list2> , <http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:SubtractProteins.stringlist1> , <http://weprov.csiro.au/controller/SubtractProteins.stringlist1minus2:AddProteinTag.protein> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:discovered_proteins_topic1and2> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:discovered_proteins_topic1not2> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:discovered_proteins_topic2not1> , <http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:proteins_topic1not2_and_2not1> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/DiscoverProteinsTopic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:IntersectProteinsTopic1not2and2not1.list1> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:discovered_proteins_topic1not2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/BioAID_protein_discovery.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DiscoverProteinsTopic1not2" .
+
+<http://weprov.csiro.au/workflow/BioAID_protein_discovery.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://rdf.adaptivedisclosure.org/~marco/BioAID/Public/Workflows/BioAID/BioAID_protein_discovery.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/DiscoverProteinsTopic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:IntersectProteinsTopic1not2and2not1.list2> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:discovered_proteins_topic2not1> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/BioAID_protein_discovery.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DiscoverProteinsTopic2not1" .
+
+<http://weprov.csiro.au/program/DiscoverProteinsTopic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:SubtractProteins.stringlist2> , <http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:discovered_proteins_topic1and2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/BioAID_protein_discovery.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DiscoverProteinsTopic1and2" .
+
+<http://weprov.csiro.au/program/CombineTopics>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CombineTopics.topic1and2:DiscoverProteinsTopic1and2.query_string> , <http://weprov.csiro.au/controller/CombineTopics.topic1not2:DiscoverProteinsTopic1not2.query_string> , <http://weprov.csiro.au/controller/CombineTopics.topic2not1:DiscoverProteinsTopic2not1.query_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CombineTopics" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1and2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1not2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic2not1> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/topic1not2> , <http://weprov.csiro.au/program/topic1and2> , <http://weprov.csiro.au/program/topic2not1> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "TwoTopics" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/topic1:topic1and2.topic1> , <http://weprov.csiro.au/controller/topic1:topic1not2.topic1> , <http://weprov.csiro.au/controller/topic1:topic2not1.topic1> , <http://weprov.csiro.au/controller/topic2:topic1and2.topic2> , <http://weprov.csiro.au/controller/topic2:topic1not2.topic2> , <http://weprov.csiro.au/controller/topic2:topic2not1.topic2> , <http://weprov.csiro.au/controller/topic1and2.topic1and2:topic1and2> , <http://weprov.csiro.au/controller/topic1not2.topic1not2:topic1not2> , <http://weprov.csiro.au/controller/topic2not1.topic2not1:topic2not1> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/topic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/topic1not2.topic1not2:topic1not2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic1not2" .
+
+<http://weprov.csiro.au/program/topic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/topic1and2.topic1and2:topic1and2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic1and2" .
+
+<http://weprov.csiro.au/program/topic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/topic2not1.topic2not1:topic2not1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic2not1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1and2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1not2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c7232751-3a47-4e9a-9ec8-fe2a59561321-v0/topic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2not1" .
+
+<http://weprov.csiro.au/controller/topic1:topic1and2.topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1:topic1and2.topic1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic1and2> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/topic1:topic1and2.topic1> , <http://weprov.csiro.au/controller/topic1:topic1not2.topic1> , <http://weprov.csiro.au/controller/topic1:topic2not1.topic1> , <http://weprov.csiro.au/controller/topic2:topic1and2.topic2> , <http://weprov.csiro.au/controller/topic2:topic1not2.topic2> , <http://weprov.csiro.au/controller/topic2:topic2not1.topic2> , <http://weprov.csiro.au/controller/stringlist1:String_list_difference.list1> , <http://weprov.csiro.au/controller/stringlist1:String_list_intersection.list1> , <http://weprov.csiro.au/controller/stringlist2:String_list_intersection.list2> , <http://weprov.csiro.au/controller/non_xml_input:Add_xml_tag.input> , <http://weprov.csiro.au/controller/tag_to_xml:Add_xml_tag.tag> , <http://weprov.csiro.au/controller/protein:AddXMLtag.non_xml_input> , <http://weprov.csiro.au/controller/topic1:CombineTopics.topic1> , <http://weprov.csiro.au/controller/topic2:CombineTopics.topic2> .
+
+<http://weprov.csiro.au/controller/topic1:topic1not2.topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1:topic1not2.topic1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic1not2> .
+
+<http://weprov.csiro.au/controller/topic1:topic2not1.topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1:topic2not1.topic1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic2not1> .
+
+<http://weprov.csiro.au/controller/topic2:topic1and2.topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2:topic1and2.topic2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic1and2> .
+
+<http://weprov.csiro.au/controller/topic2:topic1not2.topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2:topic1not2.topic2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic1not2> .
+
+<http://weprov.csiro.au/controller/topic2:topic2not1.topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2:topic2not1.topic2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/topic2not1> .
+
+<http://weprov.csiro.au/controller/topic1and2.topic1and2:topic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1and2.topic1and2:topic1and2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/topic1not2.topic1not2:topic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1not2.topic1not2:topic1not2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/topic2not1.topic2not1:topic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2not1.topic2not1:topic2not1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/IntersectProteinsTopic1not2and2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:SubtractProteins.stringlist1> , <http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:proteins_topic1not2_and_2not1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "IntersectProteinsTopic1not2and2not1" .
+
+<http://weprov.csiro.au/program/SubtractProteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SubtractProteins.stringlist1minus2:AddProteinTag.protein> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SubtractProteins" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist1minus2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/String_list_intersection> , <http://weprov.csiro.au/program/String_list_difference> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Stringlist1minus2" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/stringlist1:String_list_difference.list1> , <http://weprov.csiro.au/controller/stringlist1:String_list_intersection.list1> , <http://weprov.csiro.au/controller/stringlist2:String_list_intersection.list2> , <http://weprov.csiro.au/controller/String_list_difference.difference:stringlist1minus2> , <http://weprov.csiro.au/controller/String_list_intersection.intersection:String_list_difference.list2> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/String_list_intersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_list_intersection.intersection:String_list_difference.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_list_intersection" .
+
+<http://weprov.csiro.au/program/String_list_difference>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_list_difference.difference:stringlist1minus2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_list_difference" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "stringlist1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "stringlist2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b067d45c-86a8-48fe-be16-50b07c863856-v0/stringlist1minus2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stringlist1minus2" .
+
+<http://weprov.csiro.au/controller/stringlist1:String_list_difference.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stringlist1:String_list_difference.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_difference> .
+
+<http://weprov.csiro.au/controller/stringlist1:String_list_intersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stringlist1:String_list_intersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/stringlist2:String_list_intersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stringlist2:String_list_intersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/String_list_difference.difference:stringlist1minus2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_list_difference.difference:stringlist1minus2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/String_list_intersection.intersection:String_list_difference.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_list_intersection.intersection:String_list_difference.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_difference> .
+
+<http://weprov.csiro.au/program/AddProteinTag>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AddProteinTag.protein_xml:discovered_protein_links> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AddProteinTag" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0/protein> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0/protein_xml> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/AddXMLtag> , <http://weprov.csiro.au/program/Protein_molecule_tag> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "AddXMLProteinTag" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Protein_molecule_tag.value:AddXMLtag.tag_to_xml> , <http://weprov.csiro.au/controller/protein:AddXMLtag.non_xml_input> , <http://weprov.csiro.au/controller/AddXMLtag.xml_tagged_input:protein_xml> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/AddXMLtag>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AddXMLtag.xml_tagged_input:protein_xml> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AddXMLtag" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/tag_to_xml> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/non_xml_input> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/xml_tagged_input> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Add_xml_tag> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "XMLTagInput" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/non_xml_input:Add_xml_tag.input> , <http://weprov.csiro.au/controller/tag_to_xml:Add_xml_tag.tag> , <http://weprov.csiro.au/controller/Add_xml_tag.tagged_input:xml_tagged_input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Add_xml_tag>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Add_xml_tag.tagged_input:xml_tagged_input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Add_xml_tag" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/tag_to_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tag_to_xml" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/non_xml_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "non_xml_input" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:fda63299-4e33-49a9-b611-60b97fc5e3d6-v0/xml_tagged_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml_tagged_input" .
+
+<http://weprov.csiro.au/controller/non_xml_input:Add_xml_tag.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "non_xml_input:Add_xml_tag.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Add_xml_tag> .
+
+<http://weprov.csiro.au/controller/tag_to_xml:Add_xml_tag.tag>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tag_to_xml:Add_xml_tag.tag" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Add_xml_tag> .
+
+<http://weprov.csiro.au/controller/Add_xml_tag.tagged_input:xml_tagged_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Add_xml_tag.tagged_input:xml_tagged_input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Protein_molecule_tag>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Protein_molecule_tag.value:AddXMLtag.tag_to_xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Protein_molecule_tag" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0/protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "protein" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:a00444ad-ee3e-4c09-bdc1-bad006224621-v0/protein_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein_xml" .
+
+<http://weprov.csiro.au/controller/Protein_molecule_tag.value:AddXMLtag.tag_to_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protein_molecule_tag.value:AddXMLtag.tag_to_xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddXMLtag> .
+
+<http://weprov.csiro.au/controller/protein:AddXMLtag.non_xml_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein:AddXMLtag.non_xml_input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddXMLtag> .
+
+<http://weprov.csiro.au/controller/AddXMLtag.xml_tagged_input:protein_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AddXMLtag.xml_tagged_input:protein_xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "topic2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins_topic1not2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins_topic2not1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_proteins_topic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins_topic1and2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/proteins_topic1not2_and_2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "proteins_topic1not2_and_2not1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2da96870-80f9-40cd-a9b3-4f9c83ba12bc-v0/discovered_protein_links>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_protein_links" .
+
+<http://weprov.csiro.au/controller/AddProteinTag.protein_xml:discovered_protein_links>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AddProteinTag.protein_xml:discovered_protein_links" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/CombineTopics.topic1and2:DiscoverProteinsTopic1and2.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CombineTopics.topic1and2:DiscoverProteinsTopic1and2.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DiscoverProteinsTopic1and2> .
+
+<http://weprov.csiro.au/controller/topic1:CombineTopics.topic1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic1:CombineTopics.topic1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CombineTopics> .
+
+<http://weprov.csiro.au/controller/topic2:CombineTopics.topic2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topic2:CombineTopics.topic2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CombineTopics> .
+
+<http://weprov.csiro.au/controller/CombineTopics.topic1not2:DiscoverProteinsTopic1not2.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CombineTopics.topic1not2:DiscoverProteinsTopic1not2.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DiscoverProteinsTopic1not2> .
+
+<http://weprov.csiro.au/controller/CombineTopics.topic2not1:DiscoverProteinsTopic2not1.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CombineTopics.topic2not1:DiscoverProteinsTopic2not1.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DiscoverProteinsTopic2not1> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:SubtractProteins.stringlist2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic1and2.discovered_proteins:SubtractProteins.stringlist2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SubtractProteins> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:IntersectProteinsTopic1not2and2not1.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic1not2.discovered_proteins:IntersectProteinsTopic1not2and2not1.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/IntersectProteinsTopic1not2and2not1> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:IntersectProteinsTopic1not2and2not1.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic2not1.discovered_proteins:IntersectProteinsTopic1not2and2not1.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/IntersectProteinsTopic1not2and2not1> .
+
+<http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:SubtractProteins.stringlist1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IntersectProteinsTopic1not2and2not1.intersection:SubtractProteins.stringlist1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SubtractProteins> .
+
+<http://weprov.csiro.au/controller/SubtractProteins.stringlist1minus2:AddProteinTag.protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SubtractProteins.stringlist1minus2:AddProteinTag.protein" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddProteinTag> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic1and2.discovered_proteins:discovered_proteins_topic1and2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic1and2.discovered_proteins:discovered_proteins_topic1and2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic1not2.discovered_proteins:discovered_proteins_topic1not2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic1not2.discovered_proteins:discovered_proteins_topic1not2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/DiscoverProteinsTopic2not1.discovered_proteins:discovered_proteins_topic2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DiscoverProteinsTopic2not1.discovered_proteins:discovered_proteins_topic2not1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/IntersectProteinsTopic1not2and2not1.intersection:proteins_topic1not2_and_2not1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "IntersectProteinsTopic1not2and2not1.intersection:proteins_topic1not2_and_2not1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

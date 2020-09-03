@@ -1,0 +1,275 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/sequence> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/jobid> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/status> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/txt result> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/xml result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/WSArrayofDataXML> , <http://weprov.csiro.au/program/contentXML> , <http://weprov.csiro.au/program/poll> , <http://weprov.csiro.au/program/pollXML> , <http://weprov.csiro.au/program/params> , <http://weprov.csiro.au/program/runWUBlast> , <http://weprov.csiro.au/program/Byte___to_String> , <http://weprov.csiro.au/program/Byte___to_String1> , <http://weprov.csiro.au/program/checkStatusWorkflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "EBI Blast" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/WSArrayofDataXML.output:contentXML.WSArrayofData> , <http://weprov.csiro.au/controller/contentXML.output:runWUBlast.content> , <http://weprov.csiro.au/controller/params.output:runWUBlast.params> , <http://weprov.csiro.au/controller/poll.result:Byte___to_String.bytes> , <http://weprov.csiro.au/controller/runWUBlast.jobid:checkStatusWorkflow.job> , <http://weprov.csiro.au/controller/runWUBlast.jobid:poll.jobid> , <http://weprov.csiro.au/controller/sequence:WSArrayofDataXML.content> , <http://weprov.csiro.au/controller/pollXML.result:Byte___to_String1.bytes> , <http://weprov.csiro.au/controller/Byte___to_String1.string:xml result> , <http://weprov.csiro.au/controller/Byte___to_String.string:txt result> , <http://weprov.csiro.au/controller/checkStatusWorkflow.status:status> , <http://weprov.csiro.au/controller/runWUBlast.jobid:jobid> , <http://weprov.csiro.au/controller/runWUBlast.jobid:pollXML.jobid> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/WSArrayofDataXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/WSArrayofDataXML.output:contentXML.WSArrayofData> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "WSArrayofDataXML" .
+
+<http://weprov.csiro.au/program/contentXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/contentXML.output:runWUBlast.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "contentXML" .
+
+<http://weprov.csiro.au/program/poll>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/poll.result:Byte___to_String.bytes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "poll" .
+
+<http://weprov.csiro.au/program/pollXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pollXML.result:Byte___to_String1.bytes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pollXML" .
+
+<http://weprov.csiro.au/program/params>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/params.output:runWUBlast.params> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "params" .
+
+<http://weprov.csiro.au/program/runWUBlast>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/runWUBlast.jobid:checkStatusWorkflow.job> , <http://weprov.csiro.au/controller/runWUBlast.jobid:poll.jobid> , <http://weprov.csiro.au/controller/runWUBlast.jobid:jobid> , <http://weprov.csiro.au/controller/runWUBlast.jobid:pollXML.jobid> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "runWUBlast" .
+
+<http://weprov.csiro.au/program/Byte___to_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Byte___to_String.string:txt result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Byte___to_String" .
+
+<http://weprov.csiro.au/program/Byte___to_String1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Byte___to_String1.string:xml result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Byte___to_String1" .
+
+<http://weprov.csiro.au/program/checkStatusWorkflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/checkStatusWorkflow.status:status> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "checkStatusWorkflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0/job> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0/status> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/checkStatus> , <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/isDone> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "checkCompletion" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/job:checkStatus.jobid> , <http://weprov.csiro.au/controller/checkStatus.status:isDone.status> , <http://weprov.csiro.au/controller/isDone.finished:Fail_if_false.test> , <http://weprov.csiro.au/controller/checkStatus.status:status> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/checkStatus>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/checkStatus.status:isDone.status> , <http://weprov.csiro.au/controller/checkStatus.status:status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "checkStatus" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/isDone>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/isDone.finished:Fail_if_false.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "isDone" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0/job>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "job" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8eec7ed7-d494-4842-b35c-b6792ed19f32-v0/status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status" .
+
+<http://weprov.csiro.au/controller/job:checkStatus.jobid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "job:checkStatus.jobid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/checkStatus> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/job:checkStatus.jobid> , <http://weprov.csiro.au/controller/sequence:WSArrayofDataXML.content> .
+
+<http://weprov.csiro.au/controller/checkStatus.status:isDone.status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "checkStatus.status:isDone.status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/isDone> .
+
+<http://weprov.csiro.au/controller/isDone.finished:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "isDone.finished:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/controller/checkStatus.status:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "checkStatus.status:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/jobid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "jobid" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/txt result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "txt result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb6243e-e4b8-4dc3-b79d-9228fcb5a334-v0/xml result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml result" .
+
+<http://weprov.csiro.au/controller/WSArrayofDataXML.output:contentXML.WSArrayofData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WSArrayofDataXML.output:contentXML.WSArrayofData" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/contentXML> .
+
+<http://weprov.csiro.au/controller/contentXML.output:runWUBlast.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "contentXML.output:runWUBlast.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/runWUBlast> .
+
+<http://weprov.csiro.au/controller/params.output:runWUBlast.params>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "params.output:runWUBlast.params" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/runWUBlast> .
+
+<http://weprov.csiro.au/controller/poll.result:Byte___to_String.bytes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "poll.result:Byte___to_String.bytes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Byte___to_String> .
+
+<http://weprov.csiro.au/controller/runWUBlast.jobid:checkStatusWorkflow.job>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runWUBlast.jobid:checkStatusWorkflow.job" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/checkStatusWorkflow> .
+
+<http://weprov.csiro.au/controller/runWUBlast.jobid:poll.jobid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runWUBlast.jobid:poll.jobid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/poll> .
+
+<http://weprov.csiro.au/controller/sequence:WSArrayofDataXML.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sequence:WSArrayofDataXML.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/WSArrayofDataXML> .
+
+<http://weprov.csiro.au/controller/pollXML.result:Byte___to_String1.bytes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pollXML.result:Byte___to_String1.bytes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Byte___to_String1> .
+
+<http://weprov.csiro.au/controller/Byte___to_String1.string:xml result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Byte___to_String1.string:xml result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Byte___to_String.string:txt result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Byte___to_String.string:txt result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/checkStatusWorkflow.status:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "checkStatusWorkflow.status:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/runWUBlast.jobid:jobid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runWUBlast.jobid:jobid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/runWUBlast.jobid:pollXML.jobid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "runWUBlast.jobid:pollXML.jobid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pollXML> .

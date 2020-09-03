@@ -1,0 +1,118 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/query_string> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/maxNumberOfDocsToRetrieve> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/relevant_documents> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_proteins> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_diseases> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/diseases_per_protein> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/protein_count> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/disease_count_per_protein> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_uniprot_ids> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/disease_count> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Document_index> , <http://weprov.csiro.au/program/search_field> , <http://weprov.csiro.au/program/CountDiseasesPerProtein> , <http://weprov.csiro.au/program/CountDiseases> , <http://weprov.csiro.au/program/CountProteins> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow finds disease relevant to the query string via the following steps:\n1. A user query: a list of terms or boolean query - look at the Apache Lucene project for all details. E.g.: (EZH2 OR \"Enhancer of Zeste\" +(mutation chromatin) -clinical); consider adding 'ProteinSynonymsToQuery' in front of the input if your query is a protein.\n2. Retrieve documents: finds 'maximumNumberOfHits' relevant documents (abstract+title) based on query (the AIDA service inside is based on Apache's Lucene)\n3. Discover proteins: extract proteins discovered in the set of relevant abstracts with a 'named entity recognizer' trained on genomic terms using a Bayesian approach; the AIDA service inside is based on LingPipe. This subworkflow also 'filters' false positives from the discovered protein by requiring a discovery has a valid UniProt ID. Martijn Schuemie's service to do that contains only human UniProt IDs, which is why this workflow only works for human proteins.\n4. Link proteins to disease contained in the OMIM disease database (with a service from Japan that interrogates OMIM)\n\nWorkflow by Marco Roos (AID = Adaptive Information Disclosure, University of Amsterdam; http://adaptivedisclosure.org)\n\nText mining services by Sophia Katrenko and Edgar Meij (AID), and Martijn Schuemie (BioSemantics, Erasmus University Rotterdam).\nOMIM service from the Center for Information Biology and DNA Data Bank of Japan, National Institute of Genetics, director Hideaki Sugawara (see http://xml.nig.ac.jp)\n\nChanges to our original BioAID_DiseaseDiscovery workflow:\n   * Use of Martijn Schuemie's synsets service to\n       * provide uniprot ids to discovered proteins\n       * filter false positive discoveries, only proteins with a uniprot id go through; this introduces some false negatives (e.g. discovered proteins with a name shorter than 3 characters)\n       * solve a major issue with the original workflow where some false positives could contribute disproportionately to the number of discovered diseases\n   * Counting of results in various ways." ;
+        <http://purl.org/dc/terms/title>
+                "Demo_DiseaseDiscovery_byHumanUniprot_scaffold" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/CountDiseases.count:disease_count> , <http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein> , <http://weprov.csiro.au/controller/CountProteins.count:protein_count> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Document_index" .
+
+<http://weprov.csiro.au/program/search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search_field" .
+
+<http://weprov.csiro.au/program/CountDiseasesPerProtein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountDiseasesPerProtein" .
+
+<http://weprov.csiro.au/program/CountDiseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountDiseases.count:disease_count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountDiseases" .
+
+<http://weprov.csiro.au/program/CountProteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountProteins.count:protein_count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountProteins" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/maxNumberOfDocsToRetrieve>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxNumberOfDocsToRetrieve" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "relevant_documents" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_diseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_diseases" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/diseases_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "diseases_per_protein" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/protein_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein_count" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/disease_count_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "disease_count_per_protein" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/discovered_uniprot_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_uniprot_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v0/disease_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "disease_count" .
+
+<http://weprov.csiro.au/controller/CountDiseases.count:disease_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountDiseases.count:disease_count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountDiseasesPerProtein.count:disease_count_per_protein" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/CountProteins.count:protein_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountProteins.count:protein_count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

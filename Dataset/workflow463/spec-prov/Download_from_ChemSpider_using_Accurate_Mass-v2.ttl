@@ -1,0 +1,133 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/Mass_Range> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/Accurate_Mass> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/CompoundDetails> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/parametersXML3> , <http://weprov.csiro.au/program/parametersXML1> , <http://weprov.csiro.au/program/parametersXML2> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/GetCompoundDetails> , <http://weprov.csiro.au/program/SearchByMass> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Download from ChemSpider using Accurate Mass" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Accurate_Mass:parametersXML.mass> , <http://weprov.csiro.au/controller/GetCompoundDetails.parameters:parametersXML3.input> , <http://weprov.csiro.au/controller/Mass_Range:parametersXML.range> , <http://weprov.csiro.au/controller/SearchByMass.parameters:parametersXML1.input> , <http://weprov.csiro.au/controller/parametersXML1.SearchByMassResult:parametersXML2.cmp_id> , <http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters> , <http://weprov.csiro.au/controller/parametersXML3.GetCompoundDetailsResult:CompoundDetails> , <http://weprov.csiro.au/controller/parametersXML.output:SearchByMass.parameters> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/parametersXML3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML3.GetCompoundDetailsResult:CompoundDetails> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML3" .
+
+<http://weprov.csiro.au/program/parametersXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML1.SearchByMassResult:parametersXML2.cmp_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML1" .
+
+<http://weprov.csiro.au/program/parametersXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML2" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:SearchByMass.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/GetCompoundDetails>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetCompoundDetails.parameters:parametersXML3.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetCompoundDetails" .
+
+<http://weprov.csiro.au/program/SearchByMass>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SearchByMass.parameters:parametersXML1.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SearchByMass" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/Mass_Range>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Mass_Range" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/Accurate_Mass>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Accurate_Mass" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:61408ed9-6774-4f5f-ae5a-a119431b7a6c-v1/CompoundDetails>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CompoundDetails" .
+
+<http://weprov.csiro.au/controller/Accurate_Mass:parametersXML.mass>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Accurate_Mass:parametersXML.mass" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Accurate_Mass:parametersXML.mass> , <http://weprov.csiro.au/controller/Mass_Range:parametersXML.range> .
+
+<http://weprov.csiro.au/controller/GetCompoundDetails.parameters:parametersXML3.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetCompoundDetails.parameters:parametersXML3.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML3> .
+
+<http://weprov.csiro.au/controller/Mass_Range:parametersXML.range>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mass_Range:parametersXML.range" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/SearchByMass.parameters:parametersXML1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SearchByMass.parameters:parametersXML1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML1> .
+
+<http://weprov.csiro.au/controller/parametersXML1.SearchByMassResult:parametersXML2.cmp_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML1.SearchByMassResult:parametersXML2.cmp_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML2> .
+
+<http://weprov.csiro.au/controller/parametersXML2.output:GetCompoundDetails.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.output:GetCompoundDetails.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetCompoundDetails> .
+
+<http://weprov.csiro.au/controller/parametersXML3.GetCompoundDetailsResult:CompoundDetails>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML3.GetCompoundDetailsResult:CompoundDetails" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:SearchByMass.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:SearchByMass.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SearchByMass> .

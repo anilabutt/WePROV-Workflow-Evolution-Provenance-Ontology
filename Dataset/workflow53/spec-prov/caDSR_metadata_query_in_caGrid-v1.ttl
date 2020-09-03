@@ -1,0 +1,278 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:330297b4-39ef-4a23-aade-d09821ad0d63-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:330297b4-39ef-4a23-aade-d09821ad0d63-v0/projectsinformation> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> , <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/Extract_elements_from_a_list1> , <http://weprov.csiro.au/program/eVSDescLogicConceptSearchParamsXML> , <http://weprov.csiro.au/program/inputContext> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/projectXML1> , <http://weprov.csiro.au/program/parametersXML4> , <http://weprov.csiro.au/program/getProject> , <http://weprov.csiro.au/program/projectXML> , <http://weprov.csiro.au/program/parametersXML2> , <http://weprov.csiro.au/program/clazzXML> , <http://weprov.csiro.au/program/parametersXML3> , <http://weprov.csiro.au/program/parametersXML1> , <http://weprov.csiro.au/program/searchDescLogicConcept> , <http://weprov.csiro.au/program/findSemanticMetadataForClass> , <http://weprov.csiro.au/program/findClassesInProject> , <http://weprov.csiro.au/program/findProjects> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "tanwei-gt4" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.output:eVSDescLogicConceptSearchParamsXML.EVSDescLogicConceptSearchParams> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list1.outputlist:parametersXML1.clazz> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML1.Project> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML.Project> , <http://weprov.csiro.au/controller/clazzXML.output:Extract_elements_from_a_list1.inputlist> , <http://weprov.csiro.au/controller/eVSDescLogicConceptSearchParamsXML.output:parametersXML4.eVSDescLogicConceptSearchParams> , <http://weprov.csiro.au/controller/findClassesInProject.parameters:parametersXML2.input> , <http://weprov.csiro.au/controller/findProjects.parameters:getProject.input> , <http://weprov.csiro.au/controller/findSemanticMetadataForClass.parameters:parametersXML3.input> , <http://weprov.csiro.au/controller/getProject.Project:Extract_elements_from_a_list.inputlist> , <http://weprov.csiro.au/controller/inputContext.output:findProjects.parameters> , <http://weprov.csiro.au/controller/parametersXML1.output:findSemanticMetadataForClass.parameters> , <http://weprov.csiro.au/controller/parametersXML2.UMLClassMetadata:clazzXML.UMLClassMetadata> , <http://weprov.csiro.au/controller/parametersXML3.SemanticMetadata:Beanshell_scripting_host.input> , <http://weprov.csiro.au/controller/parametersXML4.output:searchDescLogicConcept.parameters> , <http://weprov.csiro.au/controller/parametersXML.output:findClassesInProject.parameters> , <http://weprov.csiro.au/controller/projectXML1.output:parametersXML.project> , <http://weprov.csiro.au/controller/projectXML.output:parametersXML1.project> , <http://weprov.csiro.au/controller/searchDescLogicConcept.parameters:projectsinformation> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Extract_elements_from_a_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML1.Project> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML.Project> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_elements_from_a_list" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.output:eVSDescLogicConceptSearchParamsXML.EVSDescLogicConceptSearchParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/Extract_elements_from_a_list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_elements_from_a_list1.outputlist:parametersXML1.clazz> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_elements_from_a_list1" .
+
+<http://weprov.csiro.au/program/eVSDescLogicConceptSearchParamsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eVSDescLogicConceptSearchParamsXML.output:parametersXML4.eVSDescLogicConceptSearchParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eVSDescLogicConceptSearchParamsXML" .
+
+<http://weprov.csiro.au/program/inputContext>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/inputContext.output:findProjects.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "inputContext" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:findClassesInProject.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/projectXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/projectXML1.output:parametersXML.project> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "projectXML1" .
+
+<http://weprov.csiro.au/program/parametersXML4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML4.output:searchDescLogicConcept.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML4" .
+
+<http://weprov.csiro.au/program/getProject>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getProject.Project:Extract_elements_from_a_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getProject" .
+
+<http://weprov.csiro.au/program/projectXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/projectXML.output:parametersXML1.project> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "projectXML" .
+
+<http://weprov.csiro.au/program/parametersXML2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML2.UMLClassMetadata:clazzXML.UMLClassMetadata> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML2" .
+
+<http://weprov.csiro.au/program/clazzXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/clazzXML.output:Extract_elements_from_a_list1.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "clazzXML" .
+
+<http://weprov.csiro.au/program/parametersXML3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML3.SemanticMetadata:Beanshell_scripting_host.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML3" .
+
+<http://weprov.csiro.au/program/parametersXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML1.output:findSemanticMetadataForClass.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML1" .
+
+<http://weprov.csiro.au/program/searchDescLogicConcept>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchDescLogicConcept.parameters:projectsinformation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchDescLogicConcept" .
+
+<http://weprov.csiro.au/program/findSemanticMetadataForClass>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findSemanticMetadataForClass.parameters:parametersXML3.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findSemanticMetadataForClass" .
+
+<http://weprov.csiro.au/program/findClassesInProject>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findClassesInProject.parameters:parametersXML2.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findClassesInProject" .
+
+<http://weprov.csiro.au/program/findProjects>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findProjects.parameters:getProject.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findProjects" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:330297b4-39ef-4a23-aade-d09821ad0d63-v0/projectsinformation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "projectsinformation" .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.output:eVSDescLogicConceptSearchParamsXML.EVSDescLogicConceptSearchParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.output:eVSDescLogicConceptSearchParamsXML.EVSDescLogicConceptSearchParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eVSDescLogicConceptSearchParamsXML> .
+
+<http://weprov.csiro.au/controller/Extract_elements_from_a_list1.outputlist:parametersXML1.clazz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_elements_from_a_list1.outputlist:parametersXML1.clazz" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML1> .
+
+<http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML1.Project>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_elements_from_a_list.outputlist:projectXML1.Project" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/projectXML1> .
+
+<http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:projectXML.Project>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_elements_from_a_list.outputlist:projectXML.Project" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/projectXML> .
+
+<http://weprov.csiro.au/controller/clazzXML.output:Extract_elements_from_a_list1.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "clazzXML.output:Extract_elements_from_a_list1.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list1> .
+
+<http://weprov.csiro.au/controller/eVSDescLogicConceptSearchParamsXML.output:parametersXML4.eVSDescLogicConceptSearchParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eVSDescLogicConceptSearchParamsXML.output:parametersXML4.eVSDescLogicConceptSearchParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML4> .
+
+<http://weprov.csiro.au/controller/findClassesInProject.parameters:parametersXML2.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findClassesInProject.parameters:parametersXML2.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML2> .
+
+<http://weprov.csiro.au/controller/findProjects.parameters:getProject.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findProjects.parameters:getProject.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getProject> .
+
+<http://weprov.csiro.au/controller/findSemanticMetadataForClass.parameters:parametersXML3.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findSemanticMetadataForClass.parameters:parametersXML3.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML3> .
+
+<http://weprov.csiro.au/controller/getProject.Project:Extract_elements_from_a_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getProject.Project:Extract_elements_from_a_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> .
+
+<http://weprov.csiro.au/controller/inputContext.output:findProjects.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "inputContext.output:findProjects.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findProjects> .
+
+<http://weprov.csiro.au/controller/parametersXML1.output:findSemanticMetadataForClass.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML1.output:findSemanticMetadataForClass.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findSemanticMetadataForClass> .
+
+<http://weprov.csiro.au/controller/parametersXML2.UMLClassMetadata:clazzXML.UMLClassMetadata>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML2.UMLClassMetadata:clazzXML.UMLClassMetadata" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/clazzXML> .
+
+<http://weprov.csiro.au/controller/parametersXML3.SemanticMetadata:Beanshell_scripting_host.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML3.SemanticMetadata:Beanshell_scripting_host.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/parametersXML4.output:searchDescLogicConcept.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML4.output:searchDescLogicConcept.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchDescLogicConcept> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:findClassesInProject.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:findClassesInProject.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findClassesInProject> .
+
+<http://weprov.csiro.au/controller/projectXML1.output:parametersXML.project>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "projectXML1.output:parametersXML.project" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/projectXML.output:parametersXML1.project>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "projectXML.output:parametersXML1.project" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML1> .
+
+<http://weprov.csiro.au/controller/searchDescLogicConcept.parameters:projectsinformation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchDescLogicConcept.parameters:projectsinformation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

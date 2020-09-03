@@ -1,0 +1,69 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:9340622a-d065-43fc-a43e-e798a61f5982-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9340622a-d065-43fc-a43e-e798a61f5982-v0/tavernaHome> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/open_folder_osx> , <http://weprov.csiro.au/program/open_folder_windows> , <http://weprov.csiro.au/program/open_folder_linux_gnome> , <http://weprov.csiro.au/program/find_taverna_home> ;
+        <http://purl.org/dc/terms/description>
+                "Find Taverna's home directory (and open it for Windows/OSX/Linux)" ;
+        <http://purl.org/dc/terms/title>
+                "tavernaHome" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_linux_gnome.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_osx.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_windows.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:tavernaHome> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/open_folder_osx>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "open_folder_osx" .
+
+<http://weprov.csiro.au/program/open_folder_windows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "open_folder_windows" .
+
+<http://weprov.csiro.au/program/open_folder_linux_gnome>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "open_folder_linux_gnome" .
+
+<http://weprov.csiro.au/program/find_taverna_home>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_linux_gnome.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_osx.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_windows.args> , <http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:tavernaHome> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "find_taverna_home" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9340622a-d065-43fc-a43e-e798a61f5982-v0/tavernaHome>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tavernaHome" .
+
+<http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_linux_gnome.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_taverna_home.tavernaHome:open_folder_linux_gnome.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/open_folder_linux_gnome> .
+
+<http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_osx.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_taverna_home.tavernaHome:open_folder_osx.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/open_folder_osx> .
+
+<http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:open_folder_windows.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_taverna_home.tavernaHome:open_folder_windows.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/open_folder_windows> .
+
+<http://weprov.csiro.au/controller/find_taverna_home.tavernaHome:tavernaHome>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_taverna_home.tavernaHome:tavernaHome" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

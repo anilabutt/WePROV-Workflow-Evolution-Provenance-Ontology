@@ -1,0 +1,79 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:aa6f9a00-d509-4785-95c5-413bdd06c089-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:aa6f9a00-d509-4785-95c5-413bdd06c089-v0/Query> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:aa6f9a00-d509-4785-95c5-413bdd06c089-v0/Citations> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/searchCitations> , <http://weprov.csiro.au/program/Search_Parameters> , <http://weprov.csiro.au/program/Unwrap_result> ;
+        <http://purl.org/dc/terms/description>
+                "Perform a literature search using the EBI's CiteXplore service (http://www.ebi.ac.uk/citexplore/), and get the results in a minimal XML format containing the citation information (i.e. title, author, journal, etc.), the identifier of the citation in the source database (PubMed/Medline, Agricola, Patent Abstracts, CBA, CiteSeer, etc.) and information about abstract and full article availablity including URLs." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_CiteXplore" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Query:Search_Parameters.luceneQueryString> , <http://weprov.csiro.au/controller/Search_Parameters.output:searchCitations.parameters> , <http://weprov.csiro.au/controller/Unwrap_result.return:Citations> , <http://weprov.csiro.au/controller/searchCitations.parameters:Unwrap_result.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/searchCitations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchCitations.parameters:Unwrap_result.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchCitations" .
+
+<http://weprov.csiro.au/program/Search_Parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Search_Parameters.output:searchCitations.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Search_Parameters" .
+
+<http://weprov.csiro.au/program/Unwrap_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Unwrap_result.return:Citations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Unwrap_result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:aa6f9a00-d509-4785-95c5-413bdd06c089-v0/Query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Query" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:aa6f9a00-d509-4785-95c5-413bdd06c089-v0/Citations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Citations" .
+
+<http://weprov.csiro.au/controller/Query:Search_Parameters.luceneQueryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Query:Search_Parameters.luceneQueryString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Search_Parameters> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Query:Search_Parameters.luceneQueryString> .
+
+<http://weprov.csiro.au/controller/Search_Parameters.output:searchCitations.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Search_Parameters.output:searchCitations.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchCitations> .
+
+<http://weprov.csiro.au/controller/Unwrap_result.return:Citations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unwrap_result.return:Citations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/searchCitations.parameters:Unwrap_result.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchCitations.parameters:Unwrap_result.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Unwrap_result> .

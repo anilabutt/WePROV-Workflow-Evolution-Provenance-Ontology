@@ -1,0 +1,247 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f1c374c1-670d-4282-9dbd-b189d4b65673-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f1c374c1-670d-4282-9dbd-b189d4b65673-v0/CQL File Name> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f1c374c1-670d-4282-9dbd-b189d4b65673-v0/output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> , <http://weprov.csiro.au/program/Merge_string_list_to_string> , <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/Beanshell_scripting_host1> , <http://weprov.csiro.au/program/parametersXML1> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/HierarchicalClusteringParameterXML1> , <http://weprov.csiro.au/program/PreprocessDatasetParameterSetXML1> , <http://weprov.csiro.au/program/preprocessDatasetParameterSetXML> , <http://weprov.csiro.au/program/hierarchicalClusteringParameterXML> , <http://weprov.csiro.au/program/parametersXML4> , <http://weprov.csiro.au/program/parametersXML3> , <http://weprov.csiro.au/program/execute> , <http://weprov.csiro.au/program/execute2> , <http://weprov.csiro.au/program/performAnalysis> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "cagrid-sample2" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host1.output:parametersXML3.bioAssay> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.output:parametersXML4.bioAssay> , <http://weprov.csiro.au/controller/CQL File Name:parametersXML.cqlFile> , <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/HierarchicalClusteringParameterXML1.output:hierarchicalClusteringParameterXML.HierarchicalClusteringParameter> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Beanshell_scripting_host1.input> , <http://weprov.csiro.au/controller/PreprocessDatasetParameterSetXML1.output:preprocessDatasetParameterSetXML.PreprocessDatasetParameterSet> , <http://weprov.csiro.au/controller/execute.parameters:Beanshell_scripting_host.input> , <http://weprov.csiro.au/controller/hierarchicalClusteringParameterXML.output:parametersXML3.hierarchicalClusteringParameter> , <http://weprov.csiro.au/controller/parametersXML1.BioAssay:Extract_elements_from_a_list.inputlist> , <http://weprov.csiro.au/controller/parametersXML3.output:execute2.parameters> , <http://weprov.csiro.au/controller/parametersXML4.output:performAnalysis.parameters> , <http://weprov.csiro.au/controller/parametersXML.output:execute.parameters> , <http://weprov.csiro.au/controller/performAnalysis.parameters:parametersXML1.input> , <http://weprov.csiro.au/controller/preprocessDatasetParameterSetXML.output:parametersXML4.preprocessDatasetParameterSet> , <http://weprov.csiro.au/controller/execute2.parameters:output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Extract_elements_from_a_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:Merge_string_list_to_string.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_elements_from_a_list" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Beanshell_scripting_host1.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.output:parametersXML4.bioAssay> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host1.output:parametersXML3.bioAssay> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host1" .
+
+<http://weprov.csiro.au/program/parametersXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML1.BioAssay:Extract_elements_from_a_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML1" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:execute.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/HierarchicalClusteringParameterXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/HierarchicalClusteringParameterXML1.output:hierarchicalClusteringParameterXML.HierarchicalClusteringParameter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "HierarchicalClusteringParameterXML1" .
+
+<http://weprov.csiro.au/program/PreprocessDatasetParameterSetXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PreprocessDatasetParameterSetXML1.output:preprocessDatasetParameterSetXML.PreprocessDatasetParameterSet> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PreprocessDatasetParameterSetXML1" .
+
+<http://weprov.csiro.au/program/preprocessDatasetParameterSetXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/preprocessDatasetParameterSetXML.output:parametersXML4.preprocessDatasetParameterSet> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "preprocessDatasetParameterSetXML" .
+
+<http://weprov.csiro.au/program/hierarchicalClusteringParameterXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/hierarchicalClusteringParameterXML.output:parametersXML3.hierarchicalClusteringParameter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "hierarchicalClusteringParameterXML" .
+
+<http://weprov.csiro.au/program/parametersXML4>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML4.output:performAnalysis.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML4" .
+
+<http://weprov.csiro.au/program/parametersXML3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML3.output:execute2.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML3" .
+
+<http://weprov.csiro.au/program/execute>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/execute.parameters:Beanshell_scripting_host.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "execute" .
+
+<http://weprov.csiro.au/program/execute2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/execute2.parameters:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "execute2" .
+
+<http://weprov.csiro.au/program/performAnalysis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/performAnalysis.parameters:parametersXML1.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "performAnalysis" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f1c374c1-670d-4282-9dbd-b189d4b65673-v0/CQL File Name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CQL File Name" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f1c374c1-670d-4282-9dbd-b189d4b65673-v0/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host1.output:parametersXML3.bioAssay>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host1.output:parametersXML3.bioAssay" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML3> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.output:parametersXML4.bioAssay>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.output:parametersXML4.bioAssay" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML4> .
+
+<http://weprov.csiro.au/controller/CQL File Name:parametersXML.cqlFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CQL File Name:parametersXML.cqlFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CQL File Name:parametersXML.cqlFile> .
+
+<http://weprov.csiro.au/controller/Extract_elements_from_a_list.outputlist:Merge_string_list_to_string.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_elements_from_a_list.outputlist:Merge_string_list_to_string.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .
+
+<http://weprov.csiro.au/controller/HierarchicalClusteringParameterXML1.output:hierarchicalClusteringParameterXML.HierarchicalClusteringParameter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "HierarchicalClusteringParameterXML1.output:hierarchicalClusteringParameterXML.HierarchicalClusteringParameter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hierarchicalClusteringParameterXML> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Beanshell_scripting_host1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:Beanshell_scripting_host1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host1> .
+
+<http://weprov.csiro.au/controller/PreprocessDatasetParameterSetXML1.output:preprocessDatasetParameterSetXML.PreprocessDatasetParameterSet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PreprocessDatasetParameterSetXML1.output:preprocessDatasetParameterSetXML.PreprocessDatasetParameterSet" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/preprocessDatasetParameterSetXML> .
+
+<http://weprov.csiro.au/controller/execute.parameters:Beanshell_scripting_host.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "execute.parameters:Beanshell_scripting_host.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/hierarchicalClusteringParameterXML.output:parametersXML3.hierarchicalClusteringParameter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hierarchicalClusteringParameterXML.output:parametersXML3.hierarchicalClusteringParameter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML3> .
+
+<http://weprov.csiro.au/controller/parametersXML1.BioAssay:Extract_elements_from_a_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML1.BioAssay:Extract_elements_from_a_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_elements_from_a_list> .
+
+<http://weprov.csiro.au/controller/parametersXML3.output:execute2.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML3.output:execute2.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/execute2> .
+
+<http://weprov.csiro.au/controller/parametersXML4.output:performAnalysis.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML4.output:performAnalysis.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/performAnalysis> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:execute.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:execute.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/execute> .
+
+<http://weprov.csiro.au/controller/performAnalysis.parameters:parametersXML1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "performAnalysis.parameters:parametersXML1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML1> .
+
+<http://weprov.csiro.au/controller/preprocessDatasetParameterSetXML.output:parametersXML4.preprocessDatasetParameterSet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "preprocessDatasetParameterSetXML.output:parametersXML4.preprocessDatasetParameterSet" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML4> .
+
+<http://weprov.csiro.au/controller/execute2.parameters:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "execute2.parameters:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

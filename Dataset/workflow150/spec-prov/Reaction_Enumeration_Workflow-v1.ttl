@@ -1,0 +1,85 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ccb4147c-7dea-42eb-8de9-83074a1928a3-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/ReactionEnumerator> , <http://weprov.csiro.au/program/File_Reader> , <http://weprov.csiro.au/program/File_Reader1> , <http://weprov.csiro.au/program/Read_MDL_RXN_File> , <http://weprov.csiro.au/program/Write_MDL_Mol_File_to_File> , <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow performs a reaction enumeration. Therefore it loads a generic reaction rxn file and two educt lists. This SD-Files contains molecules for the enumeration. The products of the enumerated reaction are stored as Mol Files and a PDF will be created which contains the product molecules." ;
+        <http://purl.org/dc/terms/title>
+                "Reaction Enumeration Workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/File_Reader1.resultStructure:ReactionEnumerator.reactantTwo> , <http://weprov.csiro.au/controller/File_Reader.resultStructure:ReactionEnumerator.reactantOne> , <http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Create_PDF_File_with_2D_Structures.inputStructures> , <http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Write_MDL_Mol_File_to_File.inputStructures> , <http://weprov.csiro.au/controller/Read_MDL_RXN_File.resultReaction:ReactionEnumerator.reaction> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/ReactionEnumerator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Create_PDF_File_with_2D_Structures.inputStructures> , <http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Write_MDL_Mol_File_to_File.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ReactionEnumerator" .
+
+<http://weprov.csiro.au/program/File_Reader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/File_Reader.resultStructure:ReactionEnumerator.reactantOne> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "File_Reader" .
+
+<http://weprov.csiro.au/program/File_Reader1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/File_Reader1.resultStructure:ReactionEnumerator.reactantTwo> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "File_Reader1" .
+
+<http://weprov.csiro.au/program/Read_MDL_RXN_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_MDL_RXN_File.resultReaction:ReactionEnumerator.reaction> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_MDL_RXN_File" .
+
+<http://weprov.csiro.au/program/Write_MDL_Mol_File_to_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_MDL_Mol_File_to_File" .
+
+<http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_PDF_File_with_2D_Structures" .
+
+<http://weprov.csiro.au/controller/File_Reader1.resultStructure:ReactionEnumerator.reactantTwo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "File_Reader1.resultStructure:ReactionEnumerator.reactantTwo" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ReactionEnumerator> .
+
+<http://weprov.csiro.au/controller/File_Reader.resultStructure:ReactionEnumerator.reactantOne>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "File_Reader.resultStructure:ReactionEnumerator.reactantOne" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ReactionEnumerator> .
+
+<http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Create_PDF_File_with_2D_Structures.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ReactionEnumerator.productStructures:Create_PDF_File_with_2D_Structures.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> .
+
+<http://weprov.csiro.au/controller/ReactionEnumerator.productStructures:Write_MDL_Mol_File_to_File.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ReactionEnumerator.productStructures:Write_MDL_Mol_File_to_File.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_MDL_Mol_File_to_File> .
+
+<http://weprov.csiro.au/controller/Read_MDL_RXN_File.resultReaction:ReactionEnumerator.reaction>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_MDL_RXN_File.resultReaction:ReactionEnumerator.reaction" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ReactionEnumerator> .

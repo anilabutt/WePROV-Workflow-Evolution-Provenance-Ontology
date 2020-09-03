@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:scufl xmlns:s="http://org.embl.ebi.escience/xscufl/0.1alpha" version="0.2" log="0">
+  <s:workflowdescription lsid="urn:lsid:net.sf.taverna:wfDefinition:792b902f-16ee-4fac-bafc-ca7e42fa8802" author="" title="feat_workflow" />
+  <s:processor name="feat_description" boring="true">
+    <s:stringconstant>https://ws1.grid.sara.nl/~glatard/feat_descriptions/feat_remi_tgz_newdirs_lfc_regstd.xml</s:stringconstant>
+  </s:processor>
+  <s:processor name="empty" boring="true">
+    <s:stringconstant>""</s:stringconstant>
+  </s:processor>
+  <s:processor name="convertString">
+    <s:beanshell>
+      <s:scriptvalue>import java.io.File;
+import java.lang.reflect.Array; 
+
+if(input.startsWith("lfn://")){
+		String[] sp = input.split("/");
+		String path = "";
+		int len = Array.getLength(sp);
+		if(len &lt;4)
+		    output="Error in conversion: input must be in the form lfn://lfc_host/path";
+		    else{
+			for (int i=3;i&lt;len;i++){
+			    path+=sp[i];
+			    if(i&lt;len-1)
+				path+="/";
+			}
+			//System.out.println("path is "+path);
+			File in = new File(path);
+			String base = (in.getName()).substring(0,in.getName().indexOf(".tgz"));
+			String imagedir = in.getParent();
+			String taskname = (new File(imagedir)).getName();
+			String taskdir = (new File(imagedir)).getParent();
+			String patientname = (new File(taskdir)).getName();
+			String rootbuf = (new File(new File(taskdir).getParent())).getParent()+"/output";
+			String filename=patientname+"-"+taskname+"-"+base.substring(5)+".tgz";
+			output=sp[0]+"/"+sp[1]+"/"+sp[2]+"/"+rootbuf+"/"+base+"/"+patientname+"/"+taskname+"/"+filename;
+		    }
+	    }
+	    else output="Error in conversion: input does not start with lfn://";</s:scriptvalue>
+      <s:beanshellinputlist>
+        <s:beanshellinput s:syntactictype="'text/plain'">input</s:beanshellinput>
+      </s:beanshellinputlist>
+      <s:beanshelloutputlist>
+        <s:beanshelloutput s:syntactictype="'text/plain'">output</s:beanshelloutput>
+      </s:beanshelloutputlist>
+      <s:dependencies s:classloader="iteration" />
+    </s:beanshell>
+  </s:processor>
+  <s:processor name="feat" workers="100">
+    <s:description>Service definition of function ns__GASWexecution</s:description>
+    <s:arbitrarywsdl>
+      <s:wsdl>http://egee1.unice.fr/wsdl/gasw_service_16_6.wsdl</s:wsdl>
+      <s:operation>GASWexecution</s:operation>
+    </s:arbitrarywsdl>
+    <s:iterationstrategy>
+      <i:cross xmlns:i="http://org.embl.ebi.escience/xscufliteration/0.1beta10">
+        <i:dot>
+          <i:iterator name="input2" />
+          <i:iterator name="input3" />
+          <i:iterator name="input4" />
+        </i:dot>
+        <i:iterator name="input5" />
+        <i:iterator name="input6" />
+        <i:dot>
+          <i:iterator name="input7" />
+          <i:iterator name="input8" />
+          <i:iterator name="input9" />
+          <i:iterator name="input10" />
+          <i:iterator name="input11" />
+          <i:iterator name="input12" />
+        </i:dot>
+        <i:iterator name="input1" />
+        <i:iterator name="config-file" />
+        <i:iterator name="command-line" />
+        <i:iterator name="input0" />
+        <i:iterator name="input13" />
+        <i:iterator name="input14" />
+        <i:iterator name="input15" />
+      </i:cross>
+    </s:iterationstrategy>
+  </s:processor>
+  <s:link source="PAR_file" sink="feat:input12" />
+  <s:link source="designFileTemplate" sink="feat:input6" />
+  <s:link source="feat_files_1" sink="feat:input7" />
+  <s:link source="fmri_convolve_phase" sink="feat:input2" />
+  <s:link source="fmri_convolve_phase" sink="feat:input3" />
+  <s:link source="fmri_convolve_phase" sink="feat:input4" />
+  <s:link source="fmri_custom1" sink="feat:input9" />
+  <s:link source="fmri_custom2" sink="feat:input10" />
+  <s:link source="fmri_custom3" sink="feat:input11" />
+  <s:link source="fmri_reghighres_dof" sink="feat:input0" />
+  <s:link source="fmri_regstandard_dof" sink="feat:input5" />
+  <s:link source="fmri_smooth" sink="feat:input1" />
+  <s:link source="highres_file" sink="feat:input8" />
+  <s:link source="empty:value" sink="feat:command-line" />
+  <s:link source="empty:value" sink="feat:input13" />
+  <s:link source="empty:value" sink="feat:input14" />
+  <s:link source="empty:value" sink="feat:input15" />
+  <s:link source="feat_description:value" sink="feat:config-file" />
+  <s:link source="feat:result0" sink="convertString:input" />
+  <s:link source="convertString:output" sink="feat_dir"/>
+  <s:source name="designFileTemplate" />
+  <s:source name="feat_files_1" />
+  <s:source name="highres_file" />
+  <s:source name="fmri_custom1" />
+  <s:source name="fmri_custom2" />
+  <s:source name="fmri_custom3" />
+  <s:source name="PAR_file" />
+  <s:source name="fmri_reghighres_dof" />
+  <s:source name="fmri_smooth" />
+  <s:source name="fmri_convolve_phase" />
+  <s:source name="fmri_regstandard_dof" />
+  <s:sink name="feat_dir" />
+</s:scufl>
+

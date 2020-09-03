@@ -1,0 +1,190 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/gene_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_output> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/merged> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_2> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/split_genes_2> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_genes> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/String_Constant> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/Merge_string_list_to_string> , <http://weprov.csiro.au/program/get_pathways_by_genes1> , <http://weprov.csiro.au/program/Concatenate_two_strings> , <http://weprov.csiro.au/program/lister> , <http://weprov.csiro.au/program/Merge_string_list_to_string1> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Merge_string_list_to_string1.stringlist> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Concatenate_two_strings.string2> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:merged> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:lister.file> , <http://weprov.csiro.au/controller/String_Constant.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/gene_ids:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/get_pathways_by_genes1.return:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/Concatenate_two_strings.output:pathway_output> , <http://weprov.csiro.au/controller/Merge_string_list_to_string1.concatenated:pathway_genes> , <http://weprov.csiro.au/controller/get_pathways_by_genes1.return:pathway_2> , <http://weprov.csiro.au/controller/lister.listerReturn:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/lister.listerReturn:get_pathways_by_genes1.genes_id_list> , <http://weprov.csiro.au/controller/lister.listerReturn:split_genes_2> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Split_string_into_string_list_by_regular_expression.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:lister.file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Concatenate_two_strings.string2> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:merged> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string" .
+
+<http://weprov.csiro.au/program/get_pathways_by_genes1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_pathways_by_genes1.return:Merge_string_list_to_string.stringlist> , <http://weprov.csiro.au/controller/get_pathways_by_genes1.return:pathway_2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_pathways_by_genes1" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Merge_string_list_to_string1.stringlist> , <http://weprov.csiro.au/controller/Concatenate_two_strings.output:pathway_output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings" .
+
+<http://weprov.csiro.au/program/lister>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/lister.listerReturn:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/lister.listerReturn:get_pathways_by_genes1.genes_id_list> , <http://weprov.csiro.au/controller/lister.listerReturn:split_genes_2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "lister" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string1.concatenated:pathway_genes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string1" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/gene_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gene_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_output" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/merged>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merged" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_2" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/split_genes_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_genes_2" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:NEH6KY21LR75-v0/pathway_genes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_genes" .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings.output:Merge_string_list_to_string1.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings.output:Merge_string_list_to_string1.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string1> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:Concatenate_two_strings.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:Concatenate_two_strings.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:merged>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:merged" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gene_ids:Split_string_into_string_list_by_regular_expression.string> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:lister.file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:lister.file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/lister> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Split_string_into_string_list_by_regular_expression.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Split_string_into_string_list_by_regular_expression.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/gene_ids:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_ids:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/get_pathways_by_genes1.return:Merge_string_list_to_string.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_pathways_by_genes1.return:Merge_string_list_to_string.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings.output:pathway_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings.output:pathway_output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string1.concatenated:pathway_genes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string1.concatenated:pathway_genes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/get_pathways_by_genes1.return:pathway_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_pathways_by_genes1.return:pathway_2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/lister.listerReturn:Concatenate_two_strings.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lister.listerReturn:Concatenate_two_strings.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/lister.listerReturn:get_pathways_by_genes1.genes_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lister.listerReturn:get_pathways_by_genes1.genes_id_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_pathways_by_genes1> .
+
+<http://weprov.csiro.au/controller/lister.listerReturn:split_genes_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lister.listerReturn:split_genes_2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

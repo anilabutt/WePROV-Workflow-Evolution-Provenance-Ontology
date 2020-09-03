@@ -1,0 +1,223 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/outputPlot> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/HSapIDs> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/MMusIDs> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/RNorIDs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/FlattenImageList> , <http://weprov.csiro.au/program/GetUniqueHomolog> , <http://weprov.csiro.au/program/CreateFasta> , <http://weprov.csiro.au/program/seqret> , <http://weprov.csiro.au/program/plot> , <http://weprov.csiro.au/program/emma> , <http://weprov.csiro.au/program/hsapiensGeneEnsembl> , <http://weprov.csiro.au/program/getMMusSequence> , <http://weprov.csiro.au/program/getRNorSequence> , <http://weprov.csiro.au/program/getHSapSequence> ;
+        <http://purl.org/dc/terms/description>
+                "Using Biomart and EMBOSS soaplab services, This workflow retrieves a number of sequences from 3 species: mouse, human, rat; align them, and returns a plot of the alignment result. Corresponding sequence ids are also returned." ;
+        <http://purl.org/dc/terms/title>
+                "BiomartAndEMBOSSAnalysis" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/CreateFasta.fasta:seqret.sequence_direct_data> , <http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:getHSapSequence.hsapiens_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:getMMusSequence.mmusculus_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:getRNorSequence.rnorvegicus_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data> , <http://weprov.csiro.au/controller/getHSapSequence.hsapiens_gene_ensembl.coding_gene_flank:CreateFasta.hsSeq> , <http://weprov.csiro.au/controller/getMMusSequence.mmusculus_gene_ensembl.coding_gene_flank:CreateFasta.mmSeq> , <http://weprov.csiro.au/controller/getRNorSequence.rnorvegicus_gene_ensembl.coding_gene_flank:CreateFasta.rnSeq> , <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.ensembl_gene_id:GetUniqueHomolog.HSGeneIDs> , <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.mouse_ensembl_gene:GetUniqueHomolog.MouseGeneIDs> , <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.rat_ensembl_gene:GetUniqueHomolog.RatGeneIDs> , <http://weprov.csiro.au/controller/plot.Graphics_in_PNG:FlattenImageList.inputlist> , <http://weprov.csiro.au/controller/seqret.outseq:emma.sequence_direct_data> , <http://weprov.csiro.au/controller/FlattenImageList.outputlist:outputPlot> , <http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:HSapIDs> , <http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:MMusIDs> , <http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:RNorIDs> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/FlattenImageList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FlattenImageList.outputlist:outputPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FlattenImageList" .
+
+<http://weprov.csiro.au/program/GetUniqueHomolog>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:getHSapSequence.hsapiens_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:getMMusSequence.mmusculus_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:getRNorSequence.rnorvegicus_gene_ensembl.ensembl_gene_id_filter> , <http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:HSapIDs> , <http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:MMusIDs> , <http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:RNorIDs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetUniqueHomolog" .
+
+<http://weprov.csiro.au/program/CreateFasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CreateFasta.fasta:seqret.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CreateFasta" .
+
+<http://weprov.csiro.au/program/seqret>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/seqret.outseq:emma.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seqret" .
+
+<http://weprov.csiro.au/program/plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/plot.Graphics_in_PNG:FlattenImageList.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "plot" .
+
+<http://weprov.csiro.au/program/emma>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emma" .
+
+<http://weprov.csiro.au/program/hsapiensGeneEnsembl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.ensembl_gene_id:GetUniqueHomolog.HSGeneIDs> , <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.mouse_ensembl_gene:GetUniqueHomolog.MouseGeneIDs> , <http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.rat_ensembl_gene:GetUniqueHomolog.RatGeneIDs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "hsapiensGeneEnsembl" .
+
+<http://weprov.csiro.au/program/getMMusSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getMMusSequence.mmusculus_gene_ensembl.coding_gene_flank:CreateFasta.mmSeq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getMMusSequence" .
+
+<http://weprov.csiro.au/program/getRNorSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getRNorSequence.rnorvegicus_gene_ensembl.coding_gene_flank:CreateFasta.rnSeq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getRNorSequence" .
+
+<http://weprov.csiro.au/program/getHSapSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#biomart> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getHSapSequence.hsapiens_gene_ensembl.coding_gene_flank:CreateFasta.hsSeq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getHSapSequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/outputPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "outputPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/HSapIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "HSapIDs" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/MMusIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MMusIDs" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E9TFHN0YVY0-v0/RNorIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RNorIDs" .
+
+<http://weprov.csiro.au/controller/CreateFasta.fasta:seqret.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CreateFasta.fasta:seqret.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/seqret> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:getHSapSequence.hsapiens_gene_ensembl.ensembl_gene_id_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.HSOut:getHSapSequence.hsapiens_gene_ensembl.ensembl_gene_id_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getHSapSequence> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:getMMusSequence.mmusculus_gene_ensembl.ensembl_gene_id_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.MouseOut:getMMusSequence.mmusculus_gene_ensembl.ensembl_gene_id_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMMusSequence> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:getRNorSequence.rnorvegicus_gene_ensembl.ensembl_gene_id_filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.RatOut:getRNorSequence.rnorvegicus_gene_ensembl.ensembl_gene_id_filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getRNorSequence> .
+
+<http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emma.outseq:plot.sequences_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/plot> .
+
+<http://weprov.csiro.au/controller/getHSapSequence.hsapiens_gene_ensembl.coding_gene_flank:CreateFasta.hsSeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getHSapSequence.hsapiens_gene_ensembl.coding_gene_flank:CreateFasta.hsSeq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateFasta> .
+
+<http://weprov.csiro.au/controller/getMMusSequence.mmusculus_gene_ensembl.coding_gene_flank:CreateFasta.mmSeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMMusSequence.mmusculus_gene_ensembl.coding_gene_flank:CreateFasta.mmSeq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateFasta> .
+
+<http://weprov.csiro.au/controller/getRNorSequence.rnorvegicus_gene_ensembl.coding_gene_flank:CreateFasta.rnSeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getRNorSequence.rnorvegicus_gene_ensembl.coding_gene_flank:CreateFasta.rnSeq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CreateFasta> .
+
+<http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.ensembl_gene_id:GetUniqueHomolog.HSGeneIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hsapiensGeneEnsembl.hsapiens_gene_ensembl.ensembl_gene_id:GetUniqueHomolog.HSGeneIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetUniqueHomolog> .
+
+<http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.mouse_ensembl_gene:GetUniqueHomolog.MouseGeneIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hsapiensGeneEnsembl.hsapiens_gene_ensembl.mouse_ensembl_gene:GetUniqueHomolog.MouseGeneIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetUniqueHomolog> .
+
+<http://weprov.csiro.au/controller/hsapiensGeneEnsembl.hsapiens_gene_ensembl.rat_ensembl_gene:GetUniqueHomolog.RatGeneIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hsapiensGeneEnsembl.hsapiens_gene_ensembl.rat_ensembl_gene:GetUniqueHomolog.RatGeneIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetUniqueHomolog> .
+
+<http://weprov.csiro.au/controller/plot.Graphics_in_PNG:FlattenImageList.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plot.Graphics_in_PNG:FlattenImageList.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FlattenImageList> .
+
+<http://weprov.csiro.au/controller/seqret.outseq:emma.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seqret.outseq:emma.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/emma> .
+
+<http://weprov.csiro.au/controller/FlattenImageList.outputlist:outputPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenImageList.outputlist:outputPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.HSOut:HSapIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.HSOut:HSapIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.MouseOut:MMusIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.MouseOut:MMusIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetUniqueHomolog.RatOut:RNorIDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetUniqueHomolog.RatOut:RNorIDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

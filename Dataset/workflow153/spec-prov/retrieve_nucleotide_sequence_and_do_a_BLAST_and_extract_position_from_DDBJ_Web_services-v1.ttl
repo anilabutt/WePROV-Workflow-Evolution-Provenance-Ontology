@@ -1,0 +1,103 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/sequence_database> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/bioinformatics_program> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/DDBJ_accession> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/position_blast_report_ddbj> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getFASTA_DDBJEntry> , <http://weprov.csiro.au/program/searchSimple> , <http://weprov.csiro.au/program/extractPosition> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "workflowsemanticm" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/getFASTA_DDBJEntry.Result:searchSimple.query> , <http://weprov.csiro.au/controller/sequence_database:searchSimple.database> , <http://weprov.csiro.au/controller/bioinformatics_program:searchSimple.program> , <http://weprov.csiro.au/controller/DDBJ_accession:getFASTA_DDBJEntry.accession> , <http://weprov.csiro.au/controller/searchSimple.Result:extractPosition.result> , <http://weprov.csiro.au/controller/extractPosition.Result:position_blast_report_ddbj> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/getFASTA_DDBJEntry>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getFASTA_DDBJEntry.Result:searchSimple.query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getFASTA_DDBJEntry" .
+
+<http://weprov.csiro.au/program/searchSimple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchSimple.Result:extractPosition.result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchSimple" .
+
+<http://weprov.csiro.au/program/extractPosition>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractPosition.Result:position_blast_report_ddbj> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractPosition" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/sequence_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sequence_database" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/bioinformatics_program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bioinformatics_program" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/DDBJ_accession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DDBJ_accession" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d1a9f64-13a1-4227-87a9-fe10f2b69132-v0/position_blast_report_ddbj>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "position_blast_report_ddbj" .
+
+<http://weprov.csiro.au/controller/getFASTA_DDBJEntry.Result:searchSimple.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getFASTA_DDBJEntry.Result:searchSimple.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/sequence_database:searchSimple.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sequence_database:searchSimple.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sequence_database:searchSimple.database> , <http://weprov.csiro.au/controller/bioinformatics_program:searchSimple.program> , <http://weprov.csiro.au/controller/DDBJ_accession:getFASTA_DDBJEntry.accession> .
+
+<http://weprov.csiro.au/controller/bioinformatics_program:searchSimple.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bioinformatics_program:searchSimple.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/DDBJ_accession:getFASTA_DDBJEntry.accession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DDBJ_accession:getFASTA_DDBJEntry.accession" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getFASTA_DDBJEntry> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:extractPosition.result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:extractPosition.result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractPosition> .
+
+<http://weprov.csiro.au/controller/extractPosition.Result:position_blast_report_ddbj>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractPosition.Result:position_blast_report_ddbj" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

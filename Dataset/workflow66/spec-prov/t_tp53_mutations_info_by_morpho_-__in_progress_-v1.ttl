@@ -1,0 +1,1245 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/query> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Som_Mut_IDs> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_num> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/c1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/c2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/o> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/mut> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_distr> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_log> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_summ> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/hist> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/pie> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/bar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/test> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/test2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/type> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/intron> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exon> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_distr> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_log> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_summ> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_bar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_pie> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_hist> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_bar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_pie> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/filt_type> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/bar_type> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/pie_type> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/type_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_pie> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_bar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/String_Constant2> , <http://weprov.csiro.au/program/String_Constant3> , <http://weprov.csiro.au/program/dataset> , <http://weprov.csiro.au/program/query_field> , <http://weprov.csiro.au/program/Split_string_2> , <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/Filter_list_3> , <http://weprov.csiro.au/program/Filter_list_1> , <http://weprov.csiro.au/program/Filter_list_2> , <http://weprov.csiro.au/program/Split_string_> , <http://weprov.csiro.au/program/Split_string_1> , <http://weprov.csiro.au/program/Filter_list_> , <http://weprov.csiro.au/program/filter_list1> , <http://weprov.csiro.au/program/filter_list> , <http://weprov.csiro.au/program/count> , <http://weprov.csiro.au/program/count1> , <http://weprov.csiro.au/program/R_topo> , <http://weprov.csiro.au/program/R_type> , <http://weprov.csiro.au/program/R_effect> , <http://weprov.csiro.au/program/R_exon> , <http://weprov.csiro.au/program/R_codons> , <http://weprov.csiro.au/program/getP53_Mutations> , <http://weprov.csiro.au/program/getP53_Ids> , <http://weprov.csiro.au/program/getP53_Intron> , <http://weprov.csiro.au/program/getP53_Topography> , <http://weprov.csiro.au/program/getP53_Effect> , <http://weprov.csiro.au/program/getP53_Codons> , <http://weprov.csiro.au/program/getP53_Mut_Type> , <http://weprov.csiro.au/program/getP53_Exon> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "test-tp53_info_by_morpho" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Filter_list_1.filteredlist:R_codons.i> , <http://weprov.csiro.au/controller/Filter_list_2.filteredlist:R_topo.i> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:count.list> , <http://weprov.csiro.au/controller/Split_string_1.split:Filter_list_.stringlist> , <http://weprov.csiro.au/controller/Split_string_1.split:count1.list> , <http://weprov.csiro.au/controller/Split_string_2.split:Filter_list_2.stringlist> , <http://weprov.csiro.au/controller/Split_string_.split:Filter_list_1.stringlist> , <http://weprov.csiro.au/controller/Split_string_.split:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_1.regex> , <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_2.regex> , <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_.regex> , <http://weprov.csiro.au/controller/String_Constant3.value:Filter_list_.regex> , <http://weprov.csiro.au/controller/dataset.value:getP53_Codons.dataset> , <http://weprov.csiro.au/controller/dataset.value:getP53_Ids.dataset> , <http://weprov.csiro.au/controller/dataset.value:getP53_Topography.dataset> , <http://weprov.csiro.au/controller/query:getP53_Codons.query> , <http://weprov.csiro.au/controller/query:getP53_Ids.query> , <http://weprov.csiro.au/controller/Filter_list_3.filteredlist:R_exon.i> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Effect.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Exon.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Intron.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mut_Type.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mutations.id> , <http://weprov.csiro.au/controller/filter_list1.result:R_effect.i> , <http://weprov.csiro.au/controller/filter_list.result:R_type.i> , <http://weprov.csiro.au/controller/getP53_Codons.result:Split_string_.string> , <http://weprov.csiro.au/controller/getP53_Effect.result:filter_list1.inputs> , <http://weprov.csiro.au/controller/getP53_Exon.result:Filter_list_3.stringlist> , <http://weprov.csiro.au/controller/getP53_Ids.result:Split_string_1.string> , <http://weprov.csiro.au/controller/getP53_Mut_Type.result:filter_list.inputs> , <http://weprov.csiro.au/controller/getP53_Topography.result:Split_string_2.string> , <http://weprov.csiro.au/controller/query:getP53_Topography.query> , <http://weprov.csiro.au/controller/Filter_list_2.filteredlist:test2> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:o> , <http://weprov.csiro.au/controller/R_codons.DistributionPlot:Codons_distr> , <http://weprov.csiro.au/controller/R_codons.LogPlot:Codons_log> , <http://weprov.csiro.au/controller/R_codons.PointList:Codons_summ> , <http://weprov.csiro.au/controller/R_codons.bar:bar> , <http://weprov.csiro.au/controller/R_codons.hist:hist> , <http://weprov.csiro.au/controller/R_codons.pie:pie> , <http://weprov.csiro.au/controller/R_effect.bar:effect_bar> , <http://weprov.csiro.au/controller/R_effect.n_list:effect_list> , <http://weprov.csiro.au/controller/R_effect.pie:effect_pie> , <http://weprov.csiro.au/controller/R_exon.DistributionPlot:Exons_distr> , <http://weprov.csiro.au/controller/R_exon.LogPlot:Exons_log> , <http://weprov.csiro.au/controller/R_exon.PointList:Exons_summ> , <http://weprov.csiro.au/controller/R_exon.bar:exons_bar> , <http://weprov.csiro.au/controller/R_exon.hist:exons_hist> , <http://weprov.csiro.au/controller/R_exon.pie:exons_pie> , <http://weprov.csiro.au/controller/R_topo.bar:topo_bar> , <http://weprov.csiro.au/controller/R_topo.n_list:topo_list> , <http://weprov.csiro.au/controller/R_topo.pie:topo_pie> , <http://weprov.csiro.au/controller/R_type.bar:bar_type> , <http://weprov.csiro.au/controller/R_type.n_list:type_list> , <http://weprov.csiro.au/controller/R_type.pie:pie_type> , <http://weprov.csiro.au/controller/count1.count:c2> , <http://weprov.csiro.au/controller/count.count:c1> , <http://weprov.csiro.au/controller/filter_list.result:filt_type> , <http://weprov.csiro.au/controller/query_field.value:getP53_Codons.field> , <http://weprov.csiro.au/controller/query_field.value:getP53_Ids.field> , <http://weprov.csiro.au/controller/query_field.value:getP53_Topography.field> , <http://weprov.csiro.au/controller/getP53_Codons.result:Codons_num> , <http://weprov.csiro.au/controller/getP53_Effect.result:effect> , <http://weprov.csiro.au/controller/getP53_Exon.result:exon> , <http://weprov.csiro.au/controller/getP53_Ids.result:Som_Mut_IDs> , <http://weprov.csiro.au/controller/getP53_Intron.result:intron> , <http://weprov.csiro.au/controller/getP53_Mut_Type.result:type> , <http://weprov.csiro.au/controller/getP53_Mutations.result:mut> , <http://weprov.csiro.au/controller/getP53_Topography.result:test> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/String_Constant2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_1.regex> , <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_2.regex> , <http://weprov.csiro.au/controller/String_Constant2.value:Split_string_.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant2" .
+
+<http://weprov.csiro.au/program/String_Constant3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant3.value:Filter_list_.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant3" .
+
+<http://weprov.csiro.au/program/dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/dataset.value:getP53_Codons.dataset> , <http://weprov.csiro.au/controller/dataset.value:getP53_Ids.dataset> , <http://weprov.csiro.au/controller/dataset.value:getP53_Topography.dataset> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "dataset" .
+
+<http://weprov.csiro.au/program/query_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query_field.value:getP53_Codons.field> , <http://weprov.csiro.au/controller/query_field.value:getP53_Ids.field> , <http://weprov.csiro.au/controller/query_field.value:getP53_Topography.field> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_field" .
+
+<http://weprov.csiro.au/program/Split_string_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_2.split:Filter_list_2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_2" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:count.list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/program/Filter_list_3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_3.filteredlist:R_exon.i> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_3" .
+
+<http://weprov.csiro.au/program/Filter_list_1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_1.filteredlist:R_codons.i> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_1" .
+
+<http://weprov.csiro.au/program/Filter_list_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_2.filteredlist:R_topo.i> , <http://weprov.csiro.au/controller/Filter_list_2.filteredlist:test2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_2" .
+
+<http://weprov.csiro.au/program/Split_string_>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_.split:Filter_list_1.stringlist> , <http://weprov.csiro.au/controller/Split_string_.split:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_" .
+
+<http://weprov.csiro.au/program/Split_string_1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_1.split:Filter_list_.stringlist> , <http://weprov.csiro.au/controller/Split_string_1.split:count1.list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_1" .
+
+<http://weprov.csiro.au/program/Filter_list_>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Effect.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Exon.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Intron.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mut_Type.query> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mutations.id> , <http://weprov.csiro.au/controller/Filter_list_.filteredlist:o> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_" .
+
+<http://weprov.csiro.au/program/filter_list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/filter_list1.result:R_effect.i> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "filter_list1" .
+
+<http://weprov.csiro.au/program/filter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/filter_list.result:R_type.i> , <http://weprov.csiro.au/controller/filter_list.result:filt_type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "filter_list" .
+
+<http://weprov.csiro.au/program/count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/count.count:c1> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "count" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0/list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0/count> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/CountListElements> ;
+        <http://purl.org/dc/terms/description>
+                "Simple workflow to count the number of items in a list" ;
+        <http://purl.org/dc/terms/title>
+                "CountListElements" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/list:CountListElements.list> , <http://weprov.csiro.au/controller/CountListElements.count:count> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/CountListElements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountListElements.count:count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountListElements" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0/list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0/count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count" .
+
+<http://weprov.csiro.au/controller/list:CountListElements.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "list:CountListElements.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountListElements> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/list:CountListElements.list> , <http://weprov.csiro.au/controller/i:delist_strings.stringlist> , <http://weprov.csiro.au/controller/i:delist_numbers.stringlist> , <http://weprov.csiro.au/controller/i:delist_numbe.stringlist> , <http://weprov.csiro.au/controller/query:getP53_Codons.query> , <http://weprov.csiro.au/controller/query:getP53_Ids.query> , <http://weprov.csiro.au/controller/query:getP53_Topography.query> .
+
+<http://weprov.csiro.au/controller/CountListElements.count:count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountListElements.count:count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/count1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/count1.count:c2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "count1" .
+
+<http://weprov.csiro.au/program/R_topo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/R_topo.bar:topo_bar> , <http://weprov.csiro.au/controller/R_topo.n_list:topo_list> , <http://weprov.csiro.au/controller/R_topo.pie:topo_pie> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "R_topo" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/i> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/pie> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/bar> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/n_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/DistributionPlot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/LogPlot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/PointList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/hist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/delist_strings> , <http://weprov.csiro.au/program/pie_distr> , <http://weprov.csiro.au/program/barplot> , <http://weprov.csiro.au/program/n_list> , <http://weprov.csiro.au/program/delist_numbers> , <http://weprov.csiro.au/program/hist_distr> , <http://weprov.csiro.au/program/plot_distribution> , <http://weprov.csiro.au/program/log_plot> , <http://weprov.csiro.au/program/output_points> , <http://weprov.csiro.au/program/delist_numbe> ;
+        <http://purl.org/dc/terms/description>
+                "It plots the distribution." ;
+        <http://purl.org/dc/terms/title>
+                "Distributions" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/delist_strings.concatenated:barplot.dev_numbers> , <http://weprov.csiro.au/controller/delist_strings.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/i:delist_strings.stringlist> , <http://weprov.csiro.au/controller/delist_strings.concatenated:n_list.dev_inp> , <http://weprov.csiro.au/controller/barplot.dist_plot:bar> , <http://weprov.csiro.au/controller/n_list.n_list:n_list> , <http://weprov.csiro.au/controller/pie_distr.dist_plot:pie> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:hist_distr.dev_numbers2> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:plot_distribution.dev_numbers> , <http://weprov.csiro.au/controller/i:delist_numbers.stringlist> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:barplot.dev_numbers> , <http://weprov.csiro.au/controller/hist_distr.hist_plot:hist> , <http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot> , <http://weprov.csiro.au/controller/output_points.point_list:PointList> , <http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:hist_distr.dev_numbers2> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:plot_distribution.dev_numbers> , <http://weprov.csiro.au/controller/i:delist_numbe.stringlist> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:barplot.dev_numbers> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/delist_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_strings.concatenated:barplot.dev_numbers> , <http://weprov.csiro.au/controller/delist_strings.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/delist_strings.concatenated:n_list.dev_inp> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_strings" .
+
+<http://weprov.csiro.au/program/pie_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pie_distr.dist_plot:pie> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pie_distr" .
+
+<http://weprov.csiro.au/program/barplot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/barplot.dist_plot:bar> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "barplot" .
+
+<http://weprov.csiro.au/program/n_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/n_list.n_list:n_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "n_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "i" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pie" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/n_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "n_list" .
+
+<http://weprov.csiro.au/controller/delist_strings.concatenated:barplot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_strings.concatenated:barplot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/barplot> .
+
+<http://weprov.csiro.au/controller/delist_strings.concatenated:pie_distr.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_strings.concatenated:pie_distr.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pie_distr> .
+
+<http://weprov.csiro.au/controller/i:delist_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "i:delist_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_strings> .
+
+<http://weprov.csiro.au/controller/delist_strings.concatenated:n_list.dev_inp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_strings.concatenated:n_list.dev_inp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/n_list> .
+
+<http://weprov.csiro.au/controller/barplot.dist_plot:bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "barplot.dist_plot:bar" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/n_list.n_list:n_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "n_list.n_list:n_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/pie_distr.dist_plot:pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pie_distr.dist_plot:pie" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/R_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/R_type.bar:bar_type> , <http://weprov.csiro.au/controller/R_type.n_list:type_list> , <http://weprov.csiro.au/controller/R_type.pie:pie_type> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "R_type" .
+
+<http://weprov.csiro.au/program/R_effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/R_effect.bar:effect_bar> , <http://weprov.csiro.au/controller/R_effect.n_list:effect_list> , <http://weprov.csiro.au/controller/R_effect.pie:effect_pie> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "R_effect" .
+
+<http://weprov.csiro.au/program/R_exon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/R_exon.DistributionPlot:Exons_distr> , <http://weprov.csiro.au/controller/R_exon.LogPlot:Exons_log> , <http://weprov.csiro.au/controller/R_exon.PointList:Exons_summ> , <http://weprov.csiro.au/controller/R_exon.bar:exons_bar> , <http://weprov.csiro.au/controller/R_exon.hist:exons_hist> , <http://weprov.csiro.au/controller/R_exon.pie:exons_pie> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "R_exon" .
+
+<http://weprov.csiro.au/program/delist_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_numbers.concatenated:hist_distr.dev_numbers2> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:plot_distribution.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbers.concatenated:barplot.dev_numbers> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_numbers" .
+
+<http://weprov.csiro.au/program/hist_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/hist_distr.hist_plot:hist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "hist_distr" .
+
+<http://weprov.csiro.au/program/plot_distribution>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "plot_distribution" .
+
+<http://weprov.csiro.au/program/log_plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "log_plot" .
+
+<http://weprov.csiro.au/program/output_points>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/output_points.point_list:PointList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "output_points" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/DistributionPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DistributionPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/LogPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LogPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/PointList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PointList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hist" .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:hist_distr.dev_numbers2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:hist_distr.dev_numbers2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hist_distr> .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:log_plot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:log_plot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/log_plot> .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:output_points.dev_nums>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:output_points.dev_nums" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/output_points> .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:pie_distr.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:pie_distr.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pie_distr> .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:plot_distribution.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:plot_distribution.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/plot_distribution> .
+
+<http://weprov.csiro.au/controller/i:delist_numbers.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "i:delist_numbers.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_numbers> .
+
+<http://weprov.csiro.au/controller/delist_numbers.concatenated:barplot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbers.concatenated:barplot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/barplot> .
+
+<http://weprov.csiro.au/controller/hist_distr.hist_plot:hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hist_distr.hist_plot:hist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "log_plot.log_plot:LogPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/output_points.point_list:PointList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output_points.point_list:PointList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plot_distribution.dist_plot:DistributionPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/R_codons>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/R_codons.DistributionPlot:Codons_distr> , <http://weprov.csiro.au/controller/R_codons.LogPlot:Codons_log> , <http://weprov.csiro.au/controller/R_codons.PointList:Codons_summ> , <http://weprov.csiro.au/controller/R_codons.bar:bar> , <http://weprov.csiro.au/controller/R_codons.hist:hist> , <http://weprov.csiro.au/controller/R_codons.pie:pie> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "R_codons" .
+
+<http://weprov.csiro.au/program/delist_numbe>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_numbe.concatenated:hist_distr.dev_numbers2> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:pie_distr.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:plot_distribution.dev_numbers> , <http://weprov.csiro.au/controller/delist_numbe.concatenated:barplot.dev_numbers> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_numbe" .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:hist_distr.dev_numbers2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:hist_distr.dev_numbers2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/hist_distr> .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:log_plot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:log_plot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/log_plot> .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:output_points.dev_nums>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:output_points.dev_nums" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/output_points> .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:pie_distr.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:pie_distr.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/pie_distr> .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:plot_distribution.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:plot_distribution.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/plot_distribution> .
+
+<http://weprov.csiro.au/controller/i:delist_numbe.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "i:delist_numbe.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_numbe> .
+
+<http://weprov.csiro.au/controller/delist_numbe.concatenated:barplot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_numbe.concatenated:barplot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/barplot> .
+
+<http://weprov.csiro.au/program/getP53_Mutations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Mutations.result:mut> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Mutations" .
+
+<http://weprov.csiro.au/program/getP53_Ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Ids.result:Split_string_1.string> , <http://weprov.csiro.au/controller/getP53_Ids.result:Som_Mut_IDs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Ids" .
+
+<http://weprov.csiro.au/program/getP53_Intron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Intron.result:intron> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Intron" .
+
+<http://weprov.csiro.au/program/getP53_Topography>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Topography.result:Split_string_2.string> , <http://weprov.csiro.au/controller/getP53_Topography.result:test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Topography" .
+
+<http://weprov.csiro.au/program/getP53_Effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Effect.result:filter_list1.inputs> , <http://weprov.csiro.au/controller/getP53_Effect.result:effect> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Effect" .
+
+<http://weprov.csiro.au/program/getP53_Codons>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Codons.result:Split_string_.string> , <http://weprov.csiro.au/controller/getP53_Codons.result:Codons_num> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Codons" .
+
+<http://weprov.csiro.au/program/getP53_Mut_Type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Mut_Type.result:filter_list.inputs> , <http://weprov.csiro.au/controller/getP53_Mut_Type.result:type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Mut_Type" .
+
+<http://weprov.csiro.au/program/getP53_Exon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53_Exon.result:Filter_list_3.stringlist> , <http://weprov.csiro.au/controller/getP53_Exon.result:exon> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53_Exon" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Som_Mut_IDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Som_Mut_IDs" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_num>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Codons_num" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/c1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "c1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/c2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "c2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/o>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "o" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/mut>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mut" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Codons_distr" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Codons_log" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Codons_summ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Codons_summ" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "hist" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pie" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "test" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/test2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "test2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "effect" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/intron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "intron" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "exon" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Exons_distr" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Exons_log" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/Exons_summ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Exons_summ" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "exons_bar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "exons_pie" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/exons_hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "exons_hist" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topo_bar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topo_pie" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/filt_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filt_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/bar_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bar_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/pie_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pie_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/type_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "type_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/topo_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "topo_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "effect_pie" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "effect_bar" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9aa028da-979a-4de7-963a-740d3f8b10c1-v0/effect_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "effect_list" .
+
+<http://weprov.csiro.au/controller/Filter_list_1.filteredlist:R_codons.i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_1.filteredlist:R_codons.i" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/R_codons> .
+
+<http://weprov.csiro.au/controller/Filter_list_2.filteredlist:R_topo.i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_2.filteredlist:R_topo.i" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/R_topo> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:count.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:count.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/count> .
+
+<http://weprov.csiro.au/controller/Split_string_1.split:Filter_list_.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_1.split:Filter_list_.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_> .
+
+<http://weprov.csiro.au/controller/Split_string_1.split:count1.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_1.split:count1.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/count1> .
+
+<http://weprov.csiro.au/controller/Split_string_2.split:Filter_list_2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_2.split:Filter_list_2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_2> .
+
+<http://weprov.csiro.au/controller/Split_string_.split:Filter_list_1.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_.split:Filter_list_1.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_1> .
+
+<http://weprov.csiro.au/controller/Split_string_.split:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_.split:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/String_Constant2.value:Split_string_1.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant2.value:Split_string_1.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_1> .
+
+<http://weprov.csiro.au/controller/String_Constant2.value:Split_string_2.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant2.value:Split_string_2.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_2> .
+
+<http://weprov.csiro.au/controller/String_Constant2.value:Split_string_.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant2.value:Split_string_.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_> .
+
+<http://weprov.csiro.au/controller/String_Constant3.value:Filter_list_.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant3.value:Filter_list_.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_> .
+
+<http://weprov.csiro.au/controller/dataset.value:getP53_Codons.dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dataset.value:getP53_Codons.dataset" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Codons> .
+
+<http://weprov.csiro.au/controller/dataset.value:getP53_Ids.dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dataset.value:getP53_Ids.dataset" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Ids> .
+
+<http://weprov.csiro.au/controller/dataset.value:getP53_Topography.dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dataset.value:getP53_Topography.dataset" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Topography> .
+
+<http://weprov.csiro.au/controller/query:getP53_Codons.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query:getP53_Codons.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Codons> .
+
+<http://weprov.csiro.au/controller/query:getP53_Ids.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query:getP53_Ids.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Ids> .
+
+<http://weprov.csiro.au/controller/Filter_list_3.filteredlist:R_exon.i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_3.filteredlist:R_exon.i" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/R_exon> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Effect.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:getP53_Effect.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Effect> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Exon.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:getP53_Exon.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Exon> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Intron.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:getP53_Intron.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Intron> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mut_Type.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:getP53_Mut_Type.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Mut_Type> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:getP53_Mutations.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:getP53_Mutations.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Mutations> .
+
+<http://weprov.csiro.au/controller/filter_list1.result:R_effect.i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filter_list1.result:R_effect.i" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/R_effect> .
+
+<http://weprov.csiro.au/controller/filter_list.result:R_type.i>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filter_list.result:R_type.i" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/R_type> .
+
+<http://weprov.csiro.au/controller/getP53_Codons.result:Split_string_.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Codons.result:Split_string_.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_> .
+
+<http://weprov.csiro.au/controller/getP53_Effect.result:filter_list1.inputs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Effect.result:filter_list1.inputs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/filter_list1> .
+
+<http://weprov.csiro.au/controller/getP53_Exon.result:Filter_list_3.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Exon.result:Filter_list_3.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_3> .
+
+<http://weprov.csiro.au/controller/getP53_Ids.result:Split_string_1.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Ids.result:Split_string_1.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_1> .
+
+<http://weprov.csiro.au/controller/getP53_Mut_Type.result:filter_list.inputs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Mut_Type.result:filter_list.inputs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/filter_list> .
+
+<http://weprov.csiro.au/controller/getP53_Topography.result:Split_string_2.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Topography.result:Split_string_2.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_2> .
+
+<http://weprov.csiro.au/controller/query:getP53_Topography.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query:getP53_Topography.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Topography> .
+
+<http://weprov.csiro.au/controller/Filter_list_2.filteredlist:test2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_2.filteredlist:test2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Filter_list_.filteredlist:o>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_.filteredlist:o" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.DistributionPlot:Codons_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.DistributionPlot:Codons_distr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.LogPlot:Codons_log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.LogPlot:Codons_log" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.PointList:Codons_summ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.PointList:Codons_summ" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.bar:bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.bar:bar" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.hist:hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.hist:hist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_codons.pie:pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_codons.pie:pie" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_effect.bar:effect_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_effect.bar:effect_bar" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_effect.n_list:effect_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_effect.n_list:effect_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_effect.pie:effect_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_effect.pie:effect_pie" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.DistributionPlot:Exons_distr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.DistributionPlot:Exons_distr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.LogPlot:Exons_log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.LogPlot:Exons_log" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.PointList:Exons_summ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.PointList:Exons_summ" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.bar:exons_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.bar:exons_bar" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.hist:exons_hist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.hist:exons_hist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_exon.pie:exons_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_exon.pie:exons_pie" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_topo.bar:topo_bar>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_topo.bar:topo_bar" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_topo.n_list:topo_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_topo.n_list:topo_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_topo.pie:topo_pie>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_topo.pie:topo_pie" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_type.bar:bar_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_type.bar:bar_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_type.n_list:type_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_type.n_list:type_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/R_type.pie:pie_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "R_type.pie:pie_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/count1.count:c2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count1.count:c2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/count.count:c1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count.count:c1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/filter_list.result:filt_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filter_list.result:filt_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/query_field.value:getP53_Codons.field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_field.value:getP53_Codons.field" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Codons> .
+
+<http://weprov.csiro.au/controller/query_field.value:getP53_Ids.field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_field.value:getP53_Ids.field" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Ids> .
+
+<http://weprov.csiro.au/controller/query_field.value:getP53_Topography.field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_field.value:getP53_Topography.field" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53_Topography> .
+
+<http://weprov.csiro.au/controller/getP53_Codons.result:Codons_num>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Codons.result:Codons_num" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Effect.result:effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Effect.result:effect" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Exon.result:exon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Exon.result:exon" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Ids.result:Som_Mut_IDs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Ids.result:Som_Mut_IDs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Intron.result:intron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Intron.result:intron" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Mut_Type.result:type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Mut_Type.result:type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Mutations.result:mut>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Mutations.result:mut" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getP53_Topography.result:test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53_Topography.result:test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,131 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/axisList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/optionList> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/dataXmlList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/plots> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/setOptionXmlList> , <http://weprov.csiro.au/program/mathPlotParamsXML> , <http://weprov.csiro.au/program/mathPlotResultXML> , <http://weprov.csiro.au/program/Decode_base64_to_byte> , <http://weprov.csiro.au/program/mathPlot> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "mathPlot Web service" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/axisList:mathPlotParamsXML.axis> , <http://weprov.csiro.au/controller/dataXmlList:mathPlotParamsXML.data> , <http://weprov.csiro.au/controller/mathPlot.mathPlotResult:mathPlotResultXML.input> , <http://weprov.csiro.au/controller/mathPlotParamsXML.output:mathPlot.mathPlotParams> , <http://weprov.csiro.au/controller/mathPlotResultXML.plot:Decode_base64_to_byte.base64> , <http://weprov.csiro.au/controller/optionList:setOptionXmlList.input> , <http://weprov.csiro.au/controller/setOptionXmlList.output:mathPlotParamsXML.option> , <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:plots> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/setOptionXmlList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/setOptionXmlList.output:mathPlotParamsXML.option> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setOptionXmlList" .
+
+<http://weprov.csiro.au/program/mathPlotParamsXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/mathPlotParamsXML.output:mathPlot.mathPlotParams> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "mathPlotParamsXML" .
+
+<http://weprov.csiro.au/program/mathPlotResultXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/mathPlotResultXML.plot:Decode_base64_to_byte.base64> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "mathPlotResultXML" .
+
+<http://weprov.csiro.au/program/Decode_base64_to_byte>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:plots> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Decode_base64_to_byte" .
+
+<http://weprov.csiro.au/program/mathPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/mathPlot.mathPlotResult:mathPlotResultXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "mathPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/axisList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "axisList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/optionList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "optionList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/dataXmlList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "dataXmlList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:451af9b4-f7a7-43f9-b926-823e24458652-v0/plots>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plots" .
+
+<http://weprov.csiro.au/controller/axisList:mathPlotParamsXML.axis>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "axisList:mathPlotParamsXML.axis" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mathPlotParamsXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/axisList:mathPlotParamsXML.axis> , <http://weprov.csiro.au/controller/dataXmlList:mathPlotParamsXML.data> , <http://weprov.csiro.au/controller/optionList:setOptionXmlList.input> .
+
+<http://weprov.csiro.au/controller/dataXmlList:mathPlotParamsXML.data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "dataXmlList:mathPlotParamsXML.data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mathPlotParamsXML> .
+
+<http://weprov.csiro.au/controller/mathPlot.mathPlotResult:mathPlotResultXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mathPlot.mathPlotResult:mathPlotResultXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mathPlotResultXML> .
+
+<http://weprov.csiro.au/controller/mathPlotParamsXML.output:mathPlot.mathPlotParams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mathPlotParamsXML.output:mathPlot.mathPlotParams" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mathPlot> .
+
+<http://weprov.csiro.au/controller/mathPlotResultXML.plot:Decode_base64_to_byte.base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mathPlotResultXML.plot:Decode_base64_to_byte.base64" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Decode_base64_to_byte> .
+
+<http://weprov.csiro.au/controller/optionList:setOptionXmlList.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "optionList:setOptionXmlList.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setOptionXmlList> .
+
+<http://weprov.csiro.au/controller/setOptionXmlList.output:mathPlotParamsXML.option>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "setOptionXmlList.output:mathPlotParamsXML.option" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mathPlotParamsXML> .
+
+<http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:plots>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Decode_base64_to_byte.bytes:plots" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

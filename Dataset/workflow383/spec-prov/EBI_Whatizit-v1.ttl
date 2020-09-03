@@ -1,0 +1,91 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Analysis_pipeline> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Text> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Whatizit_result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/contact> , <http://weprov.csiro.au/program/Input_params> , <http://weprov.csiro.au/program/Unwrap_result> ;
+        <http://purl.org/dc/terms/description>
+                "Perform a text-mining analysis of an input text document using the EBI's Whatizit tool (http://www.ebi.ac.uk/webservices/whatizit/info.jsf).\n\nWhatizit provides a number of text-mining pipelines which can can detect various terms of biological interest in text documents. For example finding gene names and mapping them to UniProtKB identifiers, finding chemical terms and mapping them to ChEBI, etc." ;
+        <http://purl.org/dc/terms/title>
+                "EBI_Whatizit" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Analysis_pipeline:Input_params.pipelineName> , <http://weprov.csiro.au/controller/Input_params.output:contact.parameters> , <http://weprov.csiro.au/controller/Text:Input_params.text> , <http://weprov.csiro.au/controller/Unwrap_result.return:Whatizit_result> , <http://weprov.csiro.au/controller/contact.parameters:Unwrap_result.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/contact>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/contact.parameters:Unwrap_result.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "contact" .
+
+<http://weprov.csiro.au/program/Input_params>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Input_params.output:contact.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Input_params" .
+
+<http://weprov.csiro.au/program/Unwrap_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Unwrap_result.return:Whatizit_result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Unwrap_result" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Analysis_pipeline>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Analysis_pipeline" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Text" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ad7e8c0b-b602-4004-ab94-3f96a65bef73-v0/Whatizit_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Whatizit_result" .
+
+<http://weprov.csiro.au/controller/Analysis_pipeline:Input_params.pipelineName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Analysis_pipeline:Input_params.pipelineName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Input_params> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Analysis_pipeline:Input_params.pipelineName> , <http://weprov.csiro.au/controller/Text:Input_params.text> .
+
+<http://weprov.csiro.au/controller/Input_params.output:contact.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Input_params.output:contact.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/contact> .
+
+<http://weprov.csiro.au/controller/Text:Input_params.text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Text:Input_params.text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Input_params> .
+
+<http://weprov.csiro.au/controller/Unwrap_result.return:Whatizit_result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Unwrap_result.return:Whatizit_result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/contact.parameters:Unwrap_result.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "contact.parameters:Unwrap_result.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Unwrap_result> .

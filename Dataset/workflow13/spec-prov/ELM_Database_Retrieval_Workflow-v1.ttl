@@ -1,0 +1,157 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:07048a42-adf7-4292-bbb3-05c0b112d45f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:07048a42-adf7-4292-bbb3-05c0b112d45f-v0/ELMs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Nested_Workflow> , <http://weprov.csiro.au/program/getAllELMs> , <http://weprov.csiro.au/program/SplitXML> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow retrieves all the current entries stored in the Eukaryotic Linear Motif (ELM) Database and returns all entries in a collated readable format.\nThis requires the ELM Database retrieval WSDL file: http://elm.eu.org/webservice/ELMdb.wsdl" ;
+        <http://purl.org/dc/terms/title>
+                "ELM Database Retrieval Workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Nested_Workflow.ELMs:ELMs> , <http://weprov.csiro.au/controller/SplitXML.ELM:Nested_Workflow.ELM_XMLs> , <http://weprov.csiro.au/controller/getAllELMs.parameters:SplitXML.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Nested_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Nested_Workflow.ELMs:ELMs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Nested_Workflow" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0/ELM_XMLs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0/ELMs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Split_ELMS> , <http://weprov.csiro.au/program/MergeELMS> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Inner ELM workflow" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ELM_XMLs:Split_ELMS.input> , <http://weprov.csiro.au/controller/Split_ELMS.FunctionalSite:MergeELMS.FuncSite> , <http://weprov.csiro.au/controller/Split_ELMS.Identifier:MergeELMS.Id> , <http://weprov.csiro.au/controller/Split_ELMS.LongDescription:MergeELMS.LongDes> , <http://weprov.csiro.au/controller/Split_ELMS.Regex:MergeELMS.Regex> , <http://weprov.csiro.au/controller/Split_ELMS.ShortDescription:MergeELMS.ShortDes> , <http://weprov.csiro.au/controller/MergeELMS.Entry:ELMs> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Split_ELMS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_ELMS.FunctionalSite:MergeELMS.FuncSite> , <http://weprov.csiro.au/controller/Split_ELMS.Identifier:MergeELMS.Id> , <http://weprov.csiro.au/controller/Split_ELMS.LongDescription:MergeELMS.LongDes> , <http://weprov.csiro.au/controller/Split_ELMS.Regex:MergeELMS.Regex> , <http://weprov.csiro.au/controller/Split_ELMS.ShortDescription:MergeELMS.ShortDes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_ELMS" .
+
+<http://weprov.csiro.au/program/MergeELMS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeELMS.Entry:ELMs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeELMS" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0/ELM_XMLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ELM_XMLs" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ae55ea29-f484-4b30-a7ed-96c16a224568-v0/ELMs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ELMs" .
+
+<http://weprov.csiro.au/controller/ELM_XMLs:Split_ELMS.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ELM_XMLs:Split_ELMS.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_ELMS> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ELM_XMLs:Split_ELMS.input> .
+
+<http://weprov.csiro.au/controller/Split_ELMS.FunctionalSite:MergeELMS.FuncSite>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_ELMS.FunctionalSite:MergeELMS.FuncSite" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeELMS> .
+
+<http://weprov.csiro.au/controller/Split_ELMS.Identifier:MergeELMS.Id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_ELMS.Identifier:MergeELMS.Id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeELMS> .
+
+<http://weprov.csiro.au/controller/Split_ELMS.LongDescription:MergeELMS.LongDes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_ELMS.LongDescription:MergeELMS.LongDes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeELMS> .
+
+<http://weprov.csiro.au/controller/Split_ELMS.Regex:MergeELMS.Regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_ELMS.Regex:MergeELMS.Regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeELMS> .
+
+<http://weprov.csiro.au/controller/Split_ELMS.ShortDescription:MergeELMS.ShortDes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_ELMS.ShortDescription:MergeELMS.ShortDes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeELMS> .
+
+<http://weprov.csiro.au/controller/MergeELMS.Entry:ELMs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeELMS.Entry:ELMs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/getAllELMs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getAllELMs.parameters:SplitXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getAllELMs" .
+
+<http://weprov.csiro.au/program/SplitXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitXML.ELM:Nested_Workflow.ELM_XMLs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:07048a42-adf7-4292-bbb3-05c0b112d45f-v0/ELMs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ELMs" .
+
+<http://weprov.csiro.au/controller/Nested_Workflow.ELMs:ELMs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nested_Workflow.ELMs:ELMs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/SplitXML.ELM:Nested_Workflow.ELM_XMLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitXML.ELM:Nested_Workflow.ELM_XMLs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .
+
+<http://weprov.csiro.au/controller/getAllELMs.parameters:SplitXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getAllELMs.parameters:SplitXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitXML> .

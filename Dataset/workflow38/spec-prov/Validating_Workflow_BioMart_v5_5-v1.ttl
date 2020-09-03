@@ -1,0 +1,502 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/datasetName> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Workflow_Scufl> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/ProcessorName> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/ProcessorName> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/result> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/DatasetName> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Attibute_Checked> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Filter_Checked> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/XPath_Processor> , <http://weprov.csiro.au/program/Flattenlist_Filtered_Processor> , <http://weprov.csiro.au/program/FlattenList_DatasetName> , <http://weprov.csiro.au/program/Merge_Attribute_result_list> , <http://weprov.csiro.au/program/XPath_Extract_Processor> , <http://weprov.csiro.au/program/XPath_extract_DatasetName> , <http://weprov.csiro.au/program/Merge_Filter_result_list> , <http://weprov.csiro.au/program/XPath_Filter_Processor> , <http://weprov.csiro.au/program/DatasetName_XPath_Exp> , <http://weprov.csiro.au/program/XPath_Filter_Nested_Processor> , <http://weprov.csiro.au/program/Check_Filter> , <http://weprov.csiro.au/program/Biomart_Base_URL> , <http://weprov.csiro.au/program/XPath_Extract_Filter> , <http://weprov.csiro.au/program/get_filter_from_dataset> , <http://weprov.csiro.au/program/XPath_Filter> , <http://weprov.csiro.au/program/prepare_filter_url> , <http://weprov.csiro.au/program/Check_Attribute> , <http://weprov.csiro.au/program/get_attribute_from_dataset> , <http://weprov.csiro.au/program/XPath_Extract_Attribute> , <http://weprov.csiro.au/program/prepare_attribute_url> , <http://weprov.csiro.au/program/XPath_Attribute> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Validating_Workflow_BioMart_v5_5" , "Check_Available_Filter_v5_5" , "Check_Available_Attribute_v5_5" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ProcessorName:Check_Filter.ProcessorName> , <http://weprov.csiro.au/controller/ProcessorName:XPath_Filter.ProcessorName> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Filter.xml-text> , <http://weprov.csiro.au/controller/datasetName:prepare_filter_url.datasetName> , <http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_filter_from_dataset.base> , <http://weprov.csiro.au/controller/Check_Filter.result:result> , <http://weprov.csiro.au/controller/XPath_Extract_Filter.nodelist:Check_Filter.filter> , <http://weprov.csiro.au/controller/XPath_Filter.XPathExp:XPath_Extract_Filter.xpath> , <http://weprov.csiro.au/controller/get_filter_from_dataset.contents:Check_Filter.stringInput> , <http://weprov.csiro.au/controller/prepare_filter_url.url:get_filter_from_dataset.url> , <http://weprov.csiro.au/controller/ProcessorName:Check_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/ProcessorName:XPath_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Attribute.xml-text> , <http://weprov.csiro.au/controller/datasetName:prepare_attribute_url.datasetName> , <http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_attribute_from_dataset.base> , <http://weprov.csiro.au/controller/XPath_Attribute.XPathExp:XPath_Extract_Attribute.xpath> , <http://weprov.csiro.au/controller/XPath_Extract_Attribute.nodelist:Check_Attribute.attribute> , <http://weprov.csiro.au/controller/get_attribute_from_dataset.contents:Check_Attribute.stringInput> , <http://weprov.csiro.au/controller/prepare_attribute_url.url:get_attribute_from_dataset.url> , <http://weprov.csiro.au/controller/Check_Attribute.result:result> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Processor.xml-text> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Filter_Nested_Processor.xml-text> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_extract_DatasetName.xml-text> , <http://weprov.csiro.au/controller/Check_Attribute.result:Merge_Attribute_result_list.stringlist> , <http://weprov.csiro.au/controller/Check_Filter.result:Merge_Filter_result_list.stringlist> , <http://weprov.csiro.au/controller/DatasetName_XPath_Exp.DatasetXPathExpression:XPath_extract_DatasetName.xpath> , <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Attribute.datasetName> , <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Filter.datasetName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Filter.ProcessorName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:DatasetName_XPath_Exp.processorName> , <http://weprov.csiro.au/controller/Workflow_Scufl:Check_Attribute.Workflow_Scufl> , <http://weprov.csiro.au/controller/Workflow_Scufl:Check_Filter.Workflow_Scufl> , <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:DatasetName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:ProcessorName> , <http://weprov.csiro.au/controller/Merge_Attribute_result_list.concatenated:Attibute_Checked> , <http://weprov.csiro.au/controller/Merge_Filter_result_list.concatenated:Filter_Checked> , <http://weprov.csiro.au/controller/XPath_Extract_Processor.nodelist:XPath_Filter_Processor.allProcessorName> , <http://weprov.csiro.au/controller/XPath_Filter_Nested_Processor.nodelist:Flattenlist_Filtered_Processor.inputlist> , <http://weprov.csiro.au/controller/XPath_Filter_Processor.XPathExp:XPath_Filter_Nested_Processor.xpath> , <http://weprov.csiro.au/controller/XPath_Processor.value:XPath_Extract_Processor.xpath> , <http://weprov.csiro.au/controller/XPath_extract_DatasetName.nodelist:FlattenList_DatasetName.inputlist> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/XPath_Processor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Processor.value:XPath_Extract_Processor.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Processor" .
+
+<http://weprov.csiro.au/program/Flattenlist_Filtered_Processor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Filter.ProcessorName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:DatasetName_XPath_Exp.processorName> , <http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:ProcessorName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flattenlist_Filtered_Processor" .
+
+<http://weprov.csiro.au/program/FlattenList_DatasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Attribute.datasetName> , <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Filter.datasetName> , <http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:DatasetName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FlattenList_DatasetName" .
+
+<http://weprov.csiro.au/program/Merge_Attribute_result_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_Attribute_result_list.concatenated:Attibute_Checked> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_Attribute_result_list" .
+
+<http://weprov.csiro.au/program/XPath_Extract_Processor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Extract_Processor.nodelist:XPath_Filter_Processor.allProcessorName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Extract_Processor" .
+
+<http://weprov.csiro.au/program/XPath_extract_DatasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_extract_DatasetName.nodelist:FlattenList_DatasetName.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_extract_DatasetName" .
+
+<http://weprov.csiro.au/program/Merge_Filter_result_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_Filter_result_list.concatenated:Filter_Checked> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_Filter_result_list" .
+
+<http://weprov.csiro.au/program/XPath_Filter_Processor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Filter_Processor.XPathExp:XPath_Filter_Nested_Processor.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Filter_Processor" .
+
+<http://weprov.csiro.au/program/DatasetName_XPath_Exp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DatasetName_XPath_Exp.DatasetXPathExpression:XPath_extract_DatasetName.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DatasetName_XPath_Exp" .
+
+<http://weprov.csiro.au/program/XPath_Filter_Nested_Processor>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Filter_Nested_Processor.nodelist:Flattenlist_Filtered_Processor.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Filter_Nested_Processor" .
+
+<http://weprov.csiro.au/program/Check_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Check_Filter.result:result> , <http://weprov.csiro.au/controller/Check_Filter.result:Merge_Filter_result_list.stringlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Check_Filter" .
+
+<http://weprov.csiro.au/program/Biomart_Base_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_filter_from_dataset.base> , <http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_attribute_from_dataset.base> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Biomart_Base_URL" .
+
+<http://weprov.csiro.au/program/XPath_Extract_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Extract_Filter.nodelist:Check_Filter.filter> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Extract_Filter" .
+
+<http://weprov.csiro.au/program/get_filter_from_dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_filter_from_dataset.contents:Check_Filter.stringInput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_filter_from_dataset" .
+
+<http://weprov.csiro.au/program/XPath_Filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Filter.XPathExp:XPath_Extract_Filter.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Filter" .
+
+<http://weprov.csiro.au/program/prepare_filter_url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prepare_filter_url.url:get_filter_from_dataset.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prepare_filter_url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/datasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "datasetName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Workflow_Scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Workflow_Scufl" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProcessorName" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ProcessorName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "result" .
+
+<http://weprov.csiro.au/controller/ProcessorName:Check_Filter.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProcessorName:Check_Filter.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ProcessorName:Check_Filter.ProcessorName> , <http://weprov.csiro.au/controller/ProcessorName:XPath_Filter.ProcessorName> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Filter.xml-text> , <http://weprov.csiro.au/controller/datasetName:prepare_filter_url.datasetName> , <http://weprov.csiro.au/controller/ProcessorName:Check_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/ProcessorName:XPath_Attribute.ProcessorName> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Attribute.xml-text> , <http://weprov.csiro.au/controller/datasetName:prepare_attribute_url.datasetName> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Processor.xml-text> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Filter_Nested_Processor.xml-text> , <http://weprov.csiro.au/controller/Workflow_Scufl:XPath_extract_DatasetName.xml-text> , <http://weprov.csiro.au/controller/Workflow_Scufl:Check_Attribute.Workflow_Scufl> , <http://weprov.csiro.au/controller/Workflow_Scufl:Check_Filter.Workflow_Scufl> .
+
+<http://weprov.csiro.au/controller/ProcessorName:XPath_Filter.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProcessorName:XPath_Filter.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Filter> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Filter.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:XPath_Extract_Filter.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Filter> .
+
+<http://weprov.csiro.au/controller/datasetName:prepare_filter_url.datasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "datasetName:prepare_filter_url.datasetName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prepare_filter_url> .
+
+<http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_filter_from_dataset.base>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Biomart_Base_URL.value:get_filter_from_dataset.base" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_filter_from_dataset> .
+
+<http://weprov.csiro.au/controller/Check_Filter.result:result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Check_Filter.result:result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/XPath_Extract_Filter.nodelist:Check_Filter.filter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Extract_Filter.nodelist:Check_Filter.filter" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/controller/XPath_Filter.XPathExp:XPath_Extract_Filter.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Filter.XPathExp:XPath_Extract_Filter.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Filter> .
+
+<http://weprov.csiro.au/controller/get_filter_from_dataset.contents:Check_Filter.stringInput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_filter_from_dataset.contents:Check_Filter.stringInput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/controller/prepare_filter_url.url:get_filter_from_dataset.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prepare_filter_url.url:get_filter_from_dataset.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_filter_from_dataset> .
+
+<http://weprov.csiro.au/program/Check_Attribute>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Check_Attribute.result:result> , <http://weprov.csiro.au/controller/Check_Attribute.result:Merge_Attribute_result_list.stringlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Check_Attribute" .
+
+<http://weprov.csiro.au/program/get_attribute_from_dataset>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_attribute_from_dataset.contents:Check_Attribute.stringInput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_attribute_from_dataset" .
+
+<http://weprov.csiro.au/program/XPath_Extract_Attribute>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Extract_Attribute.nodelist:Check_Attribute.attribute> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Extract_Attribute" .
+
+<http://weprov.csiro.au/program/prepare_attribute_url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prepare_attribute_url.url:get_attribute_from_dataset.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prepare_attribute_url" .
+
+<http://weprov.csiro.au/program/XPath_Attribute>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XPath_Attribute.XPathExp:XPath_Extract_Attribute.xpath> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XPath_Attribute" .
+
+<http://weprov.csiro.au/controller/ProcessorName:Check_Attribute.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProcessorName:Check_Attribute.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/ProcessorName:XPath_Attribute.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProcessorName:XPath_Attribute.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Attribute> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Attribute.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:XPath_Extract_Attribute.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Attribute> .
+
+<http://weprov.csiro.au/controller/datasetName:prepare_attribute_url.datasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "datasetName:prepare_attribute_url.datasetName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prepare_attribute_url> .
+
+<http://weprov.csiro.au/controller/Biomart_Base_URL.value:get_attribute_from_dataset.base>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Biomart_Base_URL.value:get_attribute_from_dataset.base" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_attribute_from_dataset> .
+
+<http://weprov.csiro.au/controller/XPath_Attribute.XPathExp:XPath_Extract_Attribute.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Attribute.XPathExp:XPath_Extract_Attribute.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Attribute> .
+
+<http://weprov.csiro.au/controller/XPath_Extract_Attribute.nodelist:Check_Attribute.attribute>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Extract_Attribute.nodelist:Check_Attribute.attribute" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/get_attribute_from_dataset.contents:Check_Attribute.stringInput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_attribute_from_dataset.contents:Check_Attribute.stringInput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/prepare_attribute_url.url:get_attribute_from_dataset.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prepare_attribute_url.url:get_attribute_from_dataset.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_attribute_from_dataset> .
+
+<http://weprov.csiro.au/controller/Check_Attribute.result:result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Check_Attribute.result:result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/DatasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatasetName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Attibute_Checked>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Attibute_Checked" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:63a36920-9187-4407-adf8-f73602cd80a4-v0/Filter_Checked>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_Checked" .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Extract_Processor.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:XPath_Extract_Processor.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Processor> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:XPath_Filter_Nested_Processor.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:XPath_Filter_Nested_Processor.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Filter_Nested_Processor> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:XPath_extract_DatasetName.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:XPath_extract_DatasetName.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_extract_DatasetName> .
+
+<http://weprov.csiro.au/controller/Check_Attribute.result:Merge_Attribute_result_list.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Check_Attribute.result:Merge_Attribute_result_list.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_Attribute_result_list> .
+
+<http://weprov.csiro.au/controller/Check_Filter.result:Merge_Filter_result_list.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Check_Filter.result:Merge_Filter_result_list.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_Filter_result_list> .
+
+<http://weprov.csiro.au/controller/DatasetName_XPath_Exp.DatasetXPathExpression:XPath_extract_DatasetName.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DatasetName_XPath_Exp.DatasetXPathExpression:XPath_extract_DatasetName.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_extract_DatasetName> .
+
+<http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Attribute.datasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenList_DatasetName.outputlist:Check_Attribute.datasetName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:Check_Filter.datasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenList_DatasetName.outputlist:Check_Filter.datasetName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Attribute.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flattenlist_Filtered_Processor.outputlist:Check_Attribute.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:Check_Filter.ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flattenlist_Filtered_Processor.outputlist:Check_Filter.ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:DatasetName_XPath_Exp.processorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flattenlist_Filtered_Processor.outputlist:DatasetName_XPath_Exp.processorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DatasetName_XPath_Exp> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:Check_Attribute.Workflow_Scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:Check_Attribute.Workflow_Scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Attribute> .
+
+<http://weprov.csiro.au/controller/Workflow_Scufl:Check_Filter.Workflow_Scufl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Workflow_Scufl:Check_Filter.Workflow_Scufl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Check_Filter> .
+
+<http://weprov.csiro.au/controller/FlattenList_DatasetName.outputlist:DatasetName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FlattenList_DatasetName.outputlist:DatasetName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Flattenlist_Filtered_Processor.outputlist:ProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flattenlist_Filtered_Processor.outputlist:ProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_Attribute_result_list.concatenated:Attibute_Checked>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_Attribute_result_list.concatenated:Attibute_Checked" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Merge_Filter_result_list.concatenated:Filter_Checked>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_Filter_result_list.concatenated:Filter_Checked" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/XPath_Extract_Processor.nodelist:XPath_Filter_Processor.allProcessorName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Extract_Processor.nodelist:XPath_Filter_Processor.allProcessorName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Filter_Processor> .
+
+<http://weprov.csiro.au/controller/XPath_Filter_Nested_Processor.nodelist:Flattenlist_Filtered_Processor.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Filter_Nested_Processor.nodelist:Flattenlist_Filtered_Processor.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flattenlist_Filtered_Processor> .
+
+<http://weprov.csiro.au/controller/XPath_Filter_Processor.XPathExp:XPath_Filter_Nested_Processor.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Filter_Processor.XPathExp:XPath_Filter_Nested_Processor.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Filter_Nested_Processor> .
+
+<http://weprov.csiro.au/controller/XPath_Processor.value:XPath_Extract_Processor.xpath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_Processor.value:XPath_Extract_Processor.xpath" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/XPath_Extract_Processor> .
+
+<http://weprov.csiro.au/controller/XPath_extract_DatasetName.nodelist:FlattenList_DatasetName.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XPath_extract_DatasetName.nodelist:FlattenList_DatasetName.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FlattenList_DatasetName> .

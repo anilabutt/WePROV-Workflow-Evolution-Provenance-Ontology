@@ -1,0 +1,1082 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/query_string> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/maxNumberOfDocsToRetrieve> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/relevant_documents> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_proteins> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_diseases> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/diseases_per_protein> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/protein_count> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/disease_count_per_protein> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_uniprot_ids> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/disease_count> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/search_field> , <http://weprov.csiro.au/program/Document_index> , <http://weprov.csiro.au/program/CountProteins> , <http://weprov.csiro.au/program/CountDiseases> , <http://weprov.csiro.au/program/CountDiseasesPerProtein> , <http://weprov.csiro.au/program/Flatten_and_make_unique> , <http://weprov.csiro.au/program/Link_proteins_to_diseases> , <http://weprov.csiro.au/program/Retrieve_documents> , <http://weprov.csiro.au/program/Discover_RatHumanMouseUniProt_proteins> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow finds disease relevant to the query string via the following steps:\n1. A user query: a list of terms or boolean query - look at the Apache Lucene project for all details. E.g.: (EZH2 OR \"Enhancer of Zeste\" +(mutation chromatin) -clinical); consider adding 'ProteinSynonymsToQuery' in front of the input if your query is a protein.\n2. Retrieve documents: finds 'maximumNumberOfHits' relevant documents (abstract+title) based on query (the AIDA service inside is based on Apache's Lucene)\n3. Discover proteins: extract proteins discovered in the set of relevant abstracts with a 'named entity recognizer' trained on genomic terms using a Bayesian approach; the AIDA service inside is based on LingPipe. This subworkflow also 'filters' false positives from the discovered protein by requiring a discovery has a valid UniProt ID. Martijn Schuemie's service to do that contains only human UniProt IDs, which is why this workflow only works for human proteins.\n4. Link proteins to disease contained in the OMIM disease database (with a service from Japan that interrogates OMIM)\n\nWorkflow by Marco Roos (AID = Adaptive Information Disclosure, University of Amsterdam; http://adaptivedisclosure.org)\n\nText mining services by Sophia Katrenko and Edgar Meij (AID), and Martijn Schuemie (BioSemantics, Erasmus University Rotterdam).\nOMIM service from the Center for Information Biology and DNA Data Bank of Japan, National Institute of Genetics, director Hideaki Sugawara (see http://xml.nig.ac.jp)\n\nChanges to our original BioAID_DiseaseDiscovery workflow:\n   * Use of Martijn Schuemie's synsets service to\n       * provide uniprot ids to discovered proteins\n       * filter false positive discoveries, only proteins with a uniprot id go through; this introduces some false negatives (e.g. discovered proteins with a name shorter than 3 characters)\n       * solve a major issue with the original workflow where some false positives could contribute disproportionately to the number of discovered diseases\n   * Counting of results in various ways." ;
+        <http://purl.org/dc/terms/title>
+                "BioAID_DiseaseDiscovery_RatHumanMouseUniprotFilter" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/maxNumberOfDocsToRetrieve:Retrieve_documents.maxHits> , <http://weprov.csiro.au/controller/query_string:Retrieve_documents.query_string> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:CountProteins.list> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:Link_proteins_to_diseases.keyword> , <http://weprov.csiro.au/controller/Document_index.value:Retrieve_documents.document_index> , <http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:CountDiseases.list> , <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:CountDiseasesPerProtein.list> , <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:Flatten_and_make_unique.input> , <http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein> , <http://weprov.csiro.au/controller/CountProteins.count:protein_count> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:discovered_proteins> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_uniprot_ids:discovered_uniprot_ids> , <http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:discovered_diseases> , <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:diseases_per_protein> , <http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:Discover_RatHumanMouseUniProt_proteins.documents_from_lucene> , <http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:relevant_documents> , <http://weprov.csiro.au/controller/search_field.value:Retrieve_documents.search_field> , <http://weprov.csiro.au/controller/CountDiseases.count:disease_count> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/search_field.value:Retrieve_documents.search_field> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search_field" .
+
+<http://weprov.csiro.au/program/Document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Document_index.value:Retrieve_documents.document_index> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Document_index" .
+
+<http://weprov.csiro.au/program/CountProteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountProteins.count:protein_count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountProteins" .
+
+<http://weprov.csiro.au/program/CountDiseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountDiseases.count:disease_count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountDiseases" .
+
+<http://weprov.csiro.au/program/CountDiseasesPerProtein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountDiseasesPerProtein" .
+
+<http://weprov.csiro.au/program/Flatten_and_make_unique>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:CountDiseases.list> , <http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:discovered_diseases> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_and_make_unique" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1/input> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1/flattened_unique_output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_list> , <http://weprov.csiro.au/program/Remove_duplicate_strings> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Flatten_and_make_unique" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:flattened_unique_output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Flatten_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_list.outputlist:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_list" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:flattened_unique_output> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:OMIM_disease_label> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:Strip_xml.tagged_term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1/input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f43db36c-a3ed-4f78-8d1c-89f27dfb53f7-v1/flattened_unique_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "flattened_unique_output" .
+
+<http://weprov.csiro.au/controller/input:Flatten_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input:Flatten_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/input:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/keyword:search.keyword> , <http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string> , <http://weprov.csiro.au/controller/document_index:search1.index> , <http://weprov.csiro.au/controller/maxHits:search1.maxHits> , <http://weprov.csiro.au/controller/queryString:search1.queryString> , <http://weprov.csiro.au/controller/search_field:search1.defaultField> , <http://weprov.csiro.au/controller/query_string:Biooptimize_query.query_string> , <http://weprov.csiro.au/controller/document_index:Retrieve.document_index> , <http://weprov.csiro.au/controller/maxHits:Retrieve.maxHits> , <http://weprov.csiro.au/controller/search_field:Retrieve.search_field> , <http://weprov.csiro.au/controller/input_from_lucene:NErecognize.input_data> , <http://weprov.csiro.au/controller/learned_model:NErecognize.r_type> , <http://weprov.csiro.au/controller/input_string:SplitOn_protein_molecule.string> , <http://weprov.csiro.au/controller/documents_from_lucene:Discover_entities.input_from_lucene> , <http://weprov.csiro.au/controller/maxNumberOfDocsToRetrieve:Retrieve_documents.maxHits> , <http://weprov.csiro.au/controller/query_string:Retrieve_documents.query_string> .
+
+<http://weprov.csiro.au/controller/Flatten_list.outputlist:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list.outputlist:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:flattened_unique_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:flattened_unique_output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Link_proteins_to_diseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:CountDiseasesPerProtein.list> , <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:Flatten_and_make_unique.input> , <http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:diseases_per_protein> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Link_proteins_to_diseases" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1/keyword> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1/OMIM_disease_label> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_list> , <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/search> , <http://weprov.csiro.au/program/label_OMIM_disease> , <http://weprov.csiro.au/program/Extract_diseases_from_OMIM> , <http://weprov.csiro.au/program/filter_disease_regexp> , <http://weprov.csiro.au/program/split_OMIM_regexp> , <http://weprov.csiro.au/program/Split_OMIM_results> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Link_protein_to_OMIM_disease" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Flatten_list.outputlist:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/keyword:search.keyword> , <http://weprov.csiro.au/controller/Extract_diseases_from_OMIM.filteredlist:label_OMIM_disease.OMIM_disease_string> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:OMIM_disease_label> , <http://weprov.csiro.au/controller/Split_OMIM_results.split:Extract_diseases_from_OMIM.stringlist> , <http://weprov.csiro.au/controller/filter_disease_regexp.value:Extract_diseases_from_OMIM.regex> , <http://weprov.csiro.au/controller/label_OMIM_disease.OMIM_disease_label:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/search.Result:Split_OMIM_results.string> , <http://weprov.csiro.au/controller/split_OMIM_regexp.value:Split_OMIM_results.regex> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/search>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/search.Result:Split_OMIM_results.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search" .
+
+<http://weprov.csiro.au/program/label_OMIM_disease>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/label_OMIM_disease.OMIM_disease_label:Flatten_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "label_OMIM_disease" .
+
+<http://weprov.csiro.au/program/Extract_diseases_from_OMIM>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_diseases_from_OMIM.filteredlist:label_OMIM_disease.OMIM_disease_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_diseases_from_OMIM" .
+
+<http://weprov.csiro.au/program/filter_disease_regexp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/filter_disease_regexp.value:Extract_diseases_from_OMIM.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "filter_disease_regexp" .
+
+<http://weprov.csiro.au/program/split_OMIM_regexp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_OMIM_regexp.value:Split_OMIM_results.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_OMIM_regexp" .
+
+<http://weprov.csiro.au/program/Split_OMIM_results>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_OMIM_results.split:Extract_diseases_from_OMIM.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_OMIM_results" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1/keyword>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "keyword" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4dccdaac-5994-4350-b30b-28eac86c229a-v1/OMIM_disease_label>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "OMIM_disease_label" .
+
+<http://weprov.csiro.au/controller/keyword:search.keyword>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "keyword:search.keyword" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/search> .
+
+<http://weprov.csiro.au/controller/Extract_diseases_from_OMIM.filteredlist:label_OMIM_disease.OMIM_disease_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_diseases_from_OMIM.filteredlist:label_OMIM_disease.OMIM_disease_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/label_OMIM_disease> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:OMIM_disease_label>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:OMIM_disease_label" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Split_OMIM_results.split:Extract_diseases_from_OMIM.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_OMIM_results.split:Extract_diseases_from_OMIM.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_diseases_from_OMIM> .
+
+<http://weprov.csiro.au/controller/filter_disease_regexp.value:Extract_diseases_from_OMIM.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filter_disease_regexp.value:Extract_diseases_from_OMIM.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_diseases_from_OMIM> .
+
+<http://weprov.csiro.au/controller/label_OMIM_disease.OMIM_disease_label:Flatten_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "label_OMIM_disease.OMIM_disease_label:Flatten_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list> .
+
+<http://weprov.csiro.au/controller/search.Result:Split_OMIM_results.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "search.Result:Split_OMIM_results.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_OMIM_results> .
+
+<http://weprov.csiro.au/controller/split_OMIM_regexp.value:Split_OMIM_results.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_OMIM_regexp.value:Split_OMIM_results.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_OMIM_results> .
+
+<http://weprov.csiro.au/program/Retrieve_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:Discover_RatHumanMouseUniProt_proteins.documents_from_lucene> , <http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:relevant_documents> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve_documents" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/query_string> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/document_index> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/search_field> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/maxHits> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/relevant_documents> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Biooptimize_query> , <http://weprov.csiro.au/program/Retrieve> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow retrieves relevant documents, based on a query optimized by adding a string to the original query that will rank the search output according to the most recent years. The added string adds years with priorities (most recent is highest); it starts at 2007." ;
+        <http://purl.org/dc/terms/title>
+                "Retrieve_bio_documents" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/query_string:Biooptimize_query.query_string> , <http://weprov.csiro.au/controller/Biooptimize_query.optimized_lucene_query:Retrieve.queryString> , <http://weprov.csiro.au/controller/document_index:Retrieve.document_index> , <http://weprov.csiro.au/controller/maxHits:Retrieve.maxHits> , <http://weprov.csiro.au/controller/search_field:Retrieve.search_field> , <http://weprov.csiro.au/controller/Retrieve.relevant_documents:relevant_documents> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Biooptimize_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Biooptimize_query.optimized_lucene_query:Retrieve.queryString> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Biooptimize_query" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1/query_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1/optimized_lucene_query> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Prioritise_lucene_query> , <http://weprov.csiro.au/program/Lucene_year_priorities> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow does four things:\n1. it retrieves documents relevant for the query string\n2. it discovers entities in those documents, these are considered relevant entities\n3. it filters proteins from those entities (on the tag protein_molecule)\n4. it removes all terms from the list produced by 3 (query terms temporarily considered proteins)\n\nToDo\n* Replace step 4 by the following procedure:\n  1. remove the query terms from the output of NER (probably by a regexp matching on what is inside the tag, possibly case-insensitive)\n  2. remove tag_as_protein_molecule (obsolete)\n* Add synonym service/workflow\n\nNote that Remove_inputquery has an alternative iteration strategy (dot product instead of cross product). Idem for 'Join' in 'SplitQuery'." ;
+        <http://purl.org/dc/terms/title>
+                "Lucene_bioquery_optimizer_MR1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string> , <http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string> , <http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Prioritise_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Prioritise_lucene_query" .
+
+<http://weprov.csiro.au/program/Lucene_year_priorities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Lucene_year_priorities" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1/query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:3d2eebb7-0b04-4979-9aa9-3d39b1464216-v1/optimized_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "optimized_lucene_query" .
+
+<http://weprov.csiro.au/controller/Lucene_year_priorities.value:Prioritise_lucene_query.priority_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Lucene_year_priorities.value:Prioritise_lucene_query.priority_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prioritise_lucene_query> .
+
+<http://weprov.csiro.au/controller/query_string:Prioritise_lucene_query.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_string:Prioritise_lucene_query.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prioritise_lucene_query> .
+
+<http://weprov.csiro.au/controller/Prioritise_lucene_query.lucene_query:optimized_lucene_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Prioritise_lucene_query.lucene_query:optimized_lucene_query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Retrieve>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve.relevant_documents:relevant_documents> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/queryString> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/document_index> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/search_field> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/maxHits> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/relevant_documents> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/search1> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow applies the search web service from the AIDA toolbox.\n\nComments:\nThis search service is based on lucene defaults; it may be necessary to optimize the querystring to adopt the behaviour to what is most relevant in a particular domain (e.g. for medline prioritizing based on publication date is useful). Lucene favours shorter sentences, which may be bad for subsequent information extraction." ;
+        <http://purl.org/dc/terms/title>
+                "Retrieve_documents_MR1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/document_index:search1.index> , <http://weprov.csiro.au/controller/maxHits:search1.maxHits> , <http://weprov.csiro.au/controller/queryString:search1.queryString> , <http://weprov.csiro.au/controller/search_field:search1.defaultField> , <http://weprov.csiro.au/controller/search1.searchReturn:relevant_documents> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/search1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/search1.searchReturn:relevant_documents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/queryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "queryString" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "document_index" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search_field" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/maxHits>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxHits" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:858efe24-26c0-4090-be46-c9a5b4f21cad-v1/relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "relevant_documents" .
+
+<http://weprov.csiro.au/controller/document_index:search1.index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "document_index:search1.index" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/search1> .
+
+<http://weprov.csiro.au/controller/maxHits:search1.maxHits>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxHits:search1.maxHits" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/search1> .
+
+<http://weprov.csiro.au/controller/queryString:search1.queryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "queryString:search1.queryString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/search1> .
+
+<http://weprov.csiro.au/controller/search_field:search1.defaultField>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "search_field:search1.defaultField" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/search1> .
+
+<http://weprov.csiro.au/controller/search1.searchReturn:relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "search1.searchReturn:relevant_documents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "document_index" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "search_field" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/maxHits>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxHits" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:dd1e2961-a1ca-4902-9bfb-2b776a4399ee-v1/relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "relevant_documents" .
+
+<http://weprov.csiro.au/controller/query_string:Biooptimize_query.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_string:Biooptimize_query.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Biooptimize_query> .
+
+<http://weprov.csiro.au/controller/Biooptimize_query.optimized_lucene_query:Retrieve.queryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Biooptimize_query.optimized_lucene_query:Retrieve.queryString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve> .
+
+<http://weprov.csiro.au/controller/document_index:Retrieve.document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "document_index:Retrieve.document_index" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve> .
+
+<http://weprov.csiro.au/controller/maxHits:Retrieve.maxHits>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxHits:Retrieve.maxHits" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve> .
+
+<http://weprov.csiro.au/controller/search_field:Retrieve.search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "search_field:Retrieve.search_field" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve> .
+
+<http://weprov.csiro.au/controller/Retrieve.relevant_documents:relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve.relevant_documents:relevant_documents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Discover_RatHumanMouseUniProt_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:CountProteins.list> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:Link_proteins_to_diseases.keyword> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:discovered_proteins> , <http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_uniprot_ids:discovered_uniprot_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Discover_RatHumanMouseUniProt_proteins" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/documents_from_lucene> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/discovered_proteins> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/discovered_uniprot_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/prelearned_genomics_model> , <http://weprov.csiro.au/program/Discover_entities> , <http://weprov.csiro.au/program/Extract_proteins> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow applies the discovery workflow built around the AIDA 'Named Entity Recognize' web service by Sophia Katrenko. It uses the pre-learned genomics model, named 'MedLine', to find genomics concepts in a set of documents in lucene output format." ;
+        <http://purl.org/dc/terms/title>
+                "Discover_proteins" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/documents_from_lucene:Discover_entities.input_from_lucene> , <http://weprov.csiro.au/controller/Discover_entities.discovered_entities:Extract_proteins.input_string> , <http://weprov.csiro.au/controller/Extract_proteins.protein_molecule:discovered_proteins> , <http://weprov.csiro.au/controller/Extract_proteins.uniprotID:discovered_uniprot_ids> , <http://weprov.csiro.au/controller/prelearned_genomics_model.value:Discover_entities.learned_model> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/prelearned_genomics_model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prelearned_genomics_model.value:Discover_entities.learned_model> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prelearned_genomics_model" .
+
+<http://weprov.csiro.au/program/Discover_entities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Discover_entities.discovered_entities:Extract_proteins.input_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Discover_entities" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/input_from_lucene> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/learned_model> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/discovered_entities> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/NErecognize> , <http://weprov.csiro.au/program/Default_input_type> , <http://weprov.csiro.au/program/Default_output_type> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow contains the 'Named Entity Recognize' web service from the AIDA toolbox, created by Sophia Katrenko. It can be used to discover entities of a certain type (determined by 'learned_model') in documents provided in a lucene output format.\n\nKnown issues:\nThe output of NErecognize contains concepts with / characters, breaking the xml. For post-processing its results it is better to use string manipulation than xml manipulations.\nThe output is per document, which means entities will  be redundant if they occur in more than one document." ;
+        <http://purl.org/dc/terms/title>
+                "Discover_entities" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input_from_lucene:NErecognize.input_data> , <http://weprov.csiro.au/controller/learned_model:NErecognize.r_type> , <http://weprov.csiro.au/controller/Default_input_type.value:NErecognize.input_type> , <http://weprov.csiro.au/controller/Default_output_type.value:NErecognize.output_type> , <http://weprov.csiro.au/controller/NErecognize.NErecognizeReturn:discovered_entities> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/NErecognize>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NErecognize.NErecognizeReturn:discovered_entities> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NErecognize" .
+
+<http://weprov.csiro.au/program/Default_input_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Default_input_type.value:NErecognize.input_type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Default_input_type" .
+
+<http://weprov.csiro.au/program/Default_output_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Default_output_type.value:NErecognize.output_type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Default_output_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/input_from_lucene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input_from_lucene" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/learned_model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "learned_model" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e7ae8f2a-428f-4afd-93eb-52ccb89273e1-v1/discovered_entities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_entities" .
+
+<http://weprov.csiro.au/controller/input_from_lucene:NErecognize.input_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input_from_lucene:NErecognize.input_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NErecognize> .
+
+<http://weprov.csiro.au/controller/learned_model:NErecognize.r_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "learned_model:NErecognize.r_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NErecognize> .
+
+<http://weprov.csiro.au/controller/Default_input_type.value:NErecognize.input_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Default_input_type.value:NErecognize.input_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NErecognize> .
+
+<http://weprov.csiro.au/controller/Default_output_type.value:NErecognize.output_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Default_output_type.value:NErecognize.output_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NErecognize> .
+
+<http://weprov.csiro.au/controller/NErecognize.NErecognizeReturn:discovered_entities>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NErecognize.NErecognizeReturn:discovered_entities" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Extract_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_proteins.protein_molecule:discovered_proteins> , <http://weprov.csiro.au/controller/Extract_proteins.uniprotID:discovered_uniprot_ids> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_proteins" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/input_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/protein_molecule> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/uniprotID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/FilterTrueProteinByUniProtID> , <http://weprov.csiro.au/program/Filter2> , <http://weprov.csiro.au/program/Strip_xml> , <http://weprov.csiro.au/program/UniProtOrNot> , <http://weprov.csiro.au/program/getUniprotID> , <http://weprov.csiro.au/program/SplitOn_protein_molecule> , <http://weprov.csiro.au/program/filter_protein_molecule_regexp> , <http://weprov.csiro.au/program/splitOn_protein_molecule_regexp> , <http://weprov.csiro.au/program/Filter1> , <http://weprov.csiro.au/program/Filter_protein_molecules> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow filters protein_molecule-labeled terms from an input string(list). The result is a tagged list of proteins (disregarding false positives in the input).\n\nInternal information:\nThis workflow is a copy of 'filter_protein_molecule_MR3' used for the NBIC poster (now in Archive)." ;
+        <http://purl.org/dc/terms/title>
+                "Extract_proteins" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input_string:SplitOn_protein_molecule.string> , <http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_protein:Filter2.stringlist> , <http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_uniprot:Filter1.stringlist> , <http://weprov.csiro.au/controller/Filter_protein_molecules.filteredlist:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:Strip_xml.tagged_term> , <http://weprov.csiro.au/controller/SplitOn_protein_molecule.split:Filter_protein_molecules.stringlist> , <http://weprov.csiro.au/controller/Strip_xml.term:FilterTrueProteinByUniProtID.protein> , <http://weprov.csiro.au/controller/Strip_xml.term:getUniprotID.term> , <http://weprov.csiro.au/controller/UniProtOrNot.uniprotID_or_False:FilterTrueProteinByUniProtID.uniprot> , <http://weprov.csiro.au/controller/filter_protein_molecule_regexp.value:Filter_protein_molecules.regex> , <http://weprov.csiro.au/controller/getUniprotID.getUniprotIDReturn:UniProtOrNot.uniprotIDlist> , <http://weprov.csiro.au/controller/splitOn_protein_molecule_regexp.value:SplitOn_protein_molecule.regex> , <http://weprov.csiro.au/controller/Filter1.filteredlist:uniprotID> , <http://weprov.csiro.au/controller/Filter2.filteredlist:protein_molecule> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/FilterTrueProteinByUniProtID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_protein:Filter2.stringlist> , <http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_uniprot:Filter1.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FilterTrueProteinByUniProtID" .
+
+<http://weprov.csiro.au/program/Filter2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter2.filteredlist:protein_molecule> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter2" .
+
+<http://weprov.csiro.au/program/Strip_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Strip_xml.term:FilterTrueProteinByUniProtID.protein> , <http://weprov.csiro.au/controller/Strip_xml.term:getUniprotID.term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Strip_xml" .
+
+<http://weprov.csiro.au/program/UniProtOrNot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/UniProtOrNot.uniprotID_or_False:FilterTrueProteinByUniProtID.uniprot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "UniProtOrNot" .
+
+<http://weprov.csiro.au/program/getUniprotID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getUniprotID.getUniprotIDReturn:UniProtOrNot.uniprotIDlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getUniprotID" .
+
+<http://weprov.csiro.au/program/SplitOn_protein_molecule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitOn_protein_molecule.split:Filter_protein_molecules.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitOn_protein_molecule" .
+
+<http://weprov.csiro.au/program/filter_protein_molecule_regexp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/filter_protein_molecule_regexp.value:Filter_protein_molecules.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "filter_protein_molecule_regexp" .
+
+<http://weprov.csiro.au/program/splitOn_protein_molecule_regexp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/splitOn_protein_molecule_regexp.value:SplitOn_protein_molecule.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "splitOn_protein_molecule_regexp" .
+
+<http://weprov.csiro.au/program/Filter1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter1.filteredlist:uniprotID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter1" .
+
+<http://weprov.csiro.au/program/Filter_protein_molecules>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_protein_molecules.filteredlist:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_protein_molecules" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/input_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/protein_molecule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein_molecule" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:df6063f9-b469-4d56-aecc-a62db4bcb3ad-v1/uniprotID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "uniprotID" .
+
+<http://weprov.csiro.au/controller/input_string:SplitOn_protein_molecule.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input_string:SplitOn_protein_molecule.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitOn_protein_molecule> .
+
+<http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_protein:Filter2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterTrueProteinByUniProtID.true_protein:Filter2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter2> .
+
+<http://weprov.csiro.au/controller/FilterTrueProteinByUniProtID.true_uniprot:Filter1.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FilterTrueProteinByUniProtID.true_uniprot:Filter1.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter1> .
+
+<http://weprov.csiro.au/controller/Filter_protein_molecules.filteredlist:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_protein_molecules.filteredlist:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:Strip_xml.tagged_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:Strip_xml.tagged_term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Strip_xml> .
+
+<http://weprov.csiro.au/controller/SplitOn_protein_molecule.split:Filter_protein_molecules.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitOn_protein_molecule.split:Filter_protein_molecules.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_protein_molecules> .
+
+<http://weprov.csiro.au/controller/Strip_xml.term:FilterTrueProteinByUniProtID.protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Strip_xml.term:FilterTrueProteinByUniProtID.protein" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FilterTrueProteinByUniProtID> .
+
+<http://weprov.csiro.au/controller/Strip_xml.term:getUniprotID.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Strip_xml.term:getUniprotID.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getUniprotID> .
+
+<http://weprov.csiro.au/controller/UniProtOrNot.uniprotID_or_False:FilterTrueProteinByUniProtID.uniprot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniProtOrNot.uniprotID_or_False:FilterTrueProteinByUniProtID.uniprot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FilterTrueProteinByUniProtID> .
+
+<http://weprov.csiro.au/controller/filter_protein_molecule_regexp.value:Filter_protein_molecules.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "filter_protein_molecule_regexp.value:Filter_protein_molecules.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_protein_molecules> .
+
+<http://weprov.csiro.au/controller/getUniprotID.getUniprotIDReturn:UniProtOrNot.uniprotIDlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getUniprotID.getUniprotIDReturn:UniProtOrNot.uniprotIDlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/UniProtOrNot> .
+
+<http://weprov.csiro.au/controller/splitOn_protein_molecule_regexp.value:SplitOn_protein_molecule.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitOn_protein_molecule_regexp.value:SplitOn_protein_molecule.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitOn_protein_molecule> .
+
+<http://weprov.csiro.au/controller/Filter1.filteredlist:uniprotID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter1.filteredlist:uniprotID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Filter2.filteredlist:protein_molecule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter2.filteredlist:protein_molecule" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/documents_from_lucene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "documents_from_lucene" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/discovered_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:b4c1a118-6a38-40b5-99e9-febbd3c85f2b-v1/discovered_uniprot_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_uniprot_ids" .
+
+<http://weprov.csiro.au/controller/documents_from_lucene:Discover_entities.input_from_lucene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "documents_from_lucene:Discover_entities.input_from_lucene" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Discover_entities> .
+
+<http://weprov.csiro.au/controller/Discover_entities.discovered_entities:Extract_proteins.input_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Discover_entities.discovered_entities:Extract_proteins.input_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_proteins> .
+
+<http://weprov.csiro.au/controller/Extract_proteins.protein_molecule:discovered_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_proteins.protein_molecule:discovered_proteins" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Extract_proteins.uniprotID:discovered_uniprot_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_proteins.uniprotID:discovered_uniprot_ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/prelearned_genomics_model.value:Discover_entities.learned_model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prelearned_genomics_model.value:Discover_entities.learned_model" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Discover_entities> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/maxNumberOfDocsToRetrieve>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "maxNumberOfDocsToRetrieve" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "relevant_documents" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_proteins" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_diseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_diseases" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/diseases_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "diseases_per_protein" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/protein_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein_count" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/disease_count_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "disease_count_per_protein" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/discovered_uniprot_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "discovered_uniprot_ids" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649-v1/disease_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "disease_count" .
+
+<http://weprov.csiro.au/controller/maxNumberOfDocsToRetrieve:Retrieve_documents.maxHits>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "maxNumberOfDocsToRetrieve:Retrieve_documents.maxHits" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_documents> .
+
+<http://weprov.csiro.au/controller/query_string:Retrieve_documents.query_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_string:Retrieve_documents.query_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_documents> .
+
+<http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:CountProteins.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Discover_RatHumanMouseUniProt_proteins.discovered_proteins:CountProteins.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountProteins> .
+
+<http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:Link_proteins_to_diseases.keyword>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Discover_RatHumanMouseUniProt_proteins.discovered_proteins:Link_proteins_to_diseases.keyword" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Link_proteins_to_diseases> .
+
+<http://weprov.csiro.au/controller/Document_index.value:Retrieve_documents.document_index>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Document_index.value:Retrieve_documents.document_index" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_documents> .
+
+<http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:CountDiseases.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_and_make_unique.flattened_unique_output:CountDiseases.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountDiseases> .
+
+<http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:CountDiseasesPerProtein.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Link_proteins_to_diseases.OMIM_disease_label:CountDiseasesPerProtein.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountDiseasesPerProtein> .
+
+<http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:Flatten_and_make_unique.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Link_proteins_to_diseases.OMIM_disease_label:Flatten_and_make_unique.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_and_make_unique> .
+
+<http://weprov.csiro.au/controller/CountDiseasesPerProtein.count:disease_count_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountDiseasesPerProtein.count:disease_count_per_protein" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/CountProteins.count:protein_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountProteins.count:protein_count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_proteins:discovered_proteins>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Discover_RatHumanMouseUniProt_proteins.discovered_proteins:discovered_proteins" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Discover_RatHumanMouseUniProt_proteins.discovered_uniprot_ids:discovered_uniprot_ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Discover_RatHumanMouseUniProt_proteins.discovered_uniprot_ids:discovered_uniprot_ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Flatten_and_make_unique.flattened_unique_output:discovered_diseases>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_and_make_unique.flattened_unique_output:discovered_diseases" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Link_proteins_to_diseases.OMIM_disease_label:diseases_per_protein>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Link_proteins_to_diseases.OMIM_disease_label:diseases_per_protein" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:Discover_RatHumanMouseUniProt_proteins.documents_from_lucene>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_documents.relevant_documents:Discover_RatHumanMouseUniProt_proteins.documents_from_lucene" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Discover_RatHumanMouseUniProt_proteins> .
+
+<http://weprov.csiro.au/controller/Retrieve_documents.relevant_documents:relevant_documents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_documents.relevant_documents:relevant_documents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/search_field.value:Retrieve_documents.search_field>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "search_field.value:Retrieve_documents.search_field" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_documents> .
+
+<http://weprov.csiro.au/controller/CountDiseases.count:disease_count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountDiseases.count:disease_count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

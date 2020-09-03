@@ -1,0 +1,117 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/identifier> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/system_code> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/pathway_names> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/pathway_species> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getSpecies> , <http://weprov.csiro.au/program/getNames> , <http://weprov.csiro.au/program/findPathwaysByXrefInput> , <http://weprov.csiro.au/program/findPathwaysByXref> ;
+        <http://purl.org/dc/terms/description>
+                "Finds pathways on WikiPathways by an external gene/protein/metabolite reference. See http://www.pathvisio.org/Help_1.1#Supported_database_systems for a list of supported database systems." ;
+        <http://purl.org/dc/terms/title>
+                "Get pathways by external reference" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getNames.xml-text> , <http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getSpecies.xml-text> , <http://weprov.csiro.au/controller/findPathwaysByXrefInput.output:findPathwaysByXref.parameters> , <http://weprov.csiro.au/controller/identifier:findPathwaysByXrefInput.id> , <http://weprov.csiro.au/controller/system_code:findPathwaysByXrefInput.code> , <http://weprov.csiro.au/controller/getNames.nodelist:pathway_names> , <http://weprov.csiro.au/controller/getSpecies.nodelist:pathway_species> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/getSpecies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getSpecies.nodelist:pathway_species> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSpecies" .
+
+<http://weprov.csiro.au/program/getNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getNames.nodelist:pathway_names> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getNames" .
+
+<http://weprov.csiro.au/program/findPathwaysByXrefInput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findPathwaysByXrefInput.output:findPathwaysByXref.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findPathwaysByXrefInput" .
+
+<http://weprov.csiro.au/program/findPathwaysByXref>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getNames.xml-text> , <http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getSpecies.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "findPathwaysByXref" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/identifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "identifier" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/system_code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "system_code" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/pathway_names>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_names" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:edb39d95-9097-4c39-91f9-1f36c59d375b-v0/pathway_species>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_species" .
+
+<http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getNames.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findPathwaysByXref.parameters:getNames.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getNames> .
+
+<http://weprov.csiro.au/controller/findPathwaysByXref.parameters:getSpecies.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findPathwaysByXref.parameters:getSpecies.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSpecies> .
+
+<http://weprov.csiro.au/controller/findPathwaysByXrefInput.output:findPathwaysByXref.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "findPathwaysByXrefInput.output:findPathwaysByXref.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findPathwaysByXref> .
+
+<http://weprov.csiro.au/controller/identifier:findPathwaysByXrefInput.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "identifier:findPathwaysByXrefInput.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findPathwaysByXrefInput> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/identifier:findPathwaysByXrefInput.id> , <http://weprov.csiro.au/controller/system_code:findPathwaysByXrefInput.code> .
+
+<http://weprov.csiro.au/controller/system_code:findPathwaysByXrefInput.code>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "system_code:findPathwaysByXrefInput.code" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/findPathwaysByXrefInput> .
+
+<http://weprov.csiro.au/controller/getNames.nodelist:pathway_names>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getNames.nodelist:pathway_names" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getSpecies.nodelist:pathway_species>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSpecies.nodelist:pathway_species" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

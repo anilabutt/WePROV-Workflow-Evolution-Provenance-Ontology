@@ -1,0 +1,38 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7b64453d-1ffb-485d-848d-2dc7dc4f56a1-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_a_molecular_weight_distribution> , <http://weprov.csiro.au/program/Get_Molecular_Weight_from_database> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow calculates the molecular weight of molecules stored in a postgres sql database with the Pgchem::tigress chemoinformatics cardridge. The cardridge perform the molecular weight calculation. The get a moleculear weight distribution worker creates a chart of the available data." ;
+        <http://purl.org/dc/terms/title>
+                "Molecular Weight Distribution" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.MoleuclarWeight:Get_a_molecular_weight_distribution.molecularWeights> , <http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.moleculeIDList:Get_a_molecular_weight_distribution.moleculeids> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_a_molecular_weight_distribution>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_a_molecular_weight_distribution" .
+
+<http://weprov.csiro.au/program/Get_Molecular_Weight_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.MoleuclarWeight:Get_a_molecular_weight_distribution.molecularWeights> , <http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.moleculeIDList:Get_a_molecular_weight_distribution.moleculeids> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Molecular_Weight_from_database" .
+
+<http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.MoleuclarWeight:Get_a_molecular_weight_distribution.molecularWeights>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Molecular_Weight_from_database.MoleuclarWeight:Get_a_molecular_weight_distribution.molecularWeights" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_a_molecular_weight_distribution> .
+
+<http://weprov.csiro.au/controller/Get_Molecular_Weight_from_database.moleculeIDList:Get_a_molecular_weight_distribution.moleculeids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Molecular_Weight_from_database.moleculeIDList:Get_a_molecular_weight_distribution.moleculeids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_a_molecular_weight_distribution> .

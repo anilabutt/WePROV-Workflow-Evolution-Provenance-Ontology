@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR969-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR969-v0/reaction_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR969-v0/compounds_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/get_compounds_by_reaction> ;
+        <http://purl.org/dc/terms/description>
+                "Retrieve all compounds which have a link to a given reaction_id\n\nExample on input: \nrn:R00100" ;
+        <http://purl.org/dc/terms/title>
+                "get_compounds_by_reaction" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/reaction_id:get_compounds_by_reaction.reaction_id> , <http://weprov.csiro.au/controller/get_compounds_by_reaction.return:compounds_id> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/get_compounds_by_reaction>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_compounds_by_reaction.return:compounds_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_compounds_by_reaction" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR969-v0/reaction_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "reaction_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:DI7P643SR969-v0/compounds_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compounds_id" .
+
+<http://weprov.csiro.au/controller/reaction_id:get_compounds_by_reaction.reaction_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "reaction_id:get_compounds_by_reaction.reaction_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_compounds_by_reaction> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/reaction_id:get_compounds_by_reaction.reaction_id> .
+
+<http://weprov.csiro.au/controller/get_compounds_by_reaction.return:compounds_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_compounds_by_reaction.return:compounds_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

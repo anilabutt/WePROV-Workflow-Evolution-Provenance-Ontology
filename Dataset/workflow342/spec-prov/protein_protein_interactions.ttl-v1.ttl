@@ -1,0 +1,93 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:53AECI4TRZ0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:53AECI4TRZ0-v0/ensembl_file> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:53AECI4TRZ0-v0/protein_interactions> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/idSearch> , <http://weprov.csiro.au/program/lister> , <http://weprov.csiro.au/program/id_type> , <http://weprov.csiro.au/program/return_type> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ensembl_file:lister.file> , <http://weprov.csiro.au/controller/idSearch.searchResultBean:protein_interactions> , <http://weprov.csiro.au/controller/id_type.value:idSearch.idType> , <http://weprov.csiro.au/controller/lister.listerReturn:idSearch.id> , <http://weprov.csiro.au/controller/return_type.value:idSearch.returnType> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/idSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/idSearch.searchResultBean:protein_interactions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "idSearch" .
+
+<http://weprov.csiro.au/program/lister>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/lister.listerReturn:idSearch.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "lister" .
+
+<http://weprov.csiro.au/program/id_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/id_type.value:idSearch.idType> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "id_type" .
+
+<http://weprov.csiro.au/program/return_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/return_type.value:idSearch.returnType> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "return_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:53AECI4TRZ0-v0/ensembl_file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ensembl_file" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:53AECI4TRZ0-v0/protein_interactions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "protein_interactions" .
+
+<http://weprov.csiro.au/controller/ensembl_file:lister.file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ensembl_file:lister.file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/lister> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ensembl_file:lister.file> .
+
+<http://weprov.csiro.au/controller/idSearch.searchResultBean:protein_interactions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "idSearch.searchResultBean:protein_interactions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/id_type.value:idSearch.idType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "id_type.value:idSearch.idType" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/idSearch> .
+
+<http://weprov.csiro.au/controller/lister.listerReturn:idSearch.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lister.listerReturn:idSearch.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/idSearch> .
+
+<http://weprov.csiro.au/controller/return_type.value:idSearch.returnType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "return_type.value:idSearch.returnType" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/idSearch> .

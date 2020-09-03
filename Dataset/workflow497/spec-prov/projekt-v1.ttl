@@ -1,0 +1,200 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/lat> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/lng> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/searchTarget> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/webBrowser> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/url> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/displayMap> , <http://weprov.csiro.au/program/getMapURL> , <http://weprov.csiro.au/program/getCapitalCords> , <http://weprov.csiro.au/program/getCountryCode> , <http://weprov.csiro.au/program/getCountryCapital> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "projekt" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/lat:getCountryCode.lat> , <http://weprov.csiro.au/controller/lng:getCountryCode.lng> , <http://weprov.csiro.au/controller/getCountryCapital.countryCapital:getCapitalCords.capitalName> , <http://weprov.csiro.au/controller/getCountryCode.country code:getCountryCapital.countryCode> , <http://weprov.csiro.au/controller/searchTarget:getMapURL.atarget> , <http://weprov.csiro.au/controller/getCapitalCords.clat:getMapURL.blat> , <http://weprov.csiro.au/controller/getCapitalCords.clng:getMapURL.clng> , <http://weprov.csiro.au/controller/webBrowser:displayMap.command> , <http://weprov.csiro.au/controller/getMapURL.url:displayMap.args> , <http://weprov.csiro.au/controller/getMapURL.url:url> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/displayMap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "displayMap" .
+
+<http://weprov.csiro.au/program/getMapURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getMapURL.url:displayMap.args> , <http://weprov.csiro.au/controller/getMapURL.url:url> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/getMap.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getMapURL" .
+
+<http://weprov.csiro.au/workflow/getMap.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "getMap.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/getCapitalCords>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getCapitalCords.clat:getMapURL.blat> , <http://weprov.csiro.au/controller/getCapitalCords.clng:getMapURL.clng> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/getCityCoordinates.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getCapitalCords" .
+
+<http://weprov.csiro.au/workflow/getCityCoordinates.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "getCityCoordinates.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/getCountryCode>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getCountryCode.country code:getCountryCapital.countryCode> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/getCountryCode.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getCountryCode" .
+
+<http://weprov.csiro.au/workflow/getCountryCode.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "getCountryCode.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/getCountryCapital>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getCountryCapital.countryCapital:getCapitalCords.capitalName> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/getCountryCapital.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getCountryCapital" .
+
+<http://weprov.csiro.au/workflow/getCountryCapital.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "getCountryCapital.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/lat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "lat" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/lng>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "lng" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/searchTarget>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchTarget" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/webBrowser>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "webBrowser" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:05ea1354-292a-421e-81d0-69add123428d-v0/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url" .
+
+<http://weprov.csiro.au/controller/lat:getCountryCode.lat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lat:getCountryCode.lat" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCountryCode> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/lat:getCountryCode.lat> , <http://weprov.csiro.au/controller/lng:getCountryCode.lng> , <http://weprov.csiro.au/controller/searchTarget:getMapURL.atarget> , <http://weprov.csiro.au/controller/webBrowser:displayMap.command> .
+
+<http://weprov.csiro.au/controller/lng:getCountryCode.lng>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "lng:getCountryCode.lng" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCountryCode> .
+
+<http://weprov.csiro.au/controller/getCountryCapital.countryCapital:getCapitalCords.capitalName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCountryCapital.countryCapital:getCapitalCords.capitalName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCapitalCords> .
+
+<http://weprov.csiro.au/controller/getCountryCode.country code:getCountryCapital.countryCode>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCountryCode.country code:getCountryCapital.countryCode" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCountryCapital> .
+
+<http://weprov.csiro.au/controller/searchTarget:getMapURL.atarget>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchTarget:getMapURL.atarget" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMapURL> .
+
+<http://weprov.csiro.au/controller/getCapitalCords.clat:getMapURL.blat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCapitalCords.clat:getMapURL.blat" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMapURL> .
+
+<http://weprov.csiro.au/controller/getCapitalCords.clng:getMapURL.clng>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCapitalCords.clng:getMapURL.clng" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMapURL> .
+
+<http://weprov.csiro.au/controller/webBrowser:displayMap.command>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "webBrowser:displayMap.command" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/displayMap> .
+
+<http://weprov.csiro.au/controller/getMapURL.url:displayMap.args>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMapURL.url:displayMap.args" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/displayMap> .
+
+<http://weprov.csiro.au/controller/getMapURL.url:url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMapURL.url:url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

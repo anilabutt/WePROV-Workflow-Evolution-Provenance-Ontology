@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/bio_process> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pubmed_search_term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/add_MeSH_to_string> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Add Mesh String to Biological Process" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/bio_process:add_MeSH_to_string.input> , <http://weprov.csiro.au/controller/add_MeSH_to_string.output:pubmed_search_term> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/add_MeSH_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/add_MeSH_to_string.output:pubmed_search_term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "add_MeSH_to_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/bio_process>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bio_process" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v0/pubmed_search_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pubmed_search_term" .
+
+<http://weprov.csiro.au/controller/bio_process:add_MeSH_to_string.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bio_process:add_MeSH_to_string.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_MeSH_to_string> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bio_process:add_MeSH_to_string.input> .
+
+<http://weprov.csiro.au/controller/add_MeSH_to_string.output:pubmed_search_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_MeSH_to_string.output:pubmed_search_term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

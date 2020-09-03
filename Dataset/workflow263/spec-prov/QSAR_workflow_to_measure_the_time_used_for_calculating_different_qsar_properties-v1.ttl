@@ -1,0 +1,167 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:79e98104-7185-44a9-b71e-576f606a92fc-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:79e98104-7185-44a9-b71e-576f606a92fc-v0/out_TimeUsedForQSARCalculation> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:79e98104-7185-44a9-b71e-576f606a92fc-v0/out_AtomTypeComment> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Generates_a_CSV_Comma_Separated_Value> , <http://weprov.csiro.au/program/QSAR_worker> , <http://weprov.csiro.au/program/Tag_molecules> , <http://weprov.csiro.au/program/Get_Molecules_from_database> , <http://weprov.csiro.au/program/Vector_Generator> , <http://weprov.csiro.au/program/Write_CSV___TXT_Files> , <http://weprov.csiro.au/program/Write_CSV___TXT_Files1> , <http://weprov.csiro.au/program/Perceive_atom_types> , <http://weprov.csiro.au/program/Add_the_implicit_hydrogens_to_each_molecule> , <http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow loads molecules from a database. Each molecule goes through the atom typing, gets its explecite hydrogens and the detection of the hueckel aromaticity. After that different qsar properties will be calculated. The output of this workflow will be a qsar vector as a csv file and a file which contains the time needed to calculate each qsar property." ;
+        <http://purl.org/dc/terms/title>
+                "QSAR workflow to measure the time used for calculating different qsar properties" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Add_the_implicit_hydrogens_to_each_molecule.allHydrogensAdded:Hueckel_Aromaticity_Detector.inputStructures> , <http://weprov.csiro.au/controller/Generates_a_CSV_Comma_Separated_Value.csv:Write_CSV___TXT_Files.content> , <http://weprov.csiro.au/controller/Get_Molecules_from_database.molecules:Perceive_atom_types.inputStructures> , <http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.allStructuresAfterDetection:Tag_molecules.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Add_the_implicit_hydrogens_to_each_molecule.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.comment:out_AtomTypeComment> , <http://weprov.csiro.au/controller/QSAR_worker.Time:Write_CSV___TXT_Files1.content> , <http://weprov.csiro.au/controller/QSAR_worker.calculatedStructures:Vector_Generator.inputStructures> , <http://weprov.csiro.au/controller/Tag_molecules.taggedMolecules:QSAR_worker.inputStructures> , <http://weprov.csiro.au/controller/Vector_Generator.descriptorVector:Generates_a_CSV_Comma_Separated_Value.qsarVector> , <http://weprov.csiro.au/controller/QSAR_worker.Time:out_TimeUsedForQSARCalculation> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Generates_a_CSV_Comma_Separated_Value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Generates_a_CSV_Comma_Separated_Value.csv:Write_CSV___TXT_Files.content> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Generates_a_CSV_Comma_Separated_Value" .
+
+<http://weprov.csiro.au/program/QSAR_worker>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/QSAR_worker.Time:Write_CSV___TXT_Files1.content> , <http://weprov.csiro.au/controller/QSAR_worker.calculatedStructures:Vector_Generator.inputStructures> , <http://weprov.csiro.au/controller/QSAR_worker.Time:out_TimeUsedForQSARCalculation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "QSAR_worker" .
+
+<http://weprov.csiro.au/program/Tag_molecules>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Tag_molecules.taggedMolecules:QSAR_worker.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tag_molecules" .
+
+<http://weprov.csiro.au/program/Get_Molecules_from_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Molecules_from_database.molecules:Perceive_atom_types.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Molecules_from_database" .
+
+<http://weprov.csiro.au/program/Vector_Generator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Vector_Generator.descriptorVector:Generates_a_CSV_Comma_Separated_Value.qsarVector> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Vector_Generator" .
+
+<http://weprov.csiro.au/program/Write_CSV___TXT_Files>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_CSV___TXT_Files" .
+
+<http://weprov.csiro.au/program/Write_CSV___TXT_Files1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_CSV___TXT_Files1" .
+
+<http://weprov.csiro.au/program/Perceive_atom_types>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Add_the_implicit_hydrogens_to_each_molecule.inputStructures> , <http://weprov.csiro.au/controller/Perceive_atom_types.comment:out_AtomTypeComment> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Perceive_atom_types" .
+
+<http://weprov.csiro.au/program/Add_the_implicit_hydrogens_to_each_molecule>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Add_the_implicit_hydrogens_to_each_molecule.allHydrogensAdded:Hueckel_Aromaticity_Detector.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Add_the_implicit_hydrogens_to_each_molecule" .
+
+<http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.allStructuresAfterDetection:Tag_molecules.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Hueckel_Aromaticity_Detector" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:79e98104-7185-44a9-b71e-576f606a92fc-v0/out_TimeUsedForQSARCalculation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out_TimeUsedForQSARCalculation" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:79e98104-7185-44a9-b71e-576f606a92fc-v0/out_AtomTypeComment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out_AtomTypeComment" .
+
+<http://weprov.csiro.au/controller/Add_the_implicit_hydrogens_to_each_molecule.allHydrogensAdded:Hueckel_Aromaticity_Detector.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Add_the_implicit_hydrogens_to_each_molecule.allHydrogensAdded:Hueckel_Aromaticity_Detector.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Hueckel_Aromaticity_Detector> .
+
+<http://weprov.csiro.au/controller/Generates_a_CSV_Comma_Separated_Value.csv:Write_CSV___TXT_Files.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Generates_a_CSV_Comma_Separated_Value.csv:Write_CSV___TXT_Files.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_CSV___TXT_Files> .
+
+<http://weprov.csiro.au/controller/Get_Molecules_from_database.molecules:Perceive_atom_types.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Molecules_from_database.molecules:Perceive_atom_types.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Perceive_atom_types> .
+
+<http://weprov.csiro.au/controller/Hueckel_Aromaticity_Detector.allStructuresAfterDetection:Tag_molecules.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Hueckel_Aromaticity_Detector.allStructuresAfterDetection:Tag_molecules.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Tag_molecules> .
+
+<http://weprov.csiro.au/controller/Perceive_atom_types.allAtomTypesPerceived:Add_the_implicit_hydrogens_to_each_molecule.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Perceive_atom_types.allAtomTypesPerceived:Add_the_implicit_hydrogens_to_each_molecule.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Add_the_implicit_hydrogens_to_each_molecule> .
+
+<http://weprov.csiro.au/controller/Perceive_atom_types.comment:out_AtomTypeComment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Perceive_atom_types.comment:out_AtomTypeComment" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/QSAR_worker.Time:Write_CSV___TXT_Files1.content>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "QSAR_worker.Time:Write_CSV___TXT_Files1.content" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_CSV___TXT_Files1> .
+
+<http://weprov.csiro.au/controller/QSAR_worker.calculatedStructures:Vector_Generator.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "QSAR_worker.calculatedStructures:Vector_Generator.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Vector_Generator> .
+
+<http://weprov.csiro.au/controller/Tag_molecules.taggedMolecules:QSAR_worker.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Tag_molecules.taggedMolecules:QSAR_worker.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/QSAR_worker> .
+
+<http://weprov.csiro.au/controller/Vector_Generator.descriptorVector:Generates_a_CSV_Comma_Separated_Value.qsarVector>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Vector_Generator.descriptorVector:Generates_a_CSV_Comma_Separated_Value.qsarVector" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Generates_a_CSV_Comma_Separated_Value> .
+
+<http://weprov.csiro.au/controller/QSAR_worker.Time:out_TimeUsedForQSARCalculation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "QSAR_worker.Time:out_TimeUsedForQSARCalculation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

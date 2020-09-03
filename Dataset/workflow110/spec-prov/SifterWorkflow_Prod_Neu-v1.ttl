@@ -1,0 +1,306 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/organsim> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/gene_name> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/seq> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/seq_length> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/fasta> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/mafft> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/gos> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/alignment2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/tree> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/pli> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/forester> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GetInAndOrthologsFromRefSeq> , <http://weprov.csiro.au/program/GetConservedDomainsFromFastaAlignment> , <http://weprov.csiro.au/program/buildMultipleAlignmentWithMAFFT> , <http://weprov.csiro.au/program/BuildPhylogeneticTreeFromFastaAlignment> , <http://weprov.csiro.au/program/Integer> , <http://weprov.csiro.au/program/String> , <http://weprov.csiro.au/program/gene_name> , <http://weprov.csiro.au/program/RunSifter> , <http://weprov.csiro.au/program/organism> , <http://weprov.csiro.au/program/AminoAcidSequence> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "SifterWorkflow1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/gene_name:gene_name.id> , <http://weprov.csiro.au/controller/AminoAcidSequence.mobyData:GetInAndOrthologsFromRefSeq.AminoAcidSequence(sequence)> , <http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.Newick_Text(phyogenetic_tree):RunSifter.Newick_Text(phyogenetic_tree)> , <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):BuildPhylogeneticTreeFromFastaAlignment.alignment_in_fasta_format(alignment)> , <http://weprov.csiro.au/controller/Integer.mobyData:AminoAcidSequence.Integer(Length)> , <http://weprov.csiro.au/controller/String.mobyData:AminoAcidSequence.String(SequenceString)> , <http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.alignment_in_fasta_format(fasta_alignment):GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(fasta_alignment)> , <http://weprov.csiro.au/controller/gene_name.mobyData:GetInAndOrthologsFromRefSeq.Object(gene_name)> , <http://weprov.csiro.au/controller/organism.mobyData:GetInAndOrthologsFromRefSeq.Object(organism)> , <http://weprov.csiro.au/controller/organsim:organism.id> , <http://weprov.csiro.au/controller/seq:String.value> , <http://weprov.csiro.au/controller/seq_length:Integer.value> , <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):RunSifter.alignment_in_fasta_format(alignment)> , <http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta'):buildMultipleAlignmentWithMAFFT.FASTA_AA(Collection - 'fasta')> , <http://weprov.csiro.au/controller/gene_name.mobyData:RunSifter.Object(gene_name)> , <http://weprov.csiro.au/controller/organism.mobyData:RunSifter.Object(organism)> , <http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.output:tree> , <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.output:alignment2> , <http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta' As Simples):fasta> , <http://weprov.csiro.au/controller/RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term' As Simples):gos> , <http://weprov.csiro.au/controller/RunSifter.Newick_Text(forester_file):forester> , <http://weprov.csiro.au/controller/RunSifter.text-xml(pli_file):pli> , <http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.output:mafft> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GetInAndOrthologsFromRefSeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta'):buildMultipleAlignmentWithMAFFT.FASTA_AA(Collection - 'fasta')> , <http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta' As Simples):fasta> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetInAndOrthologsFromRefSeq" .
+
+<http://weprov.csiro.au/program/GetConservedDomainsFromFastaAlignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):BuildPhylogeneticTreeFromFastaAlignment.alignment_in_fasta_format(alignment)> , <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):RunSifter.alignment_in_fasta_format(alignment)> , <http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.output:alignment2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetConservedDomainsFromFastaAlignment" .
+
+<http://weprov.csiro.au/program/buildMultipleAlignmentWithMAFFT>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.alignment_in_fasta_format(fasta_alignment):GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(fasta_alignment)> , <http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.output:mafft> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "buildMultipleAlignmentWithMAFFT" .
+
+<http://weprov.csiro.au/program/BuildPhylogeneticTreeFromFastaAlignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.Newick_Text(phyogenetic_tree):RunSifter.Newick_Text(phyogenetic_tree)> , <http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.output:tree> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BuildPhylogeneticTreeFromFastaAlignment" .
+
+<http://weprov.csiro.au/program/Integer>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Integer.mobyData:AminoAcidSequence.Integer(Length)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Integer" .
+
+<http://weprov.csiro.au/program/String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String.mobyData:AminoAcidSequence.String(SequenceString)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String" .
+
+<http://weprov.csiro.au/program/gene_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gene_name.mobyData:GetInAndOrthologsFromRefSeq.Object(gene_name)> , <http://weprov.csiro.au/controller/gene_name.mobyData:RunSifter.Object(gene_name)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gene_name" .
+
+<http://weprov.csiro.au/program/RunSifter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term' As Simples):gos> , <http://weprov.csiro.au/controller/RunSifter.Newick_Text(forester_file):forester> , <http://weprov.csiro.au/controller/RunSifter.text-xml(pli_file):pli> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "RunSifter" .
+
+<http://weprov.csiro.au/program/organism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/organism.mobyData:GetInAndOrthologsFromRefSeq.Object(organism)> , <http://weprov.csiro.au/controller/organism.mobyData:RunSifter.Object(organism)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "organism" .
+
+<http://weprov.csiro.au/program/AminoAcidSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AminoAcidSequence.mobyData:GetInAndOrthologsFromRefSeq.AminoAcidSequence(sequence)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AminoAcidSequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/organsim>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "organsim" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/gene_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gene_name" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seq" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/seq_length>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seq_length" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fasta" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/mafft>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mafft" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/gos>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gos" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/alignment2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "alignment2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tree" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/pli>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pli" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-v0/forester>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "forester" .
+
+<http://weprov.csiro.au/controller/gene_name:gene_name.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_name:gene_name.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/gene_name> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gene_name:gene_name.id> , <http://weprov.csiro.au/controller/organsim:organism.id> , <http://weprov.csiro.au/controller/seq:String.value> , <http://weprov.csiro.au/controller/seq_length:Integer.value> .
+
+<http://weprov.csiro.au/controller/AminoAcidSequence.mobyData:GetInAndOrthologsFromRefSeq.AminoAcidSequence(sequence)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AminoAcidSequence.mobyData:GetInAndOrthologsFromRefSeq.AminoAcidSequence(sequence)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetInAndOrthologsFromRefSeq> .
+
+<http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.Newick_Text(phyogenetic_tree):RunSifter.Newick_Text(phyogenetic_tree)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BuildPhylogeneticTreeFromFastaAlignment.Newick_Text(phyogenetic_tree):RunSifter.Newick_Text(phyogenetic_tree)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/RunSifter> .
+
+<http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):BuildPhylogeneticTreeFromFastaAlignment.alignment_in_fasta_format(alignment)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):BuildPhylogeneticTreeFromFastaAlignment.alignment_in_fasta_format(alignment)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BuildPhylogeneticTreeFromFastaAlignment> .
+
+<http://weprov.csiro.au/controller/Integer.mobyData:AminoAcidSequence.Integer(Length)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Integer.mobyData:AminoAcidSequence.Integer(Length)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AminoAcidSequence> .
+
+<http://weprov.csiro.au/controller/String.mobyData:AminoAcidSequence.String(SequenceString)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String.mobyData:AminoAcidSequence.String(SequenceString)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AminoAcidSequence> .
+
+<http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.alignment_in_fasta_format(fasta_alignment):GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(fasta_alignment)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "buildMultipleAlignmentWithMAFFT.alignment_in_fasta_format(fasta_alignment):GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(fasta_alignment)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetConservedDomainsFromFastaAlignment> .
+
+<http://weprov.csiro.au/controller/gene_name.mobyData:GetInAndOrthologsFromRefSeq.Object(gene_name)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_name.mobyData:GetInAndOrthologsFromRefSeq.Object(gene_name)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetInAndOrthologsFromRefSeq> .
+
+<http://weprov.csiro.au/controller/organism.mobyData:GetInAndOrthologsFromRefSeq.Object(organism)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "organism.mobyData:GetInAndOrthologsFromRefSeq.Object(organism)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetInAndOrthologsFromRefSeq> .
+
+<http://weprov.csiro.au/controller/organsim:organism.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "organsim:organism.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/organism> .
+
+<http://weprov.csiro.au/controller/seq:String.value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seq:String.value" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String> .
+
+<http://weprov.csiro.au/controller/seq_length:Integer.value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seq_length:Integer.value" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Integer> .
+
+<http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):RunSifter.alignment_in_fasta_format(alignment)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetConservedDomainsFromFastaAlignment.alignment_in_fasta_format(alignment):RunSifter.alignment_in_fasta_format(alignment)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/RunSifter> .
+
+<http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta'):buildMultipleAlignmentWithMAFFT.FASTA_AA(Collection - 'fasta')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta'):buildMultipleAlignmentWithMAFFT.FASTA_AA(Collection - 'fasta')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/buildMultipleAlignmentWithMAFFT> .
+
+<http://weprov.csiro.au/controller/gene_name.mobyData:RunSifter.Object(gene_name)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_name.mobyData:RunSifter.Object(gene_name)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/RunSifter> .
+
+<http://weprov.csiro.au/controller/organism.mobyData:RunSifter.Object(organism)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "organism.mobyData:RunSifter.Object(organism)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/RunSifter> .
+
+<http://weprov.csiro.au/controller/BuildPhylogeneticTreeFromFastaAlignment.output:tree>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BuildPhylogeneticTreeFromFastaAlignment.output:tree" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetConservedDomainsFromFastaAlignment.output:alignment2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetConservedDomainsFromFastaAlignment.output:alignment2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta' As Simples):fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta' As Simples):fasta" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term' As Simples):gos>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term' As Simples):gos" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/RunSifter.Newick_Text(forester_file):forester>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RunSifter.Newick_Text(forester_file):forester" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/RunSifter.text-xml(pli_file):pli>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RunSifter.text-xml(pli_file):pli" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/buildMultipleAlignmentWithMAFFT.output:mafft>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "buildMultipleAlignmentWithMAFFT.output:mafft" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

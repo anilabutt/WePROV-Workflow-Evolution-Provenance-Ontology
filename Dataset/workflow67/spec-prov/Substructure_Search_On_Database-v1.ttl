@@ -1,0 +1,63 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:87f859a2-bb76-470d-8b9a-0d95ee38aa4a-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:87f859a2-bb76-470d-8b9a-0d95ee38aa4a-v0/in_SMILES> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Substructure_Search_of_molecules_on_the_database> , <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> , <http://weprov.csiro.au/program/Parse_SMILES> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes as input a SMILES. This represents the substructure, for which the database gets searched. The output of this workflow is a PDF showing the 2D structures of the matched structure from the substructure search on the database." ;
+        <http://purl.org/dc/terms/title>
+                "Substructure Search On Database" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Search_of_molecules_on_the_database.substructure> , <http://weprov.csiro.au/controller/Substructure_Search_of_molecules_on_the_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures> , <http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Substructure_Search_of_molecules_on_the_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Substructure_Search_of_molecules_on_the_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Substructure_Search_of_molecules_on_the_database" .
+
+<http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Create_PDF_File_with_2D_Structures" .
+
+<http://weprov.csiro.au/program/Parse_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Search_of_molecules_on_the_database.substructure> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_SMILES" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:87f859a2-bb76-470d-8b9a-0d95ee38aa4a-v0/in_SMILES>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "in_SMILES" .
+
+<http://weprov.csiro.au/controller/Parse_SMILES.resultStructure:Substructure_Search_of_molecules_on_the_database.substructure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_SMILES.resultStructure:Substructure_Search_of_molecules_on_the_database.substructure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Substructure_Search_of_molecules_on_the_database> .
+
+<http://weprov.csiro.au/controller/Substructure_Search_of_molecules_on_the_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Substructure_Search_of_molecules_on_the_database.molecules:Create_PDF_File_with_2D_Structures.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Create_PDF_File_with_2D_Structures> .
+
+<http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "in_SMILES:Parse_SMILES.SMILE" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_SMILES> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/in_SMILES:Parse_SMILES.SMILE> .

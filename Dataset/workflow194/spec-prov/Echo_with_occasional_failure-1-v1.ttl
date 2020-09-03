@@ -1,0 +1,33 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:289f864a-17be-42a1-a26b-15b5af5a3136-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:289f864a-17be-42a1-a26b-15b5af5a3136-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Echo_with_occasional_failure> ;
+        <http://purl.org/dc/terms/description>
+                "The echo_with_occasional_failure service mostly echoes the string 'hello' to the out port.  Sometimes, it throws a service failure." ;
+        <http://purl.org/dc/terms/title>
+                "Echo_with_occasional_failure-1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Echo_with_occasional_failure.out:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Echo_with_occasional_failure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Echo_with_occasional_failure.out:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Echo_with_occasional_failure" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:289f864a-17be-42a1-a26b-15b5af5a3136-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Echo_with_occasional_failure.out:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Echo_with_occasional_failure.out:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

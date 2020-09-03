@@ -1,0 +1,103 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/xslFileURL> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/inFileURL> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/xslParamList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/outputStr> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Transform_XML> , <http://weprov.csiro.au/program/Read_xslFile> , <http://weprov.csiro.au/program/Read_inFile> ;
+        <http://purl.org/dc/terms/description>
+                "Similar to Transform_XML local widget but accepts transformation parameters and skips the part with writing to the output file. The essence, i.e. Transform_XML beanshell works with Strings representing file contents, not with file URLs." ;
+        <http://purl.org/dc/terms/title>
+                "Transform XML" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/inFileURL:Read_inFile.fileurl> , <http://weprov.csiro.au/controller/xslFileURL:Read_xslFile.fileurl> , <http://weprov.csiro.au/controller/xslParamList:Transform_XML.xslParamList> , <http://weprov.csiro.au/controller/Read_inFile.filecontents:Transform_XML.inContent> , <http://weprov.csiro.au/controller/Read_xslFile.filecontents:Transform_XML.xslContent> , <http://weprov.csiro.au/controller/Transform_XML.outputStr:outputStr> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Transform_XML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Transform_XML.outputStr:outputStr> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Transform_XML" .
+
+<http://weprov.csiro.au/program/Read_xslFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_xslFile.filecontents:Transform_XML.xslContent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_xslFile" .
+
+<http://weprov.csiro.au/program/Read_inFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_inFile.filecontents:Transform_XML.inContent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_inFile" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/xslFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xslFileURL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/inFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "inFileURL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/xslParamList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xslParamList" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7263f5cf-0259-4b8f-8034-ac62b95d9989-v0/outputStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "outputStr" .
+
+<http://weprov.csiro.au/controller/inFileURL:Read_inFile.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "inFileURL:Read_inFile.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_inFile> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/inFileURL:Read_inFile.fileurl> , <http://weprov.csiro.au/controller/xslFileURL:Read_xslFile.fileurl> , <http://weprov.csiro.au/controller/xslParamList:Transform_XML.xslParamList> .
+
+<http://weprov.csiro.au/controller/xslFileURL:Read_xslFile.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xslFileURL:Read_xslFile.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_xslFile> .
+
+<http://weprov.csiro.au/controller/xslParamList:Transform_XML.xslParamList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xslParamList:Transform_XML.xslParamList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Read_inFile.filecontents:Transform_XML.inContent>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_inFile.filecontents:Transform_XML.inContent" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Read_xslFile.filecontents:Transform_XML.xslContent>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_xslFile.filecontents:Transform_XML.xslContent" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Transform_XML.outputStr:outputStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Transform_XML.outputStr:outputStr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,131 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:VI9FMF5HBQ10-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VI9FMF5HBQ10-v0/Output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Colours> , <http://weprov.csiro.au/program/ShapeAnimals> , <http://weprov.csiro.au/program/ColourAnimals> , <http://weprov.csiro.au/program/ShapesList> , <http://weprov.csiro.au/program/AnimalsList> , <http://weprov.csiro.au/program/ColoursList> , <http://weprov.csiro.au/program/Shapes> , <http://weprov.csiro.au/program/Animals> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow shows the use of the iteration strategy editor to ensure that only relevant combinations of inputs are used during an implicit iteration." ;
+        <http://purl.org/dc/terms/title>
+                "Demonstration of configurable iteration" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Shapes.value:ShapesList.string> , <http://weprov.csiro.au/controller/Animals.value:AnimalsList.string> , <http://weprov.csiro.au/controller/Colours.value:ColoursList.string> , <http://weprov.csiro.au/controller/ColoursList.split:ColourAnimals.string1> , <http://weprov.csiro.au/controller/AnimalsList.split:ColourAnimals.string2> , <http://weprov.csiro.au/controller/ColourAnimals.output:ShapeAnimals.string2> , <http://weprov.csiro.au/controller/ShapesList.split:ShapeAnimals.string1> , <http://weprov.csiro.au/controller/ShapeAnimals.output:Output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Colours>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Colours.value:ColoursList.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Colours" .
+
+<http://weprov.csiro.au/program/ShapeAnimals>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ShapeAnimals.output:Output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ShapeAnimals" .
+
+<http://weprov.csiro.au/program/ColourAnimals>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ColourAnimals.output:ShapeAnimals.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ColourAnimals" .
+
+<http://weprov.csiro.au/program/ShapesList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ShapesList.split:ShapeAnimals.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ShapesList" .
+
+<http://weprov.csiro.au/program/AnimalsList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AnimalsList.split:ColourAnimals.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AnimalsList" .
+
+<http://weprov.csiro.au/program/ColoursList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ColoursList.split:ColourAnimals.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ColoursList" .
+
+<http://weprov.csiro.au/program/Shapes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Shapes.value:ShapesList.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Shapes" .
+
+<http://weprov.csiro.au/program/Animals>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Animals.value:AnimalsList.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Animals" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VI9FMF5HBQ10-v0/Output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Output" .
+
+<http://weprov.csiro.au/controller/Shapes.value:ShapesList.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Shapes.value:ShapesList.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ShapesList> .
+
+<http://weprov.csiro.au/controller/Animals.value:AnimalsList.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Animals.value:AnimalsList.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AnimalsList> .
+
+<http://weprov.csiro.au/controller/Colours.value:ColoursList.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Colours.value:ColoursList.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ColoursList> .
+
+<http://weprov.csiro.au/controller/ColoursList.split:ColourAnimals.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ColoursList.split:ColourAnimals.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ColourAnimals> .
+
+<http://weprov.csiro.au/controller/AnimalsList.split:ColourAnimals.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AnimalsList.split:ColourAnimals.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ColourAnimals> .
+
+<http://weprov.csiro.au/controller/ColourAnimals.output:ShapeAnimals.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ColourAnimals.output:ShapeAnimals.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ShapeAnimals> .
+
+<http://weprov.csiro.au/controller/ShapesList.split:ShapeAnimals.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ShapesList.split:ShapeAnimals.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ShapeAnimals> .
+
+<http://weprov.csiro.au/controller/ShapeAnimals.output:Output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ShapeAnimals.output:Output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

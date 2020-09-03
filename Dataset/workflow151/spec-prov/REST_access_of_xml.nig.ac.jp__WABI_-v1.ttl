@@ -1,0 +1,59 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8a8dd031-a973-44c5-acc1-0e74130f4a46-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8a8dd031-a973-44c5-acc1-0e74130f4a46-v0/url> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8a8dd031-a973-44c5-acc1-0e74130f4a46-v0/data> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> , <http://weprov.csiro.au/program/compose_URL> ;
+        <http://purl.org/dc/terms/description>
+                "See http://xml.nig.ac.jp/tutorial/rest/index.html and http://xml.nig.ac.jp/index.html#services\n\nThis workflow has a beanshell script for composing the REST URL for the service at xml.nig.ac.jp. \n\nThe example invokes the getDDBJEntry(accession) method of the getEntry service at http://xml.nig.ac.jp/wabi/Method?serviceName=GetEntry&mode=methodList&lang=en - but the workflow can be modified to invoke any other service from http://xml.nig.ac.jp/index.html#services by modifying the \"service\" and \"method\" parameters to compose_URL.\n\nAny other input parameters to compose_URL are added to the URL as well, so if instead you want to invoke the method \"analyzeParamAsync(query, param)\" from the \"ClustalW\" service, first modify the \"service\" and \"method\" default parameters to \"ClustalW\" and \"analyzeParamAsync\", and then edit the beanshell script's input ports: Remove the \"accession\" port from compose_URL, then add \"query\" and \"param\". You don't need to modify the actual beanshell script as it picks up any declared input parameters.\n\nThis pattern could probably be used for many REST services that work like xml.nig.ac.jp - but the disadvantage is that one has to manually read the documentations to figure out what the parameters are to be." ;
+        <http://purl.org/dc/terms/title>
+                "REST access of xml.nig.ac.jp" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/compose_URL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:data> , <http://weprov.csiro.au/controller/compose_URL.url:url> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_web_page_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_web_page_from_URL" .
+
+<http://weprov.csiro.au/program/compose_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/compose_URL.url:Get_web_page_from_URL.url> , <http://weprov.csiro.au/controller/compose_URL.url:url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "compose_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8a8dd031-a973-44c5-acc1-0e74130f4a46-v0/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8a8dd031-a973-44c5-acc1-0e74130f4a46-v0/data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "data" .
+
+<http://weprov.csiro.au/controller/compose_URL.url:Get_web_page_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compose_URL.url:Get_web_page_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_web_page_from_URL> .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/compose_URL.url:url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "compose_URL.url:url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

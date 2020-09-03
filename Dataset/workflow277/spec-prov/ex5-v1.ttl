@@ -1,0 +1,251 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/geneIdentifier> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/fastaSequence> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/blast_report> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/Protein_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/searchSimple> , <http://weprov.csiro.au/program/program> , <http://weprov.csiro.au/program/database> , <http://weprov.csiro.au/program/Get_Protein_FASTA> , <http://weprov.csiro.au/program/PDB_sequence_ID_input> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "ex5" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/geneIdentifier:Get_Protein_FASTA.id> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query> , <http://weprov.csiro.au/controller/database.value:searchSimple.database> , <http://weprov.csiro.au/controller/geneIdentifier:PDB_sequence_ID_input.ID> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastaSequence> , <http://weprov.csiro.au/controller/PDB_sequence_ID_input.pdbFlatFile:Protein_structure> , <http://weprov.csiro.au/controller/program.value:searchSimple.program> , <http://weprov.csiro.au/controller/searchSimple.Result:blast_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/searchSimple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/searchSimple.Result:blast_report> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "searchSimple" .
+
+<http://weprov.csiro.au/program/program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/program.value:searchSimple.program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "program" .
+
+<http://weprov.csiro.au/program/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/database.value:searchSimple.database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/program/Get_Protein_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query> , <http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastaSequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Protein_FASTA" .
+
+<http://weprov.csiro.au/program/PDB_sequence_ID_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PDB_sequence_ID_input.pdbFlatFile:Protein_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PDB_sequence_ID_input" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbFlatFile> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/AddPrefixToID> , <http://weprov.csiro.au/program/FetchPage> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/RCSBPrefix> , <http://weprov.csiro.au/program/secondsplit> , <http://weprov.csiro.au/program/ebi_srslinks> ;
+        <http://purl.org/dc/terms/description>
+                "Given a UniProt identifier such as 'P29373', this workflow fetches the PDB format flatfile from the RCSB (Note: there is not always a PDB structure available)" ;
+        <http://purl.org/dc/terms/title>
+                "LinkUniprotandPDB" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/AddPrefixToID.output:FetchPage.url> , <http://weprov.csiro.au/controller/ID:ebi_srslinks.searchterm> , <http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:secondsplit.string> , <http://weprov.csiro.au/controller/ebi_srslinks.result:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/secondsplit.split:AddPrefixToID.string2> , <http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/AddPrefixToID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AddPrefixToID.output:FetchPage.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AddPrefixToID" .
+
+<http://weprov.csiro.au/program/FetchPage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FetchPage" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:secondsplit.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/RCSBPrefix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "RCSBPrefix" .
+
+<http://weprov.csiro.au/program/secondsplit>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/secondsplit.split:AddPrefixToID.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "secondsplit" .
+
+<http://weprov.csiro.au/program/ebi_srslinks>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ebi_srslinks.result:Split_string_into_string_list_by_regular_expression.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ebi_srslinks" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:E51AE8IPB73-v0/pdbFlatFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pdbFlatFile" .
+
+<http://weprov.csiro.au/controller/AddPrefixToID.output:FetchPage.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AddPrefixToID.output:FetchPage.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/FetchPage> .
+
+<http://weprov.csiro.au/controller/ID:ebi_srslinks.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ID:ebi_srslinks.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ebi_srslinks> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ID:ebi_srslinks.searchterm> , <http://weprov.csiro.au/controller/geneIdentifier:Get_Protein_FASTA.id> , <http://weprov.csiro.au/controller/geneIdentifier:PDB_sequence_ID_input.ID> .
+
+<http://weprov.csiro.au/controller/RCSBPrefix.value:AddPrefixToID.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RCSBPrefix.value:AddPrefixToID.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddPrefixToID> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:secondsplit.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:secondsplit.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/secondsplit> .
+
+<http://weprov.csiro.au/controller/ebi_srslinks.result:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ebi_srslinks.result:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/secondsplit.split:AddPrefixToID.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "secondsplit.split:AddPrefixToID.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AddPrefixToID> .
+
+<http://weprov.csiro.au/controller/FetchPage.contents:pdbFlatFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FetchPage.contents:pdbFlatFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/geneIdentifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "geneIdentifier" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/fastaSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fastaSequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/blast_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_report" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:925e314b-0aa3-44cd-be6f-c13aa9b43027-v0/Protein_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Protein_structure" .
+
+<http://weprov.csiro.au/controller/geneIdentifier:Get_Protein_FASTA.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "geneIdentifier:Get_Protein_FASTA.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Protein_FASTA> .
+
+<http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:searchSimple.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Protein_FASTA.outputText:searchSimple.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/database.value:searchSimple.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database.value:searchSimple.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/geneIdentifier:PDB_sequence_ID_input.ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "geneIdentifier:PDB_sequence_ID_input.ID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/PDB_sequence_ID_input> .
+
+<http://weprov.csiro.au/controller/Get_Protein_FASTA.outputText:fastaSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Protein_FASTA.outputText:fastaSequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/PDB_sequence_ID_input.pdbFlatFile:Protein_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PDB_sequence_ID_input.pdbFlatFile:Protein_structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/program.value:searchSimple.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "program.value:searchSimple.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/searchSimple> .
+
+<http://weprov.csiro.au/controller/searchSimple.Result:blast_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "searchSimple.Result:blast_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

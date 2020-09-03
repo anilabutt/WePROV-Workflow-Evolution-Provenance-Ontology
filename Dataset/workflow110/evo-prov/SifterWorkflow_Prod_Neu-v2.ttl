@@ -1,0 +1,122 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-1>
+        <http://www.csiro.au/digiscape/weprov#version>
+                "1" ;
+        <http://www.w3.org/ns/prov#qualifiedRevision>
+                <http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> ;
+        <http://www.w3.org/ns/prov#wasRevisionOf>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-0> .
+
+<http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.w3.org/ns/prov#Revision> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:59:25.289Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.csiro.au/digiscape/weprov#Modification> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:59:25.264Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Marco Roos (AID)> .
+
+<http://weprov.csiro.au/agent/Marco Roos (AID)>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Marco Roos (AID)" .
+
+<http://weprov.csiro.au/evolution/renaming/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72>
+        a       <http://www.csiro.au/digiscape/weprov#Renaming> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow implements a strategy for this problem:\n> I would like to perform an iteration including a dot product between\n>     a list and a list of lists; example:\n>     Input:\n>\n>         [1]\t\t\t(1)\n>         [A,B,C]\t\t(2)\n>         [[a,b],[c,d],[e,f]]\t\t(3)\n>\n>     Desired output:\n>\n>         [1Aa, 1Ab, 1Bc, 1Bd, 1Ce, 1Cf]\n\nIn this implementation a java beanshell is used to clone the items in list 2 as many times per item as there are items in the sublists of list 3. The iteration strategy for Clone is set top dot product.\nThus a count on list 2 produces: [2,2,2]\nClone with input: [2,2,2] . [A,B,C] produces [[A,A],[B,B],[C,C]] (note the dot product) (4)\nThen concatenation of (1)*((4).(3)) produces: [[1Aa,1Ab],[1Bc,1Bd],[1Ce,1Cf]]" ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8-1>
+        <http://www.csiro.au/digiscape/weprov#version>
+                "1" ;
+        <http://www.w3.org/ns/prov#qualifiedRevision>
+                <http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> ;
+        <http://www.w3.org/ns/prov#wasRevisionOf>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd-0> .
+
+<http://weprov.csiro.au/evolution/revision/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8>
+        a       <http://www.w3.org/ns/prov#Revision> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:59:25.48Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#hadGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> ;
+        <http://www.w3.org/ns/prov#hadInvalidation>
+                <http://weprov.csiro.au/evolution/invalidation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8>
+        a       <http://www.csiro.au/digiscape/weprov#Modification> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:59:25.479Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:59:25.499Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.512Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.537Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.541Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.545Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.549Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.553Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.556Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.564Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/invalidation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8>
+        a       <http://www.w3.org/ns/prov#Invalidation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:59:25.516Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.52Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.568Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.571Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.583Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2020-02-11T04:59:25.587Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#entity>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/organsim> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/seq_length> , <http://weprov.csiro.au/controller/organsim:organism.id> , <http://weprov.csiro.au/controller/seq_length:Integer.value> , <http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.FASTA_AA(Collection - 'fasta' As Simples):fasta> , <http://weprov.csiro.au/controller/RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term' As Simples):gos> .
+
+<http://weprov.csiro.au/evolution/renaming/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8>
+        a       <http://www.csiro.au/digiscape/weprov#Renaming> ;
+        <http://purl.org/dc/terms/title>
+                "SifterWorkflow1" ;
+        <http://www.csiro.au/digiscape/weprov#workflowId>
+                "urn:lsid:net.sf.taverna:wfDefinition:f0270f77-4c24-4c6f-867f-383675ffb6dd" ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/modification/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/length>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/organism>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/family>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8/scale>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/length:Integer.value>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/organism:organism.id>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/GetInAndOrthologsFromRefSeq.output:fasta>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/RunSifter.Annotated_GO_Term_With_Probability(Collection - 'GO_term'):gos>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/RunSifter.text-plain(family_file):family>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .
+
+<http://weprov.csiro.au/controller/RunSifter.text-plain(scale_file):scale>
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/1/urn:lsid:net.sf.taverna:wfDefinition:9432adf1-d8a4-4509-b393-428ffa49c2e8> .

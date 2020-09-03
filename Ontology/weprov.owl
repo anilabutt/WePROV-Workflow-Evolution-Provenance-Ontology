@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.csiro.au/digiscape/weprov#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.csiro.au/digiscape/weprov#">
+    <Prefix name="" IRI="http://www.csiro.au/digiscape/weprov#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://purl.dataone.org/provone/2015/01/15/ontology#</Import>
+    <Import>http://www.w3.org/ns/prov-o-20130430</Import>
+    <Declaration>
+        <Class IRI="Deletion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Creation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Modification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Renaming"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#qualifiedDerivation"/>
+            <Class IRI="http://www.w3.org/ns/prov#Derivation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+            <Class IRI="Creation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasInvalidatedBy"/>
+            <Class IRI="Deletion"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#qualifiedGeneration"/>
+            <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#qualifiedInvalidation"/>
+            <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#qualifiedRevision"/>
+            <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasRevisionOf"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Creation"/>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Creation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+            <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Creation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#qualifiedUsage"/>
+            <Class IRI="http://www.w3.org/ns/prov#Usage"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Deletion"/>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Deletion"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+            <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Modification"/>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Modification"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+            <Class IRI="http://www.w3.org/ns/prov#Agent"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Renaming"/>
+        <Class IRI="http://www.w3.org/ns/prov#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Derivation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#hadActivity"/>
+            <Class IRI="Creation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Derivation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#hadUsage"/>
+            <Class IRI="http://www.w3.org/ns/prov#Usage"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Derivation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#entity"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.dataone.org/provone/2015/01/15/ontology#wasPartOf"/>
+            <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#activity"/>
+            <Class IRI="Creation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#activity"/>
+            <Class IRI="Modification"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#generated"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.dataone.org/provone/2015/01/15/ontology#wasPartOf"/>
+            <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#activity"/>
+            <Class IRI="Deletion"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#activity"/>
+            <Class IRI="Modification"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Invalidation"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#invalidated"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#entity"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#hadGeneration"/>
+            <Class IRI="http://www.w3.org/ns/prov#Generation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#hadActivity"/>
+            <Class IRI="Modification"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://purl.dataone.org/provone/2015/01/15/ontology#wasPartOf"/>
+            <Class IRI="http://www.w3.org/ns/prov#Revision"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/prov#Usage"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/prov#used"/>
+            <Class IRI="http://purl.dataone.org/provone/2015/01/15/ontology#Workflow"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

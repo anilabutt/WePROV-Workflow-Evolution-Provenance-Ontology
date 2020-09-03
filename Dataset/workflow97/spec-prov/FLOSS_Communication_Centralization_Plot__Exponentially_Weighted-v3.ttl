@@ -1,0 +1,435 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/Start_Date> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/End_Date> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/Project_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/sliding_window> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/PNGoutput> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/centralizations> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/step> , <http://weprov.csiro.au/program/Calculate_Centralization> , <http://weprov.csiro.au/program/Centralization_Plot> , <http://weprov.csiro.au/program/Extract_period_start> , <http://weprov.csiro.au/program/Extract_From> , <http://weprov.csiro.au/program/Extract_event_date> , <http://weprov.csiro.au/program/Remove_duplicate_strings> , <http://weprov.csiro.au/program/Extract_To> , <http://weprov.csiro.au/program/delist_period_start> , <http://weprov.csiro.au/program/Split_to_single_events> , <http://weprov.csiro.au/program/MergeProjectNames> , <http://weprov.csiro.au/program/delist_event_date> , <http://weprov.csiro.au/program/delist_dates> , <http://weprov.csiro.au/program/delist_from> , <http://weprov.csiro.au/program/delist_period_end> , <http://weprov.csiro.au/program/Extract_period_end> , <http://weprov.csiro.au/program/delist_to> , <http://weprov.csiro.au/program/Calculate_weight> , <http://weprov.csiro.au/program/split_periods> , <http://weprov.csiro.au/program/GetPeriods> , <http://weprov.csiro.au/program/MatrixBuilderR> , <http://weprov.csiro.au/program/EventsForProjectsInPeriod> ;
+        <http://purl.org/dc/terms/description>
+                "The analysis in this workflow represents the basis of the analysis in our paper, Social dynamics of FLOSS team communication across channels. This workflow uses WSDL components to select periodized data from the FLOSSmole database and generate sociomatrices. The workflow parses the threaded list structure into a communication network based on reply-to relationships.  In the analysis process, an edge weighting is applied so that older messages receive less weight using an exponential decay function; this is intended to moderate the effects of using a sliding window of observations for dynamic analysis. The weighted sociomatrices are then dichotomized according to a threshold, and their centralities are calculated using R’s sna package, and plotted in a time series. The final output demonstrates communication centralization trends over time in a FLOSS project.\n\nThe analysis workflow allows users to set parameter values for the size of the sliding window, the date ranges covered, and the communication venues analyzed.  Data for the analysis in the paper examined dynamics in different communication channels; the data sets included up to 90 periods (with a 90-day sliding window) and 10K’s of email messages or forum posts. Date periods are currently only in months, and exception handling for empty periods is implemented both in the WSDL components and the RShell scripts. There are a couple of inelegant solutions involving temporary output files, which are configured based on a standard Mac file structure. Future development effort could focus on solving these issues and on optimizing performance." ;
+        <http://purl.org/dc/terms/title>
+                "FLOSS Communication Centralization Plot, Exponentially Weighted" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/End_Date:GetPeriods.end_date> , <http://weprov.csiro.au/controller/Calculate_Centralization.output:Centralization_Plot.cent_list> , <http://weprov.csiro.au/controller/Extract_From.nodelist:delist_from.stringlist> , <http://weprov.csiro.au/controller/Extract_To.nodelist:delist_to.stringlist> , <http://weprov.csiro.au/controller/Extract_event_date.nodelist:delist_event_date.stringlist> , <http://weprov.csiro.au/controller/Extract_period_end.nodelist:delist_period_end.stringlist> , <http://weprov.csiro.au/controller/Extract_period_start.nodelist:delist_period_start.stringlist> , <http://weprov.csiro.au/controller/GetPeriods.return:split_periods.input> , <http://weprov.csiro.au/controller/MatrixBuilderR.return:Calculate_Centralization.filecontents> , <http://weprov.csiro.au/controller/Project_list:EventsForProjectsInPeriod.project_list> , <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:delist_dates.stringlist> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_From.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_To.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_event_date.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_end.xml-text> , <http://weprov.csiro.au/controller/Start_Date:GetPeriods.start_date> , <http://weprov.csiro.au/controller/Calculate_weight.weight:MatrixBuilderR.weight_list> , <http://weprov.csiro.au/controller/Project_list:MergeProjectNames.stringlist> , <http://weprov.csiro.au/controller/MergeProjectNames.concatenated:Centralization_Plot.project_name> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_start.xml-text> , <http://weprov.csiro.au/controller/delist_dates.concatenated:Centralization_Plot.date_list> , <http://weprov.csiro.au/controller/delist_event_date.concatenated:Calculate_weight.event_datetime> , <http://weprov.csiro.au/controller/delist_from.concatenated:MatrixBuilderR.from_list> , <http://weprov.csiro.au/controller/delist_period_end.concatenated:Calculate_weight.end_date> , <http://weprov.csiro.au/controller/delist_period_end.concatenated:Remove_duplicate_strings.stringlist> , <http://weprov.csiro.au/controller/delist_period_start.concatenated:Calculate_weight.first_date> , <http://weprov.csiro.au/controller/delist_to.concatenated:MatrixBuilderR.to_list> , <http://weprov.csiro.au/controller/sliding_window:GetPeriods.extend_window_back_by> , <http://weprov.csiro.au/controller/Centralization_Plot.centralizations:centralizations> , <http://weprov.csiro.au/controller/Centralization_Plot.g:PNGoutput> , <http://weprov.csiro.au/controller/EventsForProjectsInPeriod.return:Split_to_single_events.xml-text> , <http://weprov.csiro.au/controller/split_periods.return:EventsForProjectsInPeriod.period_xml> , <http://weprov.csiro.au/controller/step.value:GetPeriods.step> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "2" .
+
+<http://weprov.csiro.au/program/step>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/step.value:GetPeriods.step> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "step" .
+
+<http://weprov.csiro.au/program/Calculate_Centralization>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Calculate_Centralization.output:Centralization_Plot.cent_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Calculate_Centralization" .
+
+<http://weprov.csiro.au/program/Centralization_Plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Centralization_Plot.centralizations:centralizations> , <http://weprov.csiro.au/controller/Centralization_Plot.g:PNGoutput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Centralization_Plot" .
+
+<http://weprov.csiro.au/program/Extract_period_start>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_period_start.nodelist:delist_period_start.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_period_start" .
+
+<http://weprov.csiro.au/program/Extract_From>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_From.nodelist:delist_from.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_From" .
+
+<http://weprov.csiro.au/program/Extract_event_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_event_date.nodelist:delist_event_date.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_event_date" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:delist_dates.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_strings" .
+
+<http://weprov.csiro.au/program/Extract_To>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_To.nodelist:delist_to.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_To" .
+
+<http://weprov.csiro.au/program/delist_period_start>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_period_start.concatenated:Calculate_weight.first_date> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_period_start" .
+
+<http://weprov.csiro.au/program/Split_to_single_events>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_From.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_To.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_event_date.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_end.xml-text> , <http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_start.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_to_single_events" .
+
+<http://weprov.csiro.au/program/MergeProjectNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MergeProjectNames.concatenated:Centralization_Plot.project_name> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MergeProjectNames" .
+
+<http://weprov.csiro.au/program/delist_event_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_event_date.concatenated:Calculate_weight.event_datetime> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_event_date" .
+
+<http://weprov.csiro.au/program/delist_dates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_dates.concatenated:Centralization_Plot.date_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_dates" .
+
+<http://weprov.csiro.au/program/delist_from>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_from.concatenated:MatrixBuilderR.from_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_from" .
+
+<http://weprov.csiro.au/program/delist_period_end>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_period_end.concatenated:Calculate_weight.end_date> , <http://weprov.csiro.au/controller/delist_period_end.concatenated:Remove_duplicate_strings.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_period_end" .
+
+<http://weprov.csiro.au/program/Extract_period_end>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_period_end.nodelist:delist_period_end.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_period_end" .
+
+<http://weprov.csiro.au/program/delist_to>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_to.concatenated:MatrixBuilderR.to_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_to" .
+
+<http://weprov.csiro.au/program/Calculate_weight>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Calculate_weight.weight:MatrixBuilderR.weight_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Calculate_weight" .
+
+<http://weprov.csiro.au/program/split_periods>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_periods.return:EventsForProjectsInPeriod.period_xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_periods" .
+
+<http://weprov.csiro.au/program/GetPeriods>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetPeriods.return:split_periods.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetPeriods" .
+
+<http://weprov.csiro.au/program/MatrixBuilderR>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MatrixBuilderR.return:Calculate_Centralization.filecontents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MatrixBuilderR" .
+
+<http://weprov.csiro.au/program/EventsForProjectsInPeriod>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/EventsForProjectsInPeriod.return:Split_to_single_events.xml-text> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "EventsForProjectsInPeriod" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/Start_Date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Start_Date" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/End_Date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "End_Date" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/Project_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Project_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/sliding_window>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sliding_window" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/PNGoutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PNGoutput" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:509c7913-1abd-4916-897d-67dffabc3177-v2/centralizations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "centralizations" .
+
+<http://weprov.csiro.au/controller/End_Date:GetPeriods.end_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "End_Date:GetPeriods.end_date" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetPeriods> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/End_Date:GetPeriods.end_date> , <http://weprov.csiro.au/controller/Project_list:EventsForProjectsInPeriod.project_list> , <http://weprov.csiro.au/controller/Start_Date:GetPeriods.start_date> , <http://weprov.csiro.au/controller/Project_list:MergeProjectNames.stringlist> , <http://weprov.csiro.au/controller/sliding_window:GetPeriods.extend_window_back_by> .
+
+<http://weprov.csiro.au/controller/Calculate_Centralization.output:Centralization_Plot.cent_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Calculate_Centralization.output:Centralization_Plot.cent_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Centralization_Plot> .
+
+<http://weprov.csiro.au/controller/Extract_From.nodelist:delist_from.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_From.nodelist:delist_from.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_from> .
+
+<http://weprov.csiro.au/controller/Extract_To.nodelist:delist_to.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_To.nodelist:delist_to.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_to> .
+
+<http://weprov.csiro.au/controller/Extract_event_date.nodelist:delist_event_date.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_event_date.nodelist:delist_event_date.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_event_date> .
+
+<http://weprov.csiro.au/controller/Extract_period_end.nodelist:delist_period_end.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_period_end.nodelist:delist_period_end.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_period_end> .
+
+<http://weprov.csiro.au/controller/Extract_period_start.nodelist:delist_period_start.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_period_start.nodelist:delist_period_start.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_period_start> .
+
+<http://weprov.csiro.au/controller/GetPeriods.return:split_periods.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetPeriods.return:split_periods.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_periods> .
+
+<http://weprov.csiro.au/controller/MatrixBuilderR.return:Calculate_Centralization.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MatrixBuilderR.return:Calculate_Centralization.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Calculate_Centralization> .
+
+<http://weprov.csiro.au/controller/Project_list:EventsForProjectsInPeriod.project_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Project_list:EventsForProjectsInPeriod.project_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EventsForProjectsInPeriod> .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_strings.strippedlist:delist_dates.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_strings.strippedlist:delist_dates.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_dates> .
+
+<http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_From.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_to_single_events.nodelistAsXML:Extract_From.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_From> .
+
+<http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_To.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_to_single_events.nodelistAsXML:Extract_To.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_To> .
+
+<http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_event_date.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_to_single_events.nodelistAsXML:Extract_event_date.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_event_date> .
+
+<http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_end.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_to_single_events.nodelistAsXML:Extract_period_end.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_period_end> .
+
+<http://weprov.csiro.au/controller/Start_Date:GetPeriods.start_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Start_Date:GetPeriods.start_date" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetPeriods> .
+
+<http://weprov.csiro.au/controller/Calculate_weight.weight:MatrixBuilderR.weight_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Calculate_weight.weight:MatrixBuilderR.weight_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MatrixBuilderR> .
+
+<http://weprov.csiro.au/controller/Project_list:MergeProjectNames.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Project_list:MergeProjectNames.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MergeProjectNames> .
+
+<http://weprov.csiro.au/controller/MergeProjectNames.concatenated:Centralization_Plot.project_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MergeProjectNames.concatenated:Centralization_Plot.project_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Centralization_Plot> .
+
+<http://weprov.csiro.au/controller/Split_to_single_events.nodelistAsXML:Extract_period_start.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_to_single_events.nodelistAsXML:Extract_period_start.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_period_start> .
+
+<http://weprov.csiro.au/controller/delist_dates.concatenated:Centralization_Plot.date_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_dates.concatenated:Centralization_Plot.date_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Centralization_Plot> .
+
+<http://weprov.csiro.au/controller/delist_event_date.concatenated:Calculate_weight.event_datetime>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_event_date.concatenated:Calculate_weight.event_datetime" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Calculate_weight> .
+
+<http://weprov.csiro.au/controller/delist_from.concatenated:MatrixBuilderR.from_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_from.concatenated:MatrixBuilderR.from_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MatrixBuilderR> .
+
+<http://weprov.csiro.au/controller/delist_period_end.concatenated:Calculate_weight.end_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_period_end.concatenated:Calculate_weight.end_date" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Calculate_weight> .
+
+<http://weprov.csiro.au/controller/delist_period_end.concatenated:Remove_duplicate_strings.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_period_end.concatenated:Remove_duplicate_strings.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_strings> .
+
+<http://weprov.csiro.au/controller/delist_period_start.concatenated:Calculate_weight.first_date>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_period_start.concatenated:Calculate_weight.first_date" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Calculate_weight> .
+
+<http://weprov.csiro.au/controller/delist_to.concatenated:MatrixBuilderR.to_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_to.concatenated:MatrixBuilderR.to_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MatrixBuilderR> .
+
+<http://weprov.csiro.au/controller/sliding_window:GetPeriods.extend_window_back_by>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sliding_window:GetPeriods.extend_window_back_by" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetPeriods> .
+
+<http://weprov.csiro.au/controller/Centralization_Plot.centralizations:centralizations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Centralization_Plot.centralizations:centralizations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Centralization_Plot.g:PNGoutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Centralization_Plot.g:PNGoutput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/EventsForProjectsInPeriod.return:Split_to_single_events.xml-text>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "EventsForProjectsInPeriod.return:Split_to_single_events.xml-text" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_to_single_events> .
+
+<http://weprov.csiro.au/controller/split_periods.return:EventsForProjectsInPeriod.period_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_periods.return:EventsForProjectsInPeriod.period_xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/EventsForProjectsInPeriod> .
+
+<http://weprov.csiro.au/controller/step.value:GetPeriods.step>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "step.value:GetPeriods.step" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetPeriods> .

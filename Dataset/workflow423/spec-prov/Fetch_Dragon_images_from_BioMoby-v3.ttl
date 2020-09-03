@@ -1,0 +1,143 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:TPZT6DLP5V39-v2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:TPZT6DLP5V39-v2/images> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:TPZT6DLP5V39-v2/annotations> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/namespace> , <http://weprov.csiro.au/program/id> , <http://weprov.csiro.au/program/Decode_base64_to_byte> , <http://weprov.csiro.au/program/getDragonSimpleAnnotatedImages> , <http://weprov.csiro.au/program/getJpegFromAnnotatedImage> , <http://weprov.csiro.au/program/Object> , <http://weprov.csiro.au/program/Parse_Moby_Data_JPEGImage> , <http://weprov.csiro.au/program/Parse_Moby_Data_SimpleAnnotatedJPEGImage> ;
+        <http://purl.org/dc/terms/description>
+                "Fetch images and annotations of snapdragons" ;
+        <http://purl.org/dc/terms/title>
+                "Fetch Dragon images from BioMoby" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:images> , <http://weprov.csiro.au/controller/Object.mobyData:getDragonSimpleAnnotatedImages.Object(input)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_JPEGImage.image_'content':Decode_base64_to_byte.base64> , <http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):Parse_Moby_Data_SimpleAnnotatedJPEGImage.mobyData('SimpleAnnotatedJPEGImage')> , <http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):getJpegFromAnnotatedImage.SimpleAnnotatedJPEGImage(annotatedImage)> , <http://weprov.csiro.au/controller/getJpegFromAnnotatedImage.b64_encoded_jpeg(image):Parse_Moby_Data_JPEGImage.mobyData('b64_encoded_jpeg')> , <http://weprov.csiro.au/controller/id.value:Object.id> , <http://weprov.csiro.au/controller/namespace.value:Object.namespace> , <http://weprov.csiro.au/controller/Parse_Moby_Data_SimpleAnnotatedJPEGImage.image_'Description':annotations> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "2" .
+
+<http://weprov.csiro.au/program/namespace>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/namespace.value:Object.namespace> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "namespace" .
+
+<http://weprov.csiro.au/program/id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/id.value:Object.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "id" .
+
+<http://weprov.csiro.au/program/Decode_base64_to_byte>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:images> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Decode_base64_to_byte" .
+
+<http://weprov.csiro.au/program/getDragonSimpleAnnotatedImages>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):Parse_Moby_Data_SimpleAnnotatedJPEGImage.mobyData('SimpleAnnotatedJPEGImage')> , <http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):getJpegFromAnnotatedImage.SimpleAnnotatedJPEGImage(annotatedImage)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getDragonSimpleAnnotatedImages" .
+
+<http://weprov.csiro.au/program/getJpegFromAnnotatedImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getJpegFromAnnotatedImage.b64_encoded_jpeg(image):Parse_Moby_Data_JPEGImage.mobyData('b64_encoded_jpeg')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getJpegFromAnnotatedImage" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:getDragonSimpleAnnotatedImages.Object(input)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_JPEGImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_JPEGImage.image_'content':Decode_base64_to_byte.base64> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_JPEGImage" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_SimpleAnnotatedJPEGImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_SimpleAnnotatedJPEGImage.image_'Description':annotations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_SimpleAnnotatedJPEGImage" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:TPZT6DLP5V39-v2/images>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "images" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:TPZT6DLP5V39-v2/annotations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "annotations" .
+
+<http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:images>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Decode_base64_to_byte.bytes:images" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:getDragonSimpleAnnotatedImages.Object(input)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:getDragonSimpleAnnotatedImages.Object(input)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getDragonSimpleAnnotatedImages> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_JPEGImage.image_'content':Decode_base64_to_byte.base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_JPEGImage.image_'content':Decode_base64_to_byte.base64" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Decode_base64_to_byte> .
+
+<http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):Parse_Moby_Data_SimpleAnnotatedJPEGImage.mobyData('SimpleAnnotatedJPEGImage')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):Parse_Moby_Data_SimpleAnnotatedJPEGImage.mobyData('SimpleAnnotatedJPEGImage')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_SimpleAnnotatedJPEGImage> .
+
+<http://weprov.csiro.au/controller/getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):getJpegFromAnnotatedImage.SimpleAnnotatedJPEGImage(annotatedImage)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getDragonSimpleAnnotatedImages.SimpleAnnotatedJPEGImage(Collection - 'image' As Simples):getJpegFromAnnotatedImage.SimpleAnnotatedJPEGImage(annotatedImage)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getJpegFromAnnotatedImage> .
+
+<http://weprov.csiro.au/controller/getJpegFromAnnotatedImage.b64_encoded_jpeg(image):Parse_Moby_Data_JPEGImage.mobyData('b64_encoded_jpeg')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getJpegFromAnnotatedImage.b64_encoded_jpeg(image):Parse_Moby_Data_JPEGImage.mobyData('b64_encoded_jpeg')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_JPEGImage> .
+
+<http://weprov.csiro.au/controller/id.value:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "id.value:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/controller/namespace.value:Object.namespace>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "namespace.value:Object.namespace" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_SimpleAnnotatedJPEGImage.image_'Description':annotations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_SimpleAnnotatedJPEGImage.image_'Description':annotations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

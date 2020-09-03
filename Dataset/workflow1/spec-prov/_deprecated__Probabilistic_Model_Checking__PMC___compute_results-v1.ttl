@@ -1,0 +1,288 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/resultsXml> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constantNameList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/varName> , <http://weprov.csiro.au/program/propertiesUrl> , <http://weprov.csiro.au/program/rewardsUrl> , <http://weprov.csiro.au/program/appendRewards> , <http://weprov.csiro.au/program/getRewards> , <http://weprov.csiro.au/program/setConstantsStr> , <http://weprov.csiro.au/program/getProperties> , <http://weprov.csiro.au/program/initValues> , <http://weprov.csiro.au/program/getModel> , <http://weprov.csiro.au/program/modelUrl> , <http://weprov.csiro.au/program/Prism> , <http://weprov.csiro.au/program/Sbml2Prism> , <http://weprov.csiro.au/program/parametrizePrismModel> , <http://weprov.csiro.au/program/constName> , <http://weprov.csiro.au/program/initvalues2List> , <http://weprov.csiro.au/program/initValuesSep> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Probabilistic Model Checking (PMC): compute results" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Sbml2Prism.prismModel:parametrizePrismModel.inModel> , <http://weprov.csiro.au/controller/appendRewards.output:Prism.model> , <http://weprov.csiro.au/controller/constName.value:parametrizePrismModel.constList> , <http://weprov.csiro.au/controller/getModel.filecontents:Sbml2Prism.sbmlModel> , <http://weprov.csiro.au/controller/getProperties.filecontents:Prism.properties> , <http://weprov.csiro.au/controller/getRewards.filecontents:appendRewards.string2> , <http://weprov.csiro.au/controller/initValues.value:initvalues2List.string> , <http://weprov.csiro.au/controller/initValuesSep.value:initvalues2List.regex> , <http://weprov.csiro.au/controller/initvalues2List.split:setConstantsStr.valueList> , <http://weprov.csiro.au/controller/modelUrl.value:getModel.fileurl> , <http://weprov.csiro.au/controller/parametrizePrismModel.outModel:appendRewards.string1> , <http://weprov.csiro.au/controller/parametrizePrismModel.paramList:constantNameList> , <http://weprov.csiro.au/controller/parametrizePrismModel.paramList:setConstantsStr.nameList> , <http://weprov.csiro.au/controller/propertiesUrl.value:getProperties.fileurl> , <http://weprov.csiro.au/controller/rewardsUrl.value:getRewards.fileurl> , <http://weprov.csiro.au/controller/setConstantsStr.constantsStr:Prism.constants> , <http://weprov.csiro.au/controller/varName.value:parametrizePrismModel.initList> , <http://weprov.csiro.au/controller/Prism.resultsXml:resultsXml> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/varName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/varName.value:parametrizePrismModel.initList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "varName" .
+
+<http://weprov.csiro.au/program/propertiesUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/propertiesUrl.value:getProperties.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "propertiesUrl" .
+
+<http://weprov.csiro.au/program/rewardsUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/rewardsUrl.value:getRewards.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "rewardsUrl" .
+
+<http://weprov.csiro.au/program/appendRewards>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/appendRewards.output:Prism.model> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "appendRewards" .
+
+<http://weprov.csiro.au/program/getRewards>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getRewards.filecontents:appendRewards.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getRewards" .
+
+<http://weprov.csiro.au/program/setConstantsStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/setConstantsStr.constantsStr:Prism.constants> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setConstantsStr" .
+
+<http://weprov.csiro.au/program/getProperties>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getProperties.filecontents:Prism.properties> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getProperties" .
+
+<http://weprov.csiro.au/program/initValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/initValues.value:initvalues2List.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "initValues" .
+
+<http://weprov.csiro.au/program/getModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getModel.filecontents:Sbml2Prism.sbmlModel> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getModel" .
+
+<http://weprov.csiro.au/program/modelUrl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/modelUrl.value:getModel.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "modelUrl" .
+
+<http://weprov.csiro.au/program/Prism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Prism.resultsXml:resultsXml> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/ws_prism.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Prism" .
+
+<http://weprov.csiro.au/workflow/ws_prism.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://bioputer.mimuw.edu.pl/tav4sb/workflows/ws_prism.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/Sbml2Prism>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Sbml2Prism.prismModel:parametrizePrismModel.inModel> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/ws_sbml2Prism.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Sbml2Prism" .
+
+<http://weprov.csiro.au/workflow/ws_sbml2Prism.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://bioputer.mimuw.edu.pl/tav4sb/workflows/ws_sbml2Prism.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/parametrizePrismModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametrizePrismModel.outModel:appendRewards.string1> , <http://weprov.csiro.au/controller/parametrizePrismModel.paramList:constantNameList> , <http://weprov.csiro.au/controller/parametrizePrismModel.paramList:setConstantsStr.nameList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametrizePrismModel" .
+
+<http://weprov.csiro.au/program/constName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/constName.value:parametrizePrismModel.constList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "constName" .
+
+<http://weprov.csiro.au/program/initvalues2List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/initvalues2List.split:setConstantsStr.valueList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "initvalues2List" .
+
+<http://weprov.csiro.au/program/initValuesSep>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/initValuesSep.value:initvalues2List.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "initValuesSep" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/resultsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "resultsXml" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:85187e42-e01e-4df8-803a-dbee10f0d9d7-v0/constantNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "constantNameList" .
+
+<http://weprov.csiro.au/controller/Sbml2Prism.prismModel:parametrizePrismModel.inModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sbml2Prism.prismModel:parametrizePrismModel.inModel" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametrizePrismModel> .
+
+<http://weprov.csiro.au/controller/appendRewards.output:Prism.model>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "appendRewards.output:Prism.model" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prism> .
+
+<http://weprov.csiro.au/controller/constName.value:parametrizePrismModel.constList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "constName.value:parametrizePrismModel.constList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametrizePrismModel> .
+
+<http://weprov.csiro.au/controller/getModel.filecontents:Sbml2Prism.sbmlModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.filecontents:Sbml2Prism.sbmlModel" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Sbml2Prism> .
+
+<http://weprov.csiro.au/controller/getProperties.filecontents:Prism.properties>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getProperties.filecontents:Prism.properties" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prism> .
+
+<http://weprov.csiro.au/controller/getRewards.filecontents:appendRewards.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getRewards.filecontents:appendRewards.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/appendRewards> .
+
+<http://weprov.csiro.au/controller/initValues.value:initvalues2List.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "initValues.value:initvalues2List.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/initvalues2List> .
+
+<http://weprov.csiro.au/controller/initValuesSep.value:initvalues2List.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "initValuesSep.value:initvalues2List.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/initvalues2List> .
+
+<http://weprov.csiro.au/controller/initvalues2List.split:setConstantsStr.valueList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "initvalues2List.split:setConstantsStr.valueList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setConstantsStr> .
+
+<http://weprov.csiro.au/controller/modelUrl.value:getModel.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "modelUrl.value:getModel.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getModel> .
+
+<http://weprov.csiro.au/controller/parametrizePrismModel.outModel:appendRewards.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametrizePrismModel.outModel:appendRewards.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/appendRewards> .
+
+<http://weprov.csiro.au/controller/parametrizePrismModel.paramList:constantNameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametrizePrismModel.paramList:constantNameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametrizePrismModel.paramList:setConstantsStr.nameList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametrizePrismModel.paramList:setConstantsStr.nameList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setConstantsStr> .
+
+<http://weprov.csiro.au/controller/propertiesUrl.value:getProperties.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "propertiesUrl.value:getProperties.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getProperties> .
+
+<http://weprov.csiro.au/controller/rewardsUrl.value:getRewards.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rewardsUrl.value:getRewards.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getRewards> .
+
+<http://weprov.csiro.au/controller/setConstantsStr.constantsStr:Prism.constants>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "setConstantsStr.constantsStr:Prism.constants" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Prism> .
+
+<http://weprov.csiro.au/controller/varName.value:parametrizePrismModel.initList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "varName.value:parametrizePrismModel.initList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametrizePrismModel> .
+
+<http://weprov.csiro.au/controller/Prism.resultsXml:resultsXml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Prism.resultsXml:resultsXml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,93 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:2ad85267-6b96-4cca-b27b-f1346a8f6b24-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2ad85267-6b96-4cca-b27b-f1346a8f6b24-v0/PubMed_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2ad85267-6b96-4cca-b27b-f1346a8f6b24-v0/MedlineAbstract> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/queryPmid> , <http://weprov.csiro.au/program/InputParameters> , <http://weprov.csiro.au/program/Outputparameters> , <http://weprov.csiro.au/program/PipelineName> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow retrieves Medline Abstracts of any given PMIDs (PubMed id)\nyou can use: 9879 as input example to run this workflow" ;
+        <http://purl.org/dc/terms/title>
+                "Retrieve_abstract_from_Medline" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/InputParameters.output:queryPmid.parameters> , <http://weprov.csiro.au/controller/PubMed_id:InputParameters.pmid> , <http://weprov.csiro.au/controller/PipelineName.value:InputParameters.pipelineName> , <http://weprov.csiro.au/controller/Outputparameters.return:MedlineAbstract> , <http://weprov.csiro.au/controller/queryPmid.parameters:Outputparameters.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/queryPmid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/queryPmid.parameters:Outputparameters.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "queryPmid" .
+
+<http://weprov.csiro.au/program/InputParameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/InputParameters.output:queryPmid.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "InputParameters" .
+
+<http://weprov.csiro.au/program/Outputparameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Outputparameters.return:MedlineAbstract> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Outputparameters" .
+
+<http://weprov.csiro.au/program/PipelineName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PipelineName.value:InputParameters.pipelineName> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PipelineName" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2ad85267-6b96-4cca-b27b-f1346a8f6b24-v0/PubMed_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "PubMed_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:2ad85267-6b96-4cca-b27b-f1346a8f6b24-v0/MedlineAbstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MedlineAbstract" .
+
+<http://weprov.csiro.au/controller/InputParameters.output:queryPmid.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "InputParameters.output:queryPmid.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/queryPmid> .
+
+<http://weprov.csiro.au/controller/PubMed_id:InputParameters.pmid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PubMed_id:InputParameters.pmid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/InputParameters> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/PubMed_id:InputParameters.pmid> .
+
+<http://weprov.csiro.au/controller/PipelineName.value:InputParameters.pipelineName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PipelineName.value:InputParameters.pipelineName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/InputParameters> .
+
+<http://weprov.csiro.au/controller/Outputparameters.return:MedlineAbstract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Outputparameters.return:MedlineAbstract" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/queryPmid.parameters:Outputparameters.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "queryPmid.parameters:Outputparameters.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Outputparameters> .

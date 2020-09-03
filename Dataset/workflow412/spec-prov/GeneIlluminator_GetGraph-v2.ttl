@@ -1,0 +1,93 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Graph> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/GeneIlluminator_GetGraph> , <http://weprov.csiro.au/program/Object> , <http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_svgz> ;
+        <http://purl.org/dc/terms/description>
+                "Example workflow demonstrating how to use GeneIlluminator_GetGraph, a synchronous BioMOBY service for gene symbol disambiguation. If a gene symbol is ambiguous this service uses GeneIlluminator to create clusters describing which different genes, sharing the same symbol, exist in different parts of the tree of life. GeneIlluminator provides also aliases associated to the input gene symbol. Finally, a graphical overview of the clusters and gene symbols is created in SVG format and returned to the client. For technical reasons the image is transferred over the wire in ZIPped and Base64 encoded format. On the client-side a Beanshell processor takes care of base64 decoding and unZIPping resulting in the Scalable Vector Graphics (SVG) image.\n\n(Use GeneIlluminator_GetClusters to fetch the raw data instead of a graphical representation of the clusters or GeneIlluminator_Disambiguate to get the most likely cluster for a certain species of interest in addition to the clusters.)\n\nVisit http://www.bioinformatics.nl/gi/ for more info about GeneIlluminator.\n\nGeneIlluminator services use a secure connection over HTTPS. To make this work you *must* import our SSL certificates in your local Java keystores. More information can be found on https://www.bioinformatics.nl/phenolink/home/\n  " ;
+        <http://purl.org/dc/terms/title>
+                "GeneIlluminator_GetGraph" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> , <http://weprov.csiro.au/controller/GeneIlluminator_GetGraph.b64_encoded_svgz(graph):Parse_Moby_Data_b64_encoded_svgz.mobyData('b64_encoded_svgz')> , <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetGraph.Object(gene_symbol)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_svgz.graph_'content':Beanshell_scripting_host.Base64EncSVGZ> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.SVG:Graph> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.SVG:Graph> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/GeneIlluminator_GetGraph>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneIlluminator_GetGraph.b64_encoded_svgz(graph):Parse_Moby_Data_b64_encoded_svgz.mobyData('b64_encoded_svgz')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneIlluminator_GetGraph" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetGraph.Object(gene_symbol)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_svgz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_svgz.graph_'content':Beanshell_scripting_host.Base64EncSVGZ> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_b64_encoded_svgz" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/GeneSymbol>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GeneSymbol" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8c2cfd1f-a6e7-445b-a353-0946d7d467cd-v1/Graph>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Graph" .
+
+<http://weprov.csiro.au/controller/GeneSymbol:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneSymbol:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GeneSymbol:Object.id> .
+
+<http://weprov.csiro.au/controller/GeneIlluminator_GetGraph.b64_encoded_svgz(graph):Parse_Moby_Data_b64_encoded_svgz.mobyData('b64_encoded_svgz')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GeneIlluminator_GetGraph.b64_encoded_svgz(graph):Parse_Moby_Data_b64_encoded_svgz.mobyData('b64_encoded_svgz')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_svgz> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:GeneIlluminator_GetGraph.Object(gene_symbol)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:GeneIlluminator_GetGraph.Object(gene_symbol)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GeneIlluminator_GetGraph> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_svgz.graph_'content':Beanshell_scripting_host.Base64EncSVGZ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_b64_encoded_svgz.graph_'content':Beanshell_scripting_host.Base64EncSVGZ" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.SVG:Graph>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.SVG:Graph" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

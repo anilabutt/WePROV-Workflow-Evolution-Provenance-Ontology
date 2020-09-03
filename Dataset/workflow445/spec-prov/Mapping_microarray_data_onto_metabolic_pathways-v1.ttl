@@ -1,0 +1,531 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/sbmlString> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/colouredExpressionValues> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/geneNames> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/newSBMLString> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/sbml> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/image> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/FileLocation> , <http://weprov.csiro.au/program/createDictionary> , <http://weprov.csiro.au/program/swapAffyIds> , <http://weprov.csiro.au/program/extractExpressData> , <http://weprov.csiro.au/program/addColorToValues> , <http://weprov.csiro.au/program/merge> , <http://weprov.csiro.au/program/calcExpressionRange> , <http://weprov.csiro.au/program/getSBMLFile> , <http://weprov.csiro.au/program/queryMaxd> , <http://weprov.csiro.au/program/extractGeneNames> , <http://weprov.csiro.au/program/getModel> , <http://weprov.csiro.au/program/readSBMLFromString> , <http://weprov.csiro.au/program/getListOfSpecies> , <http://weprov.csiro.au/program/createSbmlReader> , <http://weprov.csiro.au/program/getNumSpecies> , <http://weprov.csiro.au/program/writeSBML> , <http://weprov.csiro.au/program/writeAnnotation> , <http://weprov.csiro.au/program/createSBMLReader> , <http://weprov.csiro.au/program/writeToString> , <http://weprov.csiro.au/program/createSBMLDocument> , <http://weprov.csiro.au/program/unsetAnnotation> , <http://weprov.csiro.au/program/getAnnotation> , <http://weprov.csiro.au/program/getNamespaces> , <http://weprov.csiro.au/program/setAnnotation> , <http://weprov.csiro.au/program/setModel> , <http://weprov.csiro.au/program/add> , <http://weprov.csiro.au/program/createSbmlWriter> , <http://weprov.csiro.au/program/createImage> , <http://weprov.csiro.au/program/getAffyIds> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow maps microarray data onto metabolic pathway diagrams represented as SBML models drawn using Cell Designer. To run this workflow requires libsbml to be installed into taverna - see http://www.mcisb.org/software/taverna/libsbml/index.html" , "" ;
+        <http://purl.org/dc/terms/title>
+                "Mapping microarray data onto metabolic pathways" , "Untitled workflow #7" , "icsb30_createpng" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/createSbmlReader.object:readSBMLFromString.object> , <http://weprov.csiro.au/controller/getListOfSpecies.result:extractGeneNames.listOfSpecies> , <http://weprov.csiro.au/controller/getModel.result:getListOfSpecies.object> , <http://weprov.csiro.au/controller/getModel.result:getNumSpecies.object> , <http://weprov.csiro.au/controller/getNumSpecies.result:extractGeneNames.NumOfSpecies> , <http://weprov.csiro.au/controller/readSBMLFromString.result:getModel.object> , <http://weprov.csiro.au/controller/sbmlString:readSBMLFromString.xml> , <http://weprov.csiro.au/controller/extractGeneNames.geneNames:geneNames> , <http://weprov.csiro.au/controller/colouredExpressionValues:writeAnnotation.ExpressionValues> , <http://weprov.csiro.au/controller/createSBMLDocument.object:getNamespaces.object> , <http://weprov.csiro.au/controller/createSBMLDocument.object:setModel.object> , <http://weprov.csiro.au/controller/createSBMLDocument.object:writeToString.d> , <http://weprov.csiro.au/controller/createSBMLReader.object:readSBMLFromString.object> , <http://weprov.csiro.au/controller/createSbmlWriter.object:writeToString.object> , <http://weprov.csiro.au/controller/getAnnotation.result:writeAnnotation.annotation> , <http://weprov.csiro.au/controller/getModel.result:getAnnotation.object> , <http://weprov.csiro.au/controller/getModel.result:setModel.m> , <http://weprov.csiro.au/controller/getModel.result:unsetAnnotation.object> , <http://weprov.csiro.au/controller/getNamespaces.result:add.object> , <http://weprov.csiro.au/controller/unsetAnnotation.object:setAnnotation.object> , <http://weprov.csiro.au/controller/writeAnnotation.NewSBMLFile:setAnnotation.xml> , <http://weprov.csiro.au/controller/writeToString.result:newSBMLString> , <http://weprov.csiro.au/controller/FileLocation.value:getSBMLFile.url> , <http://weprov.csiro.au/controller/addColorToValues.ColorCodedExpressionValues:writeSBML.colouredExpressionValues> , <http://weprov.csiro.au/controller/calcExpressionRange.colorcode:addColorToValues.colorcode> , <http://weprov.csiro.au/controller/createDictionary.AffyIdGeneNameMap:swapAffyIds.affyIdGeneNameMap> , <http://weprov.csiro.au/controller/createImage.createImageReturn:image> , <http://weprov.csiro.au/controller/extractExpressData.ExpressionValues:swapAffyIds.expressionValues> , <http://weprov.csiro.au/controller/extractGeneNames.geneNames:createDictionary.GeneNames> , <http://weprov.csiro.au/controller/extractGeneNames.geneNames:getAffyIds.geneName> , <http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:createDictionary.AffyIds> , <http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:merge.ids> , <http://weprov.csiro.au/controller/getSBMLFile.contents:extractGeneNames.sbmlString> , <http://weprov.csiro.au/controller/getSBMLFile.contents:writeSBML.sbmlString> , <http://weprov.csiro.au/controller/merge.mergedIds:queryMaxd.GeneNames> , <http://weprov.csiro.au/controller/queryMaxd.return:extractExpressData.maxdBrowseXMLOutput> , <http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:addColorToValues.expressionValues> , <http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:calcExpressionRange.expressionValues> , <http://weprov.csiro.au/controller/writeSBML.newSBMLString:createImage.sbml> , <http://weprov.csiro.au/controller/writeSBML.newSBMLString:sbml> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/FileLocation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/FileLocation.value:getSBMLFile.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "FileLocation" .
+
+<http://weprov.csiro.au/program/createDictionary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createDictionary.AffyIdGeneNameMap:swapAffyIds.affyIdGeneNameMap> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createDictionary" .
+
+<http://weprov.csiro.au/program/swapAffyIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:addColorToValues.expressionValues> , <http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:calcExpressionRange.expressionValues> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "swapAffyIds" .
+
+<http://weprov.csiro.au/program/extractExpressData>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractExpressData.ExpressionValues:swapAffyIds.expressionValues> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractExpressData" .
+
+<http://weprov.csiro.au/program/addColorToValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/addColorToValues.ColorCodedExpressionValues:writeSBML.colouredExpressionValues> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "addColorToValues" .
+
+<http://weprov.csiro.au/program/merge>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge.mergedIds:queryMaxd.GeneNames> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge" .
+
+<http://weprov.csiro.au/program/calcExpressionRange>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/calcExpressionRange.colorcode:addColorToValues.colorcode> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "calcExpressionRange" .
+
+<http://weprov.csiro.au/program/getSBMLFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getSBMLFile.contents:extractGeneNames.sbmlString> , <http://weprov.csiro.au/controller/getSBMLFile.contents:writeSBML.sbmlString> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSBMLFile" .
+
+<http://weprov.csiro.au/program/queryMaxd>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/queryMaxd.return:extractExpressData.maxdBrowseXMLOutput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "queryMaxd" .
+
+<http://weprov.csiro.au/program/extractGeneNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractGeneNames.geneNames:geneNames> , <http://weprov.csiro.au/controller/extractGeneNames.geneNames:createDictionary.GeneNames> , <http://weprov.csiro.au/controller/extractGeneNames.geneNames:getAffyIds.geneName> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractGeneNames" .
+
+<http://weprov.csiro.au/program/getModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getModel.result:getListOfSpecies.object> , <http://weprov.csiro.au/controller/getModel.result:getNumSpecies.object> , <http://weprov.csiro.au/controller/getModel.result:getAnnotation.object> , <http://weprov.csiro.au/controller/getModel.result:setModel.m> , <http://weprov.csiro.au/controller/getModel.result:unsetAnnotation.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getModel" .
+
+<http://weprov.csiro.au/program/readSBMLFromString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/readSBMLFromString.result:getModel.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "readSBMLFromString" .
+
+<http://weprov.csiro.au/program/getListOfSpecies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getListOfSpecies.result:extractGeneNames.listOfSpecies> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getListOfSpecies" .
+
+<http://weprov.csiro.au/program/createSbmlReader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createSbmlReader.object:readSBMLFromString.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createSbmlReader" .
+
+<http://weprov.csiro.au/program/getNumSpecies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getNumSpecies.result:extractGeneNames.NumOfSpecies> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getNumSpecies" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/sbmlString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbmlString" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/geneNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "geneNames" .
+
+<http://weprov.csiro.au/controller/createSbmlReader.object:readSBMLFromString.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSbmlReader.object:readSBMLFromString.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readSBMLFromString> .
+
+<http://weprov.csiro.au/controller/getListOfSpecies.result:extractGeneNames.listOfSpecies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getListOfSpecies.result:extractGeneNames.listOfSpecies" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractGeneNames> .
+
+<http://weprov.csiro.au/controller/getModel.result:getListOfSpecies.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.result:getListOfSpecies.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getListOfSpecies> .
+
+<http://weprov.csiro.au/controller/getModel.result:getNumSpecies.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.result:getNumSpecies.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getNumSpecies> .
+
+<http://weprov.csiro.au/controller/getNumSpecies.result:extractGeneNames.NumOfSpecies>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getNumSpecies.result:extractGeneNames.NumOfSpecies" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractGeneNames> .
+
+<http://weprov.csiro.au/controller/readSBMLFromString.result:getModel.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readSBMLFromString.result:getModel.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getModel> .
+
+<http://weprov.csiro.au/controller/sbmlString:readSBMLFromString.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbmlString:readSBMLFromString.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readSBMLFromString> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sbmlString:readSBMLFromString.xml> , <http://weprov.csiro.au/controller/colouredExpressionValues:writeAnnotation.ExpressionValues> .
+
+<http://weprov.csiro.au/controller/extractGeneNames.geneNames:geneNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractGeneNames.geneNames:geneNames" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/writeSBML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/writeSBML.newSBMLString:createImage.sbml> , <http://weprov.csiro.au/controller/writeSBML.newSBMLString:sbml> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "writeSBML" .
+
+<http://weprov.csiro.au/program/writeAnnotation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/writeAnnotation.NewSBMLFile:setAnnotation.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "writeAnnotation" .
+
+<http://weprov.csiro.au/program/createSBMLReader>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createSBMLReader.object:readSBMLFromString.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createSBMLReader" .
+
+<http://weprov.csiro.au/program/writeToString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/writeToString.result:newSBMLString> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "writeToString" .
+
+<http://weprov.csiro.au/program/createSBMLDocument>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createSBMLDocument.object:getNamespaces.object> , <http://weprov.csiro.au/controller/createSBMLDocument.object:setModel.object> , <http://weprov.csiro.au/controller/createSBMLDocument.object:writeToString.d> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createSBMLDocument" .
+
+<http://weprov.csiro.au/program/unsetAnnotation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/unsetAnnotation.object:setAnnotation.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "unsetAnnotation" .
+
+<http://weprov.csiro.au/program/getAnnotation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getAnnotation.result:writeAnnotation.annotation> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getAnnotation" .
+
+<http://weprov.csiro.au/program/getNamespaces>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getNamespaces.result:add.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getNamespaces" .
+
+<http://weprov.csiro.au/program/setAnnotation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setAnnotation" .
+
+<http://weprov.csiro.au/program/setModel>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "setModel" .
+
+<http://weprov.csiro.au/program/add>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "add" .
+
+<http://weprov.csiro.au/program/createSbmlWriter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createSbmlWriter.object:writeToString.object> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createSbmlWriter" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/colouredExpressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "colouredExpressionValues" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/newSBMLString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "newSBMLString" .
+
+<http://weprov.csiro.au/controller/colouredExpressionValues:writeAnnotation.ExpressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "colouredExpressionValues:writeAnnotation.ExpressionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeAnnotation> .
+
+<http://weprov.csiro.au/controller/createSBMLDocument.object:getNamespaces.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSBMLDocument.object:getNamespaces.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getNamespaces> .
+
+<http://weprov.csiro.au/controller/createSBMLDocument.object:setModel.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSBMLDocument.object:setModel.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setModel> .
+
+<http://weprov.csiro.au/controller/createSBMLDocument.object:writeToString.d>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSBMLDocument.object:writeToString.d" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeToString> .
+
+<http://weprov.csiro.au/controller/createSBMLReader.object:readSBMLFromString.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSBMLReader.object:readSBMLFromString.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readSBMLFromString> .
+
+<http://weprov.csiro.au/controller/createSbmlWriter.object:writeToString.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createSbmlWriter.object:writeToString.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeToString> .
+
+<http://weprov.csiro.au/controller/getAnnotation.result:writeAnnotation.annotation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getAnnotation.result:writeAnnotation.annotation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeAnnotation> .
+
+<http://weprov.csiro.au/controller/getModel.result:getAnnotation.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.result:getAnnotation.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getAnnotation> .
+
+<http://weprov.csiro.au/controller/getModel.result:setModel.m>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.result:setModel.m" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setModel> .
+
+<http://weprov.csiro.au/controller/getModel.result:unsetAnnotation.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getModel.result:unsetAnnotation.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/unsetAnnotation> .
+
+<http://weprov.csiro.au/controller/getNamespaces.result:add.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getNamespaces.result:add.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add> .
+
+<http://weprov.csiro.au/controller/unsetAnnotation.object:setAnnotation.object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "unsetAnnotation.object:setAnnotation.object" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setAnnotation> .
+
+<http://weprov.csiro.au/controller/writeAnnotation.NewSBMLFile:setAnnotation.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "writeAnnotation.NewSBMLFile:setAnnotation.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/setAnnotation> .
+
+<http://weprov.csiro.au/controller/writeToString.result:newSBMLString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "writeToString.result:newSBMLString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/createImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createImage.createImageReturn:image> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createImage" .
+
+<http://weprov.csiro.au/program/getAffyIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:createDictionary.AffyIds> , <http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:merge.ids> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getAffyIds" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/sbml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbml" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RAF68CG7K10-v0/image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "image" .
+
+<http://weprov.csiro.au/controller/FileLocation.value:getSBMLFile.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "FileLocation.value:getSBMLFile.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSBMLFile> .
+
+<http://weprov.csiro.au/controller/addColorToValues.ColorCodedExpressionValues:writeSBML.colouredExpressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "addColorToValues.ColorCodedExpressionValues:writeSBML.colouredExpressionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeSBML> .
+
+<http://weprov.csiro.au/controller/calcExpressionRange.colorcode:addColorToValues.colorcode>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "calcExpressionRange.colorcode:addColorToValues.colorcode" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addColorToValues> .
+
+<http://weprov.csiro.au/controller/createDictionary.AffyIdGeneNameMap:swapAffyIds.affyIdGeneNameMap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createDictionary.AffyIdGeneNameMap:swapAffyIds.affyIdGeneNameMap" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/swapAffyIds> .
+
+<http://weprov.csiro.au/controller/createImage.createImageReturn:image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createImage.createImageReturn:image" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/extractExpressData.ExpressionValues:swapAffyIds.expressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractExpressData.ExpressionValues:swapAffyIds.expressionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/swapAffyIds> .
+
+<http://weprov.csiro.au/controller/extractGeneNames.geneNames:createDictionary.GeneNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractGeneNames.geneNames:createDictionary.GeneNames" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createDictionary> .
+
+<http://weprov.csiro.au/controller/extractGeneNames.geneNames:getAffyIds.geneName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractGeneNames.geneNames:getAffyIds.geneName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getAffyIds> .
+
+<http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:createDictionary.AffyIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getAffyIds.getAffyIdReturn:createDictionary.AffyIds" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createDictionary> .
+
+<http://weprov.csiro.au/controller/getAffyIds.getAffyIdReturn:merge.ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getAffyIds.getAffyIdReturn:merge.ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge> .
+
+<http://weprov.csiro.au/controller/getSBMLFile.contents:extractGeneNames.sbmlString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSBMLFile.contents:extractGeneNames.sbmlString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractGeneNames> .
+
+<http://weprov.csiro.au/controller/getSBMLFile.contents:writeSBML.sbmlString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSBMLFile.contents:writeSBML.sbmlString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/writeSBML> .
+
+<http://weprov.csiro.au/controller/merge.mergedIds:queryMaxd.GeneNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge.mergedIds:queryMaxd.GeneNames" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/queryMaxd> .
+
+<http://weprov.csiro.au/controller/queryMaxd.return:extractExpressData.maxdBrowseXMLOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "queryMaxd.return:extractExpressData.maxdBrowseXMLOutput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractExpressData> .
+
+<http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:addColorToValues.expressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "swapAffyIds.NewExpressionValues:addColorToValues.expressionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addColorToValues> .
+
+<http://weprov.csiro.au/controller/swapAffyIds.NewExpressionValues:calcExpressionRange.expressionValues>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "swapAffyIds.NewExpressionValues:calcExpressionRange.expressionValues" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/calcExpressionRange> .
+
+<http://weprov.csiro.au/controller/writeSBML.newSBMLString:createImage.sbml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "writeSBML.newSBMLString:createImage.sbml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createImage> .
+
+<http://weprov.csiro.au/controller/writeSBML.newSBMLString:sbml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "writeSBML.newSBMLString:sbml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

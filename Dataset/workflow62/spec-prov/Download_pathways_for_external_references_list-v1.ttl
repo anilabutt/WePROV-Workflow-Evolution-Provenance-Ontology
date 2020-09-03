@@ -1,0 +1,225 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/xreflist> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/output_path> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/file_type> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/written_files> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/splitLines> , <http://weprov.csiro.au/program/count> , <http://weprov.csiro.au/program/createPath> , <http://weprov.csiro.au/program/createFileName> , <http://weprov.csiro.au/program/readXrefList> , <http://weprov.csiro.au/program/clone_list> , <http://weprov.csiro.au/program/find_pathways_by_xref> , <http://weprov.csiro.au/program/write_pathway> ;
+        <http://purl.org/dc/terms/description>
+                "Takes a list of external references to genes/proteins/metabolites, finds all pathways on WikiPathways that contain one of the given genes/proteins/metabolites and downloads them in a given file format." ;
+        <http://purl.org/dc/terms/title>
+                "Download pathways for external references list" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/output_path:createPath.output_path> , <http://weprov.csiro.au/controller/xreflist:readXrefList.fileurl> , <http://weprov.csiro.au/controller/clone_list.clones:createFileName.path_name> , <http://weprov.csiro.au/controller/count.count:clone_list.copy_number> , <http://weprov.csiro.au/controller/createFileName.file_name:write_pathway.file_name> , <http://weprov.csiro.au/controller/createPath.path_name:clone_list.input> , <http://weprov.csiro.au/controller/file_type:write_pathway.file_type> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:count.list> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:createFileName.pathway_name> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:write_pathway.pathway_name> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:createFileName.pathway_species> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:write_pathway.pathway_species> , <http://weprov.csiro.au/controller/readXrefList.filecontents:splitLines.string> , <http://weprov.csiro.au/controller/splitLines.split:createPath.xref> , <http://weprov.csiro.au/controller/splitLines.split:find_pathways_by_xref.identifier> , <http://weprov.csiro.au/controller/write_pathway.writtenFile:written_files> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/splitLines>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/splitLines.split:createPath.xref> , <http://weprov.csiro.au/controller/splitLines.split:find_pathways_by_xref.identifier> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "splitLines" .
+
+<http://weprov.csiro.au/program/count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/count.count:clone_list.copy_number> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "count" .
+
+<http://weprov.csiro.au/program/createPath>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createPath.path_name:clone_list.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createPath" .
+
+<http://weprov.csiro.au/program/createFileName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createFileName.file_name:write_pathway.file_name> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createFileName" .
+
+<http://weprov.csiro.au/program/readXrefList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/readXrefList.filecontents:splitLines.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "readXrefList" .
+
+<http://weprov.csiro.au/program/clone_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/clone_list.clones:createFileName.path_name> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "clone_list" .
+
+<http://weprov.csiro.au/workflow/download?version=1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://www.myexperiment.org/workflows/106/download?version=1" , "http://www.myexperiment.org/workflows/391/download?version=1" , "http://www.myexperiment.org/workflows/392/download?version=1" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/find_pathways_by_xref>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:count.list> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:createFileName.pathway_name> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:write_pathway.pathway_name> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:createFileName.pathway_species> , <http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:write_pathway.pathway_species> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "find_pathways_by_xref" .
+
+<http://weprov.csiro.au/program/write_pathway>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/write_pathway.writtenFile:written_files> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "write_pathway" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/xreflist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xreflist" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/output_path>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "output_path" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/file_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "file_type" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0d9b79b7-050c-495c-ae64-99338e61d50b-v0/written_files>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "written_files" .
+
+<http://weprov.csiro.au/controller/output_path:createPath.output_path>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output_path:createPath.output_path" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createPath> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/output_path:createPath.output_path> , <http://weprov.csiro.au/controller/xreflist:readXrefList.fileurl> , <http://weprov.csiro.au/controller/file_type:write_pathway.file_type> .
+
+<http://weprov.csiro.au/controller/xreflist:readXrefList.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xreflist:readXrefList.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/readXrefList> .
+
+<http://weprov.csiro.au/controller/clone_list.clones:createFileName.path_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "clone_list.clones:createFileName.path_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createFileName> .
+
+<http://weprov.csiro.au/controller/count.count:clone_list.copy_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count.count:clone_list.copy_number" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/clone_list> .
+
+<http://weprov.csiro.au/controller/createFileName.file_name:write_pathway.file_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createFileName.file_name:write_pathway.file_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/write_pathway> .
+
+<http://weprov.csiro.au/controller/createPath.path_name:clone_list.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createPath.path_name:clone_list.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/clone_list> .
+
+<http://weprov.csiro.au/controller/file_type:write_pathway.file_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "file_type:write_pathway.file_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/write_pathway> .
+
+<http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:count.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_pathways_by_xref.pathway_names:count.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/count> .
+
+<http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:createFileName.pathway_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_pathways_by_xref.pathway_names:createFileName.pathway_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createFileName> .
+
+<http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_names:write_pathway.pathway_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_pathways_by_xref.pathway_names:write_pathway.pathway_name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/write_pathway> .
+
+<http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:createFileName.pathway_species>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_pathways_by_xref.pathway_species:createFileName.pathway_species" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createFileName> .
+
+<http://weprov.csiro.au/controller/find_pathways_by_xref.pathway_species:write_pathway.pathway_species>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "find_pathways_by_xref.pathway_species:write_pathway.pathway_species" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/write_pathway> .
+
+<http://weprov.csiro.au/controller/readXrefList.filecontents:splitLines.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "readXrefList.filecontents:splitLines.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/splitLines> .
+
+<http://weprov.csiro.au/controller/splitLines.split:createPath.xref>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitLines.split:createPath.xref" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/createPath> .
+
+<http://weprov.csiro.au/controller/splitLines.split:find_pathways_by_xref.identifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitLines.split:find_pathways_by_xref.identifier" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/find_pathways_by_xref> .
+
+<http://weprov.csiro.au/controller/write_pathway.writtenFile:written_files>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "write_pathway.writtenFile:written_files" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

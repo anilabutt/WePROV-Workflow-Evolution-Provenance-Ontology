@@ -1,0 +1,93 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:c2120790-396f-4a61-85ee-58fc67c5f74f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c2120790-396f-4a61-85ee-58fc67c5f74f-v0/experimentid> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c2120790-396f-4a61-85ee-58fc67c5f74f-v0/output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/MetwareGetExperimentRaw> , <http://weprov.csiro.au/program/String> , <http://weprov.csiro.au/program/MetwareExperimentId> , <http://weprov.csiro.au/program/abwur_test_xcms> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "simple_xcms_pipeline" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/MetwareExperimentId.mobyData:MetwareGetExperimentRaw.MetwareExperimentId(MetwareExperimentId)> , <http://weprov.csiro.au/controller/String.mobyData:MetwareExperimentId.String(ExperimentId)> , <http://weprov.csiro.au/controller/experimentid:String.value> , <http://weprov.csiro.au/controller/MetwareGetExperimentRaw.MSRawCdfUrlSet(MSRawCdfUrlSet):abwur_test_xcms.MSRawCdfUrlSet(MSRawCdfUrlSet)> , <http://weprov.csiro.au/controller/abwur_test_xcms.output:output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/MetwareGetExperimentRaw>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MetwareGetExperimentRaw.MSRawCdfUrlSet(MSRawCdfUrlSet):abwur_test_xcms.MSRawCdfUrlSet(MSRawCdfUrlSet)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MetwareGetExperimentRaw" .
+
+<http://weprov.csiro.au/program/String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String.mobyData:MetwareExperimentId.String(ExperimentId)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String" .
+
+<http://weprov.csiro.au/program/MetwareExperimentId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MetwareExperimentId.mobyData:MetwareGetExperimentRaw.MetwareExperimentId(MetwareExperimentId)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MetwareExperimentId" .
+
+<http://weprov.csiro.au/program/abwur_test_xcms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/abwur_test_xcms.output:output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "abwur_test_xcms" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c2120790-396f-4a61-85ee-58fc67c5f74f-v0/experimentid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "experimentid" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:c2120790-396f-4a61-85ee-58fc67c5f74f-v0/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/controller/MetwareExperimentId.mobyData:MetwareGetExperimentRaw.MetwareExperimentId(MetwareExperimentId)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MetwareExperimentId.mobyData:MetwareGetExperimentRaw.MetwareExperimentId(MetwareExperimentId)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MetwareGetExperimentRaw> .
+
+<http://weprov.csiro.au/controller/String.mobyData:MetwareExperimentId.String(ExperimentId)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String.mobyData:MetwareExperimentId.String(ExperimentId)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MetwareExperimentId> .
+
+<http://weprov.csiro.au/controller/experimentid:String.value>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "experimentid:String.value" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/experimentid:String.value> .
+
+<http://weprov.csiro.au/controller/MetwareGetExperimentRaw.MSRawCdfUrlSet(MSRawCdfUrlSet):abwur_test_xcms.MSRawCdfUrlSet(MSRawCdfUrlSet)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MetwareGetExperimentRaw.MSRawCdfUrlSet(MSRawCdfUrlSet):abwur_test_xcms.MSRawCdfUrlSet(MSRawCdfUrlSet)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/abwur_test_xcms> .
+
+<http://weprov.csiro.au/controller/abwur_test_xcms.output:output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "abwur_test_xcms.output:output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,65 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:be87921d-4da7-42fd-a7b0-86dbc47d6579-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:be87921d-4da7-42fd-a7b0-86dbc47d6579-v0/fasta_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:be87921d-4da7-42fd-a7b0-86dbc47d6579-v0/fasta_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Split_into_sequences> , <http://weprov.csiro.au/program/Add_angle> ;
+        <http://purl.org/dc/terms/description>
+                "Split a string containing a set of sequences in fasta format into a list for fasta formated sequences." ;
+        <http://purl.org/dc/terms/title>
+                "Fasta_string_to_fasta_list" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/fasta_string:Split_into_sequences.string> , <http://weprov.csiro.au/controller/Add_angle.full_fasta:fasta_list> , <http://weprov.csiro.au/controller/Split_into_sequences.split:Add_angle.stripped_fasta> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Split_into_sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_into_sequences.split:Add_angle.stripped_fasta> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_into_sequences" .
+
+<http://weprov.csiro.au/program/Add_angle>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Add_angle.full_fasta:fasta_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Add_angle" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:be87921d-4da7-42fd-a7b0-86dbc47d6579-v0/fasta_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fasta_string" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:be87921d-4da7-42fd-a7b0-86dbc47d6579-v0/fasta_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fasta_list" .
+
+<http://weprov.csiro.au/controller/fasta_string:Split_into_sequences.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fasta_string:Split_into_sequences.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_into_sequences> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fasta_string:Split_into_sequences.string> .
+
+<http://weprov.csiro.au/controller/Add_angle.full_fasta:fasta_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Add_angle.full_fasta:fasta_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Split_into_sequences.split:Add_angle.stripped_fasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_into_sequences.split:Add_angle.stripped_fasta" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Add_angle> .

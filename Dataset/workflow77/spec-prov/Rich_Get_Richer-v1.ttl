@@ -1,0 +1,153 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/Summary> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/DistributionPlot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/LogPlot> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/PointList> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/delist_dev_numbers> , <http://weprov.csiro.au/program/get_developer_data> , <http://weprov.csiro.au/program/flatten_dev_numbers> , <http://weprov.csiro.au/program/output_points> , <http://weprov.csiro.au/program/plot_distribution> , <http://weprov.csiro.au/program/log_plot> , <http://weprov.csiro.au/program/distribution_summary> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow is a replication of the analysis from an OSCon 2004 presentation by Megan Conklin, entitled \"Do the Rich Get Richer?\" to demonstrate scale-free distribution of FLOSS developers among projects.\n\nThe workflow retrieves the current number of active developers (for the most recent calculation of said statistic) from the FLOSSmole database. It summarizes and plots the distribution of developers to projects, on both a straight and log-log scale. It also generates a flat list of the developer counts for visualization in other software." ;
+        <http://purl.org/dc/terms/title>
+                "Rich Get Richer" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:distribution_summary.dev_numbers> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:plot_distribution.dev_numbers> , <http://weprov.csiro.au/controller/flatten_dev_numbers.outputlist:delist_dev_numbers.stringlist> , <http://weprov.csiro.au/controller/get_developer_data.resultList:flatten_dev_numbers.inputlist> , <http://weprov.csiro.au/controller/distribution_summary.dev_dist:Summary> , <http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot> , <http://weprov.csiro.au/controller/output_points.point_list:PointList> , <http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/delist_dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:distribution_summary.dev_numbers> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:log_plot.dev_numbers> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:output_points.dev_nums> , <http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:plot_distribution.dev_numbers> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "delist_dev_numbers" .
+
+<http://weprov.csiro.au/program/get_developer_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_developer_data.resultList:flatten_dev_numbers.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_developer_data" .
+
+<http://weprov.csiro.au/program/flatten_dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/flatten_dev_numbers.outputlist:delist_dev_numbers.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "flatten_dev_numbers" .
+
+<http://weprov.csiro.au/program/output_points>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/output_points.point_list:PointList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "output_points" .
+
+<http://weprov.csiro.au/program/plot_distribution>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "plot_distribution" .
+
+<http://weprov.csiro.au/program/log_plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "log_plot" .
+
+<http://weprov.csiro.au/program/distribution_summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/distribution_summary.dev_dist:Summary> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "distribution_summary" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/Summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Summary" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/DistributionPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DistributionPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/LogPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "LogPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:7c908eb7-6994-402a-b1cb-6d5f7beb443d-v0/PointList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PointList" .
+
+<http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:distribution_summary.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_dev_numbers.concatenated:distribution_summary.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/distribution_summary> .
+
+<http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:log_plot.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_dev_numbers.concatenated:log_plot.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/log_plot> .
+
+<http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:output_points.dev_nums>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_dev_numbers.concatenated:output_points.dev_nums" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/output_points> .
+
+<http://weprov.csiro.au/controller/delist_dev_numbers.concatenated:plot_distribution.dev_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "delist_dev_numbers.concatenated:plot_distribution.dev_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/plot_distribution> .
+
+<http://weprov.csiro.au/controller/flatten_dev_numbers.outputlist:delist_dev_numbers.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "flatten_dev_numbers.outputlist:delist_dev_numbers.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/delist_dev_numbers> .
+
+<http://weprov.csiro.au/controller/get_developer_data.resultList:flatten_dev_numbers.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_developer_data.resultList:flatten_dev_numbers.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/flatten_dev_numbers> .
+
+<http://weprov.csiro.au/controller/distribution_summary.dev_dist:Summary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "distribution_summary.dev_dist:Summary" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/log_plot.log_plot:LogPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "log_plot.log_plot:LogPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/output_points.point_list:PointList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output_points.point_list:PointList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/plot_distribution.dist_plot:DistributionPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plot_distribution.dist_plot:DistributionPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,139 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/query_term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/synonyms> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/new_query> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Flatten_list> , <http://weprov.csiro.au/program/Flatten_list2> , <http://weprov.csiro.au/program/Concat_synonyms> , <http://weprov.csiro.au/program/SplitQuery> , <http://weprov.csiro.au/program/getSynsets> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow creates a query string from the query term using Martijn Schuemie's synonym service. The service is limited to proteins, enzymes and genes. An input query that is a boolean string will be split and processed, but the boolean logic of the input query will be lost." ;
+        <http://purl.org/dc/terms/title>
+                "ProteinSynonymsToQuery" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Concat_synonyms.new_query:new_query> , <http://weprov.csiro.au/controller/Flatten_list.outputlist:Flatten_list2.inputlist> , <http://weprov.csiro.au/controller/SplitQuery.queryList:getSynsets.term> , <http://weprov.csiro.au/controller/Flatten_list2.outputlist:synonyms> , <http://weprov.csiro.au/controller/getSynsets.getSynsetsReturn:Flatten_list.inputlist> , <http://weprov.csiro.au/controller/query_term:Concat_synonyms.query_term> , <http://weprov.csiro.au/controller/query_term:SplitQuery.queryString> , <http://weprov.csiro.au/controller/Flatten_list2.outputlist:Concat_synonyms.synonymlist> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Flatten_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_list.outputlist:Flatten_list2.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_list" .
+
+<http://weprov.csiro.au/program/Flatten_list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Flatten_list2.outputlist:synonyms> , <http://weprov.csiro.au/controller/Flatten_list2.outputlist:Concat_synonyms.synonymlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Flatten_list2" .
+
+<http://weprov.csiro.au/program/Concat_synonyms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concat_synonyms.new_query:new_query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concat_synonyms" .
+
+<http://weprov.csiro.au/program/SplitQuery>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SplitQuery.queryList:getSynsets.term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/Split_query_string_MR3.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SplitQuery" .
+
+<http://weprov.csiro.au/workflow/Split_query_string_MR3.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/D:/Marco/adaptivedisclosure.org/public_html/BioAID/Preliminary/Workflows/Archive/Split_query_string_MR3.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/getSynsets>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getSynsets.getSynsetsReturn:Flatten_list.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSynsets" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/query_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_term" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/synonyms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "synonyms" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ecb927cc-a200-4290-9342-302d5fc836ca-v1/new_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "new_query" .
+
+<http://weprov.csiro.au/controller/Concat_synonyms.new_query:new_query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concat_synonyms.new_query:new_query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query_term:Concat_synonyms.query_term> , <http://weprov.csiro.au/controller/query_term:SplitQuery.queryString> .
+
+<http://weprov.csiro.au/controller/Flatten_list.outputlist:Flatten_list2.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list.outputlist:Flatten_list2.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list2> .
+
+<http://weprov.csiro.au/controller/SplitQuery.queryList:getSynsets.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SplitQuery.queryList:getSynsets.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSynsets> .
+
+<http://weprov.csiro.au/controller/Flatten_list2.outputlist:synonyms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list2.outputlist:synonyms" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getSynsets.getSynsetsReturn:Flatten_list.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSynsets.getSynsetsReturn:Flatten_list.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Flatten_list> .
+
+<http://weprov.csiro.au/controller/query_term:Concat_synonyms.query_term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_term:Concat_synonyms.query_term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat_synonyms> .
+
+<http://weprov.csiro.au/controller/query_term:SplitQuery.queryString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_term:SplitQuery.queryString" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/SplitQuery> .
+
+<http://weprov.csiro.au/controller/Flatten_list2.outputlist:Concat_synonyms.synonymlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Flatten_list2.outputlist:Concat_synonyms.synonymlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concat_synonyms> .

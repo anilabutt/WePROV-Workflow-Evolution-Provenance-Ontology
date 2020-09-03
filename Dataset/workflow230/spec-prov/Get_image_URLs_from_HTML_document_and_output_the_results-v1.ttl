@@ -1,0 +1,61 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:792f948f-5948-4899-9d0f-6fdd35c85549-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:792f948f-5948-4899-9d0f-6fdd35c85549-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Get_image_URLs_from_HTTP_document> , <http://weprov.csiro.au/program/Get_web_page_from_URL> , <http://weprov.csiro.au/program/Get_image_from_URL> ;
+        <http://purl.org/dc/terms/description>
+                "Retrieve the web page at http://www.mygrid.org.uk, examine it for images and output the images." ;
+        <http://purl.org/dc/terms/title>
+                "Get image URLs from HTML document and output the results" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Get_image_URLs_from_HTTP_document.imagelinks:Get_image_from_URL.url> , <http://weprov.csiro.au/controller/Get_image_from_URL.image:out> , <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:Get_image_URLs_from_HTTP_document.document> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Get_image_URLs_from_HTTP_document>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_image_URLs_from_HTTP_document.imagelinks:Get_image_from_URL.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_image_URLs_from_HTTP_document" .
+
+<http://weprov.csiro.au/program/Get_web_page_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:Get_image_URLs_from_HTTP_document.document> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_web_page_from_URL" .
+
+<http://weprov.csiro.au/program/Get_image_from_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_image_from_URL.image:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_image_from_URL" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:792f948f-5948-4899-9d0f-6fdd35c85549-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Get_image_URLs_from_HTTP_document.imagelinks:Get_image_from_URL.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_image_URLs_from_HTTP_document.imagelinks:Get_image_from_URL.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_image_from_URL> .
+
+<http://weprov.csiro.au/controller/Get_image_from_URL.image:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_image_from_URL.image:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Get_web_page_from_URL.contents:Get_image_URLs_from_HTTP_document.document>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_web_page_from_URL.contents:Get_image_URLs_from_HTTP_document.document" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_image_URLs_from_HTTP_document> .

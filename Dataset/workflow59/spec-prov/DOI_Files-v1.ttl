@@ -1,0 +1,266 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/seed> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/sqlUpdateStatements> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/DOIURLs> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/file_location> , <http://weprov.csiro.au/program/read_input> , <http://weprov.csiro.au/program/split_rows> , <http://weprov.csiro.au/program/split_numbers_to_list> , <http://weprov.csiro.au/program/split_more> , <http://weprov.csiro.au/program/make_number_sequence> , <http://weprov.csiro.au/program/format_months> , <http://weprov.csiro.au/program/aggregate_doi_urls> , <http://weprov.csiro.au/program/generate_doi> , <http://weprov.csiro.au/program/generate_doi_url_mapping> , <http://weprov.csiro.au/program/split_fields> , <http://weprov.csiro.au/program/make_sql_doi_updates> , <http://weprov.csiro.au/program/aggregate_sql_updates> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow generates additional files required for handling DOI creation: the DOI URL mapping required for the DOI deposit, and a set of sql update statements to insert the DOIs into an eprints database.\n\nNote that it is extremely important for this workflow to use the same CSV file as was used with the DOI record generator, as well as the same seed number." ;
+        <http://purl.org/dc/terms/title>
+                "DOI Files" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/aggregate_doi_urls.import_file:DOIURLs> , <http://weprov.csiro.au/controller/aggregate_sql_updates.update_statements:sqlUpdateStatements> , <http://weprov.csiro.au/controller/file_location.value:read_input.fileurl> , <http://weprov.csiro.au/controller/format_months.formatted_month:generate_doi.month> , <http://weprov.csiro.au/controller/generate_doi.doi:make_sql_doi_updates.doi> , <http://weprov.csiro.au/controller/generate_doi_url_mapping.doi_records:aggregate_doi_urls.doi> , <http://weprov.csiro.au/controller/make_sql_doi_updates.sql_insert:aggregate_sql_updates.sql> , <http://weprov.csiro.au/controller/read_input.filecontents:split_rows.string> , <http://weprov.csiro.au/controller/seed:make_number_sequence.seed> , <http://weprov.csiro.au/controller/generate_doi.doi:generate_doi_url_mapping.doi> , <http://weprov.csiro.au/controller/make_number_sequence.number_sequence:split_numbers_to_list.string> , <http://weprov.csiro.au/controller/split_fields.eprintid:make_number_sequence.trigger> , <http://weprov.csiro.au/controller/split_fields.eprintid:make_sql_doi_updates.eprintid> , <http://weprov.csiro.au/controller/split_fields.month:format_months.month> , <http://weprov.csiro.au/controller/split_fields.source:generate_doi.source> , <http://weprov.csiro.au/controller/split_fields.url:generate_doi_url_mapping.url> , <http://weprov.csiro.au/controller/split_fields.year:generate_doi.year> , <http://weprov.csiro.au/controller/split_more.split:split_fields.file> , <http://weprov.csiro.au/controller/split_numbers_to_list.split:generate_doi.seed> , <http://weprov.csiro.au/controller/split_rows.split:split_more.string> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/file_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/file_location.value:read_input.fileurl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "file_location" .
+
+<http://weprov.csiro.au/program/read_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/read_input.filecontents:split_rows.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "read_input" .
+
+<http://weprov.csiro.au/program/split_rows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_rows.split:split_more.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_rows" .
+
+<http://weprov.csiro.au/program/split_numbers_to_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_numbers_to_list.split:generate_doi.seed> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_numbers_to_list" .
+
+<http://weprov.csiro.au/program/split_more>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_more.split:split_fields.file> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_more" .
+
+<http://weprov.csiro.au/program/make_number_sequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/make_number_sequence.number_sequence:split_numbers_to_list.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "make_number_sequence" .
+
+<http://weprov.csiro.au/program/format_months>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/format_months.formatted_month:generate_doi.month> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "format_months" .
+
+<http://weprov.csiro.au/program/aggregate_doi_urls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/aggregate_doi_urls.import_file:DOIURLs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "aggregate_doi_urls" .
+
+<http://weprov.csiro.au/program/generate_doi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/generate_doi.doi:make_sql_doi_updates.doi> , <http://weprov.csiro.au/controller/generate_doi.doi:generate_doi_url_mapping.doi> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "generate_doi" .
+
+<http://weprov.csiro.au/program/generate_doi_url_mapping>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/generate_doi_url_mapping.doi_records:aggregate_doi_urls.doi> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "generate_doi_url_mapping" .
+
+<http://weprov.csiro.au/program/split_fields>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_fields.eprintid:make_number_sequence.trigger> , <http://weprov.csiro.au/controller/split_fields.eprintid:make_sql_doi_updates.eprintid> , <http://weprov.csiro.au/controller/split_fields.month:format_months.month> , <http://weprov.csiro.au/controller/split_fields.source:generate_doi.source> , <http://weprov.csiro.au/controller/split_fields.url:generate_doi_url_mapping.url> , <http://weprov.csiro.au/controller/split_fields.year:generate_doi.year> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_fields" .
+
+<http://weprov.csiro.au/program/make_sql_doi_updates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/make_sql_doi_updates.sql_insert:aggregate_sql_updates.sql> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "make_sql_doi_updates" .
+
+<http://weprov.csiro.au/program/aggregate_sql_updates>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/aggregate_sql_updates.update_statements:sqlUpdateStatements> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "aggregate_sql_updates" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/seed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seed" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/sqlUpdateStatements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sqlUpdateStatements" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:4a10d766-1358-4db7-b65e-92406db0ae9c-v0/DOIURLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DOIURLs" .
+
+<http://weprov.csiro.au/controller/aggregate_doi_urls.import_file:DOIURLs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "aggregate_doi_urls.import_file:DOIURLs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/seed:make_number_sequence.seed> .
+
+<http://weprov.csiro.au/controller/aggregate_sql_updates.update_statements:sqlUpdateStatements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "aggregate_sql_updates.update_statements:sqlUpdateStatements" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/file_location.value:read_input.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "file_location.value:read_input.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/read_input> .
+
+<http://weprov.csiro.au/controller/format_months.formatted_month:generate_doi.month>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "format_months.formatted_month:generate_doi.month" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi> .
+
+<http://weprov.csiro.au/controller/generate_doi.doi:make_sql_doi_updates.doi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generate_doi.doi:make_sql_doi_updates.doi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_sql_doi_updates> .
+
+<http://weprov.csiro.au/controller/generate_doi_url_mapping.doi_records:aggregate_doi_urls.doi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generate_doi_url_mapping.doi_records:aggregate_doi_urls.doi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/aggregate_doi_urls> .
+
+<http://weprov.csiro.au/controller/make_sql_doi_updates.sql_insert:aggregate_sql_updates.sql>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_sql_doi_updates.sql_insert:aggregate_sql_updates.sql" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/aggregate_sql_updates> .
+
+<http://weprov.csiro.au/controller/read_input.filecontents:split_rows.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "read_input.filecontents:split_rows.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_rows> .
+
+<http://weprov.csiro.au/controller/seed:make_number_sequence.seed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seed:make_number_sequence.seed" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_number_sequence> .
+
+<http://weprov.csiro.au/controller/generate_doi.doi:generate_doi_url_mapping.doi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "generate_doi.doi:generate_doi_url_mapping.doi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi_url_mapping> .
+
+<http://weprov.csiro.au/controller/make_number_sequence.number_sequence:split_numbers_to_list.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_number_sequence.number_sequence:split_numbers_to_list.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_numbers_to_list> .
+
+<http://weprov.csiro.au/controller/split_fields.eprintid:make_number_sequence.trigger>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.eprintid:make_number_sequence.trigger" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_number_sequence> .
+
+<http://weprov.csiro.au/controller/split_fields.eprintid:make_sql_doi_updates.eprintid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.eprintid:make_sql_doi_updates.eprintid" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_sql_doi_updates> .
+
+<http://weprov.csiro.au/controller/split_fields.month:format_months.month>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.month:format_months.month" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/format_months> .
+
+<http://weprov.csiro.au/controller/split_fields.source:generate_doi.source>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.source:generate_doi.source" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi> .
+
+<http://weprov.csiro.au/controller/split_fields.url:generate_doi_url_mapping.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.url:generate_doi_url_mapping.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi_url_mapping> .
+
+<http://weprov.csiro.au/controller/split_fields.year:generate_doi.year>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_fields.year:generate_doi.year" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi> .
+
+<http://weprov.csiro.au/controller/split_more.split:split_fields.file>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_more.split:split_fields.file" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_fields> .
+
+<http://weprov.csiro.au/controller/split_numbers_to_list.split:generate_doi.seed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_numbers_to_list.split:generate_doi.seed" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/generate_doi> .
+
+<http://weprov.csiro.au/controller/split_rows.split:split_more.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_rows.split:split_more.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_more> .

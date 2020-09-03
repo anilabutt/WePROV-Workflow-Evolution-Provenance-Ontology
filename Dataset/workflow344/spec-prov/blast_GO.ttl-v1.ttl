@@ -1,0 +1,147 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/blast_report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/Gi_numbers> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/GO_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GOIDFromGiList> , <http://weprov.csiro.au/program/gi_number> , <http://weprov.csiro.au/program/Merge_string_list_to_string> , <http://weprov.csiro.au/program/separator> , <http://weprov.csiro.au/program/blastsimplifier> , <http://weprov.csiro.au/program/split_by_regex> , <http://weprov.csiro.au/program/regex> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GOIDFromGiList.result:GO_id> , <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:GOIDFromGiList.giList> , <http://weprov.csiro.au/controller/blast_report:blastsimplifier.new_direct_data> , <http://weprov.csiro.au/controller/blastsimplifier.output:Gi_numbers> , <http://weprov.csiro.au/controller/blastsimplifier.output:split_by_regex.string> , <http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi> , <http://weprov.csiro.au/controller/regex.value:split_by_regex.regex> , <http://weprov.csiro.au/controller/separator.value:Merge_string_list_to_string.seperator> , <http://weprov.csiro.au/controller/split_by_regex.split:Merge_string_list_to_string.stringlist> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GOIDFromGiList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GOIDFromGiList.result:GO_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GOIDFromGiList" .
+
+<http://weprov.csiro.au/program/gi_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gi_number" .
+
+<http://weprov.csiro.au/program/Merge_string_list_to_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:GOIDFromGiList.giList> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Merge_string_list_to_string" .
+
+<http://weprov.csiro.au/program/separator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/separator.value:Merge_string_list_to_string.seperator> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "separator" .
+
+<http://weprov.csiro.au/program/blastsimplifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blastsimplifier.output:Gi_numbers> , <http://weprov.csiro.au/controller/blastsimplifier.output:split_by_regex.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blastsimplifier" .
+
+<http://weprov.csiro.au/program/split_by_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_by_regex.split:Merge_string_list_to_string.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_by_regex" .
+
+<http://weprov.csiro.au/program/regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/regex.value:split_by_regex.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "regex" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/blast_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blast_report" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/Gi_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Gi_numbers" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:PYYNXDR0LZ0-v0/GO_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GO_id" .
+
+<http://weprov.csiro.au/controller/GOIDFromGiList.result:GO_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GOIDFromGiList.result:GO_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blast_report:blastsimplifier.new_direct_data> .
+
+<http://weprov.csiro.au/controller/Merge_string_list_to_string.concatenated:GOIDFromGiList.giList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Merge_string_list_to_string.concatenated:GOIDFromGiList.giList" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GOIDFromGiList> .
+
+<http://weprov.csiro.au/controller/blast_report:blastsimplifier.new_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_report:blastsimplifier.new_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:Gi_numbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:Gi_numbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:split_by_regex.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:split_by_regex.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_by_regex> .
+
+<http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gi_number.value:blastsimplifier.gi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/controller/regex.value:split_by_regex.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex.value:split_by_regex.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_by_regex> .
+
+<http://weprov.csiro.au/controller/separator.value:Merge_string_list_to_string.seperator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "separator.value:Merge_string_list_to_string.seperator" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .
+
+<http://weprov.csiro.au/controller/split_by_regex.split:Merge_string_list_to_string.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_by_regex.split:Merge_string_list_to_string.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Merge_string_list_to_string> .

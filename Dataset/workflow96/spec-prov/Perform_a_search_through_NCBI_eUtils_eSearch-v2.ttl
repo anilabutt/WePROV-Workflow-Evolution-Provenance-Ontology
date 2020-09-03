@@ -1,0 +1,77 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/terms> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/database> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/xml_output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/NCBI_eSearch> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in a search term and a database (e.g. snp, gene, protein) in which to perfom the search over. The result is an xml file containing summary information about the search term" ;
+        <http://purl.org/dc/terms/title>
+                "Perform a search through NCBI eUtils eSearch" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/database:parametersXML.db> , <http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters> , <http://weprov.csiro.au/controller/terms:parametersXML.term> , <http://weprov.csiro.au/controller/NCBI_eSearch.parameters:xml_output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/NCBI_eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NCBI_eSearch.parameters:xml_output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NCBI_eSearch" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/terms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "terms" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v1/xml_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml_output" .
+
+<http://weprov.csiro.au/controller/database:parametersXML.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database:parametersXML.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/database:parametersXML.db> , <http://weprov.csiro.au/controller/terms:parametersXML.term> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:NCBI_eSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NCBI_eSearch> .
+
+<http://weprov.csiro.au/controller/terms:parametersXML.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "terms:parametersXML.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/NCBI_eSearch.parameters:xml_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI_eSearch.parameters:xml_output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

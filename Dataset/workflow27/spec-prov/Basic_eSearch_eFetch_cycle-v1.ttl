@@ -1,0 +1,481 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/eFetch_output> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/WebEnv> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/Result_List> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/WebEnv_in_EFetch> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/sample_data> , <http://weprov.csiro.au/program/eSearch> , <http://weprov.csiro.au/program/eFetch> ;
+        <http://purl.org/dc/terms/description>
+                "This is an example workflow which uses the entrez eUtils to query the gene database at NCBI and retrieve same data about some genes." ;
+        <http://purl.org/dc/terms/title>
+                "eSearch_eFetch1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/eFetch.WebEnv_in_eFetch:WebEnv_in_EFetch> , <http://weprov.csiro.au/controller/eFetch.seq:eFetch_output> , <http://weprov.csiro.au/controller/eSearch.Query_key:eFetch.query_key> , <http://weprov.csiro.au/controller/eSearch.Result_List:Result_List> , <http://weprov.csiro.au/controller/eSearch.WebEnv:WebEnv> , <http://weprov.csiro.au/controller/eSearch.WebEnv:eFetch.WebEnv> , <http://weprov.csiro.au/controller/sample_data.db:eFetch.db> , <http://weprov.csiro.au/controller/sample_data.db:eSearch.db> , <http://weprov.csiro.au/controller/sample_data.term:eSearch.term> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/sample_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sample_data.db:eFetch.db> , <http://weprov.csiro.au/controller/sample_data.db:eSearch.db> , <http://weprov.csiro.au/controller/sample_data.term:eSearch.term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sample_data" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0/db> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0/term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/db> , <http://weprov.csiro.au/program/term> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "eUtils_sample_data1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/db.value:db> , <http://weprov.csiro.au/controller/term.value:term> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/db.value:db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "db" .
+
+<http://weprov.csiro.au/program/term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/term.value:term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "term" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0/db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "db" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:0b05da96-eea1-4ca9-8fc7-5d5717c44370-v0/term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "term" .
+
+<http://weprov.csiro.au/controller/db.value:db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "db.value:db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/db:run_eSearch_Parameters.db> , <http://weprov.csiro.au/controller/term:run_eSearch_Parameters.term> , <http://weprov.csiro.au/controller/WebEnv:eFetch_input.WebEnv> , <http://weprov.csiro.au/controller/db:eFetch_input.db> , <http://weprov.csiro.au/controller/WebEnv:WebEnv_in_eFetch> , <http://weprov.csiro.au/controller/query_key:eFetch_input.query_key> .
+
+<http://weprov.csiro.au/controller/term.value:term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "term.value:term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eSearch.Query_key:eFetch.query_key> , <http://weprov.csiro.au/controller/eSearch.Result_List:Result_List> , <http://weprov.csiro.au/controller/eSearch.WebEnv:WebEnv> , <http://weprov.csiro.au/controller/eSearch.WebEnv:eFetch.WebEnv> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eSearch" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/db> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/term> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Result_List> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/eSearch_Output> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Errors> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Query_Translation> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Query_key> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/WebEnv> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/run_eSearch_Parameters> , <http://weprov.csiro.au/program/use_history> , <http://weprov.csiro.au/program/run_eSearch_Output> , <http://weprov.csiro.au/program/run_eSearch> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "eSearch1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/db:run_eSearch_Parameters.db> , <http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_Output> , <http://weprov.csiro.au/controller/run_eSearch.parameters:run_eSearch_Output.input> , <http://weprov.csiro.au/controller/run_eSearch_Output.ERROR:Errors> , <http://weprov.csiro.au/controller/run_eSearch_Parameters.output:run_eSearch.parameters> , <http://weprov.csiro.au/controller/term:run_eSearch_Parameters.term> , <http://weprov.csiro.au/controller/use_history.value:run_eSearch_Parameters.usehistory> , <http://weprov.csiro.au/controller/run_eSearch_Output.IdList:Result_List> , <http://weprov.csiro.au/controller/run_eSearch_Output.QueryKey:Query_key> , <http://weprov.csiro.au/controller/run_eSearch_Output.QueryTranslation:Query_Translation> , <http://weprov.csiro.au/controller/run_eSearch_Output.WebEnv:WebEnv> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/run_eSearch_Parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSearch_Parameters.output:run_eSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSearch_Parameters" .
+
+<http://weprov.csiro.au/program/use_history>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/use_history.value:run_eSearch_Parameters.usehistory> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "use_history" .
+
+<http://weprov.csiro.au/program/run_eSearch_Output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSearch_Output.ERROR:Errors> , <http://weprov.csiro.au/controller/run_eSearch_Output.IdList:Result_List> , <http://weprov.csiro.au/controller/run_eSearch_Output.QueryKey:Query_key> , <http://weprov.csiro.au/controller/run_eSearch_Output.QueryTranslation:Query_Translation> , <http://weprov.csiro.au/controller/run_eSearch_Output.WebEnv:WebEnv> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSearch_Output" .
+
+<http://weprov.csiro.au/program/run_eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_Output> , <http://weprov.csiro.au/controller/run_eSearch.parameters:run_eSearch_Output.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSearch" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "db" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "term" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Result_List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Result_List" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/eSearch_Output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch_Output" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Errors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Errors" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Query_Translation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Query_Translation" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/Query_key>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Query_key" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d812057f-532d-4aa3-9de7-f8683fbcce63-v0/WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv" .
+
+<http://weprov.csiro.au/controller/db:run_eSearch_Parameters.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "db:run_eSearch_Parameters.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch_Parameters> .
+
+<http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_Output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch.parameters:eSearch_Output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/run_eSearch.parameters:run_eSearch_Output.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch.parameters:run_eSearch_Output.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch_Output> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Output.ERROR:Errors>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Output.ERROR:Errors" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Parameters.output:run_eSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Parameters.output:run_eSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch> .
+
+<http://weprov.csiro.au/controller/term:run_eSearch_Parameters.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "term:run_eSearch_Parameters.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch_Parameters> .
+
+<http://weprov.csiro.au/controller/use_history.value:run_eSearch_Parameters.usehistory>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "use_history.value:run_eSearch_Parameters.usehistory" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch_Parameters> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Output.IdList:Result_List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Output.IdList:Result_List" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Output.QueryKey:Query_key>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Output.QueryKey:Query_key" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Output.QueryTranslation:Query_Translation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Output.QueryTranslation:Query_Translation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/run_eSearch_Output.WebEnv:WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch_Output.WebEnv:WebEnv" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/eFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eFetch.WebEnv_in_eFetch:WebEnv_in_EFetch> , <http://weprov.csiro.au/controller/eFetch.seq:eFetch_output> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eFetch" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/WebEnv> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/query_key> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/db> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/seq> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/SeqSet> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/WebEnv_in_eFetch> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/eFetch_input> , <http://weprov.csiro.au/program/Bioseq_seq> , <http://weprov.csiro.au/program/eFetch_output> , <http://weprov.csiro.au/program/run_eFetch> ;
+        <http://purl.org/dc/terms/description>
+                "Given a list of Yeast genes IDs, returns a file with their sequences." ;
+        <http://purl.org/dc/terms/title>
+                "eFetch1" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/WebEnv:eFetch_input.WebEnv> , <http://weprov.csiro.au/controller/db:eFetch_input.db> , <http://weprov.csiro.au/controller/eFetch_input.output:run_eFetch.parameters> , <http://weprov.csiro.au/controller/Bioseq_seq.Bioseq-set_seq-set:seq> , <http://weprov.csiro.au/controller/WebEnv:WebEnv_in_eFetch> , <http://weprov.csiro.au/controller/query_key:eFetch_input.query_key> , <http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:Bioseq_seq.input> , <http://weprov.csiro.au/controller/run_eFetch.parameters:eFetch_output.input> , <http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:SeqSet> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/eFetch_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eFetch_input.output:run_eFetch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eFetch_input" .
+
+<http://weprov.csiro.au/program/Bioseq_seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Bioseq_seq.Bioseq-set_seq-set:seq> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Bioseq_seq" .
+
+<http://weprov.csiro.au/program/eFetch_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:Bioseq_seq.input> , <http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:SeqSet> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eFetch_output" .
+
+<http://weprov.csiro.au/program/run_eFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eFetch.parameters:eFetch_output.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eFetch" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "WebEnv" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/query_key>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_key" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "db" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seq" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/SeqSet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SeqSet" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:6a99a21a-f6fc-487e-b6fb-a394eb1e11ab-v0/WebEnv_in_eFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv_in_eFetch" .
+
+<http://weprov.csiro.au/controller/WebEnv:eFetch_input.WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv:eFetch_input.WebEnv" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch_input> .
+
+<http://weprov.csiro.au/controller/db:eFetch_input.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "db:eFetch_input.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch_input> .
+
+<http://weprov.csiro.au/controller/eFetch_input.output:run_eFetch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch_input.output:run_eFetch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eFetch> .
+
+<http://weprov.csiro.au/controller/Bioseq_seq.Bioseq-set_seq-set:seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Bioseq_seq.Bioseq-set_seq-set:seq" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/WebEnv:WebEnv_in_eFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv:WebEnv_in_eFetch" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/query_key:eFetch_input.query_key>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_key:eFetch_input.query_key" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch_input> .
+
+<http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:Bioseq_seq.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch_output.Bioseq-set:Bioseq_seq.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Bioseq_seq> .
+
+<http://weprov.csiro.au/controller/run_eFetch.parameters:eFetch_output.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eFetch.parameters:eFetch_output.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch_output> .
+
+<http://weprov.csiro.au/controller/eFetch_output.Bioseq-set:SeqSet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch_output.Bioseq-set:SeqSet" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/eFetch_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch_output" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/Result_List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Result_List" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:faf8febb-28ac-4077-9241-338b8eeb22a3-v0/WebEnv_in_EFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "WebEnv_in_EFetch" .
+
+<http://weprov.csiro.au/controller/eFetch.WebEnv_in_eFetch:WebEnv_in_EFetch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch.WebEnv_in_eFetch:WebEnv_in_EFetch" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eFetch.seq:eFetch_output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eFetch.seq:eFetch_output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eSearch.Query_key:eFetch.query_key>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch.Query_key:eFetch.query_key" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch> .
+
+<http://weprov.csiro.au/controller/eSearch.Result_List:Result_List>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch.Result_List:Result_List" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eSearch.WebEnv:WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch.WebEnv:WebEnv" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eSearch.WebEnv:eFetch.WebEnv>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch.WebEnv:eFetch.WebEnv" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch> .
+
+<http://weprov.csiro.au/controller/sample_data.db:eFetch.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sample_data.db:eFetch.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eFetch> .
+
+<http://weprov.csiro.au/controller/sample_data.db:eSearch.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sample_data.db:eSearch.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch> .
+
+<http://weprov.csiro.au/controller/sample_data.term:eSearch.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sample_data.term:eSearch.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch> .

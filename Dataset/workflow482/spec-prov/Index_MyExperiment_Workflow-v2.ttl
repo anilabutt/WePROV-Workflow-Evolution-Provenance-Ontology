@@ -1,0 +1,663 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/page> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/temp_location> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/indexname> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Select_temp_location> , <http://weprov.csiro.au/program/pages> , <http://weprov.csiro.au/program/page_iterator> , <http://weprov.csiro.au/program/create_url> , <http://weprov.csiro.au/program/Ask_index_name> , <http://weprov.csiro.au/program/Nested_Workflow> , <http://weprov.csiro.au/program/create_all_worksflows_location> , <http://weprov.csiro.au/program/append_extension> , <http://weprov.csiro.au/program/sandbox_myexperiment_org> , <http://weprov.csiro.au/program/getTargetURL> , <http://weprov.csiro.au/program/indexconfig> , <http://weprov.csiro.au/program/Get_workflow> , <http://weprov.csiro.au/program/Get_all_workflows> , <http://weprov.csiro.au/program/Write_Text_File> , <http://weprov.csiro.au/program/save_extract_workflow_XSLT> , <http://weprov.csiro.au/program/Extract_Workflows> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/make_XSLTlocation> , <http://weprov.csiro.au/program/extract_workflow_URIs> , <http://weprov.csiro.au/program/merge_title_description> , <http://weprov.csiro.au/program/save_workflow> , <http://weprov.csiro.au/program/add_prefix> , <http://weprov.csiro.au/program/addToIndexWithConfig> , <http://weprov.csiro.au/program/extractTitle> , <http://weprov.csiro.au/program/extractDescription> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "IndexAllOfMyExperimentWorkflow" , "IndexMyExperiment" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Extract_Workflows.outputStr:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/Get_all_workflows.contents:Write_Text_File.filecontents> , <http://weprov.csiro.au/controller/Get_workflow.contents:save_workflow.filecontents> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:getTargetURL.stringlist> , <http://weprov.csiro.au/controller/add_prefix.output:extractDescription.xml_filename> , <http://weprov.csiro.au/controller/add_prefix.output:extractTitle.xml_filename> , <http://weprov.csiro.au/controller/add_prefix.output:save_workflow.outputFile> , <http://weprov.csiro.au/controller/append_extension.output:addToIndexWithConfig.filename> , <http://weprov.csiro.au/controller/create_all_worksflows_location.output:Extract_Workflows.inFileURL> , <http://weprov.csiro.au/controller/create_all_worksflows_location.output:Write_Text_File.outputFile> , <http://weprov.csiro.au/controller/extractDescription.title:merge_title_description.string2> , <http://weprov.csiro.au/controller/extractTitle.title:append_extension.string1> , <http://weprov.csiro.au/controller/extractTitle.title:merge_title_description.string1> , <http://weprov.csiro.au/controller/extract_workflow_URIs.value:save_extract_workflow_XSLT.filecontents> , <http://weprov.csiro.au/controller/getTargetURL.filteredlist:Get_workflow.url> , <http://weprov.csiro.au/controller/getTargetURL.filteredlist:add_prefix.string2> , <http://weprov.csiro.au/controller/make_XSLTlocation.output:Extract_Workflows.xslFileURL> , <http://weprov.csiro.au/controller/make_XSLTlocation.output:save_extract_workflow_XSLT.outputFile> , <http://weprov.csiro.au/controller/merge_title_description.output:addToIndexWithConfig.filedata> , <http://weprov.csiro.au/controller/page:Get_all_workflows.url> , <http://weprov.csiro.au/controller/temp_location:add_prefix.string1> , <http://weprov.csiro.au/controller/temp_location:create_all_worksflows_location.string1> , <http://weprov.csiro.au/controller/temp_location:extractDescription.temp_location> , <http://weprov.csiro.au/controller/temp_location:extractTitle.temp_location> , <http://weprov.csiro.au/controller/temp_location:make_XSLTlocation.string1> , <http://weprov.csiro.au/controller/indexconfig.value:addToIndexWithConfig.config> , <http://weprov.csiro.au/controller/indexname:addToIndexWithConfig.indexName> , <http://weprov.csiro.au/controller/addToIndexWithConfig.addToIndexWithConfigReturn:out> , <http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_all_workflows.base> , <http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_workflow.base> , <http://weprov.csiro.au/controller/Ask_index_name.answer:Nested_Workflow.indexname> , <http://weprov.csiro.au/controller/Nested_Workflow.out:out> , <http://weprov.csiro.au/controller/Select_temp_location.answer:Nested_Workflow.temp_location> , <http://weprov.csiro.au/controller/create_url.output:Nested_Workflow.page> , <http://weprov.csiro.au/controller/page_iterator.split:create_url.string2> , <http://weprov.csiro.au/controller/pages.value:page_iterator.string> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Select_temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Select_temp_location.answer:Nested_Workflow.temp_location> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Select_temp_location" .
+
+<http://weprov.csiro.au/program/pages>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/pages.value:page_iterator.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "pages" .
+
+<http://weprov.csiro.au/program/page_iterator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/page_iterator.split:create_url.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "page_iterator" .
+
+<http://weprov.csiro.au/program/create_url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_url.output:Nested_Workflow.page> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_url" .
+
+<http://weprov.csiro.au/program/Ask_index_name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Ask_index_name.answer:Nested_Workflow.indexname> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Ask_index_name" .
+
+<http://weprov.csiro.au/program/Nested_Workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Nested_Workflow.out:out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Nested_Workflow" .
+
+<http://weprov.csiro.au/program/create_all_worksflows_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_all_worksflows_location.output:Extract_Workflows.inFileURL> , <http://weprov.csiro.au/controller/create_all_worksflows_location.output:Write_Text_File.outputFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_all_worksflows_location" .
+
+<http://weprov.csiro.au/program/append_extension>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/append_extension.output:addToIndexWithConfig.filename> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "append_extension" .
+
+<http://weprov.csiro.au/program/sandbox_myexperiment_org>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_all_workflows.base> , <http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_workflow.base> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sandbox_myexperiment_org" .
+
+<http://weprov.csiro.au/program/getTargetURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getTargetURL.filteredlist:Get_workflow.url> , <http://weprov.csiro.au/controller/getTargetURL.filteredlist:add_prefix.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getTargetURL" .
+
+<http://weprov.csiro.au/program/indexconfig>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/indexconfig.value:addToIndexWithConfig.config> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "indexconfig" .
+
+<http://weprov.csiro.au/program/Get_workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_workflow.contents:save_workflow.filecontents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_workflow" .
+
+<http://weprov.csiro.au/program/Get_all_workflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_all_workflows.contents:Write_Text_File.filecontents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_all_workflows" .
+
+<http://weprov.csiro.au/program/Write_Text_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_Text_File" .
+
+<http://weprov.csiro.au/program/save_extract_workflow_XSLT>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "save_extract_workflow_XSLT" .
+
+<http://weprov.csiro.au/program/Extract_Workflows>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Extract_Workflows.outputStr:Split_string_into_string_list_by_regular_expression.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Extract_Workflows" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:getTargetURL.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/make_XSLTlocation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/make_XSLTlocation.output:Extract_Workflows.xslFileURL> , <http://weprov.csiro.au/controller/make_XSLTlocation.output:save_extract_workflow_XSLT.outputFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "make_XSLTlocation" .
+
+<http://weprov.csiro.au/program/extract_workflow_URIs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extract_workflow_URIs.value:save_extract_workflow_XSLT.filecontents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extract_workflow_URIs" .
+
+<http://weprov.csiro.au/program/merge_title_description>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_title_description.output:addToIndexWithConfig.filedata> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_title_description" .
+
+<http://weprov.csiro.au/program/save_workflow>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "save_workflow" .
+
+<http://weprov.csiro.au/program/add_prefix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/add_prefix.output:extractDescription.xml_filename> , <http://weprov.csiro.au/controller/add_prefix.output:extractTitle.xml_filename> , <http://weprov.csiro.au/controller/add_prefix.output:save_workflow.outputFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "add_prefix" .
+
+<http://weprov.csiro.au/program/addToIndexWithConfig>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/addToIndexWithConfig.addToIndexWithConfigReturn:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "addToIndexWithConfig" .
+
+<http://weprov.csiro.au/program/extractTitle>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractTitle.title:append_extension.string1> , <http://weprov.csiro.au/controller/extractTitle.title:merge_title_description.string1> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractTitle" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/temp_location> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/xml_filename> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/title> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/make_temp_outputfilename> , <http://weprov.csiro.au/program/Write_XSL_File> , <http://weprov.csiro.au/program/make_XSL_location> , <http://weprov.csiro.au/program/XSL> , <http://weprov.csiro.au/program/Transform_XML> , <http://weprov.csiro.au/program/Read_Text_File> , <http://weprov.csiro.au/program/remove_xml> , <http://weprov.csiro.au/program/add_ID> , <http://weprov.csiro.au/program/extract_ID> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "extractTitle" , "extractDescription" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/temp_location:make_XSL_location.string1> , <http://weprov.csiro.au/controller/XSL.value:Write_XSL_File.filecontents> , <http://weprov.csiro.au/controller/make_XSL_location.output:Transform_XML.xslFileURL> , <http://weprov.csiro.au/controller/make_XSL_location.output:Write_XSL_File.outputFile> , <http://weprov.csiro.au/controller/temp_location:make_temp_outputfilename.string1> , <http://weprov.csiro.au/controller/xml_filename:Transform_XML.inFileURL> , <http://weprov.csiro.au/controller/Read_Text_File.filecontents:remove_xml.in> , <http://weprov.csiro.au/controller/make_temp_outputfilename.output:Read_Text_File.fileurl> , <http://weprov.csiro.au/controller/make_temp_outputfilename.output:Transform_XML.outFileURL> , <http://weprov.csiro.au/controller/xml_filename:extract_ID.in> , <http://weprov.csiro.au/controller/extract_ID.out:add_ID.string2> , <http://weprov.csiro.au/controller/remove_xml.out:add_ID.string1> , <http://weprov.csiro.au/controller/temp_location:extract_ID.tmp> , <http://weprov.csiro.au/controller/add_ID.output:title> , <http://weprov.csiro.au/controller/remove_xml.out:title> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/make_temp_outputfilename>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/make_temp_outputfilename.output:Read_Text_File.fileurl> , <http://weprov.csiro.au/controller/make_temp_outputfilename.output:Transform_XML.outFileURL> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "make_temp_outputfilename" .
+
+<http://weprov.csiro.au/program/Write_XSL_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Write_XSL_File" .
+
+<http://weprov.csiro.au/program/make_XSL_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/make_XSL_location.output:Transform_XML.xslFileURL> , <http://weprov.csiro.au/controller/make_XSL_location.output:Write_XSL_File.outputFile> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "make_XSL_location" .
+
+<http://weprov.csiro.au/program/XSL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/XSL.value:Write_XSL_File.filecontents> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "XSL" .
+
+<http://weprov.csiro.au/program/Transform_XML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Transform_XML" .
+
+<http://weprov.csiro.au/program/Read_Text_File>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_Text_File.filecontents:remove_xml.in> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_Text_File" .
+
+<http://weprov.csiro.au/program/remove_xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/remove_xml.out:add_ID.string1> , <http://weprov.csiro.au/controller/remove_xml.out:title> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "remove_xml" .
+
+<http://weprov.csiro.au/program/add_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/add_ID.output:title> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "add_ID" .
+
+<http://weprov.csiro.au/program/extract_ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extract_ID.out:add_ID.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extract_ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "temp_location" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/xml_filename>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xml_filename" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1/title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "title" .
+
+<http://weprov.csiro.au/controller/temp_location:make_XSL_location.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:make_XSL_location.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_XSL_location> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/temp_location:make_XSL_location.string1> , <http://weprov.csiro.au/controller/temp_location:make_temp_outputfilename.string1> , <http://weprov.csiro.au/controller/xml_filename:Transform_XML.inFileURL> , <http://weprov.csiro.au/controller/xml_filename:extract_ID.in> , <http://weprov.csiro.au/controller/temp_location:extract_ID.tmp> , <http://weprov.csiro.au/controller/page:Get_all_workflows.url> , <http://weprov.csiro.au/controller/temp_location:add_prefix.string1> , <http://weprov.csiro.au/controller/temp_location:create_all_worksflows_location.string1> , <http://weprov.csiro.au/controller/temp_location:extractDescription.temp_location> , <http://weprov.csiro.au/controller/temp_location:extractTitle.temp_location> , <http://weprov.csiro.au/controller/temp_location:make_XSLTlocation.string1> , <http://weprov.csiro.au/controller/indexname:addToIndexWithConfig.indexName> .
+
+<http://weprov.csiro.au/controller/XSL.value:Write_XSL_File.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "XSL.value:Write_XSL_File.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_XSL_File> .
+
+<http://weprov.csiro.au/controller/make_XSL_location.output:Transform_XML.xslFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_XSL_location.output:Transform_XML.xslFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/make_XSL_location.output:Write_XSL_File.outputFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_XSL_location.output:Write_XSL_File.outputFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_XSL_File> .
+
+<http://weprov.csiro.au/controller/temp_location:make_temp_outputfilename.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:make_temp_outputfilename.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_temp_outputfilename> .
+
+<http://weprov.csiro.au/controller/xml_filename:Transform_XML.inFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml_filename:Transform_XML.inFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/Read_Text_File.filecontents:remove_xml.in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_Text_File.filecontents:remove_xml.in" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/remove_xml> .
+
+<http://weprov.csiro.au/controller/make_temp_outputfilename.output:Read_Text_File.fileurl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_temp_outputfilename.output:Read_Text_File.fileurl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Read_Text_File> .
+
+<http://weprov.csiro.au/controller/make_temp_outputfilename.output:Transform_XML.outFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_temp_outputfilename.output:Transform_XML.outFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Transform_XML> .
+
+<http://weprov.csiro.au/controller/xml_filename:extract_ID.in>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml_filename:extract_ID.in" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract_ID> .
+
+<http://weprov.csiro.au/controller/extract_ID.out:add_ID.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract_ID.out:add_ID.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_ID> .
+
+<http://weprov.csiro.au/controller/remove_xml.out:add_ID.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "remove_xml.out:add_ID.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_ID> .
+
+<http://weprov.csiro.au/controller/temp_location:extract_ID.tmp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:extract_ID.tmp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract_ID> .
+
+<http://weprov.csiro.au/controller/add_ID.output:title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_ID.output:title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/extractDescription>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extractDescription.title:merge_title_description.string2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:cc4d7cfa-d20a-40c8-a4e8-230a7058dbae-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extractDescription" .
+
+<http://weprov.csiro.au/controller/remove_xml.out:title>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "remove_xml.out:title" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/page>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "page" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "temp_location" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/indexname>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "indexname" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:8703a10e-f268-421a-bb4a-910eb92339a8-v1/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Extract_Workflows.outputStr:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Extract_Workflows.outputStr:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/Get_all_workflows.contents:Write_Text_File.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_all_workflows.contents:Write_Text_File.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_Text_File> .
+
+<http://weprov.csiro.au/controller/Get_workflow.contents:save_workflow.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_workflow.contents:save_workflow.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/save_workflow> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:getTargetURL.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:getTargetURL.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getTargetURL> .
+
+<http://weprov.csiro.au/controller/add_prefix.output:extractDescription.xml_filename>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_prefix.output:extractDescription.xml_filename" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractDescription> .
+
+<http://weprov.csiro.au/controller/add_prefix.output:extractTitle.xml_filename>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_prefix.output:extractTitle.xml_filename" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractTitle> .
+
+<http://weprov.csiro.au/controller/add_prefix.output:save_workflow.outputFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "add_prefix.output:save_workflow.outputFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/save_workflow> .
+
+<http://weprov.csiro.au/controller/append_extension.output:addToIndexWithConfig.filename>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "append_extension.output:addToIndexWithConfig.filename" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addToIndexWithConfig> .
+
+<http://weprov.csiro.au/controller/create_all_worksflows_location.output:Extract_Workflows.inFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_all_worksflows_location.output:Extract_Workflows.inFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_Workflows> .
+
+<http://weprov.csiro.au/controller/create_all_worksflows_location.output:Write_Text_File.outputFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_all_worksflows_location.output:Write_Text_File.outputFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Write_Text_File> .
+
+<http://weprov.csiro.au/controller/extractDescription.title:merge_title_description.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractDescription.title:merge_title_description.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_title_description> .
+
+<http://weprov.csiro.au/controller/extractTitle.title:append_extension.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractTitle.title:append_extension.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/append_extension> .
+
+<http://weprov.csiro.au/controller/extractTitle.title:merge_title_description.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extractTitle.title:merge_title_description.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_title_description> .
+
+<http://weprov.csiro.au/controller/extract_workflow_URIs.value:save_extract_workflow_XSLT.filecontents>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract_workflow_URIs.value:save_extract_workflow_XSLT.filecontents" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/save_extract_workflow_XSLT> .
+
+<http://weprov.csiro.au/controller/getTargetURL.filteredlist:Get_workflow.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getTargetURL.filteredlist:Get_workflow.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_workflow> .
+
+<http://weprov.csiro.au/controller/getTargetURL.filteredlist:add_prefix.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getTargetURL.filteredlist:add_prefix.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_prefix> .
+
+<http://weprov.csiro.au/controller/make_XSLTlocation.output:Extract_Workflows.xslFileURL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_XSLTlocation.output:Extract_Workflows.xslFileURL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Extract_Workflows> .
+
+<http://weprov.csiro.au/controller/make_XSLTlocation.output:save_extract_workflow_XSLT.outputFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "make_XSLTlocation.output:save_extract_workflow_XSLT.outputFile" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/save_extract_workflow_XSLT> .
+
+<http://weprov.csiro.au/controller/merge_title_description.output:addToIndexWithConfig.filedata>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_title_description.output:addToIndexWithConfig.filedata" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addToIndexWithConfig> .
+
+<http://weprov.csiro.au/controller/page:Get_all_workflows.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "page:Get_all_workflows.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_all_workflows> .
+
+<http://weprov.csiro.au/controller/temp_location:add_prefix.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:add_prefix.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/add_prefix> .
+
+<http://weprov.csiro.au/controller/temp_location:create_all_worksflows_location.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:create_all_worksflows_location.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/create_all_worksflows_location> .
+
+<http://weprov.csiro.au/controller/temp_location:extractDescription.temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:extractDescription.temp_location" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractDescription> .
+
+<http://weprov.csiro.au/controller/temp_location:extractTitle.temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:extractTitle.temp_location" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extractTitle> .
+
+<http://weprov.csiro.au/controller/temp_location:make_XSLTlocation.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "temp_location:make_XSLTlocation.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/make_XSLTlocation> .
+
+<http://weprov.csiro.au/controller/indexconfig.value:addToIndexWithConfig.config>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "indexconfig.value:addToIndexWithConfig.config" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addToIndexWithConfig> .
+
+<http://weprov.csiro.au/controller/indexname:addToIndexWithConfig.indexName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "indexname:addToIndexWithConfig.indexName" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addToIndexWithConfig> .
+
+<http://weprov.csiro.au/controller/addToIndexWithConfig.addToIndexWithConfigReturn:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "addToIndexWithConfig.addToIndexWithConfigReturn:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_all_workflows.base>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sandbox_myexperiment_org.value:Get_all_workflows.base" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_all_workflows> .
+
+<http://weprov.csiro.au/controller/sandbox_myexperiment_org.value:Get_workflow.base>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sandbox_myexperiment_org.value:Get_workflow.base" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_workflow> .
+
+<http://weprov.csiro.au/controller/Ask_index_name.answer:Nested_Workflow.indexname>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Ask_index_name.answer:Nested_Workflow.indexname" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .
+
+<http://weprov.csiro.au/controller/Nested_Workflow.out:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Nested_Workflow.out:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Select_temp_location.answer:Nested_Workflow.temp_location>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Select_temp_location.answer:Nested_Workflow.temp_location" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .
+
+<http://weprov.csiro.au/controller/create_url.output:Nested_Workflow.page>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_url.output:Nested_Workflow.page" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Nested_Workflow> .
+
+<http://weprov.csiro.au/controller/page_iterator.split:create_url.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "page_iterator.split:create_url.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/create_url> .
+
+<http://weprov.csiro.au/controller/pages.value:page_iterator.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pages.value:page_iterator.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/page_iterator> .

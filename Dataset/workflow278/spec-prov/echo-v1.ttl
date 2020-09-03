@@ -1,0 +1,79 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:845965f6-8763-4581-84f9-a30610dd3856-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:845965f6-8763-4581-84f9-a30610dd3856-v0/StringToEcho> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:845965f6-8763-4581-84f9-a30610dd3856-v0/StringEchoed> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/echo> , <http://weprov.csiro.au/program/echoRequestXML> , <http://weprov.csiro.au/program/echoResponseXML> ;
+        <http://purl.org/dc/terms/description>
+                "The workflow tests the standard-compliance of web service descriptions of ARC-1, a development of the EU project \"KnowARC\" to modernise the grid infrastructure ARC of the NorduGrid. Learn more about it on http://www.knowarc.eu and http://www.nordugrid.org. If you have computers in spare - join us - and help you very own and many other sciences. And you make many interesting contacts just en passent.\n\nNo authorisation is required for this very experimental service." ;
+        <http://purl.org/dc/terms/title>
+                "echo" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/StringToEcho:echoRequestXML.say> , <http://weprov.csiro.au/controller/echo.echoResponse:echoResponseXML.input> , <http://weprov.csiro.au/controller/echoRequestXML.output:echo.echoRequest> , <http://weprov.csiro.au/controller/echoResponseXML.hear:StringEchoed> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/echo>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echo.echoResponse:echoResponseXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echo" .
+
+<http://weprov.csiro.au/program/echoRequestXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echoRequestXML.output:echo.echoRequest> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echoRequestXML" .
+
+<http://weprov.csiro.au/program/echoResponseXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/echoResponseXML.hear:StringEchoed> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "echoResponseXML" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:845965f6-8763-4581-84f9-a30610dd3856-v0/StringToEcho>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "StringToEcho" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:845965f6-8763-4581-84f9-a30610dd3856-v0/StringEchoed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringEchoed" .
+
+<http://weprov.csiro.au/controller/StringToEcho:echoRequestXML.say>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "StringToEcho:echoRequestXML.say" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echoRequestXML> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/StringToEcho:echoRequestXML.say> .
+
+<http://weprov.csiro.au/controller/echo.echoResponse:echoResponseXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echo.echoResponse:echoResponseXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echoResponseXML> .
+
+<http://weprov.csiro.au/controller/echoRequestXML.output:echo.echoRequest>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echoRequestXML.output:echo.echoRequest" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/echo> .
+
+<http://weprov.csiro.au/controller/echoResponseXML.hear:StringEchoed>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "echoResponseXML.hear:StringEchoed" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

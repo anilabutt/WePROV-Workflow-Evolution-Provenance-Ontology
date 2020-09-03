@@ -1,0 +1,217 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/intron> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/effect> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/mutations> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/regex_id_separator> , <http://weprov.csiro.au/program/regex_entry_list_separator> , <http://weprov.csiro.au/program/id_position> , <http://weprov.csiro.au/program/Split_string_into_list_by_regular_expression_2> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/String_list_intersection> , <http://weprov.csiro.au/program/tp53_somatic_mutations_database> , <http://weprov.csiro.au/program/getP53MutationIdsByEffect> , <http://weprov.csiro.au/program/getP53MutationsByIds> , <http://weprov.csiro.au/program/getP53MutationIdsByIntron> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes the intron, the effect and the TP53 somatic mutation database as input and retrieves the full TP53 somatic mutation description(s) by first retrieving two different outputs: \n- first output: a TP53 somatic mutation database unique IDs list associated with the input intron (done via a call to the getP53MutationIdsByIntron web service) \n- second otput: a TP53 somatic mutation database unique IDs list associated with the input effect (done via a call to the getP53MutationIdsByEffect web service)and then using IDs for retrieving the full TP53 somatic mutations descriptions (done via a call to the getP53MutationsByIds web service).\nAll these web services are available at the soaplab system at http://bioinformatics.istge.it:8080/axis/services\n<br>\nA number or string list local elaborations (for both outputs) are required:\n- returned IDs are in a string and this must be transformed in a list (done by the 'Split_string_into_string_list_by_regular_expression' processor and by the 'Split_string_into_string_list_by_regular_expression_2' processor, that are implemented by using a Split_string_into_string_list_by_regular_expression local processor)\n- comparison of the two above outputs and identification of the common subset (done by the 'String_list_intersection' processor, that is implemented by using a String_list_intersection local processor)\n- returned IDs include catalogues' names and this must be removed before their utilization for further processing (done by the 'Filter_list_of_strings_extracting_match_to_a_regex' processor, that is implemented by using a Filter_list_of_strings_extracting_match_to_a_regex local processor)\n<br>\nSpecial requirements on input data are:\n- the intron range of numbers is 2-11,\n- one or more of the following effects can be specified: 'fs' (frameshift), 'missense', 'na' (not available), 'nonsense', 'other', 'silent', 'splice'. Other values may lead to errors,\n- when specifying more than one intron or effect, they must be in a unique input string but on distinct text lines" ;
+        <http://purl.org/dc/terms/title>
+                "Search TP53 Somatic Mutation catalogue by intron and effect and retrieve full somatic mutation descriptions" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/intron:getP53MutationIdsByIntron.intron> , <http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/getP53MutationIdsByIntron.result:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/regex_id_separator.value:Filter_list_of_strings_extracting_match_to_a_regex.regex> , <http://weprov.csiro.au/controller/id_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group> , <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:getP53MutationsByIds.id> , <http://weprov.csiro.au/controller/getP53MutationsByIds.result:mutations> , <http://weprov.csiro.au/controller/effect:getP53MutationIdsByEffect.effect> , <http://weprov.csiro.au/controller/getP53MutationIdsByEffect.result:Split_string_into_list_by_regular_expression_2.string> , <http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_list_by_regular_expression_2.regex> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:String_list_intersection.list1> , <http://weprov.csiro.au/controller/Split_string_into_list_by_regular_expression_2.split:String_list_intersection.list2> , <http://weprov.csiro.au/controller/String_list_intersection.intersection:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> , <http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByEffect.libs> , <http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByIntron.libs> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/regex_id_separator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/regex_id_separator.value:Filter_list_of_strings_extracting_match_to_a_regex.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "regex_id_separator" .
+
+<http://weprov.csiro.au/program/regex_entry_list_separator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_list_by_regular_expression_2.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "regex_entry_list_separator" .
+
+<http://weprov.csiro.au/program/id_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/id_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "id_position" .
+
+<http://weprov.csiro.au/program/Split_string_into_list_by_regular_expression_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_list_by_regular_expression_2.split:String_list_intersection.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_list_by_regular_expression_2" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:getP53MutationsByIds.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:String_list_intersection.list1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/String_list_intersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_list_intersection.intersection:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_list_intersection" .
+
+<http://weprov.csiro.au/program/tp53_somatic_mutations_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByEffect.libs> , <http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByIntron.libs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tp53_somatic_mutations_database" .
+
+<http://weprov.csiro.au/program/getP53MutationIdsByEffect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationIdsByEffect.result:Split_string_into_list_by_regular_expression_2.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationIdsByEffect" .
+
+<http://weprov.csiro.au/program/getP53MutationsByIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationsByIds.result:mutations> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationsByIds" .
+
+<http://weprov.csiro.au/program/getP53MutationIdsByIntron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationIdsByIntron.result:Split_string_into_string_list_by_regular_expression.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationIdsByIntron" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/intron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "intron" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "effect" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:RTE7A0GDUO0-v0/mutations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mutations" .
+
+<http://weprov.csiro.au/controller/intron:getP53MutationIdsByIntron.intron>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "intron:getP53MutationIdsByIntron.intron" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsByIntron> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/intron:getP53MutationIdsByIntron.intron> , <http://weprov.csiro.au/controller/effect:getP53MutationIdsByEffect.effect> .
+
+<http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_string_list_by_regular_expression.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex_entry_list_separator.value:Split_string_into_string_list_by_regular_expression.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/getP53MutationIdsByIntron.result:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationIdsByIntron.result:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/regex_id_separator.value:Filter_list_of_strings_extracting_match_to_a_regex.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex_id_separator.value:Filter_list_of_strings_extracting_match_to_a_regex.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/id_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "id_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:getP53MutationsByIds.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:getP53MutationsByIds.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationsByIds> .
+
+<http://weprov.csiro.au/controller/getP53MutationsByIds.result:mutations>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationsByIds.result:mutations" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/effect:getP53MutationIdsByEffect.effect>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "effect:getP53MutationIdsByEffect.effect" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsByEffect> .
+
+<http://weprov.csiro.au/controller/getP53MutationIdsByEffect.result:Split_string_into_list_by_regular_expression_2.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationIdsByEffect.result:Split_string_into_list_by_regular_expression_2.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_list_by_regular_expression_2> .
+
+<http://weprov.csiro.au/controller/regex_entry_list_separator.value:Split_string_into_list_by_regular_expression_2.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex_entry_list_separator.value:Split_string_into_list_by_regular_expression_2.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_list_by_regular_expression_2> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:String_list_intersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:String_list_intersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/Split_string_into_list_by_regular_expression_2.split:String_list_intersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_list_by_regular_expression_2.split:String_list_intersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/String_list_intersection.intersection:Filter_list_of_strings_extracting_match_to_a_regex.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_list_intersection.intersection:Filter_list_of_strings_extracting_match_to_a_regex.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByEffect.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_somatic_mutations_database.value:getP53MutationIdsByEffect.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsByEffect> .
+
+<http://weprov.csiro.au/controller/tp53_somatic_mutations_database.value:getP53MutationIdsByIntron.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_somatic_mutations_database.value:getP53MutationIdsByIntron.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsByIntron> .

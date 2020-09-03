@@ -1,0 +1,215 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/kegg_gene_id_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/gene_descriptions> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/pathway_by_genes> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/pathway_descriptions> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/btit> , <http://weprov.csiro.au/program/get_pathways_by_genes> , <http://weprov.csiro.au/program/regex> , <http://weprov.csiro.au/program/Remove_duplicate_pathways> , <http://weprov.csiro.au/program/merge_descriptions> , <http://weprov.csiro.au/program/merge_pathways> , <http://weprov.csiro.au/program/split_by_regex> , <http://weprov.csiro.au/program/merge_pathways_2> , <http://weprov.csiro.au/program/remove_nulls_2> , <http://weprov.csiro.au/program/remove_Nulls> , <http://weprov.csiro.au/program/btit1> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow gets a series of information relating to a list of KEGG genes supplied to it. It also removes any null values from a list of strings." ;
+        <http://purl.org/dc/terms/title>
+                "Get Kegg Gene information" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Remove_duplicate_pathways.strippedlist:merge_pathways_2.stringlist> , <http://weprov.csiro.au/controller/btit1.return:pathway_descriptions> , <http://weprov.csiro.au/controller/btit.return:merge_descriptions.stringlist> , <http://weprov.csiro.au/controller/get_pathways_by_genes.return:merge_pathways.stringlist> , <http://weprov.csiro.au/controller/kegg_gene_id_list:btit.string> , <http://weprov.csiro.au/controller/kegg_gene_id_list:split_by_regex.string> , <http://weprov.csiro.au/controller/merge_descriptions.concatenated:remove_Nulls.input> , <http://weprov.csiro.au/controller/merge_pathways.concatenated:Remove_duplicate_pathways.stringlist> , <http://weprov.csiro.au/controller/merge_pathways.concatenated:btit1.string> , <http://weprov.csiro.au/controller/merge_pathways_2.concatenated:remove_nulls_2.input> , <http://weprov.csiro.au/controller/regex.value:split_by_regex.regex> , <http://weprov.csiro.au/controller/split_by_regex.split:get_pathways_by_genes.genes_id_list> , <http://weprov.csiro.au/controller/remove_Nulls.output:gene_descriptions> , <http://weprov.csiro.au/controller/remove_nulls_2.output:pathway_by_genes> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/btit>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/btit.return:merge_descriptions.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "btit" .
+
+<http://weprov.csiro.au/program/get_pathways_by_genes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_pathways_by_genes.return:merge_pathways.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_pathways_by_genes" .
+
+<http://weprov.csiro.au/program/regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/regex.value:split_by_regex.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "regex" .
+
+<http://weprov.csiro.au/program/Remove_duplicate_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_duplicate_pathways.strippedlist:merge_pathways_2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_duplicate_pathways" .
+
+<http://weprov.csiro.au/program/merge_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_descriptions.concatenated:remove_Nulls.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_descriptions" .
+
+<http://weprov.csiro.au/program/merge_pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_pathways.concatenated:Remove_duplicate_pathways.stringlist> , <http://weprov.csiro.au/controller/merge_pathways.concatenated:btit1.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_pathways" .
+
+<http://weprov.csiro.au/program/split_by_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_by_regex.split:get_pathways_by_genes.genes_id_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_by_regex" .
+
+<http://weprov.csiro.au/program/merge_pathways_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge_pathways_2.concatenated:remove_nulls_2.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge_pathways_2" .
+
+<http://weprov.csiro.au/program/remove_nulls_2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/remove_nulls_2.output:pathway_by_genes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "remove_nulls_2" .
+
+<http://weprov.csiro.au/program/remove_Nulls>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/remove_Nulls.output:gene_descriptions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "remove_Nulls" .
+
+<http://weprov.csiro.au/program/btit1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/btit1.return:pathway_descriptions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "btit1" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/kegg_gene_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "kegg_gene_id_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/gene_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gene_descriptions" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/pathway_by_genes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_by_genes" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02-v1/pathway_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathway_descriptions" .
+
+<http://weprov.csiro.au/controller/Remove_duplicate_pathways.strippedlist:merge_pathways_2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_duplicate_pathways.strippedlist:merge_pathways_2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_pathways_2> .
+
+<http://weprov.csiro.au/controller/btit1.return:pathway_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "btit1.return:pathway_descriptions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/kegg_gene_id_list:btit.string> , <http://weprov.csiro.au/controller/kegg_gene_id_list:split_by_regex.string> .
+
+<http://weprov.csiro.au/controller/btit.return:merge_descriptions.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "btit.return:merge_descriptions.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_descriptions> .
+
+<http://weprov.csiro.au/controller/get_pathways_by_genes.return:merge_pathways.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_pathways_by_genes.return:merge_pathways.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge_pathways> .
+
+<http://weprov.csiro.au/controller/kegg_gene_id_list:btit.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kegg_gene_id_list:btit.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/btit> .
+
+<http://weprov.csiro.au/controller/kegg_gene_id_list:split_by_regex.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kegg_gene_id_list:split_by_regex.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_by_regex> .
+
+<http://weprov.csiro.au/controller/merge_descriptions.concatenated:remove_Nulls.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_descriptions.concatenated:remove_Nulls.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/remove_Nulls> .
+
+<http://weprov.csiro.au/controller/merge_pathways.concatenated:Remove_duplicate_pathways.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_pathways.concatenated:Remove_duplicate_pathways.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_duplicate_pathways> .
+
+<http://weprov.csiro.au/controller/merge_pathways.concatenated:btit1.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_pathways.concatenated:btit1.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/btit1> .
+
+<http://weprov.csiro.au/controller/merge_pathways_2.concatenated:remove_nulls_2.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge_pathways_2.concatenated:remove_nulls_2.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/remove_nulls_2> .
+
+<http://weprov.csiro.au/controller/regex.value:split_by_regex.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "regex.value:split_by_regex.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split_by_regex> .
+
+<http://weprov.csiro.au/controller/split_by_regex.split:get_pathways_by_genes.genes_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_by_regex.split:get_pathways_by_genes.genes_id_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_pathways_by_genes> .
+
+<http://weprov.csiro.au/controller/remove_Nulls.output:gene_descriptions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "remove_Nulls.output:gene_descriptions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/remove_nulls_2.output:pathway_by_genes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "remove_nulls_2.output:pathway_by_genes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

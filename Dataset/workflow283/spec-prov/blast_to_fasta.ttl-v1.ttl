@@ -1,0 +1,155 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/blast_simple> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/fasta_sequences> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/molecular_type> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/blastsimplifier> , <http://weprov.csiro.au/program/blast_ddbj> , <http://weprov.csiro.au/program/gi_number> , <http://weprov.csiro.au/program/query_seq> , <http://weprov.csiro.au/program/database> , <http://weprov.csiro.au/program/program> , <http://weprov.csiro.au/program/GetFasta> , <http://weprov.csiro.au/program/MoleculeType> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "ddbjBlastn" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/GetFasta.result:fasta_sequences> , <http://weprov.csiro.au/controller/MoleculeType.result:molecular_type> , <http://weprov.csiro.au/controller/blast_ddbj.Result:blastsimplifier.new_direct_data> , <http://weprov.csiro.au/controller/blastsimplifier.output:GetFasta.gi> , <http://weprov.csiro.au/controller/blastsimplifier.output:MoleculeType.gi> , <http://weprov.csiro.au/controller/database.value:blast_ddbj.database> , <http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi> , <http://weprov.csiro.au/controller/program.value:blast_ddbj.program> , <http://weprov.csiro.au/controller/query_seq.value:blast_ddbj.query> , <http://weprov.csiro.au/controller/blastsimplifier.output:blast_simple> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/blastsimplifier>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blastsimplifier.output:GetFasta.gi> , <http://weprov.csiro.au/controller/blastsimplifier.output:MoleculeType.gi> , <http://weprov.csiro.au/controller/blastsimplifier.output:blast_simple> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blastsimplifier" .
+
+<http://weprov.csiro.au/program/blast_ddbj>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/blast_ddbj.Result:blastsimplifier.new_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "blast_ddbj" .
+
+<http://weprov.csiro.au/program/gi_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "gi_number" .
+
+<http://weprov.csiro.au/program/query_seq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/query_seq.value:blast_ddbj.query> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "query_seq" .
+
+<http://weprov.csiro.au/program/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/database.value:blast_ddbj.database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/program/program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/program.value:blast_ddbj.program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "program" .
+
+<http://weprov.csiro.au/program/GetFasta>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GetFasta.result:fasta_sequences> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GetFasta" .
+
+<http://weprov.csiro.au/program/MoleculeType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/MoleculeType.result:molecular_type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "MoleculeType" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/blast_simple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_simple" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/fasta_sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fasta_sequences" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:VZJS5NJL4P0-v0/molecular_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "molecular_type" .
+
+<http://weprov.csiro.au/controller/GetFasta.result:fasta_sequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GetFasta.result:fasta_sequences" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/MoleculeType.result:molecular_type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "MoleculeType.result:molecular_type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/blast_ddbj.Result:blastsimplifier.new_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_ddbj.Result:blastsimplifier.new_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:GetFasta.gi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:GetFasta.gi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/GetFasta> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:MoleculeType.gi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:MoleculeType.gi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/MoleculeType> .
+
+<http://weprov.csiro.au/controller/database.value:blast_ddbj.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database.value:blast_ddbj.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blast_ddbj> .
+
+<http://weprov.csiro.au/controller/gi_number.value:blastsimplifier.gi>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "gi_number.value:blastsimplifier.gi" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blastsimplifier> .
+
+<http://weprov.csiro.au/controller/program.value:blast_ddbj.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "program.value:blast_ddbj.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blast_ddbj> .
+
+<http://weprov.csiro.au/controller/query_seq.value:blast_ddbj.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "query_seq.value:blast_ddbj.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/blast_ddbj> .
+
+<http://weprov.csiro.au/controller/blastsimplifier.output:blast_simple>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastsimplifier.output:blast_simple" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

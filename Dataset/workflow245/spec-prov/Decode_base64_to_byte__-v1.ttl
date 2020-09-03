@@ -1,0 +1,47 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Decode_base64_to_byte> , <http://weprov.csiro.au/program/Byte___to_String> ;
+        <http://purl.org/dc/terms/description>
+                "The decode base64 to byte[] service decodes the base64 string.  The byte array is then converted into the string 'Hello world'." ;
+        <http://purl.org/dc/terms/title>
+                "Decode base64 to byte[]" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Byte___to_String.string:out> , <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:Byte___to_String.bytes> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Decode_base64_to_byte>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:Byte___to_String.bytes> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Decode_base64_to_byte" .
+
+<http://weprov.csiro.au/program/Byte___to_String>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Byte___to_String.string:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Byte___to_String" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e76467e0-81f5-4732-805f-bc9f3d7da30f-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Byte___to_String.string:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Byte___to_String.string:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:Byte___to_String.bytes>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Decode_base64_to_byte.bytes:Byte___to_String.bytes" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Byte___to_String> .

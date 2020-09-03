@@ -1,0 +1,127 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/PMID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/stack> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/translation> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/run_eSearch> , <http://weprov.csiro.au/program/eSearch_input_merger> , <http://weprov.csiro.au/program/Database> , <http://weprov.csiro.au/program/rettype> , <http://weprov.csiro.au/program/DOI> , <http://weprov.csiro.au/program/eSearch_output_splitter> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "DOI2PMID" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/DOI.value:eSearch_input_merger.term> , <http://weprov.csiro.au/controller/Database.value:eSearch_input_merger.db> , <http://weprov.csiro.au/controller/eSearch_input_merger.output:run_eSearch.parameters> , <http://weprov.csiro.au/controller/eSearch_output_splitter.IdList:PMID> , <http://weprov.csiro.au/controller/eSearch_output_splitter.QueryTranslation:translation> , <http://weprov.csiro.au/controller/eSearch_output_splitter.TranslationStack:stack> , <http://weprov.csiro.au/controller/rettype.value:eSearch_input_merger.rettype> , <http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_output_splitter.input> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/run_eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_output_splitter.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSearch" .
+
+<http://weprov.csiro.au/program/eSearch_input_merger>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eSearch_input_merger.output:run_eSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eSearch_input_merger" .
+
+<http://weprov.csiro.au/program/Database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Database.value:eSearch_input_merger.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Database" .
+
+<http://weprov.csiro.au/program/rettype>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/rettype.value:eSearch_input_merger.rettype> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "rettype" .
+
+<http://weprov.csiro.au/program/DOI>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DOI.value:eSearch_input_merger.term> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DOI" .
+
+<http://weprov.csiro.au/program/eSearch_output_splitter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/eSearch_output_splitter.IdList:PMID> , <http://weprov.csiro.au/controller/eSearch_output_splitter.QueryTranslation:translation> , <http://weprov.csiro.au/controller/eSearch_output_splitter.TranslationStack:stack> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "eSearch_output_splitter" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/PMID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PMID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/stack>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stack" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:5daeea50-2b92-4f4c-9970-0b24e5572226-v0/translation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "translation" .
+
+<http://weprov.csiro.au/controller/DOI.value:eSearch_input_merger.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DOI.value:eSearch_input_merger.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch_input_merger> .
+
+<http://weprov.csiro.au/controller/Database.value:eSearch_input_merger.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Database.value:eSearch_input_merger.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch_input_merger> .
+
+<http://weprov.csiro.au/controller/eSearch_input_merger.output:run_eSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch_input_merger.output:run_eSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSearch> .
+
+<http://weprov.csiro.au/controller/eSearch_output_splitter.IdList:PMID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch_output_splitter.IdList:PMID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eSearch_output_splitter.QueryTranslation:translation>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch_output_splitter.QueryTranslation:translation" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/eSearch_output_splitter.TranslationStack:stack>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "eSearch_output_splitter.TranslationStack:stack" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/rettype.value:eSearch_input_merger.rettype>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "rettype.value:eSearch_input_merger.rettype" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch_input_merger> .
+
+<http://weprov.csiro.au/controller/run_eSearch.parameters:eSearch_output_splitter.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSearch.parameters:eSearch_output_splitter.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/eSearch_output_splitter> .

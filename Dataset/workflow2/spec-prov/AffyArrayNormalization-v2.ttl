@@ -1,0 +1,475 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/User_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/Email_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/Password_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL1_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL2_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL3_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/ResultDir> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/url> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/status> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/job_id> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/downloaded> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/log> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/DownloadFile> , <http://weprov.csiro.au/program/Parse_Moby_Data_URL> , <http://weprov.csiro.au/program/Password> , <http://weprov.csiro.au/program/User> , <http://weprov.csiro.au/program/URL3> , <http://weprov.csiro.au/program/URL2> , <http://weprov.csiro.au/program/Parse_Moby_Data_Object_job_id> , <http://weprov.csiro.au/program/Email> , <http://weprov.csiro.au/program/URL1> , <http://weprov.csiro.au/program/AffyArrayNormalization_submit> , <http://weprov.csiro.au/program/CheckStatus> ;
+        <http://purl.org/dc/terms/description>
+                "The AffyArrayNormalization web services normalise raw Affymetrix GeneChip data. They are wrappers around Philip de Groot's normalization R script to provide remote programmatic access. This example workflow demonstrates the use of the AffyArrayNormalization services.\n\nThe flow is as follows:\n\n* A client executes the AffyArrayNormalization_submit service with two inputs: a User object and a collection of URLs to CEL files.\n* The User object contains a user ID, a password and an e-mail address. Currently the user ID and password can be any characters [a-zA-Z0-9]. Just pick something, there's no need to register them first. They are only used to make sure that the one who tries to download the results is the same person as the one who submitted the job.\n* Your job will be submitted to the SUN Grid Engine on the NuGO R-server. The e-mail address is used by the Sun Grid Engine to notify you when your job is done. We might also use it to send you feedback in case something goes wrong with your job, but it won't be used for anything else and will only be stored for a maximum of 7 days (together with your job's results).\n* The URLs to the CEL files must use either the http or https protocol. You can restrict access to these URLs using basic authentication and putting the username and password in the URL. For example if the user is pieter and the password is test you could have a URL like this: https://pieter:test@lab5.bioinformatics.nl/phenolink/home/TisMix_mix5a_01_v1_U133plus2.CEL. Hence you have to put the CEL files somewhere on a web server, so the AffyArrayNormalization_submit service can download them.\n* The AffyArrayNormalization_submit service returns a job ID and a link to the results. Once the job is done this link can be used to download the results. Results will be available for 7 days after which they will be deleted automatically. \n* The job ID is used to execute the AffyArrayNormalization_poll service inside a nested workflow. AffyArrayNormalization_poll returns the job status and unless the status is \"finished\" the entire nested workflow will fail. If the nested CheckStatus workflow fails, Taverna will automatically retry until it succeeds and hence the job has finished (or until the maximum number of retries is reached).\n* The nested DownloadFile workflow depends on successful completion of the nested CheckStatus workflow. The name says it all: It downloads the result, which is a single ZIP file. This workflow does not take care of unzipping the archive. You have to do that yourself.\n\nAffyArrayNormalization services use a secure connection over HTTPS. To make this work you *must* import our SSL certificates in your local Java keystores. You can do this either manually as described at https://www.bioinformatics.nl/phenolink/home/JavaAndHTTPS.html or use a Java tool to do the job as described at http://www.myexperiment.org/files/148" ;
+        <http://purl.org/dc/terms/title>
+                "AffyArrayNormalization" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):CheckStatus.Object_job_id> , <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')> , <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> , <http://weprov.csiro.au/controller/Email_id:Email.id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:DownloadFile.url> , <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> , <http://weprov.csiro.au/controller/Password_id:Password.id> , <http://weprov.csiro.au/controller/ResultDir:DownloadFile.path> , <http://weprov.csiro.au/controller/URL1_id:URL1.id> , <http://weprov.csiro.au/controller/URL2_id:URL2.id> , <http://weprov.csiro.au/controller/URL3_id:URL3.id> , <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):Parse_Moby_Data_Object_job_id.mobyData('Object')> , <http://weprov.csiro.au/controller/URL1.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> , <http://weprov.csiro.au/controller/URL2.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> , <http://weprov.csiro.au/controller/URL3.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> , <http://weprov.csiro.au/controller/User.mobyData:AffyArrayNormalization_submit.User(user)> , <http://weprov.csiro.au/controller/User_id:User.id> , <http://weprov.csiro.au/controller/CheckStatus.status:status> , <http://weprov.csiro.au/controller/DownloadFile.downloaded:downloaded> , <http://weprov.csiro.au/controller/DownloadFile.log_message:log> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_job_id.id:job_id> , <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:url> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/DownloadFile>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DownloadFile.downloaded:downloaded> , <http://weprov.csiro.au/controller/DownloadFile.log_message:log> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DownloadFile" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/url> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/path> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/downloaded> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/log_message> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Download> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "DownloadFile" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/path:Download.Path> , <http://weprov.csiro.au/controller/url:Download.URL> , <http://weprov.csiro.au/controller/Download.Downloaded:downloaded> , <http://weprov.csiro.au/controller/Download.Message:log_message> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Download>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Download.Downloaded:downloaded> , <http://weprov.csiro.au/controller/Download.Message:log_message> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Download" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/path>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "path" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/downloaded>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "downloaded" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:e68be16d-dce2-474b-9d45-c6ed1a25f4cd-v1/log_message>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "log_message" .
+
+<http://weprov.csiro.au/controller/path:Download.Path>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "path:Download.Path" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Download> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/path:Download.Path> , <http://weprov.csiro.au/controller/url:Download.URL> , <http://weprov.csiro.au/controller/Object_job_id:AffyArrayNormalization_poll.Object(job_id)> , <http://weprov.csiro.au/controller/Email_id:Email.id> , <http://weprov.csiro.au/controller/Password_id:Password.id> , <http://weprov.csiro.au/controller/ResultDir:DownloadFile.path> , <http://weprov.csiro.au/controller/URL1_id:URL1.id> , <http://weprov.csiro.au/controller/URL2_id:URL2.id> , <http://weprov.csiro.au/controller/URL3_id:URL3.id> , <http://weprov.csiro.au/controller/User_id:User.id> .
+
+<http://weprov.csiro.au/controller/url:Download.URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url:Download.URL" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Download> .
+
+<http://weprov.csiro.au/controller/Download.Downloaded:downloaded>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Download.Downloaded:downloaded" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Download.Message:log_message>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Download.Message:log_message" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_URL>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:DownloadFile.url> , <http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_URL" .
+
+<http://weprov.csiro.au/program/Password>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Password" .
+
+<http://weprov.csiro.au/program/User>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/User.mobyData:AffyArrayNormalization_submit.User(user)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "User" .
+
+<http://weprov.csiro.au/program/URL3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/URL3.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL3" .
+
+<http://weprov.csiro.au/program/URL2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/URL2.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL2" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Object_job_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_job_id.id:job_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Object_job_id" .
+
+<http://weprov.csiro.au/program/Email>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Email" .
+
+<http://weprov.csiro.au/program/URL1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/URL1.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL1" .
+
+<http://weprov.csiro.au/program/AffyArrayNormalization_submit>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):CheckStatus.Object_job_id> , <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')> , <http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):Parse_Moby_Data_Object_job_id.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AffyArrayNormalization_submit" .
+
+<http://weprov.csiro.au/program/CheckStatus>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CheckStatus.status:status> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CheckStatus" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1/Object_job_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1/status> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Fail_if_false> , <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/AffyArrayNormalization_poll> , <http://weprov.csiro.au/program/Parse_Moby_Data_Object_status> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "AffyArrayNormalization_status" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/AffyArrayNormalization_poll.Object(status):Parse_Moby_Data_Object_status.mobyData('Object')> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.job_finished:Fail_if_false.test> , <http://weprov.csiro.au/controller/Object_job_id:AffyArrayNormalization_poll.Object(job_id)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:Beanshell_scripting_host.status> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:status> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Fail_if_false>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fail_if_false" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.job_finished:Fail_if_false.test> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/AffyArrayNormalization_poll>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/AffyArrayNormalization_poll.Object(status):Parse_Moby_Data_Object_status.mobyData('Object')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "AffyArrayNormalization_poll" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Object_status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:Beanshell_scripting_host.status> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:status> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Object_status" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1/Object_job_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object_job_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:66901cf5-e28e-43d6-89bb-748923cfe9cd-v1/status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status" .
+
+<http://weprov.csiro.au/controller/AffyArrayNormalization_poll.Object(status):Parse_Moby_Data_Object_status.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AffyArrayNormalization_poll.Object(status):Parse_Moby_Data_Object_status.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Object_status> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.job_finished:Fail_if_false.test>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.job_finished:Fail_if_false.test" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Fail_if_false> .
+
+<http://weprov.csiro.au/controller/Object_job_id:AffyArrayNormalization_poll.Object(job_id)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object_job_id:AffyArrayNormalization_poll.Object(job_id)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AffyArrayNormalization_poll> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:Beanshell_scripting_host.status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Object_status.id:Beanshell_scripting_host.status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Object_status.id:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Object_status.id:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/User_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "User_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/Email_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Email_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/Password_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Password_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL1_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL1_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL2_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL2_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/URL3_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "URL3_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/ResultDir>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ResultDir" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "url" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "status" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/job_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "job_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/downloaded>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "downloaded" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:BB74LM87OX0-v1/log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "log" .
+
+<http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):CheckStatus.Object_job_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AffyArrayNormalization_submit.Object(job_id):CheckStatus.Object_job_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CheckStatus> .
+
+<http://weprov.csiro.au/controller/AffyArrayNormalization_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AffyArrayNormalization_submit.URL(result):Parse_Moby_Data_URL.mobyData('URL')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_URL> .
+
+<http://weprov.csiro.au/controller/Email.mobyData:User.Email(email)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Email.mobyData:User.Email(email)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/Email_id:Email.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Email_id:Email.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Email> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:DownloadFile.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_URL.id:DownloadFile.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DownloadFile> .
+
+<http://weprov.csiro.au/controller/Password.mobyData:User.Password(password)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Password.mobyData:User.Password(password)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/Password_id:Password.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Password_id:Password.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Password> .
+
+<http://weprov.csiro.au/controller/ResultDir:DownloadFile.path>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ResultDir:DownloadFile.path" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DownloadFile> .
+
+<http://weprov.csiro.au/controller/URL1_id:URL1.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL1_id:URL1.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/URL1> .
+
+<http://weprov.csiro.au/controller/URL2_id:URL2.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL2_id:URL2.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/URL2> .
+
+<http://weprov.csiro.au/controller/URL3_id:URL3.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL3_id:URL3.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/URL3> .
+
+<http://weprov.csiro.au/controller/AffyArrayNormalization_submit.Object(job_id):Parse_Moby_Data_Object_job_id.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "AffyArrayNormalization_submit.Object(job_id):Parse_Moby_Data_Object_job_id.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Object_job_id> .
+
+<http://weprov.csiro.au/controller/URL1.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL1.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AffyArrayNormalization_submit> .
+
+<http://weprov.csiro.au/controller/URL2.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL2.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AffyArrayNormalization_submit> .
+
+<http://weprov.csiro.au/controller/URL3.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "URL3.mobyData:AffyArrayNormalization_submit.URL(Collection - 'cel_files')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AffyArrayNormalization_submit> .
+
+<http://weprov.csiro.au/controller/User.mobyData:AffyArrayNormalization_submit.User(user)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "User.mobyData:AffyArrayNormalization_submit.User(user)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/AffyArrayNormalization_submit> .
+
+<http://weprov.csiro.au/controller/User_id:User.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "User_id:User.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/User> .
+
+<http://weprov.csiro.au/controller/CheckStatus.status:status>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CheckStatus.status:status" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/DownloadFile.downloaded:downloaded>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DownloadFile.downloaded:downloaded" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/DownloadFile.log_message:log>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DownloadFile.log_message:log" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Object_job_id.id:job_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Object_job_id.id:job_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_URL.id:url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_URL.id:url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

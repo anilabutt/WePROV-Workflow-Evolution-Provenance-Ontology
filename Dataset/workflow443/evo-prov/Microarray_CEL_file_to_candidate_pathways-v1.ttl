@@ -1,0 +1,84 @@
+<http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:16.589Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Paul Fisher / Jun Zhao> .
+
+<http://weprov.csiro.au/agent/Paul Fisher / Jun Zhao>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Paul Fisher / Jun Zhao" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:16.589Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.csiro.au/digiscape/weprov#wasPartOf>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:16.592Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:P81DV9PQW02> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:16.592Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Paul Fisher> .
+
+<http://weprov.csiro.au/agent/Paul Fisher>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Paul Fisher" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:www.mygrid.org.uk:operation:RUO295H3GU0> .
+
+<http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3>
+        a       <http://www.csiro.au/digiscape/weprov#Creation> , <http://www.w3.org/ns/prov#Activity> ;
+        <http://www.w3.org/ns/prov#startedAtTime>
+                "2020-02-11T04:48:16.601Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://www.w3.org/ns/prov#wasAssociatedWith>
+                <http://weprov.csiro.au/agent/Saeedeh Maleki-Dizaji and Paul Fisher> .
+
+<http://weprov.csiro.au/agent/Saeedeh Maleki-Dizaji and Paul Fisher>
+        a       <http://www.w3.org/ns/prov#Agent> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Saeedeh Maleki-Dizaji and Paul Fisher" .
+
+<http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3>
+        a       <http://www.w3.org/ns/prov#Generation> ;
+        <http://www.w3.org/ns/prov#activity>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3> ;
+        <http://www.w3.org/ns/prov#atTime>
+                "2020-02-11T04:48:16.601Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3>
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" ;
+        <http://www.w3.org/ns/prov#qualifiedGeneration>
+                <http://weprov.csiro.au/evolution/generation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3> ;
+        <http://www.w3.org/ns/prov#wasGeneratedBy>
+                <http://weprov.csiro.au/evolution/creation/urn:lsid:net.sf.taverna:wfDefinition:d93a16c9-b599-48b4-b2c8-562127456fa3> .

@@ -1,0 +1,464 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:987VIOO8G26-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:987VIOO8G26-v1/cell_line_lib> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:987VIOO8G26-v1/result> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/token_position> , <http://weprov.csiro.au/program/label_identifier_regex> , <http://weprov.csiro.au/program/split_list_regex> , <http://weprov.csiro.au/program/tp53_somatic_database> , <http://weprov.csiro.au/program/wild_card> , <http://weprov.csiro.au/program/tp53_iarc_label_separator> , <http://weprov.csiro.au/program/Remove_any_blank_space> , <http://weprov.csiro.au/program/Remove_any_minus_character> , <http://weprov.csiro.au/program/String_Constant> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> , <http://weprov.csiro.au/program/String_list_intersection> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex1> , <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression_for_tp53> , <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex2> , <http://weprov.csiro.au/program/Get_pubmed_xml_by_pmid> , <http://weprov.csiro.au/program/Concatenate_two_strings> , <http://weprov.csiro.au/program/getP53MutationIdsBySampleName> , <http://weprov.csiro.au/program/getP53SampleNames> , <http://weprov.csiro.au/program/getCellLineByName> , <http://weprov.csiro.au/program/getP53PubMedIdByIds> , <http://weprov.csiro.au/program/Retrieve_all_cell_line_names> , <http://weprov.csiro.au/program/getP53MutationsBySampleName> , <http://weprov.csiro.au/program/Concatenate_two_strings1> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/cell_line_lib:Retrieve_all_cell_line_names.libs> , <http://weprov.csiro.au/controller/Retrieve_all_cell_line_names.result:Split_string_into_string_list_by_regular_expression.string> , <http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group> , <http://weprov.csiro.au/controller/label_identifier_regex.value:Filter_list_of_strings_extracting_match_to_a_regex.regex> , <http://weprov.csiro.au/controller/wild_card.value:Retrieve_all_cell_line_names.id> , <http://weprov.csiro.au/controller/wild_card.value:getP53SampleNames.id> , <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53SampleNames.libs> , <http://weprov.csiro.au/controller/getP53SampleNames.result:Split_string_into_string_list_by_regular_expression_for_tp53.string> , <http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression_for_tp53.regex> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.group> , <http://weprov.csiro.au/controller/tp53_iarc_label_separator.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.regex> , <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression_for_tp53.split:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.stringlist> , <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:String_list_intersection.list1> , <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.filteredlist:String_list_intersection.list2> , <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationsBySampleName.libs> , <http://weprov.csiro.au/controller/String_list_intersection.intersection:Remove_any_blank_space.input_str> , <http://weprov.csiro.au/controller/Remove_any_blank_space.output_str:Remove_any_minus_character.input_str> , <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationsBySampleName.sample> , <http://weprov.csiro.au/controller/cell_line_lib:getCellLineByName.libs> , <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getCellLineByName.sample> , <http://weprov.csiro.au/controller/getCellLineByName.result:Concatenate_two_strings.string1> , <http://weprov.csiro.au/controller/getP53MutationsBySampleName.result:Concatenate_two_strings.string2> , <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationIdsBySampleName.libs> , <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationIdsBySampleName.sample> , <http://weprov.csiro.au/controller/getP53MutationIdsBySampleName.result:Filter_list_of_strings_extracting_match_to_a_regex1.stringlist> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex1.group> , <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex1.filteredlist:getP53PubMedIdByIds.id> , <http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex1.regex> , <http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex2.regex> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex2.group> , <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex2.filteredlist:Get_pubmed_xml_by_pmid.id> , <http://weprov.csiro.au/controller/getP53PubMedIdByIds.result:Filter_list_of_strings_extracting_match_to_a_regex2.stringlist> , <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/Get_pubmed_xml_by_pmid.outputText:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:result> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/token_position>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.group> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex1.group> , <http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex2.group> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "token_position" .
+
+<http://weprov.csiro.au/program/label_identifier_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/label_identifier_regex.value:Filter_list_of_strings_extracting_match_to_a_regex.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "label_identifier_regex" .
+
+<http://weprov.csiro.au/program/split_list_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression.regex> , <http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression_for_tp53.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split_list_regex" .
+
+<http://weprov.csiro.au/program/tp53_somatic_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53SampleNames.libs> , <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationsBySampleName.libs> , <http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationIdsBySampleName.libs> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tp53_somatic_database" .
+
+<http://weprov.csiro.au/program/wild_card>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/wild_card.value:Retrieve_all_cell_line_names.id> , <http://weprov.csiro.au/controller/wild_card.value:getP53SampleNames.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "wild_card" .
+
+<http://weprov.csiro.au/program/tp53_iarc_label_separator>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tp53_iarc_label_separator.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tp53_iarc_label_separator" .
+
+<http://weprov.csiro.au/program/Remove_any_blank_space>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_any_blank_space.output_str:Remove_any_minus_character.input_str> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_any_blank_space" .
+
+<http://weprov.csiro.au/program/Remove_any_minus_character>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationsBySampleName.sample> , <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getCellLineByName.sample> , <http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationIdsBySampleName.sample> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Remove_any_minus_character" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex1.regex> , <http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex2.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.filteredlist:String_list_intersection.list2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex_for_tp53" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression" .
+
+<http://weprov.csiro.au/program/String_list_intersection>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_list_intersection.intersection:Remove_any_blank_space.input_str> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_list_intersection" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:String_list_intersection.list1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex1.filteredlist:getP53PubMedIdByIds.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex1" .
+
+<http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression_for_tp53>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression_for_tp53.split:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Split_string_into_string_list_by_regular_expression_for_tp53" .
+
+<http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex2.filteredlist:Get_pubmed_xml_by_pmid.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Filter_list_of_strings_extracting_match_to_a_regex2" .
+
+<http://weprov.csiro.au/program/Get_pubmed_xml_by_pmid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_pubmed_xml_by_pmid.outputText:Concatenate_two_strings1.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_pubmed_xml_by_pmid" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings.output:Concatenate_two_strings1.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings" .
+
+<http://weprov.csiro.au/program/getP53MutationIdsBySampleName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationIdsBySampleName.result:Filter_list_of_strings_extracting_match_to_a_regex1.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationIdsBySampleName" .
+
+<http://weprov.csiro.au/program/getP53SampleNames>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53SampleNames.result:Split_string_into_string_list_by_regular_expression_for_tp53.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53SampleNames" .
+
+<http://weprov.csiro.au/program/getCellLineByName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getCellLineByName.result:Concatenate_two_strings.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getCellLineByName" .
+
+<http://weprov.csiro.au/program/getP53PubMedIdByIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53PubMedIdByIds.result:Filter_list_of_strings_extracting_match_to_a_regex2.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53PubMedIdByIds" .
+
+<http://weprov.csiro.au/program/Retrieve_all_cell_line_names>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Retrieve_all_cell_line_names.result:Split_string_into_string_list_by_regular_expression.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Retrieve_all_cell_line_names" .
+
+<http://weprov.csiro.au/program/getP53MutationsBySampleName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getP53MutationsBySampleName.result:Concatenate_two_strings.string2> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getP53MutationsBySampleName" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:result> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings1" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:987VIOO8G26-v1/cell_line_lib>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cell_line_lib" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:987VIOO8G26-v1/result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "result" .
+
+<http://weprov.csiro.au/controller/cell_line_lib:Retrieve_all_cell_line_names.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cell_line_lib:Retrieve_all_cell_line_names.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_all_cell_line_names> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cell_line_lib:Retrieve_all_cell_line_names.libs> , <http://weprov.csiro.au/controller/cell_line_lib:getCellLineByName.libs> .
+
+<http://weprov.csiro.au/controller/Retrieve_all_cell_line_names.result:Split_string_into_string_list_by_regular_expression.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Retrieve_all_cell_line_names.result:Split_string_into_string_list_by_regular_expression.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_list_regex.value:Split_string_into_string_list_by_regular_expression.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression.split:Filter_list_of_strings_extracting_match_to_a_regex.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token_position.value:Filter_list_of_strings_extracting_match_to_a_regex.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/label_identifier_regex.value:Filter_list_of_strings_extracting_match_to_a_regex.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "label_identifier_regex.value:Filter_list_of_strings_extracting_match_to_a_regex.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex> .
+
+<http://weprov.csiro.au/controller/wild_card.value:Retrieve_all_cell_line_names.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wild_card.value:Retrieve_all_cell_line_names.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Retrieve_all_cell_line_names> .
+
+<http://weprov.csiro.au/controller/wild_card.value:getP53SampleNames.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "wild_card.value:getP53SampleNames.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53SampleNames> .
+
+<http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53SampleNames.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_somatic_database.value:getP53SampleNames.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53SampleNames> .
+
+<http://weprov.csiro.au/controller/getP53SampleNames.result:Split_string_into_string_list_by_regular_expression_for_tp53.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53SampleNames.result:Split_string_into_string_list_by_regular_expression_for_tp53.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression_for_tp53> .
+
+<http://weprov.csiro.au/controller/split_list_regex.value:Split_string_into_string_list_by_regular_expression_for_tp53.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split_list_regex.value:Split_string_into_string_list_by_regular_expression_for_tp53.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Split_string_into_string_list_by_regular_expression_for_tp53> .
+
+<http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token_position.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53> .
+
+<http://weprov.csiro.au/controller/tp53_iarc_label_separator.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_iarc_label_separator.value:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53> .
+
+<http://weprov.csiro.au/controller/Split_string_into_string_list_by_regular_expression_for_tp53.split:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Split_string_into_string_list_by_regular_expression_for_tp53.split:Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:String_list_intersection.list1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex.filteredlist:String_list_intersection.list1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.filteredlist:String_list_intersection.list2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex_for_tp53.filteredlist:String_list_intersection.list2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/String_list_intersection> .
+
+<http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationsBySampleName.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_somatic_database.value:getP53MutationsBySampleName.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationsBySampleName> .
+
+<http://weprov.csiro.au/controller/String_list_intersection.intersection:Remove_any_blank_space.input_str>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_list_intersection.intersection:Remove_any_blank_space.input_str" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_any_blank_space> .
+
+<http://weprov.csiro.au/controller/Remove_any_blank_space.output_str:Remove_any_minus_character.input_str>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_any_blank_space.output_str:Remove_any_minus_character.input_str" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Remove_any_minus_character> .
+
+<http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationsBySampleName.sample>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_any_minus_character.output_str:getP53MutationsBySampleName.sample" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationsBySampleName> .
+
+<http://weprov.csiro.au/controller/cell_line_lib:getCellLineByName.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cell_line_lib:getCellLineByName.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCellLineByName> .
+
+<http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getCellLineByName.sample>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_any_minus_character.output_str:getCellLineByName.sample" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getCellLineByName> .
+
+<http://weprov.csiro.au/controller/getCellLineByName.result:Concatenate_two_strings.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getCellLineByName.result:Concatenate_two_strings.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/getP53MutationsBySampleName.result:Concatenate_two_strings.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationsBySampleName.result:Concatenate_two_strings.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings> .
+
+<http://weprov.csiro.au/controller/tp53_somatic_database.value:getP53MutationIdsBySampleName.libs>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tp53_somatic_database.value:getP53MutationIdsBySampleName.libs" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsBySampleName> .
+
+<http://weprov.csiro.au/controller/Remove_any_minus_character.output_str:getP53MutationIdsBySampleName.sample>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Remove_any_minus_character.output_str:getP53MutationIdsBySampleName.sample" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53MutationIdsBySampleName> .
+
+<http://weprov.csiro.au/controller/getP53MutationIdsBySampleName.result:Filter_list_of_strings_extracting_match_to_a_regex1.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53MutationIdsBySampleName.result:Filter_list_of_strings_extracting_match_to_a_regex1.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex1> .
+
+<http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex1.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token_position.value:Filter_list_of_strings_extracting_match_to_a_regex1.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex1> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex1.filteredlist:getP53PubMedIdByIds.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex1.filteredlist:getP53PubMedIdByIds.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getP53PubMedIdByIds> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex1.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex1.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex1> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex2.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Filter_list_of_strings_extracting_match_to_a_regex2.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex2> .
+
+<http://weprov.csiro.au/controller/token_position.value:Filter_list_of_strings_extracting_match_to_a_regex2.group>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "token_position.value:Filter_list_of_strings_extracting_match_to_a_regex2.group" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex2> .
+
+<http://weprov.csiro.au/controller/Filter_list_of_strings_extracting_match_to_a_regex2.filteredlist:Get_pubmed_xml_by_pmid.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Filter_list_of_strings_extracting_match_to_a_regex2.filteredlist:Get_pubmed_xml_by_pmid.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_pubmed_xml_by_pmid> .
+
+<http://weprov.csiro.au/controller/getP53PubMedIdByIds.result:Filter_list_of_strings_extracting_match_to_a_regex2.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getP53PubMedIdByIds.result:Filter_list_of_strings_extracting_match_to_a_regex2.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Filter_list_of_strings_extracting_match_to_a_regex2> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings.output:Concatenate_two_strings1.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings.output:Concatenate_two_strings1.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/controller/Get_pubmed_xml_by_pmid.outputText:Concatenate_two_strings1.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_pubmed_xml_by_pmid.outputText:Concatenate_two_strings1.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings1.output:result>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings1.output:result" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

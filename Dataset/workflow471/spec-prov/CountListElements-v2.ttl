@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v1/xml_list> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v1/count> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/CountListElements> ;
+        <http://purl.org/dc/terms/description>
+                "Very simple workflow to count the number of items in a list (top level only in case of nested lists). Does no more than\ncount = list.size();" ;
+        <http://purl.org/dc/terms/title>
+                "CountListElements" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/xml_list:CountListElements.list> , <http://weprov.csiro.au/controller/CountListElements.count:count> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/CountListElements>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/CountListElements.count:count> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "CountListElements" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v1/xml_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "xml_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:bc985989-2fee-4b0c-92b0-c5031adc6c85-v1/count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count" .
+
+<http://weprov.csiro.au/controller/xml_list:CountListElements.list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "xml_list:CountListElements.list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/CountListElements> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/xml_list:CountListElements.list> .
+
+<http://weprov.csiro.au/controller/CountListElements.count:count>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "CountListElements.count:count" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,141 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/output> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/pathwayId> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/pathwayImage> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/getKeggPathwaysByKeggID> , <http://weprov.csiro.au/program/Object> , <http://weprov.csiro.au/program/Parse_Moby_Data_Object> , <http://weprov.csiro.au/program/getKeggPathwayAsGif> , <http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_gif> , <http://weprov.csiro.au/program/Decode_base64_to_byte> , <http://weprov.csiro.au/program/String_Constant> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow retrieves KEGG  pathway id and image given a KEGG gene id. \ne.g hsa:6402 or eco:b0002" ;
+        <http://purl.org/dc/terms/title>
+                "keggID to Kegg pathways with BioMoby services" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:pathwayImage> , <http://weprov.csiro.au/controller/Object.mobyData:getKeggPathwaysByKeggID.Object(keggID)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_gif.image_'content':Decode_base64_to_byte.base64> , <http://weprov.csiro.au/controller/String_Constant.value:Object.id> , <http://weprov.csiro.au/controller/getKeggPathwayAsGif.b64_encoded_gif(image):Parse_Moby_Data_b64_encoded_gif.mobyData('b64_encoded_gif')> , <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):getKeggPathwayAsGif.Object(pathway)> , <http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:pathwayId> , <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):Parse_Moby_Data_Object.mobyData('Object')> , <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways'):output> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/getKeggPathwaysByKeggID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):getKeggPathwayAsGif.Object(pathway)> , <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):Parse_Moby_Data_Object.mobyData('Object')> , <http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways'):output> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getKeggPathwaysByKeggID" .
+
+<http://weprov.csiro.au/program/Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Object.mobyData:getKeggPathwaysByKeggID.Object(keggID)> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Object" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_Object>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:pathwayId> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_Object" .
+
+<http://weprov.csiro.au/program/getKeggPathwayAsGif>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getKeggPathwayAsGif.b64_encoded_gif(image):Parse_Moby_Data_b64_encoded_gif.mobyData('b64_encoded_gif')> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getKeggPathwayAsGif" .
+
+<http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_gif>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_gif.image_'content':Decode_base64_to_byte.base64> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Parse_Moby_Data_b64_encoded_gif" .
+
+<http://weprov.csiro.au/program/Decode_base64_to_byte>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:pathwayImage> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Decode_base64_to_byte" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Object.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "output" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/pathwayId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathwayId" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:30ae8bf5-7d1d-4b57-b09c-0b81daa4422d-v1/pathwayImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathwayImage" .
+
+<http://weprov.csiro.au/controller/Decode_base64_to_byte.bytes:pathwayImage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Decode_base64_to_byte.bytes:pathwayImage" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Object.mobyData:getKeggPathwaysByKeggID.Object(keggID)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Object.mobyData:getKeggPathwaysByKeggID.Object(keggID)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getKeggPathwaysByKeggID> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_b64_encoded_gif.image_'content':Decode_base64_to_byte.base64>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_b64_encoded_gif.image_'content':Decode_base64_to_byte.base64" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Decode_base64_to_byte> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Object.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Object.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Object> .
+
+<http://weprov.csiro.au/controller/getKeggPathwayAsGif.b64_encoded_gif(image):Parse_Moby_Data_b64_encoded_gif.mobyData('b64_encoded_gif')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getKeggPathwayAsGif.b64_encoded_gif(image):Parse_Moby_Data_b64_encoded_gif.mobyData('b64_encoded_gif')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_b64_encoded_gif> .
+
+<http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):getKeggPathwayAsGif.Object(pathway)>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):getKeggPathwayAsGif.Object(pathway)" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getKeggPathwayAsGif> .
+
+<http://weprov.csiro.au/controller/Parse_Moby_Data_Object.id:pathwayId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Parse_Moby_Data_Object.id:pathwayId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):Parse_Moby_Data_Object.mobyData('Object')>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getKeggPathwaysByKeggID.Object(Collection - 'pathways' As Simples):Parse_Moby_Data_Object.mobyData('Object')" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Parse_Moby_Data_Object> .
+
+<http://weprov.csiro.au/controller/getKeggPathwaysByKeggID.Object(Collection - 'pathways'):output>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getKeggPathwaysByKeggID.Object(Collection - 'pathways'):output" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

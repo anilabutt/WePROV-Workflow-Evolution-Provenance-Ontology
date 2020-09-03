@@ -1,0 +1,206 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/1st structure PDB ID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/2nd structure PDB ID> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/3rd structure PDB ID> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/stdout> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/stderr> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/combined structures> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/structure_derived_sequence_alignment> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/1st_structure> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/2nd_structure> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/3rd_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Mustang_Structure_Alignment> , <http://weprov.csiro.au/program/2nd> , <http://weprov.csiro.au/program/3rd> , <http://weprov.csiro.au/program/1st> ;
+        <http://purl.org/dc/terms/description>
+                "This grid-executed Mustang application performs a structural alignment of protein sequences. The number of arguments is variable, in principle, but is shown here for three. The application is executed via the Taverna-ARC plugin on a machine of the NorduGrid. Although your machine can be a part of it, you may prefer to wait for a later version of that interface that does not require grid certificates." ;
+        <http://purl.org/dc/terms/title>
+                "Structural alignment of arbitrary number of protein structures." ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/1st structure PDB ID:1st.pdbID> , <http://weprov.csiro.au/controller/2nd structure PDB ID:2nd.pdbID> , <http://weprov.csiro.au/controller/3rd structure PDB ID:3rd.pdbID> , <http://weprov.csiro.au/controller/1st.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/2nd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/3rd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/1st.pdbFlatFile:1st_structure> , <http://weprov.csiro.au/controller/2nd.pdbFlatFile:2nd_structure> , <http://weprov.csiro.au/controller/3rd.pdbFlatFile:3rd_structure> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDERR:stderr> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDOUT:stdout> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.combined_structures:combined structures> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.structure_derived_alignment:structure_derived_sequence_alignment> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Mustang_Structure_Alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDERR:stderr> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDOUT:stdout> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.combined_structures:combined structures> , <http://weprov.csiro.au/controller/Mustang_Structure_Alignment.structure_derived_alignment:structure_derived_sequence_alignment> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Mustang_Structure_Alignment" .
+
+<http://weprov.csiro.au/program/2nd>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/2nd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/2nd.pdbFlatFile:2nd_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "2nd" .
+
+<http://weprov.csiro.au/workflow/download?version=1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "http://www.myexperiment.org/workflows/167/download?version=1" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/3rd>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/3rd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/3rd.pdbFlatFile:3rd_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "3rd" .
+
+<http://weprov.csiro.au/program/1st>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/1st.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures> , <http://weprov.csiro.au/controller/1st.pdbFlatFile:1st_structure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/download?version=1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "1st" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/1st structure PDB ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "1st structure PDB ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/2nd structure PDB ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "2nd structure PDB ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/3rd structure PDB ID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "3rd structure PDB ID" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/stdout>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stdout" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/stderr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "stderr" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/combined structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "combined structures" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/structure_derived_sequence_alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "structure_derived_sequence_alignment" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/1st_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "1st_structure" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/2nd_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "2nd_structure" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:043a84d4-6f01-402e-845a-0f834249217f-v0/3rd_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "3rd_structure" .
+
+<http://weprov.csiro.au/controller/1st structure PDB ID:1st.pdbID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "1st structure PDB ID:1st.pdbID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/1st> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/1st structure PDB ID:1st.pdbID> , <http://weprov.csiro.au/controller/2nd structure PDB ID:2nd.pdbID> , <http://weprov.csiro.au/controller/3rd structure PDB ID:3rd.pdbID> .
+
+<http://weprov.csiro.au/controller/2nd structure PDB ID:2nd.pdbID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "2nd structure PDB ID:2nd.pdbID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/2nd> .
+
+<http://weprov.csiro.au/controller/3rd structure PDB ID:3rd.pdbID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "3rd structure PDB ID:3rd.pdbID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/3rd> .
+
+<http://weprov.csiro.au/controller/1st.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "1st.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Mustang_Structure_Alignment> .
+
+<http://weprov.csiro.au/controller/2nd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "2nd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Mustang_Structure_Alignment> .
+
+<http://weprov.csiro.au/controller/3rd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "3rd.pdbFlatFile:Mustang_Structure_Alignment.pdb_structures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Mustang_Structure_Alignment> .
+
+<http://weprov.csiro.au/controller/1st.pdbFlatFile:1st_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "1st.pdbFlatFile:1st_structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/2nd.pdbFlatFile:2nd_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "2nd.pdbFlatFile:2nd_structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/3rd.pdbFlatFile:3rd_structure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "3rd.pdbFlatFile:3rd_structure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDERR:stderr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mustang_Structure_Alignment.STDERR:stderr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Mustang_Structure_Alignment.STDOUT:stdout>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mustang_Structure_Alignment.STDOUT:stdout" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Mustang_Structure_Alignment.combined_structures:combined structures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mustang_Structure_Alignment.combined_structures:combined structures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Mustang_Structure_Alignment.structure_derived_alignment:structure_derived_sequence_alignment>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Mustang_Structure_Alignment.structure_derived_alignment:structure_derived_sequence_alignment" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

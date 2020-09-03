@@ -1,0 +1,179 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/peptides> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/cds> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/blast_out> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/genscan_report> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/RepeatMasker_report> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/GI_number> , <http://weprov.csiro.au/program/BLASTp> , <http://weprov.csiro.au/program/SWISS> , <http://weprov.csiro.au/program/Get_Nucleotide_FASTA> , <http://weprov.csiro.au/program/BLAST> , <http://weprov.csiro.au/program/genscan> , <http://weprov.csiro.au/program/repeatmasker> , <http://weprov.csiro.au/program/genscansplitter> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Genome annotation pipeline demonstrator workflow for Nucleic Acids Research" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/BLASTp.value:BLAST.program> , <http://weprov.csiro.au/controller/GI_number.value:Get_Nucleotide_FASTA.id> , <http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:repeatmasker.sequence_direct_data> , <http://weprov.csiro.au/controller/SWISS.value:BLAST.database> , <http://weprov.csiro.au/controller/genscan.output:genscansplitter.scanrecord_direct_data> , <http://weprov.csiro.au/controller/genscansplitter.peptide:BLAST.query> , <http://weprov.csiro.au/controller/repeatmasker.masked:genscan.sequence_direct_data> , <http://weprov.csiro.au/controller/BLAST.Result:blast_out> , <http://weprov.csiro.au/controller/genscansplitter.coding:cds> , <http://weprov.csiro.au/controller/genscansplitter.coding:genscan_report> , <http://weprov.csiro.au/controller/genscansplitter.peptide:peptides> , <http://weprov.csiro.au/controller/repeatmasker.report:RepeatMasker_report> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/GI_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/GI_number.value:Get_Nucleotide_FASTA.id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "GI_number" .
+
+<http://weprov.csiro.au/program/BLASTp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BLASTp.value:BLAST.program> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BLASTp" .
+
+<http://weprov.csiro.au/program/SWISS>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/SWISS.value:BLAST.database> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SWISS" .
+
+<http://weprov.csiro.au/program/Get_Nucleotide_FASTA>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:repeatmasker.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Get_Nucleotide_FASTA" .
+
+<http://weprov.csiro.au/program/BLAST>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/BLAST.Result:blast_out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "BLAST" .
+
+<http://weprov.csiro.au/program/genscan>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/genscan.output:genscansplitter.scanrecord_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "genscan" .
+
+<http://weprov.csiro.au/program/repeatmasker>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/repeatmasker.masked:genscan.sequence_direct_data> , <http://weprov.csiro.au/controller/repeatmasker.report:RepeatMasker_report> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "repeatmasker" .
+
+<http://weprov.csiro.au/program/genscansplitter>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/genscansplitter.peptide:BLAST.query> , <http://weprov.csiro.au/controller/genscansplitter.coding:cds> , <http://weprov.csiro.au/controller/genscansplitter.coding:genscan_report> , <http://weprov.csiro.au/controller/genscansplitter.peptide:peptides> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "genscansplitter" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/peptides>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "peptides" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/cds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cds" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/blast_out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blast_out" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/genscan_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscan_report" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:2QHN4W0J0A144-v0/RepeatMasker_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "RepeatMasker_report" .
+
+<http://weprov.csiro.au/controller/BLASTp.value:BLAST.program>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BLASTp.value:BLAST.program" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BLAST> .
+
+<http://weprov.csiro.au/controller/GI_number.value:Get_Nucleotide_FASTA.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "GI_number.value:Get_Nucleotide_FASTA.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Get_Nucleotide_FASTA> .
+
+<http://weprov.csiro.au/controller/Get_Nucleotide_FASTA.outputText:repeatmasker.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Get_Nucleotide_FASTA.outputText:repeatmasker.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/repeatmasker> .
+
+<http://weprov.csiro.au/controller/SWISS.value:BLAST.database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "SWISS.value:BLAST.database" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BLAST> .
+
+<http://weprov.csiro.au/controller/genscan.output:genscansplitter.scanrecord_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscan.output:genscansplitter.scanrecord_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/genscansplitter> .
+
+<http://weprov.csiro.au/controller/genscansplitter.peptide:BLAST.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscansplitter.peptide:BLAST.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/BLAST> .
+
+<http://weprov.csiro.au/controller/repeatmasker.masked:genscan.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "repeatmasker.masked:genscan.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/genscan> .
+
+<http://weprov.csiro.au/controller/BLAST.Result:blast_out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "BLAST.Result:blast_out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/genscansplitter.coding:cds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscansplitter.coding:cds" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/genscansplitter.coding:genscan_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscansplitter.coding:genscan_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/genscansplitter.peptide:peptides>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "genscansplitter.peptide:peptides" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/repeatmasker.report:RepeatMasker_report>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "repeatmasker.report:RepeatMasker_report" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

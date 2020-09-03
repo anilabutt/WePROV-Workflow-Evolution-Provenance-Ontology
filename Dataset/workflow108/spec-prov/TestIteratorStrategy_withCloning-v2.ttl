@@ -1,0 +1,334 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/letter_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/concatenated> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/capital_list> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/count_concatenated> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/count_letterlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/create_capitalList> , <http://weprov.csiro.au/program/String_Constant> , <http://weprov.csiro.au/program/create_ListOfLists> , <http://weprov.csiro.au/program/Count2> , <http://weprov.csiro.au/program/Count1> , <http://weprov.csiro.au/program/Concatenate> , <http://weprov.csiro.au/program/Clone> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow implements a strategy for this problem:\n> I would like to perform an iteration including a dot product between\n>     a list and a list of lists; example:\n>     Input:\n>\n>         [1]\t\t\t(1)\n>         [A,B,C]\t\t(2)\n>         [[a,b],[c,d],[e,f]]\t\t(3)\n>\n>     Desired output:\n>\n>         [1Aa, 1Ab, 1Bc, 1Bd, 1Ce, 1Cf]\n\nIn this implementation a java beanshell is used to clone the items in list 2 as many times per item as there are items in the sublists of list 3. The iteration strategy for Clone is set to a dot product.\nThus a count on list 2 produces: [2,2,2]\nClone with input: [2,2,2] . [A,B,C] produces [[A,A],[B,B],[C,C]] (note the dot product) (4)\nThen concatenation of (1)*((4).(3)) produces: [[1Aa,1Ab],[1Bc,1Bd],[1Ce,1Cf]]" ;
+        <http://purl.org/dc/terms/title>
+                "TestIteratorStrategy_withCloning" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Clone.clones:Concatenate.input2> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> , <http://weprov.csiro.au/controller/Count1.count:Clone.copy_number> , <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> , <http://weprov.csiro.au/controller/create_ListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:Clone.input> , <http://weprov.csiro.au/controller/Count1.count:count_letterlist> , <http://weprov.csiro.au/controller/Count2.count:count_concatenated> , <http://weprov.csiro.au/controller/create_ListOfLists.outlist:Count1.xml_list> , <http://weprov.csiro.au/controller/create_ListOfLists.outlist:letter_list> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/create_capitalList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_capitalList.capitallist:Clone.input> , <http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_capitalList" .
+
+<http://weprov.csiro.au/program/String_Constant>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "String_Constant" .
+
+<http://weprov.csiro.au/program/create_ListOfLists>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/create_ListOfLists.outlist:Concatenate.input3> , <http://weprov.csiro.au/controller/create_ListOfLists.outlist:Count1.xml_list> , <http://weprov.csiro.au/controller/create_ListOfLists.outlist:letter_list> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "create_ListOfLists" .
+
+<http://weprov.csiro.au/program/Count2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Count2.count:count_concatenated> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/CountListElements.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Count2" .
+
+<http://weprov.csiro.au/workflow/CountListElements.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/D:/Marco/adaptivedisclosure.org/public_html/BioAID/Preliminary/Workflows/UtilityWorkflows/CountListElements.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/program/Count1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Count1.count:Clone.copy_number> , <http://weprov.csiro.au/controller/Count1.count:count_letterlist> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/CountListElements.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Count1" .
+
+<http://weprov.csiro.au/program/Concatenate>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list> , <http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input1> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input2> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input3> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/concatenated_string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> , <http://weprov.csiro.au/program/Concatenate_two_strings2> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "Concatenate" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings1" .
+
+<http://weprov.csiro.au/program/Concatenate_two_strings2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Concatenate_two_strings2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input2" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input3" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:1c2b5081-98c5-4e7a-8445-ef2553d16086-v1/concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated_string" .
+
+<http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input1:Concatenate_two_strings1.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/input1:Concatenate_two_strings1.string1> , <http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2> , <http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2> , <http://weprov.csiro.au/controller/copy_number:Clone.copy_number> , <http://weprov.csiro.au/controller/input:Clone.input> .
+
+<http://weprov.csiro.au/controller/input2:Concatenate_two_strings1.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input2:Concatenate_two_strings1.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings1> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings1.output:Concatenate_two_strings2.string1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings1.output:Concatenate_two_strings2.string1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/input3:Concatenate_two_strings2.string2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input3:Concatenate_two_strings2.string2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate_two_strings2> .
+
+<http://weprov.csiro.au/controller/Concatenate_two_strings2.output:concatenated_string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate_two_strings2.output:concatenated_string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/Clone>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Clone.clones:clones> , <http://weprov.csiro.au/controller/Clone.clones:Concatenate.input2> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Clone" .
+
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/copy_number> , <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/input> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/clones> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Clone> ;
+        <http://purl.org/dc/terms/description>
+                "Utility workflow that clones an item copy_number times. You can use this to work around standard iteration strategies, e.g. in combination with the CountListItems workflow.\n\nWorkflow examples: TestIterationStrategy_withClones. For an alternative approach see TestIterationStrategy_withNesting.\n\nExample I/O:\n\ninput: A\ncopy_number: 3\nresult: [A,A,A]\n\ninput: [A,B,C]\ncopy_number: 3\nresult: [[A,A,A][B,B,B][C,C,C]]\n\ninput: [A,B,C]\ncopy_number: [3,2]\nresult: [[[A,A,A],[A,A]][[B,B,B],[B,B]],[[C,C,C],[C,C]]]\n\ninput: [A,B,C]\ncopy_number: [3,2,1]\niteration strategy: dot product\nresult: [[A,A,A],[B,B],[C]]" ;
+        <http://purl.org/dc/terms/title>
+                "CloneItemsInList" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/copy_number:Clone.copy_number> , <http://weprov.csiro.au/controller/input:Clone.input> , <http://weprov.csiro.au/controller/Clone.clones:clones> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/copy_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "copy_number" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "input" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:ee6fce91-2abe-4998-9721-3270aeb0d0b2-v1/clones>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "clones" .
+
+<http://weprov.csiro.au/controller/copy_number:Clone.copy_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "copy_number:Clone.copy_number" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Clone> .
+
+<http://weprov.csiro.au/controller/input:Clone.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "input:Clone.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Clone> .
+
+<http://weprov.csiro.au/controller/Clone.clones:clones>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Clone.clones:clones" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "letter_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "concatenated" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "capital_list" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/count_concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count_concatenated" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:15427033-6d05-4185-acc9-8d66f5d88a72-v1/count_letterlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "count_letterlist" .
+
+<http://weprov.csiro.au/controller/Clone.clones:Concatenate.input2>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Clone.clones:Concatenate.input2" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/Concatenate.concatenated_string:Count2.xml_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate.concatenated_string:Count2.xml_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Count2> .
+
+<http://weprov.csiro.au/controller/Concatenate.concatenated_string:concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Concatenate.concatenated_string:concatenated" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Count1.count:Clone.copy_number>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count1.count:Clone.copy_number" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Clone> .
+
+<http://weprov.csiro.au/controller/String_Constant.value:Concatenate.input1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "String_Constant.value:Concatenate.input1" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_ListOfLists.outlist:Concatenate.input3>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_ListOfLists.outlist:Concatenate.input3" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Concatenate> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:Clone.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:Clone.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Clone> .
+
+<http://weprov.csiro.au/controller/Count1.count:count_letterlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count1.count:count_letterlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/Count2.count:count_concatenated>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Count2.count:count_concatenated" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_ListOfLists.outlist:Count1.xml_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_ListOfLists.outlist:Count1.xml_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Count1> .
+
+<http://weprov.csiro.au/controller/create_ListOfLists.outlist:letter_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_ListOfLists.outlist:letter_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/create_capitalList.capitallist:capital_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "create_capitalList.capitallist:capital_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

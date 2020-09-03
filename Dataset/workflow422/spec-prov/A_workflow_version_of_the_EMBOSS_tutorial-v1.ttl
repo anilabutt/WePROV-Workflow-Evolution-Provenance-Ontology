@@ -1,0 +1,253 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/outputPlot> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/prophetOutput> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/tmapPlot> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/sequenceid> , <http://weprov.csiro.au/program/prophecyType> , <http://weprov.csiro.au/program/prophecyName> , <http://weprov.csiro.au/program/send> , <http://weprov.csiro.au/program/sbegin> , <http://weprov.csiro.au/program/msfFormat> , <http://weprov.csiro.au/program/transeqSequenceID> , <http://weprov.csiro.au/program/prophet> , <http://weprov.csiro.au/program/prophecy> , <http://weprov.csiro.au/program/tmap> , <http://weprov.csiro.au/program/seqret1> , <http://weprov.csiro.au/program/transeq> , <http://weprov.csiro.au/program/formatSequences> , <http://weprov.csiro.au/program/emma> , <http://weprov.csiro.au/program/plot> ;
+        <http://purl.org/dc/terms/description>
+                "Designed to show the use of EMBOSS based Soaplab services from Taverna, this workflow has no inputs as all initial values are specified as string constants. A sequence set is fetched using the seqret tool, then simultaneously scanned for predicted transmembrane regions and subjected to a multiple alignment using emma. This alignment is then plotted to a set of PNG images and also used to build a profile using the prophecy and prophet tools." ;
+        <http://purl.org/dc/terms/title>
+                "A workflow version of the EMBOSS tutorial" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/sequenceid.value:seqret1.sequence_usa> , <http://weprov.csiro.au/controller/seqret1.outseq:emma.sequence_direct_data> , <http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data> , <http://weprov.csiro.au/controller/plot.Graphics_in_PNG:outputPlot> , <http://weprov.csiro.au/controller/emma.outseq:prophecy.sequence_direct_data> , <http://weprov.csiro.au/controller/prophecyType.value:prophecy.type> , <http://weprov.csiro.au/controller/prophecyName.value:prophecy.name> , <http://weprov.csiro.au/controller/prophecy.outfile:prophet.infile_direct_data> , <http://weprov.csiro.au/controller/transeq.outseq:prophet.sequence_direct_data> , <http://weprov.csiro.au/controller/transeqSequenceID.value:transeq.sequence_usa> , <http://weprov.csiro.au/controller/sbegin.value:transeq.sbegin> , <http://weprov.csiro.au/controller/send.value:transeq.send> , <http://weprov.csiro.au/controller/prophet.outfile:prophetOutput> , <http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmapPlot> , <http://weprov.csiro.au/controller/seqret1.outseq:formatSequences.sequence_direct_data> , <http://weprov.csiro.au/controller/formatSequences.outseq:tmap.sequences_direct_data> , <http://weprov.csiro.au/controller/msfFormat.value:formatSequences.osformat> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/sequenceid>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sequenceid.value:seqret1.sequence_usa> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sequenceid" .
+
+<http://weprov.csiro.au/program/prophecyType>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prophecyType.value:prophecy.type> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prophecyType" .
+
+<http://weprov.csiro.au/program/prophecyName>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prophecyName.value:prophecy.name> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prophecyName" .
+
+<http://weprov.csiro.au/program/send>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/send.value:transeq.send> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "send" .
+
+<http://weprov.csiro.au/program/sbegin>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/sbegin.value:transeq.sbegin> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "sbegin" .
+
+<http://weprov.csiro.au/program/msfFormat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/msfFormat.value:formatSequences.osformat> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "msfFormat" .
+
+<http://weprov.csiro.au/program/transeqSequenceID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/transeqSequenceID.value:transeq.sequence_usa> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "transeqSequenceID" .
+
+<http://weprov.csiro.au/program/prophet>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prophet.outfile:prophetOutput> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prophet" .
+
+<http://weprov.csiro.au/program/prophecy>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/prophecy.outfile:prophet.infile_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "prophecy" .
+
+<http://weprov.csiro.au/program/tmap>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmapPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "tmap" .
+
+<http://weprov.csiro.au/program/seqret1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/seqret1.outseq:emma.sequence_direct_data> , <http://weprov.csiro.au/controller/seqret1.outseq:formatSequences.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "seqret1" .
+
+<http://weprov.csiro.au/program/transeq>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/transeq.outseq:prophet.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "transeq" .
+
+<http://weprov.csiro.au/program/formatSequences>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/formatSequences.outseq:tmap.sequences_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "formatSequences" .
+
+<http://weprov.csiro.au/program/emma>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data> , <http://weprov.csiro.au/controller/emma.outseq:prophecy.sequence_direct_data> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "emma" .
+
+<http://weprov.csiro.au/program/plot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/plot.Graphics_in_PNG:outputPlot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "plot" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/outputPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "outputPlot" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/prophetOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prophetOutput" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:M763988GGM2-v0/tmapPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmapPlot" .
+
+<http://weprov.csiro.au/controller/sequenceid.value:seqret1.sequence_usa>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sequenceid.value:seqret1.sequence_usa" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/seqret1> .
+
+<http://weprov.csiro.au/controller/seqret1.outseq:emma.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seqret1.outseq:emma.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/emma> .
+
+<http://weprov.csiro.au/controller/emma.outseq:plot.sequences_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emma.outseq:plot.sequences_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/plot> .
+
+<http://weprov.csiro.au/controller/plot.Graphics_in_PNG:outputPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "plot.Graphics_in_PNG:outputPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/emma.outseq:prophecy.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "emma.outseq:prophecy.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prophecy> .
+
+<http://weprov.csiro.au/controller/prophecyType.value:prophecy.type>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prophecyType.value:prophecy.type" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prophecy> .
+
+<http://weprov.csiro.au/controller/prophecyName.value:prophecy.name>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prophecyName.value:prophecy.name" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prophecy> .
+
+<http://weprov.csiro.au/controller/prophecy.outfile:prophet.infile_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prophecy.outfile:prophet.infile_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prophet> .
+
+<http://weprov.csiro.au/controller/transeq.outseq:prophet.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeq.outseq:prophet.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/prophet> .
+
+<http://weprov.csiro.au/controller/transeqSequenceID.value:transeq.sequence_usa>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "transeqSequenceID.value:transeq.sequence_usa" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/transeq> .
+
+<http://weprov.csiro.au/controller/sbegin.value:transeq.sbegin>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "sbegin.value:transeq.sbegin" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/transeq> .
+
+<http://weprov.csiro.au/controller/send.value:transeq.send>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "send.value:transeq.send" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/transeq> .
+
+<http://weprov.csiro.au/controller/prophet.outfile:prophetOutput>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "prophet.outfile:prophetOutput" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/tmap.Graphics_in_PNG:tmapPlot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "tmap.Graphics_in_PNG:tmapPlot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/seqret1.outseq:formatSequences.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "seqret1.outseq:formatSequences.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/formatSequences> .
+
+<http://weprov.csiro.au/controller/formatSequences.outseq:tmap.sequences_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "formatSequences.outseq:tmap.sequences_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/tmap> .
+
+<http://weprov.csiro.au/controller/msfFormat.value:formatSequences.osformat>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "msfFormat.value:formatSequences.osformat" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/formatSequences> .

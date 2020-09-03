@@ -1,0 +1,531 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/swissprot> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/embl> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/medlineIds> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/medline> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/interproIds> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/goDiagram> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/ecNumbers> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/pathways> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/meltTemp> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/targetSequence> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/blastReport> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/PDBStructure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/ProbeSetId> , <http://weprov.csiro.au/program/removePrefix> , <http://weprov.csiro.au/program/cleanGoIds> , <http://weprov.csiro.au/program/cleanInterproIds> , <http://weprov.csiro.au/program/splitString> , <http://weprov.csiro.au/program/createVizSession> , <http://weprov.csiro.au/program/destroyVizSession> , <http://weprov.csiro.au/program/getInterProIds> , <http://weprov.csiro.au/program/getEmblId> , <http://weprov.csiro.au/program/getSwissProtId> , <http://weprov.csiro.au/program/getMolFuncGoIds> , <http://weprov.csiro.au/program/getDotFromViz> , <http://weprov.csiro.au/program/addTermToViz> , <http://weprov.csiro.au/program/getEC> , <http://weprov.csiro.au/program/cleanEcNumbers> , <http://weprov.csiro.au/program/getPathwaysByECNumbers> , <http://weprov.csiro.au/program/getMedlineIds> , <http://weprov.csiro.au/program/getPathwayDiagrams> , <http://weprov.csiro.au/program/mark_pathway_by_objects> , <http://weprov.csiro.au/program/DDBJ_Blastn> , <http://weprov.csiro.au/program/getTargetSequence> , <http://weprov.csiro.au/program/ebi_uniprot> , <http://weprov.csiro.au/program/ebi_medline2007> , <http://weprov.csiro.au/program/ebi_embl> , <http://weprov.csiro.au/program/calcMeltTemp> , <http://weprov.csiro.au/program/UniprotAndPdb> ;
+        <http://purl.org/dc/terms/description>
+                "This is a revised workflow for the Graves disease scenario gene annotation pipeline used in the myGrid project. The  workflow had to be re-written due to the loss of the services invoked in the original workflow." ;
+        <http://purl.org/dc/terms/title>
+                "Gene annotation pipeline for the Graves disease scenario" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/ProbeSetId.value:getEC.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getEmblId.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getInterProIds.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getMolFuncGoIds.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getSwissProtId.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getTargetSequence.probeSetId> , <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:getPathwaysByECNumbers.enzyme_id_list> , <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:mark_pathway_by_objects.object_id_list> , <http://weprov.csiro.au/controller/cleanGoIds.goIds:addTermToViz.geneOntologyID> , <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:addTermToViz.sessionID> , <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:destroyVizSession.sessionID> , <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:getDotFromViz.sessionID> , <http://weprov.csiro.au/controller/ebi_embl.result:calcMeltTemp.sequence_direct_data> , <http://weprov.csiro.au/controller/getEC.getECReturn:cleanEcNumbers.inputStr> , <http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:ebi_embl.searchterm> , <http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:getMedlineIds.searchterm> , <http://weprov.csiro.au/controller/getInterProIds.getInterProReturn:cleanInterproIds.inputStr> , <http://weprov.csiro.au/controller/getMedlineIds.result:removePrefix.str> , <http://weprov.csiro.au/controller/DDBJ_Blastn.Result:blastReport> , <http://weprov.csiro.au/controller/UniprotAndPdb.pdbFlatFile:PDBStructure> , <http://weprov.csiro.au/controller/getMolFuncGoIds.getGeneOntologyMolecularFunctionReturn:cleanGoIds.inputStr> , <http://weprov.csiro.au/controller/mark_pathway_by_objects.return:getPathwayDiagrams.url> , <http://weprov.csiro.au/controller/removePrefix.id:ebi_medline2007.searchterm> , <http://weprov.csiro.au/controller/splitString.split:UniprotAndPdb.ids> , <http://weprov.csiro.au/controller/splitString.split:ebi_uniprot.searchterm> , <http://weprov.csiro.au/controller/calcMeltTemp.outfile:meltTemp> , <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:ecNumbers> , <http://weprov.csiro.au/controller/cleanInterproIds.interproIds:interproIds> , <http://weprov.csiro.au/controller/ebi_embl.result:embl> , <http://weprov.csiro.au/controller/ebi_medline2007.result:medline> , <http://weprov.csiro.au/controller/ebi_uniprot.result:swissprot> , <http://weprov.csiro.au/controller/getDotFromViz.getDotReturn:goDiagram> , <http://weprov.csiro.au/controller/getMedlineIds.result:medlineIds> , <http://weprov.csiro.au/controller/getPathwayDiagrams.image:pathways> , <http://weprov.csiro.au/controller/getPathwaysByECNumbers.return:mark_pathway_by_objects.pathway_id> , <http://weprov.csiro.au/controller/getSwissProtId.getSwissProtReturn:splitString.string> , <http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:DDBJ_Blastn.query> , <http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:targetSequence> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/ProbeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ProbeSetId.value:getEC.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getEmblId.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getInterProIds.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getMolFuncGoIds.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getSwissProtId.probeSetId> , <http://weprov.csiro.au/controller/ProbeSetId.value:getTargetSequence.probeSetId> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ProbeSetId" .
+
+<http://weprov.csiro.au/program/removePrefix>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/removePrefix.id:ebi_medline2007.searchterm> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "removePrefix" .
+
+<http://weprov.csiro.au/program/cleanGoIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cleanGoIds.goIds:addTermToViz.geneOntologyID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cleanGoIds" .
+
+<http://weprov.csiro.au/program/cleanInterproIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cleanInterproIds.interproIds:interproIds> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cleanInterproIds" .
+
+<http://weprov.csiro.au/program/splitString>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/splitString.split:UniprotAndPdb.ids> , <http://weprov.csiro.au/controller/splitString.split:ebi_uniprot.searchterm> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "splitString" .
+
+<http://weprov.csiro.au/program/createVizSession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:addTermToViz.sessionID> , <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:destroyVizSession.sessionID> , <http://weprov.csiro.au/controller/createVizSession.createSessionReturn:getDotFromViz.sessionID> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "createVizSession" .
+
+<http://weprov.csiro.au/program/destroyVizSession>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "destroyVizSession" .
+
+<http://weprov.csiro.au/program/getInterProIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getInterProIds.getInterProReturn:cleanInterproIds.inputStr> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getInterProIds" .
+
+<http://weprov.csiro.au/program/getEmblId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:ebi_embl.searchterm> , <http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:getMedlineIds.searchterm> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getEmblId" .
+
+<http://weprov.csiro.au/program/getSwissProtId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getSwissProtId.getSwissProtReturn:splitString.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getSwissProtId" .
+
+<http://weprov.csiro.au/program/getMolFuncGoIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getMolFuncGoIds.getGeneOntologyMolecularFunctionReturn:cleanGoIds.inputStr> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getMolFuncGoIds" .
+
+<http://weprov.csiro.au/program/getDotFromViz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getDotFromViz.getDotReturn:goDiagram> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getDotFromViz" .
+
+<http://weprov.csiro.au/program/addTermToViz>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "addTermToViz" .
+
+<http://weprov.csiro.au/program/getEC>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getEC.getECReturn:cleanEcNumbers.inputStr> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getEC" .
+
+<http://weprov.csiro.au/program/cleanEcNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:getPathwaysByECNumbers.enzyme_id_list> , <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:mark_pathway_by_objects.object_id_list> , <http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:ecNumbers> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "cleanEcNumbers" .
+
+<http://weprov.csiro.au/program/getPathwaysByECNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPathwaysByECNumbers.return:mark_pathway_by_objects.pathway_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPathwaysByECNumbers" .
+
+<http://weprov.csiro.au/program/getMedlineIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getMedlineIds.result:removePrefix.str> , <http://weprov.csiro.au/controller/getMedlineIds.result:medlineIds> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getMedlineIds" .
+
+<http://weprov.csiro.au/program/getPathwayDiagrams>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getPathwayDiagrams.image:pathways> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getPathwayDiagrams" .
+
+<http://weprov.csiro.au/program/mark_pathway_by_objects>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/mark_pathway_by_objects.return:getPathwayDiagrams.url> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "mark_pathway_by_objects" .
+
+<http://weprov.csiro.au/program/DDBJ_Blastn>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/DDBJ_Blastn.Result:blastReport> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DDBJ_Blastn" .
+
+<http://weprov.csiro.au/program/getTargetSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:DDBJ_Blastn.query> , <http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:targetSequence> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "getTargetSequence" .
+
+<http://weprov.csiro.au/program/ebi_uniprot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ebi_uniprot.result:swissprot> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ebi_uniprot" .
+
+<http://weprov.csiro.au/program/ebi_medline2007>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ebi_medline2007.result:medline> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ebi_medline2007" .
+
+<http://weprov.csiro.au/program/ebi_embl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/ebi_embl.result:calcMeltTemp.sequence_direct_data> , <http://weprov.csiro.au/controller/ebi_embl.result:embl> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "ebi_embl" .
+
+<http://weprov.csiro.au/program/calcMeltTemp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/calcMeltTemp.outfile:meltTemp> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "calcMeltTemp" .
+
+<http://weprov.csiro.au/program/UniprotAndPdb>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/UniprotAndPdb.pdbFlatFile:PDBStructure> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/workflow/uniprotandPDBxml.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "UniprotAndPdb" .
+
+<http://weprov.csiro.au/workflow/uniprotandPDBxml.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.org/dc/terms/description>
+                "" ;
+        <http://purl.org/dc/terms/title>
+                "" ;
+        <http://www.csiro.au/digiscape/weprov#location>
+                "file:/D:/terrybiteImport/examples/examples/testworkflows/uniprotandPDBxml.xml" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/swissprot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "swissprot" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/embl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "embl" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/medlineIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "medlineIds" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/medline>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "medline" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/interproIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "interproIds" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/goDiagram>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "goDiagram" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/ecNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ecNumbers" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "pathways" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/meltTemp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "meltTemp" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/targetSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "targetSequence" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/blastReport>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "blastReport" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:O212J5USSV4-v0/PDBStructure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "PDBStructure" .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getEC.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getEC.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getEC> .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getEmblId.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getEmblId.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getEmblId> .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getInterProIds.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getInterProIds.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getInterProIds> .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getMolFuncGoIds.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getMolFuncGoIds.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMolFuncGoIds> .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getSwissProtId.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getSwissProtId.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getSwissProtId> .
+
+<http://weprov.csiro.au/controller/ProbeSetId.value:getTargetSequence.probeSetId>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ProbeSetId.value:getTargetSequence.probeSetId" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getTargetSequence> .
+
+<http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:getPathwaysByECNumbers.enzyme_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cleanEcNumbers.ecNumbers:getPathwaysByECNumbers.enzyme_id_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwaysByECNumbers> .
+
+<http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:mark_pathway_by_objects.object_id_list>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cleanEcNumbers.ecNumbers:mark_pathway_by_objects.object_id_list" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mark_pathway_by_objects> .
+
+<http://weprov.csiro.au/controller/cleanGoIds.goIds:addTermToViz.geneOntologyID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cleanGoIds.goIds:addTermToViz.geneOntologyID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addTermToViz> .
+
+<http://weprov.csiro.au/controller/createVizSession.createSessionReturn:addTermToViz.sessionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createVizSession.createSessionReturn:addTermToViz.sessionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/addTermToViz> .
+
+<http://weprov.csiro.au/controller/createVizSession.createSessionReturn:destroyVizSession.sessionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createVizSession.createSessionReturn:destroyVizSession.sessionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/destroyVizSession> .
+
+<http://weprov.csiro.au/controller/createVizSession.createSessionReturn:getDotFromViz.sessionID>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "createVizSession.createSessionReturn:getDotFromViz.sessionID" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getDotFromViz> .
+
+<http://weprov.csiro.au/controller/ebi_embl.result:calcMeltTemp.sequence_direct_data>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ebi_embl.result:calcMeltTemp.sequence_direct_data" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/calcMeltTemp> .
+
+<http://weprov.csiro.au/controller/getEC.getECReturn:cleanEcNumbers.inputStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getEC.getECReturn:cleanEcNumbers.inputStr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/cleanEcNumbers> .
+
+<http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:ebi_embl.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getEmblId.getRepresentativePublicIdReturn:ebi_embl.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ebi_embl> .
+
+<http://weprov.csiro.au/controller/getEmblId.getRepresentativePublicIdReturn:getMedlineIds.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getEmblId.getRepresentativePublicIdReturn:getMedlineIds.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getMedlineIds> .
+
+<http://weprov.csiro.au/controller/getInterProIds.getInterProReturn:cleanInterproIds.inputStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getInterProIds.getInterProReturn:cleanInterproIds.inputStr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/cleanInterproIds> .
+
+<http://weprov.csiro.au/controller/getMedlineIds.result:removePrefix.str>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMedlineIds.result:removePrefix.str" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/removePrefix> .
+
+<http://weprov.csiro.au/controller/DDBJ_Blastn.Result:blastReport>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "DDBJ_Blastn.Result:blastReport" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/UniprotAndPdb.pdbFlatFile:PDBStructure>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "UniprotAndPdb.pdbFlatFile:PDBStructure" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getMolFuncGoIds.getGeneOntologyMolecularFunctionReturn:cleanGoIds.inputStr>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMolFuncGoIds.getGeneOntologyMolecularFunctionReturn:cleanGoIds.inputStr" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/cleanGoIds> .
+
+<http://weprov.csiro.au/controller/mark_pathway_by_objects.return:getPathwayDiagrams.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "mark_pathway_by_objects.return:getPathwayDiagrams.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/getPathwayDiagrams> .
+
+<http://weprov.csiro.au/controller/removePrefix.id:ebi_medline2007.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "removePrefix.id:ebi_medline2007.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ebi_medline2007> .
+
+<http://weprov.csiro.au/controller/splitString.split:UniprotAndPdb.ids>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitString.split:UniprotAndPdb.ids" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/UniprotAndPdb> .
+
+<http://weprov.csiro.au/controller/splitString.split:ebi_uniprot.searchterm>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "splitString.split:ebi_uniprot.searchterm" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/ebi_uniprot> .
+
+<http://weprov.csiro.au/controller/calcMeltTemp.outfile:meltTemp>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "calcMeltTemp.outfile:meltTemp" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/cleanEcNumbers.ecNumbers:ecNumbers>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cleanEcNumbers.ecNumbers:ecNumbers" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/cleanInterproIds.interproIds:interproIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "cleanInterproIds.interproIds:interproIds" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ebi_embl.result:embl>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ebi_embl.result:embl" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ebi_medline2007.result:medline>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ebi_medline2007.result:medline" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/ebi_uniprot.result:swissprot>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ebi_uniprot.result:swissprot" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getDotFromViz.getDotReturn:goDiagram>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getDotFromViz.getDotReturn:goDiagram" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getMedlineIds.result:medlineIds>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getMedlineIds.result:medlineIds" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getPathwayDiagrams.image:pathways>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPathwayDiagrams.image:pathways" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/getPathwaysByECNumbers.return:mark_pathway_by_objects.pathway_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getPathwaysByECNumbers.return:mark_pathway_by_objects.pathway_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/mark_pathway_by_objects> .
+
+<http://weprov.csiro.au/controller/getSwissProtId.getSwissProtReturn:splitString.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getSwissProtId.getSwissProtReturn:splitString.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/splitString> .
+
+<http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:DDBJ_Blastn.query>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getTargetSequence.getTargetSequenceReturn:DDBJ_Blastn.query" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/DDBJ_Blastn> .
+
+<http://weprov.csiro.au/controller/getTargetSequence.getTargetSequenceReturn:targetSequence>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "getTargetSequence.getTargetSequenceReturn:targetSequence" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

@@ -1,0 +1,65 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:544267e8-382b-4c20-a9ee-2bdcf7b4ed46-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:544267e8-382b-4c20-a9ee-2bdcf7b4ed46-v0/origin> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:544267e8-382b-4c20-a9ee-2bdcf7b4ed46-v0/Comments> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/Read_MDL_SD_File_as_DB_input> , <http://weprov.csiro.au/program/Insert_Molecule_into_database> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow load molecules into a database. The molecules originally are stored in a MDL SD file. As workflow input an origin is added to each molecule which gets stored into the database. The output of the workflow shows logs from the database insert process." ;
+        <http://purl.org/dc/terms/title>
+                "InsertMoleculesIntoDatabase" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Read_MDL_SD_File_as_DB_input.resultStructures:Insert_Molecule_into_database.inputStructures> , <http://weprov.csiro.au/controller/origin:Insert_Molecule_into_database.Origon> , <http://weprov.csiro.au/controller/Insert_Molecule_into_database.comment:Comments> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/Read_MDL_SD_File_as_DB_input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Read_MDL_SD_File_as_DB_input.resultStructures:Insert_Molecule_into_database.inputStructures> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Read_MDL_SD_File_as_DB_input" .
+
+<http://weprov.csiro.au/program/Insert_Molecule_into_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Insert_Molecule_into_database.comment:Comments> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Insert_Molecule_into_database" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:544267e8-382b-4c20-a9ee-2bdcf7b4ed46-v0/origin>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "origin" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:544267e8-382b-4c20-a9ee-2bdcf7b4ed46-v0/Comments>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Comments" .
+
+<http://weprov.csiro.au/controller/Read_MDL_SD_File_as_DB_input.resultStructures:Insert_Molecule_into_database.inputStructures>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Read_MDL_SD_File_as_DB_input.resultStructures:Insert_Molecule_into_database.inputStructures" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Insert_Molecule_into_database> .
+
+<http://weprov.csiro.au/controller/origin:Insert_Molecule_into_database.Origon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "origin:Insert_Molecule_into_database.Origon" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Insert_Molecule_into_database> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/origin:Insert_Molecule_into_database.Origon> .
+
+<http://weprov.csiro.au/controller/Insert_Molecule_into_database.comment:Comments>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Insert_Molecule_into_database.comment:Comments" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

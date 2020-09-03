@@ -1,0 +1,51 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:QQ71HFWBOL25-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QQ71HFWBOL25-v0/string> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QQ71HFWBOL25-v0/ID_and_definitions> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/bfind> ;
+        <http://purl.org/dc/terms/description>
+                "Used for searching entries by keywords. User needs to specify a database from those which are supported by DBGET system before keywords\n\nExample of input parameter: \ngb E-cadherin human" ;
+        <http://purl.org/dc/terms/title>
+                "bfind" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/string:bfind.string> , <http://weprov.csiro.au/controller/bfind.return:ID_and_definitions> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/bfind>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/bfind.return:ID_and_definitions> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "bfind" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QQ71HFWBOL25-v0/string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "string" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QQ71HFWBOL25-v0/ID_and_definitions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "ID_and_definitions" .
+
+<http://weprov.csiro.au/controller/string:bfind.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "string:bfind.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/bfind> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/string:bfind.string> .
+
+<http://weprov.csiro.au/controller/bfind.return:ID_and_definitions>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "bfind.return:ID_and_definitions" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

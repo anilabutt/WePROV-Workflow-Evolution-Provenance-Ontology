@@ -1,0 +1,25 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:64f89a27-63d3-4fe0-8846-2000f5298b3d-v1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/DecodeBase64EncodedSVGZ> , <http://weprov.csiro.au/program/DownloadToDiskFromURLWithBasicAuth> , <http://weprov.csiro.au/program/SelectItemsFromList> ;
+        <http://purl.org/dc/terms/description>
+                "Public collection of generic Beanshells curated by the myExperimentBeanshellCollection group on myExperiment. Visit http://www.myexperiment.org for details and updates.\n\nTo use this collection of beanshells in Taverna:\n* Right click \"Available Processors\" in the \"Design Perspective\"\n* Choose \"Add new Workflow scavenger...\"\n* Provide the URL to this beanshell collection on www.myExperiment.org or if you downloaded this to your hard disk, provide a \"file\" URL to the absolute path of this file\n  (On Linux/Unix/Mac: file:///some/path/on/my/disk/myExperimentBeanshellCollection.xml)\n  (On Windows:             file:///drive_letter:/My%20Documents/myExperimentBeanshellCollection.xml)\n* You can select Beanshells from this scavenger now and add them to your workflow like any other processor." ;
+        <http://purl.org/dc/terms/title>
+                "myExperimentBeanshellCollection" ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "1" .
+
+<http://weprov.csiro.au/program/DecodeBase64EncodedSVGZ>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DecodeBase64EncodedSVGZ" .
+
+<http://weprov.csiro.au/program/DownloadToDiskFromURLWithBasicAuth>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "DownloadToDiskFromURLWithBasicAuth" .
+
+<http://weprov.csiro.au/program/SelectItemsFromList>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "SelectItemsFromList" .

@@ -1,0 +1,191 @@
+<http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:d03e7996-9580-42b3-b977-972447770fb0-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d03e7996-9580-42b3-b977-972447770fb0-v0/kegg_entry_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d03e7996-9580-42b3-b977-972447770fb0-v0/swissprot_id> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/get_linkdb_by_entry> , <http://weprov.csiro.au/program/returnXML> , <http://weprov.csiro.au/program/database> , <http://weprov.csiro.au/program/returnXML1> , <http://weprov.csiro.au/program/split> , <http://weprov.csiro.au/program/colon> , <http://weprov.csiro.au/program/extract> , <http://weprov.csiro.au/program/from> , <http://weprov.csiro.au/program/to> , <http://weprov.csiro.au/program/merge> , <http://weprov.csiro.au/program/merge1> ;
+        <http://purl.org/dc/terms/description>
+                "Takes a KEGG gene identifier, e.g. sce:YAL038W (yeast pyruvate kinase) and converts to the corresponding Swissprot identifier." ;
+        <http://purl.org/dc/terms/title>
+                "kegg_gene_to_swissprot_identifier" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/kegg_entry_id:get_linkdb_by_entry.entry_id> , <http://weprov.csiro.au/controller/colon.value:split.regex> , <http://weprov.csiro.au/controller/database.value:get_linkdb_by_entry.db> , <http://weprov.csiro.au/controller/extract.outputlist:merge.stringlist> , <http://weprov.csiro.au/controller/from.value:extract.fromindex> , <http://weprov.csiro.au/controller/get_linkdb_by_entry.return:returnXML.input> , <http://weprov.csiro.au/controller/merge.concatenated:merge1.stringlist> , <http://weprov.csiro.au/controller/returnXML1.entry_id2:split.string> , <http://weprov.csiro.au/controller/returnXML.return:returnXML1.input> , <http://weprov.csiro.au/controller/split.split:extract.inputlist> , <http://weprov.csiro.au/controller/to.value:extract.toindex> , <http://weprov.csiro.au/controller/merge1.concatenated:swissprot_id> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/get_linkdb_by_entry>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/get_linkdb_by_entry.return:returnXML.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "get_linkdb_by_entry" .
+
+<http://weprov.csiro.au/program/returnXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/returnXML.return:returnXML1.input> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "returnXML" .
+
+<http://weprov.csiro.au/program/database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/database.value:get_linkdb_by_entry.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "database" .
+
+<http://weprov.csiro.au/program/returnXML1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/returnXML1.entry_id2:split.string> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "returnXML1" .
+
+<http://weprov.csiro.au/program/split>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/split.split:extract.inputlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "split" .
+
+<http://weprov.csiro.au/program/colon>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/colon.value:split.regex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "colon" .
+
+<http://weprov.csiro.au/program/extract>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/extract.outputlist:merge.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "extract" .
+
+<http://weprov.csiro.au/program/from>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/from.value:extract.fromindex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "from" .
+
+<http://weprov.csiro.au/program/to>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/to.value:extract.toindex> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "to" .
+
+<http://weprov.csiro.au/program/merge>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge.concatenated:merge1.stringlist> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge" .
+
+<http://weprov.csiro.au/program/merge1>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/merge1.concatenated:swissprot_id> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "merge1" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d03e7996-9580-42b3-b977-972447770fb0-v0/kegg_entry_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "kegg_entry_id" .
+
+<http://weprov.csiro.au/port/urn:lsid:net.sf.taverna:wfDefinition:d03e7996-9580-42b3-b977-972447770fb0-v0/swissprot_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "swissprot_id" .
+
+<http://weprov.csiro.au/controller/kegg_entry_id:get_linkdb_by_entry.entry_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "kegg_entry_id:get_linkdb_by_entry.entry_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_linkdb_by_entry> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/kegg_entry_id:get_linkdb_by_entry.entry_id> .
+
+<http://weprov.csiro.au/controller/colon.value:split.regex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "colon.value:split.regex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split> .
+
+<http://weprov.csiro.au/controller/database.value:get_linkdb_by_entry.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "database.value:get_linkdb_by_entry.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/get_linkdb_by_entry> .
+
+<http://weprov.csiro.au/controller/extract.outputlist:merge.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "extract.outputlist:merge.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge> .
+
+<http://weprov.csiro.au/controller/from.value:extract.fromindex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "from.value:extract.fromindex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract> .
+
+<http://weprov.csiro.au/controller/get_linkdb_by_entry.return:returnXML.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "get_linkdb_by_entry.return:returnXML.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/returnXML> .
+
+<http://weprov.csiro.au/controller/merge.concatenated:merge1.stringlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge.concatenated:merge1.stringlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/merge1> .
+
+<http://weprov.csiro.au/controller/returnXML1.entry_id2:split.string>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "returnXML1.entry_id2:split.string" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/split> .
+
+<http://weprov.csiro.au/controller/returnXML.return:returnXML1.input>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "returnXML.return:returnXML1.input" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/returnXML1> .
+
+<http://weprov.csiro.au/controller/split.split:extract.inputlist>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "split.split:extract.inputlist" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract> .
+
+<http://weprov.csiro.au/controller/to.value:extract.toindex>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "to.value:extract.toindex" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/extract> .
+
+<http://weprov.csiro.au/controller/merge1.concatenated:swissprot_id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "merge1.concatenated:swissprot_id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .

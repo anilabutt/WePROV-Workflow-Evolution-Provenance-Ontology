@@ -1,0 +1,187 @@
+<http://weprov.csiro.au/workflow/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Workflow> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/terms> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort>
+                <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/webpage> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/image> , <http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/out> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#hasSubProgram>
+                <http://weprov.csiro.au/program/NCBI_eSearch> , <http://weprov.csiro.au/program/fetch_compound_info> , <http://weprov.csiro.au/program/fetch_compound_image> , <http://weprov.csiro.au/program/Beanshell_scripting_host> , <http://weprov.csiro.au/program/parametersXML> , <http://weprov.csiro.au/program/run_eSummary> , <http://weprov.csiro.au/program/requestXML> , <http://weprov.csiro.au/program/NCBI_database> ;
+        <http://purl.org/dc/terms/description>
+                "This workflow takes in a search term and a database (e.g. snp, gene, protein) in which to perfom the search over. The result is an xml file containing summary information about the search term" ;
+        <http://purl.org/dc/terms/title>
+                "Search InChI in NCBI eSearch (pccompound)" ;
+        <http://www.csiro.au/digiscape/weprov#hasController>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.id:requestXML.id> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.image:fetch_compound_image.url> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.info:fetch_compound_info.url> , <http://weprov.csiro.au/controller/NCBI_database.value:Beanshell_scripting_host.db_search> , <http://weprov.csiro.au/controller/NCBI_database.value:parametersXML.db> , <http://weprov.csiro.au/controller/fetch_compound_image.image:image> , <http://weprov.csiro.au/controller/fetch_compound_info.contents:webpage> , <http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters> , <http://weprov.csiro.au/controller/terms:parametersXML.term> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.db:requestXML.db> , <http://weprov.csiro.au/controller/NCBI_eSearch.parameters:Beanshell_scripting_host.xml> , <http://weprov.csiro.au/controller/requestXML.output:run_eSummary.request> , <http://weprov.csiro.au/controller/run_eSummary.result:out> ;
+        <http://www.csiro.au/digiscape/weprov#revision>
+                "0" .
+
+<http://weprov.csiro.au/program/NCBI_eSearch>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NCBI_eSearch.parameters:Beanshell_scripting_host.xml> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NCBI_eSearch" .
+
+<http://weprov.csiro.au/program/fetch_compound_info>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetch_compound_info.contents:webpage> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetch_compound_info" .
+
+<http://weprov.csiro.au/program/fetch_compound_image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/fetch_compound_image.image:image> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "fetch_compound_image" .
+
+<http://weprov.csiro.au/program/Beanshell_scripting_host>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#beanshell> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/Beanshell_scripting_host.id:requestXML.id> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.image:fetch_compound_image.url> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.info:fetch_compound_info.url> , <http://weprov.csiro.au/controller/Beanshell_scripting_host.db:requestXML.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Beanshell_scripting_host" .
+
+<http://weprov.csiro.au/program/parametersXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "parametersXML" .
+
+<http://weprov.csiro.au/program/run_eSummary>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#arbitrarywsdl> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/run_eSummary.result:out> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "run_eSummary" .
+
+<http://weprov.csiro.au/program/requestXML>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#local> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/requestXML.output:run_eSummary.request> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "requestXML" .
+
+<http://weprov.csiro.au/program/NCBI_database>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Program> , <http://www.csiro.au/digiscape/weprov#stringconstant> ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/NCBI_database.value:Beanshell_scripting_host.db_search> , <http://weprov.csiro.au/controller/NCBI_database.value:parametersXML.db> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "NCBI_database" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/terms>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "terms" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/webpage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "webpage" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "image" .
+
+<http://weprov.csiro.au/port/urn:lsid:www.mygrid.org.uk:operation:QM8274VGE529-v0/out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Port> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "out" .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.id:requestXML.id>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.id:requestXML.id" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/requestXML> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.image:fetch_compound_image.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.image:fetch_compound_image.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetch_compound_image> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.info:fetch_compound_info.url>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.info:fetch_compound_info.url" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/fetch_compound_info> .
+
+<http://weprov.csiro.au/controller/NCBI_database.value:Beanshell_scripting_host.db_search>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI_database.value:Beanshell_scripting_host.db_search" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/NCBI_database.value:parametersXML.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI_database.value:parametersXML.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/fetch_compound_image.image:image>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetch_compound_image.image:image" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/program/>
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controlledBy>
+                <http://weprov.csiro.au/controller/terms:parametersXML.term> .
+
+<http://weprov.csiro.au/controller/fetch_compound_info.contents:webpage>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "fetch_compound_info.contents:webpage" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
+
+<http://weprov.csiro.au/controller/parametersXML.output:NCBI_eSearch.parameters>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "parametersXML.output:NCBI_eSearch.parameters" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/NCBI_eSearch> .
+
+<http://weprov.csiro.au/controller/terms:parametersXML.term>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "terms:parametersXML.term" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/parametersXML> .
+
+<http://weprov.csiro.au/controller/Beanshell_scripting_host.db:requestXML.db>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Beanshell_scripting_host.db:requestXML.db" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/requestXML> .
+
+<http://weprov.csiro.au/controller/NCBI_eSearch.parameters:Beanshell_scripting_host.xml>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "NCBI_eSearch.parameters:Beanshell_scripting_host.xml" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/Beanshell_scripting_host> .
+
+<http://weprov.csiro.au/controller/requestXML.output:run_eSummary.request>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "requestXML.output:run_eSummary.request" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/run_eSummary> .
+
+<http://weprov.csiro.au/controller/run_eSummary.result:out>
+        a       <http://purl.dataone.org/provone/2015/01/15/ontology#Controller> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "run_eSummary.result:out" ;
+        <http://purl.dataone.org/provone/2015/01/15/ontology#controls>
+                <http://weprov.csiro.au/program/> .
