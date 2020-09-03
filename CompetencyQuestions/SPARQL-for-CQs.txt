@@ -1,0 +1,245 @@
+/** CQ1: Find the temporal reconstruction of the workflow design */
+
+		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
+				"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/> " + 				
+				
+				"CONSTRUCT { " + 
+				"?creation a weprov:Creation; a ?activityType; prov:startedAtTime ?startTime. " + 
+				"?creation prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName. " + 
+				"?generation a prov:Generation; prov:atTime ?genTime; prov:activity ?creation; prov:generated ?workflow. ?workflow prov:qualifiedGeneration ?generation; prov:wasGeneratedBy ?creation. ?aGeneration weprov:wasPartOf ?generation." + 
+				"?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime. " + 
+				"?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName. " + 
+				"?renaming prov:activity ?modification; a weprov:Renaming; dcterm:title ?title; dcterm:description ?description; prov:agent ?renamedAgent. " + 
+				"?revision a prov:Revision; prov:atTime ?revTime; weprov:revision ?revisionNo; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision. ?revision weprov:wasPartOf ?pRevision.  " + 
+				"?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen. " + 
+				"?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity."+
+				"} " + 				
+				"FROM <http://weprov.csiro.au/> " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE {  " + 
+				"{ ?creation a weprov:Creation; a ?activityType; prov:startedAtTime ?startTime. OPTIONAL {?creation prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName} ?generation a prov:Generation; prov:atTime ?genTime; prov:activity ?creation; prov:generated ?workflowId. OPTIONAL {?aGeneration weprov:wasPartOf ?generation.} ?workflowId prov:qualifiedGeneration ?generation; prov:wasGeneratedBy ?creation.  " + 
+				"FILTER (?workflowId = ?workflow) { SELECT ?workflow WHERE { <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649>  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} }  }  " + 
+				"UNION { " + 
+				"{?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime. OPTIONAL {?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName} OPTIONAL {?renaming prov:activity ?modification; a weprov:Renaming. OPTIONAL{?renaming dcterm:title ?title}. OPTIONAL{?renaming dcterm:description ?description}. OPTIONAL{?renaming prov:agent ?renamedAgent}} ?revision a prov:Revision; prov:atTime ?revTime; weprov:revision ?revisionNo; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision. OPTIONAL {?revision weprov:wasPartOf ?pRevision}  OPTIONAL {?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen.} OPTIONAL {?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity.} } " + 
+				"FILTER (?workflowId = ?workflow) { SELECT ?workflow WHERE { <http://weprov.csiro.au/workflow/urn:lsid:net.sf.taverna:wfDefinition:618ac202-acf6-4695-bdc6-ca0078be3649>  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} }} " + 
+				"}";
+				
+				
+/** CQ2: Identify different types of changes in a revision of the workflow.*/ 
+
+		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
+				"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/> " + 
+				
+				"CONSTRUCT {?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime. " + 
+				"?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName. " + 
+				"?renaming prov:activity ?modification; a weprov:Renaming; dcterm:title ?title; dcterm:description ?description; prov:agent ?renamedAgent. " + 
+				"?revision a prov:Revision; prov:atTime ?revTime; weprov:revision \""+ revision + "\"; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision. ?revision weprov:wasPartOf ?pRevision.  " + 
+				"?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen. " + 
+				"?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity.} " + 
+				"FROM <http://weprov.csiro.au/> " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE { " + 
+				"?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime. " + 
+				"OPTIONAL {?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName} " + 
+				"OPTIONAL {?renaming prov:activity ?modification; a weprov:Renaming. OPTIONAL{?renaming dcterm:title ?title}. OPTIONAL{?renaming dcterm:description ?description}. OPTIONAL{?renaming prov:agent ?renamedAgent}} " + 
+				"?revision a prov:Revision; prov:atTime ?revTime; weprov:revision \""+ revision + "\"; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision. OPTIONAL {?revision weprov:wasPartOf ?pRevision}  " + 
+				"OPTIONAL {?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen.} " + 
+				"OPTIONAL {?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity.} " + 
+				"FILTER (?workflowId = ?workflow) " + 
+				" { SELECT ?workflow  " + 
+				"   WHERE { <"+workflowId+">  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} }  " + 
+				"}";
+				
+				
+/** CQ3:  Report the reason(s) of divergent results of two executions of a workflow.*/ 
+
+		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
+				"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/> " + 
+				
+				"CONSTRUCT {?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime. " + 
+				"?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName. " + 
+				"?renaming prov:activity ?modification; a weprov:Renaming; dcterm:title ?title; dcterm:description ?description; prov:agent ?renamedAgent. " + 
+				"?revision a prov:Revision; prov:atTime ?revTime; weprov:revision ?revisionNo; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision. ?revision weprov:wasPartOf ?pRevision.  " + 
+				"?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen. " + 
+				"?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity.} " + 
+				"FROM <http://weprov.csiro.au/> " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE { " + 
+				"?modification a weprov:Modification; a ?activityType; prov:startedAtTime ?startTime.  " + 
+				"OPTIONAL {?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName}  " + 
+				"OPTIONAL {?renaming prov:activity ?modification; a weprov:Renaming. OPTIONAL {?renaming dcterm:title ?title}. OPTIONAL{?renaming dcterm:description ?description}. OPTIONAL{?renaming prov:agent ?renamedAgent}}  " + 
+				"?revision a prov:Revision; prov:atTime ?time; weprov:revision ?revisionNo; prov:activity ?modification; prov:wasRevisionOf ?workflowId. ?workflowId prov:qualifiedRevision ?revision.  " + 
+				"OPTIONAL {?revision weprov:wasPartOf ?pRevision}   " + 
+				"OPTIONAL {?revision prov:hadGeneration ?gen. ?gen a prov:Generation; prov:atTime ?genTime; prov:activity ?modification. ?entity prov:qualifiedGeneration ?gen.}  " + 
+				"OPTIONAL {?revision prov:hadInvalidation ?invalid. ?invalid a prov:Invalidation; prov:atTime ?invalidTime; prov:activity ?modification; prov:entity ?invalidEntity.}   " + 
+				"FILTER ((?time >= \""+firstTime+"\"^^xsd:dateTime) && (?time <= \""+lastTime+"\"^^xsd:dateTime) ) " + 
+				"FILTER (?workflowId = ?workflow) " + 
+				"{ SELECT ?workflow  " + 
+				"WHERE { <"+workflowId+">  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} }  " + 
+				"}";
+				
+/** CQ4:  Which one is the most unstable component of the workflow? */ 
+
+		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"CONSTRUCT {?workflowId weprov:hasRevisions ?revisions} " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE { " + 
+				"	SELECT ?workflowId (max(?revCount) As ?revisions) " + 
+				"	FROM <http://weprov.csiro.au/> " + 
+				"	FROM <http://weprov.csiro.au/evolution/> "+
+				"	WHERE { " + 
+				"		?modification a weprov:Modification. " + 
+				"		?revision a prov:Revision; weprov:revision ?revCount; prov:activity ?modification; prov:wasRevisionOf ?workflowId.  " + 
+				"	FILTER (?workflowId = ?workflow) " + 
+				"		{ "+
+				"			SELECT ?workflow  " + 
+				"   		WHERE { <"+workflowId+">  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} "+
+				"		}  " + 
+				"	  } Group By (?workflowId)  " + 
+				"}";
+				
+/** CQ5: Identify all the agents who have participated in the design of the workflow.*/ 
+
+		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"Construct " +
+				"{ ?activity a ?type; prov:wasAssociatedWith ?agentId. ?agentId foaf:name ?agent. } " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"Where{ " + 
+				"    VALUES ?type {weprov:Creation weprov:Invalidation weprov:Modification} " + 
+				"    ?activity a ?type; " + 
+				"    prov:wasAssociatedWith ?agentId. ?agentId foaf:name ?agent. " + 
+				"	 { 	{<"+workflowId+"> prov:wasGeneratedBy ?activity.} UNION " +
+				"		{<"+workflowId+"> prov:wasInvalidatedBy ?activity.} UNION " +
+				"		{<"+workflowId+"> prov:qualifiedRevision/prov:activity ?activity.} " +
+				"	 }" + 
+				"}";
+				
+/**  CQ6: Who is responsible for a change (revision) in the workflow */
+
+		String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/> " + 
+				"Construct { ?revision prov:wasAssociatedWith ?agent. ?agent foaf:name ?agent. } " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE { " + 
+				"?modification a weprov:Modification. " + 
+				"OPTIONAL {?modification prov:wasAssociatedWith ?agent. ?agent a ?agentType; foaf:name ?agentName} " + 
+				"?revision a prov:Revision; weprov:revision \""+ revision + "\"; prov:activity ?modification; prov:wasRevisionOf <"+workflowId+">. " + 
+				"}";
+				
+/** CQ7: Who participated in the first version of the workflow?**/
+
+		String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+				"CONSTRUCT { ?generation prov:wasAssociatedWith ?agent; prov:generated <"+workflowId+">. ?agent foaf:name ?agent. } " + 
+				"FROM <http://weprov.csiro.au/evolution/> "+
+				"WHERE {  " + 
+				"?creation a weprov:Creation.  " + 
+				"?generation a prov:Generation; prov:activity ?creation; prov:generated <"+workflowId+">.  " + 
+				"OPTIONAL {?creation prov:wasAssociatedWith ?agent. ?agent foaf:name ?agentName.}  " + 
+				"}";
+				
+/** CQ8: Find all workflows (or versions of a workflow) where an agent has participated.*/
+
+			String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+					"		PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+					"		PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+					"		CONSTRUCT {?workflowId prov:wasAttributedTo ?agentId. ?agentId foaf:name ?name.} " + 
+					"		FROM <http://weprov.csiro.au/evolution/> "+
+					"		WHERE { " +
+					" 		{?workflowId prov:wasGeneratedBy|prov:wasInvalidatedBy ?activity.} UNION "+
+					"		{?workflowId (prov:qualifiedDerivation|prov:qualifiedRevision)/prov:activity ?activity.} " + 
+					"		?activity prov:wasAssociatedWith ?agentId. ?agentId foaf:name ?name. " + 
+					"		FILTER regex(?name, \""+name+"\", \"i\") " + 
+					"		}";
+					
+/** CQ9: Find the collaborative researchers and their collaboration count of designing workflows together.
+	 * Users need to know researchers (i.e., agents) who most often collaborate and their count of collaborative workflows. **/
+	 
+			String sparql = "PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
+				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+				"PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+				"CONSTRUCT { " + 
+				"?workflow prov:wasAttributedTo ?agentId1. " + 
+				"?workflow prov:wasAttributedTo ?agentId2 }  " + 
+				"FROM <http://weprov.csiro.au/evolution/> " +
+				"WHERE { " + 
+				"{?workflow prov:wasGeneratedBy|prov:wasInvalidatedBy ?activity.} UNION {?workflow (prov:qualifiedDerivation|prov:qualifiedRevision)/prov:activity ?activity.} ?activity prov:wasAssociatedWith ?agentId1. " + 
+				"{?workflow prov:wasGeneratedBy|prov:wasInvalidatedBy ?activity2.} UNION {?workflow (prov:qualifiedDerivation|prov:qualifiedRevision)/prov:activity ?activity2.} ?activity2 prov:wasAssociatedWith ?agentId2. " + 
+				"FILTER (?agentId1 != ?agentId2) " + 
+				"}";
+
+/** CQ10: When a (first/last) version of the workflow is created? 
+	* When different versions of a workflow are created. **/
+	
+			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+					"PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+					"CONSTRUCT {"+
+					"<"+workflowId+"> prov:qualifiedGeneration ?generation. ?generation prov:atTime ?generationTime. " + 
+					"<"+workflowId+"> prov:qualifiedDerivation ?derivation. ?derivation prov:atTime ?derivationTime. " + 
+					"<"+workflowId+"> prov:qualifiedRevision ?revision. ?revision prov:atTime ?revisionTime. " + 
+					"<"+workflowId+"> prov:qualifiedInvalidation ?invalidation. ?invalidation prov:atTime ?invalidationTime. " + 
+					"} " + 
+					"FROM <http://weprov.csiro.au/evolution/> "+
+					"WHERE { " +
+					"{<"+workflowId+"> prov:qualifiedGeneration ?generation. ?generation prov:atTime ?generationTime} UNION "+
+					"{<"+workflowId+"> prov:qualifiedDerivation ?derivation. ?derivation prov:atTime ?derivationTime} UNION "+
+					"{<"+workflowId+"> prov:qualifiedRevision ?revision. ?revision prov:atTime ?revisionTime} UNION "+
+					"{<"+workflowId+"> prov:qualifiedInvalidation ?invalidation. ?invalidation prov:atTime ?invalidationTime}"+
+					"} ";
+					
+/** CQ11: (a) How long an agent participated in a workflow?  */
+							
+			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+					"PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+					"CONSTRUCT {<"+workflowId+"> prov:wasAttributedTo ?agentId. ?agentId prov:startedAtTime ?startTime; prov:endedAtTime ?endTime.}  " + 
+					"FROM <http://weprov.csiro.au/evolution/> "+
+					"WHERE { " + 
+					"SELECT ?agentId (min(?time) AS ?startTime)  (max(?time) AS ?endTime) " + 
+					"FROM <http://weprov.csiro.au/evolution/> "+
+					"WHERE { " + 
+					"    { {<"+workflowId+"> prov:wasGeneratedBy|prov:wasInvalidatedBy ?activity.} UNION  " + 
+					"      {<"+workflowId+"> (prov:qualifiedDerivation|prov:qualifiedRevision)/prov:activity ?activity.} }  " + 
+					"?activity prov:startedAtTime ?time; prov:wasAssociatedWith ?agentId. ?agentId foaf:name ?name. " + 
+					"FILTER regex(?name, \""+agentName+"\", \"i\") " + 
+					"} GROUP BY ?agentId " + 
+					"} ";
+					
+/** CQ11: (b) How long an agent participated in a repository of the workflow  */
+
+			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
+					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
+					"PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
+					"CONSTRUCT {?workflow prov:wasAttributedTo ?agentId. ?agentId prov:startedAtTime ?startTime; prov:endedAtTime ?endTime.}  " + 
+					"FROM <http://weprov.csiro.au/evolution/> "+
+					"WHERE { " + 
+					"SELECT ?agentId (min(?time) AS ?startTime)  (max(?time) AS ?endTime) " + 
+					"FROM <http://weprov.csiro.au/evolution/> "+
+					"WHERE { " + 
+					"    { {?workflow prov:wasGeneratedBy|prov:wasInvalidatedBy ?activity.} UNION  " + 
+					"      {?workflow (prov:qualifiedDerivation|prov:qualifiedRevision)/prov:activity ?activity.} }  " + 
+					"?activity prov:startedAtTime ?time; prov:wasAssociatedWith ?agentId. ?agentId foaf:name ?name. " + 
+					"FILTER regex(?name, \""+agentName+"\", \"i\") " + 
+					"} GROUP BY ?agentId " + 
+					"} ";
+					
