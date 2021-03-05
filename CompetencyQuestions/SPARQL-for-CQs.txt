@@ -1,5 +1,9 @@
 /** CQ1: Find the temporal reconstruction of the workflow design */
 
+/** Description: The query accepts workflow-Id as the query parameter and returns the evolution provenance of the first to the latest version of the workflow and its sub workflows. 
+* This information will show how, when, and who created the workflow and who, when and what changes this workflow.  
+**/
+
 		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
 				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
 				"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> " + 
@@ -31,6 +35,10 @@
 				
 /** CQ2: Identify different types of changes in a revision of the workflow.*/ 
 
+/** Description:  This query takes two input parameters" (1) workflow Id and (2) version number. It returns all the changes that are made in this version. 
+* The information shows that what part of the workflow has been changed, showing the added, deleted, and modified inputs, outputs, parameters and/or programs.
+**/
+
 		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
 				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
 				"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> " + 
@@ -56,10 +64,16 @@
 				"FILTER (?workflowId = ?workflow) " + 
 				" { SELECT ?workflow  " + 
 				"   WHERE { <"+workflowId+">  (provone:hasSubProgram/provone:hasSubProgram)*  ?workflow.} }  " + 
-				"}";
+				" } ";
 				
 				
 /** CQ3:  Report the reason(s) of divergent results of two executions of a workflow.*/ 
+
+/** 
+* This query takes three parameters: (1) workflow Id (2) first execution time (3) second execution time.
+* The query finds the changes in the structure/definition of a workflow during a time duration. Suppose there is any change hanppened during this period. This would be the reason for the divergent results. 
+* Suppose the execution of this query returns an empty result set. In that case, it means no changes have been made in the workflow structure, and there are some un intensional changes in parameter settings or input data sets.
+**/
 
 		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
 				"PREFIX dcterm:<http://purl.org/dc/terms/> " + 
@@ -92,6 +106,12 @@
 				
 /** CQ4:  Which one is the most unstable component of the workflow? */ 
 
+/**
+* In this query, we identified the workflow's component (sub workflow) that has been changing more often than the other parts of the workflow.
+* Thus, the query accepts a workflow Id, finds all sub-workflows for this workflow, and identifies the revisions recorded for each sub-workflow and select the one with maximum revisions. 
+* The query returns the sub-workflow along with the number of times it has been revised since its inception.
+**/
+
 		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
 				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
@@ -114,6 +134,12 @@
 				
 /** CQ5: Identify all the agents who have participated in the design of the workflow.*/ 
 
+/**
+* This query returns the agent (person or organisation) who have worked on any of the workflow versions. 
+* The query accepts a workflow Id as a parameter. It identifies all its versions (i.e., revisions) and, finally, the agents' name who have been involved in the generation, invalidation or modification of this workflow. 
+* The query returns all involved agents and the type of activity they performed in this workflow.
+**/
+
 		String sparql ="PREFIX provone:<http://purl.dataone.org/provone/2015/01/15/ontology#> " + 
 				"PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
@@ -132,6 +158,11 @@
 				
 /**  CQ6: Who is responsible for a change (revision) in the workflow */
 
+/**
+* This query returns the agent (person or organisation) who have worked on a specific workflow version. 
+* The query accepts a workflow Id and the revision Id as query parameters. It identifies all the agents' name who have been involved in the modification of this workflow. 
+**/
+
 		String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
 				"PREFIX foaf:<http://xmlns.com/foaf/0.1/> " + 
@@ -144,6 +175,11 @@
 				"}";
 				
 /** CQ7: Who participated in the first version of the workflow?**/
+
+/**
+* This query returns the agent (person or organisation) who have worked on the first version of a workflow. 
+* The query accepts a workflow Id as a query parameter. It identifies the agents' name who have been involved in the creation of this workflow. 
+**/
 
 		String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 				"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
@@ -158,6 +194,11 @@
 				
 /** CQ8: Find all workflows (or versions of a workflow) where an agent has participated.*/
 
+/**
+* This query returns all the workflows where an agent (person or organisation) has participated. 
+* The query accepts an agent name as a query parameter. It identifies all the workflows that the agent has created, invalidated or modified. 
+**/
+
 			String sparql = "PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 					"		PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
 					"		PREFIX foaf:<http://xmlns.com/foaf/0.1/>  " + 
@@ -170,6 +211,7 @@
 					"		FILTER regex(?name, \""+name+"\", \"i\") " + 
 					"		}";
 					
+
 /** CQ9: Find the collaborative researchers and their collaboration count of designing workflows together.
 	 * Users need to know researchers (i.e., agents) who most often collaborate and their count of collaborative workflows. **/
 	 
@@ -188,7 +230,11 @@
 				"}";
 
 /** CQ10: When a (first/last) version of the workflow is created? 
-	* When different versions of a workflow are created. **/
+	
+/** When different versions of a workflow are created. 
+* The query accepts a workflow Id as a parameter. It identifies all its versions (i.e., revisions) and, finally, the time when the workflow version was generated, invalidated or modified. 
+* The query returns all versions and the generation, modification or deletion time of that version.
+**/
 	
 			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
@@ -207,7 +253,10 @@
 					"{<"+workflowId+"> prov:qualifiedInvalidation ?invalidation. ?invalidation prov:atTime ?invalidationTime}"+
 					"} ";
 					
-/** CQ11: (a) How long an agent participated in a workflow?  */
+/** CQ11: (a) How long an agent participated in a workflow?  
+* The query takes workflow Id and the agent Id as the query parameters. It returns the duration for which the agent was involved in the design of this workflow.
+For this the query identifies all the versions of the workflow where the agent was a participant. Then it considers the minimum time as the start time and maximum time as the end time of agent's participation on that workflow. 
+*/
 							
 			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
@@ -225,7 +274,11 @@
 					"} GROUP BY ?agentId " + 
 					"} ";
 					
-/** CQ11: (b) How long an agent participated in a repository of the workflow  */
+/** CQ11: (b) How long an agent participated in a repository of the workflow?
+  
+* The query takes the agent Id as a query parameter. It returns the duration for which the agent was involved in the design of any of the workflow in this repository.
+For this the query identifies all the workflow where the agent was a participant. Then it considers the minimum time as the start time and maximum time as the end time of agent's participation on that workflow. 
+*/
 
 			String sparql ="PREFIX prov:<http://www.w3.org/ns/prov#> " + 
 					"PREFIX weprov:<http://www.csiro.au/digiscape/weprov#> " + 
